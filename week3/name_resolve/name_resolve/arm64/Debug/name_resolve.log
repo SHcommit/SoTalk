@@ -1,0 +1,6 @@
+﻿  name_resolve.cpp
+\\Mac\Home\NetworkSocketProgrammingWithBSD\3Week\name_resolve\name_resolve\name_resolve.cpp(9,17): warning C4996: 'gethostbyname': Use getaddrinfo() or GetAddrInfoW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+\\Mac\Home\NetworkSocketProgrammingWithBSD\3Week\name_resolve\name_resolve\name_resolve.cpp(18,17): warning C4996: 'gethostbyaddr': Use getnameinfo() or GetNameInfoW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+\\Mac\Home\NetworkSocketProgrammingWithBSD\3Week\name_resolve\name_resolve\name_resolve.cpp(22,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+\\Mac\Home\NetworkSocketProgrammingWithBSD\3Week\name_resolve\name_resolve\name_resolve.cpp(35,30): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  name_resolve.vcxproj -> \\Mac\Home\NetworkSocketProgrammingWithBSD\3Week\name_resolve\arm64\Debug\name_resolve.exe

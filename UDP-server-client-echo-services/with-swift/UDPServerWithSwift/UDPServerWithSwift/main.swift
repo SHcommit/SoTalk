@@ -16,7 +16,7 @@ let MaxBuf = 4096
 
 func udpServerWithSwift() throws {
   var servSocket: Int32 = socket(AF_INET, SOCK_DGRAM, 0)
-  if servSocket == -1 { throw "DEBUG: Invalid client's socket" }
+  if servSocket == -1 { throw "DEBUG: Invalid server's socket" }
   
   var servAddr = sockaddr_in()
   var clientAddr = sockaddr()
@@ -36,7 +36,7 @@ func udpServerWithSwift() throws {
   while true {
     print("DEBUG: 클라이언트로부터 데이터를 기다린다")
     
-    var buffer = [String](repeating: "", count: MaxBuf)
+    var buffer = [UInt8](repeating: 0, count: MaxBuf)
     
     var ret = recvfrom(
       servSocket,
@@ -48,8 +48,12 @@ func udpServerWithSwift() throws {
     guard ret >= 0 else {
       throw "Invalid receive data fro client"
     }
-    
-    print("read ==> \(buffer)")
+    let data = Data(bytes: buffer, count: ret)
+    if let str = String(data: data, encoding: .utf8) {
+      print("read ===> \(str)")
+    }else {
+      throw "Error decoding receive"
+    }
     
     ret = sendto(
       servSocket,

@@ -3,10 +3,8 @@
 #include <winsock2.h>
 #include <stdlib.h>
 #include <stdio.h>
-
 const u_short BUFSIZE = 512;
 const u_short PORT = 9000;
-
 int main() {
 	int res;
 
@@ -31,16 +29,11 @@ int main() {
 		printf("Socket option set : (%d)\n", WSAGetLastError());
 		return -1;
 	}
-
-
-
-
 	SOCKADDR_IN remoteAddr;
 	ZeroMemory(&remoteAddr, sizeof(remoteAddr));
 	remoteAddr.sin_family = AF_INET;
 	remoteAddr.sin_port = htons(PORT);
 	remoteAddr.sin_addr.s_addr = htonl(INADDR_BROADCAST);
-
 	char buf[BUFSIZE + 1];
 	int len;
 

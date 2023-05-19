@@ -10,7 +10,7 @@ import Foundation
 //MARK: - Constraints
 typealias ClientError = ClientTCPDispatchError
 let BufSize = 1000
-let Port = 4501
+let Port = 9000
 
 //MARK: - ClientTCPDispatchError
 enum ClientTCPDispatchError: Error {

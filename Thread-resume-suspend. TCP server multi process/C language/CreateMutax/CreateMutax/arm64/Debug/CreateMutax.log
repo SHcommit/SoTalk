@@ -1,0 +1,5 @@
+﻿  CraeteMutex.cpp
+\\Mac\Home\NetworkSocketProgrammingWithBSD\Thread-resume-suspend. TCP server multi process\C language\CreateMutax\CreateMutax\CraeteMutex.cpp(12,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+\\Mac\Home\NetworkSocketProgrammingWithBSD\Thread-resume-suspend. TCP server multi process\C language\CreateMutax\CreateMutax\CraeteMutex.cpp(15,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+\\Mac\Home\NetworkSocketProgrammingWithBSD\Thread-resume-suspend. TCP server multi process\C language\CreateMutax\CreateMutax\CraeteMutex.cpp(18,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  CreateMutax.vcxproj -> \\Mac\Home\NetworkSocketProgrammingWithBSD\Thread-resume-suspend. TCP server multi process\C language\CreateMutax\arm64\Debug\CreateMutax.exe

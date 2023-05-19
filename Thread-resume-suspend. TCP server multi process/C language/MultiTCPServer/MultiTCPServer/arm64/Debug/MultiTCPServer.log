@@ -1,0 +1,5 @@
+﻿  MultiTCPServer.cpp
+\\Mac\Home\NetworkSocketProgrammingWithBSD\Thread-resume-suspend. TCP server multi process\C language\MultiTCPServer\MultiTCPServer\MultiTCPServer.cpp(27,30): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+\\Mac\Home\NetworkSocketProgrammingWithBSD\Thread-resume-suspend. TCP server multi process\C language\MultiTCPServer\MultiTCPServer\MultiTCPServer.cpp(36,3): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+\\Mac\Home\NetworkSocketProgrammingWithBSD\Thread-resume-suspend. TCP server multi process\C language\MultiTCPServer\MultiTCPServer\MultiTCPServer.cpp(76,4): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  MultiTCPServer.vcxproj -> \\Mac\Home\NetworkSocketProgrammingWithBSD\Thread-resume-suspend. TCP server multi process\C language\MultiTCPServer\arm64\Debug\MultiTCPServer.exe

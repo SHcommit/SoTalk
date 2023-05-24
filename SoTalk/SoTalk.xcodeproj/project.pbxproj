@@ -1,0 +1,568 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		15856D052A1E9CAA0085FE75 /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D002A1E9CAA0085FE75 /* UIControl+Combine.swift */; };
+		15856D062A1E9CAA0085FE75 /* UISwitch+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D012A1E9CAA0085FE75 /* UISwitch+Combine.swift */; };
+		15856D072A1E9CAA0085FE75 /* UIButton+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D022A1E9CAA0085FE75 /* UIButton+Combine.swift */; };
+		15856D082A1E9CAA0085FE75 /* UIControl+CombineInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D032A1E9CAA0085FE75 /* UIControl+CombineInteraction.swift */; };
+		15856D092A1E9CAA0085FE75 /* UITextField+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D042A1E9CAA0085FE75 /* UITextField+Combine.swift */; };
+		15856D0E2A1E9D150085FE75 /* ConvenienceInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D0B2A1E9D150085FE75 /* ConvenienceInit.swift */; };
+		15856D0F2A1E9D150085FE75 /* ViewModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D0C2A1E9D150085FE75 /* ViewModelProtocols.swift */; };
+		15856D102A1E9D150085FE75 /* LayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D0D2A1E9D150085FE75 /* LayoutSupport.swift */; };
+		15856D182A1E9F490085FE75 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D172A1E9F490085FE75 /* LoginViewModel.swift */; };
+		15856D1B2A1EA14A0085FE75 /* LoginViewModel+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D1A2A1EA14A0085FE75 /* LoginViewModel+Transform.swift */; };
+		1589198B2A1E7B43006796B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589198A2A1E7B43006796B2 /* AppDelegate.swift */; };
+		1589198D2A1E7B43006796B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589198C2A1E7B43006796B2 /* SceneDelegate.swift */; };
+		1589198F2A1E7B43006796B2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589198E2A1E7B43006796B2 /* LoginViewController.swift */; };
+		158919942A1E7B43006796B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 158919932A1E7B43006796B2 /* Assets.xcassets */; };
+		158919972A1E7B43006796B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 158919952A1E7B43006796B2 /* LaunchScreen.storyboard */; };
+		15E7C9FD2A1EB01600F1CB49 /* .swiftLint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */; };
+		5E71008154573DB656B961E4 /* Pods_SoTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE089AEF1146D1A3C6EEAEE /* Pods_SoTalk.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		15856D002A1E9CAA0085FE75 /* UIControl+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
+		15856D012A1E9CAA0085FE75 /* UISwitch+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISwitch+Combine.swift"; sourceTree = "<group>"; };
+		15856D022A1E9CAA0085FE75 /* UIButton+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Combine.swift"; sourceTree = "<group>"; };
+		15856D032A1E9CAA0085FE75 /* UIControl+CombineInteraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+CombineInteraction.swift"; sourceTree = "<group>"; };
+		15856D042A1E9CAA0085FE75 /* UITextField+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Combine.swift"; sourceTree = "<group>"; };
+		15856D0B2A1E9D150085FE75 /* ConvenienceInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvenienceInit.swift; sourceTree = "<group>"; };
+		15856D0C2A1E9D150085FE75 /* ViewModelProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelProtocols.swift; sourceTree = "<group>"; };
+		15856D0D2A1E9D150085FE75 /* LayoutSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutSupport.swift; sourceTree = "<group>"; };
+		15856D172A1E9F490085FE75 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		15856D1A2A1EA14A0085FE75 /* LoginViewModel+Transform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewModel+Transform.swift"; sourceTree = "<group>"; };
+		158919872A1E7B43006796B2 /* SoTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1589198A2A1E7B43006796B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1589198C2A1E7B43006796B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1589198E2A1E7B43006796B2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		158919932A1E7B43006796B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		158919962A1E7B43006796B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		158919982A1E7B43006796B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftLint.yml; sourceTree = "<group>"; };
+		2463DFC5BC230B7F4B511AF1 /* Pods-SoTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.release.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.release.xcconfig"; sourceTree = "<group>"; };
+		CDACD0805765933D5DC0C8A6 /* Pods-SoTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.debug.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.debug.xcconfig"; sourceTree = "<group>"; };
+		FCE089AEF1146D1A3C6EEAEE /* Pods_SoTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		158919842A1E7B43006796B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E71008154573DB656B961E4 /* Pods_SoTalk.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		157383402A1E9B1A00EDE059 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				15856D0A2A1E9D150085FE75 /* Protocol */,
+				15856CFF2A1E9CAA0085FE75 /* CombineCocoa */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		15856CFF2A1E9CAA0085FE75 /* CombineCocoa */ = {
+			isa = PBXGroup;
+			children = (
+				15856D002A1E9CAA0085FE75 /* UIControl+Combine.swift */,
+				15856D012A1E9CAA0085FE75 /* UISwitch+Combine.swift */,
+				15856D022A1E9CAA0085FE75 /* UIButton+Combine.swift */,
+				15856D032A1E9CAA0085FE75 /* UIControl+CombineInteraction.swift */,
+				15856D042A1E9CAA0085FE75 /* UITextField+Combine.swift */,
+			);
+			path = CombineCocoa;
+			sourceTree = "<group>";
+		};
+		15856D0A2A1E9D150085FE75 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				15856D0B2A1E9D150085FE75 /* ConvenienceInit.swift */,
+				15856D0C2A1E9D150085FE75 /* ViewModelProtocols.swift */,
+				15856D0D2A1E9D150085FE75 /* LayoutSupport.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		15856D112A1E9EFD0085FE75 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				15856D122A1E9F030085FE75 /* Authentication */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		15856D122A1E9F030085FE75 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				15856D142A1E9F0F0085FE75 /* Signup */,
+				15856D132A1E9F080085FE75 /* Login */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		15856D132A1E9F080085FE75 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				15856D192A1E9F7C0085FE75 /* Extension */,
+				15856D162A1E9F350085FE75 /* ViewModel */,
+				15856D152A1E9F2D0085FE75 /* ViewController */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		15856D142A1E9F0F0085FE75 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		15856D152A1E9F2D0085FE75 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1589198E2A1E7B43006796B2 /* LoginViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		15856D162A1E9F350085FE75 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				15856D172A1E9F490085FE75 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		15856D192A1E9F7C0085FE75 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				15856D1A2A1EA14A0085FE75 /* LoginViewModel+Transform.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		1589197E2A1E7B43006796B2 = {
+			isa = PBXGroup;
+			children = (
+				15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */,
+				158919892A1E7B43006796B2 /* Source */,
+				158919882A1E7B43006796B2 /* Products */,
+				FB162AD42CBF726F528DAA83 /* Pods */,
+				38F98D16A7B7CEAC5182972F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		158919882A1E7B43006796B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				158919872A1E7B43006796B2 /* SoTalk.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		158919892A1E7B43006796B2 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				15856D112A1E9EFD0085FE75 /* Feature */,
+				157383402A1E9B1A00EDE059 /* Common */,
+				1589199E2A1E979A006796B2 /* Support */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		1589199E2A1E979A006796B2 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				158919932A1E7B43006796B2 /* Assets.xcassets */,
+				1589198A2A1E7B43006796B2 /* AppDelegate.swift */,
+				158919952A1E7B43006796B2 /* LaunchScreen.storyboard */,
+				1589198C2A1E7B43006796B2 /* SceneDelegate.swift */,
+				158919982A1E7B43006796B2 /* Info.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		38F98D16A7B7CEAC5182972F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FCE089AEF1146D1A3C6EEAEE /* Pods_SoTalk.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB162AD42CBF726F528DAA83 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CDACD0805765933D5DC0C8A6 /* Pods-SoTalk.debug.xcconfig */,
+				2463DFC5BC230B7F4B511AF1 /* Pods-SoTalk.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		158919862A1E7B43006796B2 /* SoTalk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1589199B2A1E7B43006796B2 /* Build configuration list for PBXNativeTarget "SoTalk" */;
+			buildPhases = (
+				E4FC303DB78A08D05D6AA3F5 /* [CP] Check Pods Manifest.lock */,
+				158919832A1E7B43006796B2 /* Sources */,
+				158919842A1E7B43006796B2 /* Frameworks */,
+				158919852A1E7B43006796B2 /* Resources */,
+				77BA663CACF89937122A8C43 /* [CP] Embed Pods Frameworks */,
+				15BB01AD2A1EB1420035B486 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SoTalk;
+			productName = SoTalk;
+			productReference = 158919872A1E7B43006796B2 /* SoTalk.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1589197F2A1E7B43006796B2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					158919862A1E7B43006796B2 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = 158919822A1E7B43006796B2 /* Build configuration list for PBXProject "SoTalk" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1589197E2A1E7B43006796B2;
+			productRefGroup = 158919882A1E7B43006796B2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				158919862A1E7B43006796B2 /* SoTalk */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		158919852A1E7B43006796B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				158919972A1E7B43006796B2 /* LaunchScreen.storyboard in Resources */,
+				158919942A1E7B43006796B2 /* Assets.xcassets in Resources */,
+				15E7C9FD2A1EB01600F1CB49 /* .swiftLint.yml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15BB01AD2A1EB1420035B486 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+		77BA663CACF89937122A8C43 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoTalk/Pods-SoTalk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoTalk/Pods-SoTalk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SoTalk/Pods-SoTalk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4FC303DB78A08D05D6AA3F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SoTalk-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		158919832A1E7B43006796B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1589198F2A1E7B43006796B2 /* LoginViewController.swift in Sources */,
+				15856D082A1E9CAA0085FE75 /* UIControl+CombineInteraction.swift in Sources */,
+				15856D052A1E9CAA0085FE75 /* UIControl+Combine.swift in Sources */,
+				15856D092A1E9CAA0085FE75 /* UITextField+Combine.swift in Sources */,
+				15856D102A1E9D150085FE75 /* LayoutSupport.swift in Sources */,
+				1589198B2A1E7B43006796B2 /* AppDelegate.swift in Sources */,
+				15856D0E2A1E9D150085FE75 /* ConvenienceInit.swift in Sources */,
+				15856D062A1E9CAA0085FE75 /* UISwitch+Combine.swift in Sources */,
+				15856D182A1E9F490085FE75 /* LoginViewModel.swift in Sources */,
+				1589198D2A1E7B43006796B2 /* SceneDelegate.swift in Sources */,
+				15856D1B2A1EA14A0085FE75 /* LoginViewModel+Transform.swift in Sources */,
+				15856D0F2A1E9D150085FE75 /* ViewModelProtocols.swift in Sources */,
+				15856D072A1E9CAA0085FE75 /* UIButton+Combine.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		158919952A1E7B43006796B2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				158919962A1E7B43006796B2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		158919992A1E7B43006796B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1589199A2A1E7B43006796B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1589199C2A1E7B43006796B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDACD0805765933D5DC0C8A6 /* Pods-SoTalk.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Source/Support/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SH.SoTalk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1589199D2A1E7B43006796B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2463DFC5BC230B7F4B511AF1 /* Pods-SoTalk.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Source/Support/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SH.SoTalk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		158919822A1E7B43006796B2 /* Build configuration list for PBXProject "SoTalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				158919992A1E7B43006796B2 /* Debug */,
+				1589199A2A1E7B43006796B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1589199B2A1E7B43006796B2 /* Build configuration list for PBXNativeTarget "SoTalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1589199C2A1E7B43006796B2 /* Debug */,
+				1589199D2A1E7B43006796B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1589197F2A1E7B43006796B2 /* Project object */;
+}

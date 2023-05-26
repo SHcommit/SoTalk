@@ -16,12 +16,28 @@
 		15856D0F2A1E9D150085FE75 /* ViewModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D0C2A1E9D150085FE75 /* ViewModelProtocols.swift */; };
 		15856D102A1E9D150085FE75 /* LayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D0D2A1E9D150085FE75 /* LayoutSupport.swift */; };
 		15856D182A1E9F490085FE75 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D172A1E9F490085FE75 /* LoginViewModel.swift */; };
-		15856D1B2A1EA14A0085FE75 /* LoginViewModel+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D1A2A1EA14A0085FE75 /* LoginViewModel+Transform.swift */; };
+		15856D1B2A1EA14A0085FE75 /* LoginViewModel+Associatedtype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D1A2A1EA14A0085FE75 /* LoginViewModel+Associatedtype.swift */; };
 		1589198B2A1E7B43006796B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589198A2A1E7B43006796B2 /* AppDelegate.swift */; };
 		1589198D2A1E7B43006796B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589198C2A1E7B43006796B2 /* SceneDelegate.swift */; };
 		1589198F2A1E7B43006796B2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589198E2A1E7B43006796B2 /* LoginViewController.swift */; };
 		158919942A1E7B43006796B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 158919932A1E7B43006796B2 /* Assets.xcassets */; };
 		158919972A1E7B43006796B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 158919952A1E7B43006796B2 /* LaunchScreen.storyboard */; };
+		15BB01C22A1F01070035B486 /* LoginViewControllerConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01C12A1F01070035B486 /* LoginViewControllerConstant.swift */; };
+		15BB01C82A1F0B710035B486 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01C72A1F0B710035B486 /* UIColor+Palette.swift */; };
+		15BB01CA2A1F10730035B486 /* AuthenticationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01C92A1F10730035B486 /* AuthenticationTextField.swift */; };
+		15BB01CD2A1F11D70035B486 /* UISpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01CC2A1F11D70035B486 /* UISpacing.swift */; };
+		15BB01CF2A1F134A0035B486 /* AuthenticationTextFieldConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01CE2A1F134A0035B486 /* AuthenticationTextFieldConstant.swift */; };
+		15BB01D22A1F24960035B486 /* ForgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01D12A1F24960035B486 /* ForgetView.swift */; };
+		15BB01D42A1F25280035B486 /* ForgetViewConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01D32A1F25280035B486 /* ForgetViewConstant.swift */; };
+		15BB01D72A1F2A070035B486 /* ForgetViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01D62A1F2A070035B486 /* ForgetViewDelegate.swift */; };
+		15BB01D92A1F311E0035B486 /* OneUnitHeightLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01D82A1F311E0035B486 /* OneUnitHeightLine.swift */; };
+		15BB01DB2A1F31470035B486 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01DA2A1F31470035B486 /* UIColor+Hex.swift */; };
+		15BB01DE2A1F3DD70035B486 /* BackgroundBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01DD2A1F3DD70035B486 /* BackgroundBlur.swift */; };
+		15BB01E02A1F480E0035B486 /* UIView+CustomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01DF2A1F480E0035B486 /* UIView+CustomAnimation.swift */; };
+		15BB01E32A1F519B0035B486 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01E22A1F519B0035B486 /* SignUpViewController.swift */; };
+		15BB01E72A205F5C0035B486 /* NavigationControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01E62A205F5C0035B486 /* NavigationControler.swift */; };
+		15BB01E92A209ABF0035B486 /* UIColor+iconColorChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01E82A209ABF0035B486 /* UIColor+iconColorChange.swift */; };
+		15BB01EB2A20CA240035B486 /* AuthenticationTextFieldColorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01EA2A20CA240035B486 /* AuthenticationTextFieldColorState.swift */; };
 		15E7C9FD2A1EB01600F1CB49 /* .swiftLint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */; };
 		5E71008154573DB656B961E4 /* Pods_SoTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE089AEF1146D1A3C6EEAEE /* Pods_SoTalk.framework */; };
 /* End PBXBuildFile section */
@@ -36,7 +52,7 @@
 		15856D0C2A1E9D150085FE75 /* ViewModelProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelProtocols.swift; sourceTree = "<group>"; };
 		15856D0D2A1E9D150085FE75 /* LayoutSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutSupport.swift; sourceTree = "<group>"; };
 		15856D172A1E9F490085FE75 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		15856D1A2A1EA14A0085FE75 /* LoginViewModel+Transform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewModel+Transform.swift"; sourceTree = "<group>"; };
+		15856D1A2A1EA14A0085FE75 /* LoginViewModel+Associatedtype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewModel+Associatedtype.swift"; sourceTree = "<group>"; };
 		158919872A1E7B43006796B2 /* SoTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1589198A2A1E7B43006796B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1589198C2A1E7B43006796B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +60,22 @@
 		158919932A1E7B43006796B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		158919962A1E7B43006796B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		158919982A1E7B43006796B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15BB01C12A1F01070035B486 /* LoginViewControllerConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerConstant.swift; sourceTree = "<group>"; };
+		15BB01C72A1F0B710035B486 /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
+		15BB01C92A1F10730035B486 /* AuthenticationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTextField.swift; sourceTree = "<group>"; };
+		15BB01CC2A1F11D70035B486 /* UISpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISpacing.swift; sourceTree = "<group>"; };
+		15BB01CE2A1F134A0035B486 /* AuthenticationTextFieldConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTextFieldConstant.swift; sourceTree = "<group>"; };
+		15BB01D12A1F24960035B486 /* ForgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetView.swift; sourceTree = "<group>"; };
+		15BB01D32A1F25280035B486 /* ForgetViewConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetViewConstant.swift; sourceTree = "<group>"; };
+		15BB01D62A1F2A070035B486 /* ForgetViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetViewDelegate.swift; sourceTree = "<group>"; };
+		15BB01D82A1F311E0035B486 /* OneUnitHeightLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneUnitHeightLine.swift; sourceTree = "<group>"; };
+		15BB01DA2A1F31470035B486 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		15BB01DD2A1F3DD70035B486 /* BackgroundBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundBlur.swift; sourceTree = "<group>"; };
+		15BB01DF2A1F480E0035B486 /* UIView+CustomAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CustomAnimation.swift"; sourceTree = "<group>"; };
+		15BB01E22A1F519B0035B486 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		15BB01E62A205F5C0035B486 /* NavigationControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControler.swift; sourceTree = "<group>"; };
+		15BB01E82A209ABF0035B486 /* UIColor+iconColorChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+iconColorChange.swift"; sourceTree = "<group>"; };
+		15BB01EA2A20CA240035B486 /* AuthenticationTextFieldColorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTextFieldColorState.swift; sourceTree = "<group>"; };
 		15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftLint.yml; sourceTree = "<group>"; };
 		2463DFC5BC230B7F4B511AF1 /* Pods-SoTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.release.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.release.xcconfig"; sourceTree = "<group>"; };
 		CDACD0805765933D5DC0C8A6 /* Pods-SoTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.debug.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.debug.xcconfig"; sourceTree = "<group>"; };
@@ -65,6 +97,10 @@
 		157383402A1E9B1A00EDE059 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				15BB01DC2A1F3C9F0035B486 /* Utils */,
+				15BB01D02A1F248B0035B486 /* View */,
+				15BB01CB2A1F11C40035B486 /* Model */,
+				15BB01C62A1F0B5A0035B486 /* Extension */,
 				15856D0A2A1E9D150085FE75 /* Protocol */,
 				15856CFF2A1E9CAA0085FE75 /* CombineCocoa */,
 			);
@@ -89,6 +125,7 @@
 				15856D0B2A1E9D150085FE75 /* ConvenienceInit.swift */,
 				15856D0C2A1E9D150085FE75 /* ViewModelProtocols.swift */,
 				15856D0D2A1E9D150085FE75 /* LayoutSupport.swift */,
+				15BB01DF2A1F480E0035B486 /* UIView+CustomAnimation.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -104,7 +141,7 @@
 		15856D122A1E9F030085FE75 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				15856D142A1E9F0F0085FE75 /* Signup */,
+				15856D142A1E9F0F0085FE75 /* SignUp */,
 				15856D132A1E9F080085FE75 /* Login */,
 			);
 			path = Authentication;
@@ -113,6 +150,9 @@
 		15856D132A1E9F080085FE75 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				15BB01D52A1F29F90035B486 /* Protocol */,
+				15BB01C32A1F010D0035B486 /* View */,
+				15BB01C02A1F00F10035B486 /* Constant */,
 				15856D192A1E9F7C0085FE75 /* Extension */,
 				15856D162A1E9F350085FE75 /* ViewModel */,
 				15856D152A1E9F2D0085FE75 /* ViewController */,
@@ -120,11 +160,12 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		15856D142A1E9F0F0085FE75 /* Signup */ = {
+		15856D142A1E9F0F0085FE75 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				15BB01E12A1F518E0035B486 /* ViewController */,
 			);
-			path = Signup;
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		15856D152A1E9F2D0085FE75 /* ViewController */ = {
@@ -146,7 +187,7 @@
 		15856D192A1E9F7C0085FE75 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				15856D1A2A1EA14A0085FE75 /* LoginViewModel+Transform.swift */,
+				15856D1A2A1EA14A0085FE75 /* LoginViewModel+Associatedtype.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -173,8 +214,8 @@
 		158919892A1E7B43006796B2 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				15856D112A1E9EFD0085FE75 /* Feature */,
 				157383402A1E9B1A00EDE059 /* Common */,
+				15856D112A1E9EFD0085FE75 /* Feature */,
 				1589199E2A1E979A006796B2 /* Support */,
 			);
 			path = Source;
@@ -190,6 +231,77 @@
 				158919982A1E7B43006796B2 /* Info.plist */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		15BB01C02A1F00F10035B486 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				15BB01C12A1F01070035B486 /* LoginViewControllerConstant.swift */,
+				15BB01CE2A1F134A0035B486 /* AuthenticationTextFieldConstant.swift */,
+				15BB01D32A1F25280035B486 /* ForgetViewConstant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		15BB01C32A1F010D0035B486 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				15BB01D12A1F24960035B486 /* ForgetView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		15BB01C62A1F0B5A0035B486 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				15BB01C72A1F0B710035B486 /* UIColor+Palette.swift */,
+				15BB01DA2A1F31470035B486 /* UIColor+Hex.swift */,
+				15BB01E82A209ABF0035B486 /* UIColor+iconColorChange.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		15BB01CB2A1F11C40035B486 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				15BB01CC2A1F11D70035B486 /* UISpacing.swift */,
+				15BB01EA2A20CA240035B486 /* AuthenticationTextFieldColorState.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		15BB01D02A1F248B0035B486 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				15BB01C92A1F10730035B486 /* AuthenticationTextField.swift */,
+				15BB01D82A1F311E0035B486 /* OneUnitHeightLine.swift */,
+				15BB01E62A205F5C0035B486 /* NavigationControler.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		15BB01D52A1F29F90035B486 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				15BB01D62A1F2A070035B486 /* ForgetViewDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		15BB01DC2A1F3C9F0035B486 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				15BB01DD2A1F3DD70035B486 /* BackgroundBlur.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		15BB01E12A1F518E0035B486 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				15BB01E22A1F519B0035B486 /* SignUpViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		38F98D16A7B7CEAC5182972F /* Frameworks */ = {
@@ -345,17 +457,33 @@
 			files = (
 				1589198F2A1E7B43006796B2 /* LoginViewController.swift in Sources */,
 				15856D082A1E9CAA0085FE75 /* UIControl+CombineInteraction.swift in Sources */,
+				15BB01E92A209ABF0035B486 /* UIColor+iconColorChange.swift in Sources */,
+				15BB01EB2A20CA240035B486 /* AuthenticationTextFieldColorState.swift in Sources */,
+				15BB01DB2A1F31470035B486 /* UIColor+Hex.swift in Sources */,
 				15856D052A1E9CAA0085FE75 /* UIControl+Combine.swift in Sources */,
+				15BB01DE2A1F3DD70035B486 /* BackgroundBlur.swift in Sources */,
 				15856D092A1E9CAA0085FE75 /* UITextField+Combine.swift in Sources */,
 				15856D102A1E9D150085FE75 /* LayoutSupport.swift in Sources */,
 				1589198B2A1E7B43006796B2 /* AppDelegate.swift in Sources */,
 				15856D0E2A1E9D150085FE75 /* ConvenienceInit.swift in Sources */,
+				15BB01C82A1F0B710035B486 /* UIColor+Palette.swift in Sources */,
+				15BB01C22A1F01070035B486 /* LoginViewControllerConstant.swift in Sources */,
 				15856D062A1E9CAA0085FE75 /* UISwitch+Combine.swift in Sources */,
 				15856D182A1E9F490085FE75 /* LoginViewModel.swift in Sources */,
+				15BB01D42A1F25280035B486 /* ForgetViewConstant.swift in Sources */,
 				1589198D2A1E7B43006796B2 /* SceneDelegate.swift in Sources */,
-				15856D1B2A1EA14A0085FE75 /* LoginViewModel+Transform.swift in Sources */,
+				15BB01E72A205F5C0035B486 /* NavigationControler.swift in Sources */,
+				15BB01CD2A1F11D70035B486 /* UISpacing.swift in Sources */,
+				15856D1B2A1EA14A0085FE75 /* LoginViewModel+Associatedtype.swift in Sources */,
 				15856D0F2A1E9D150085FE75 /* ViewModelProtocols.swift in Sources */,
+				15BB01E02A1F480E0035B486 /* UIView+CustomAnimation.swift in Sources */,
 				15856D072A1E9CAA0085FE75 /* UIButton+Combine.swift in Sources */,
+				15BB01D72A1F2A070035B486 /* ForgetViewDelegate.swift in Sources */,
+				15BB01CA2A1F10730035B486 /* AuthenticationTextField.swift in Sources */,
+				15BB01E32A1F519B0035B486 /* SignUpViewController.swift in Sources */,
+				15BB01D92A1F311E0035B486 /* OneUnitHeightLine.swift in Sources */,
+				15BB01CF2A1F134A0035B486 /* AuthenticationTextFieldConstant.swift in Sources */,
+				15BB01D22A1F24960035B486 /* ForgetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

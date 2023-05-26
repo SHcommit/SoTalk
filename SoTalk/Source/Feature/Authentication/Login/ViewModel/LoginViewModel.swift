@@ -17,7 +17,9 @@ extension LoginViewModel: ViewModelCase {
     return Publishers
       .MergeMany([
         appearFlow(with: input),
-        viewLoadFlow(with: input)])
+        viewLoadFlow(with: input),
+        signUpChain(with: input),
+        signInChain(with: input)])
       .eraseToAnyPublisher()
   }
 }
@@ -39,4 +41,28 @@ private extension LoginViewModel {
       .mapError { $0 as? ErrorType ?? .unexpectedError }
       .eraseToAnyPublisher()
   }
+  
+  func signUpChain(with input: Input) -> Output {
+    return input
+      .signUp
+      .tryMap { _ -> State in return .gotoSignUp }
+      .mapError { $0 as? ErrorType ?? .unexpectedError }
+      .eraseToAnyPublisher()
+  }
+  
+  func signInChain(with input: Input) -> Output {
+    return input
+      .signIn
+      .setFailureType(to: ErrorType.self)
+      .tryMap { _ -> State in return .gotoChatPage }
+      .mapError { $0 as? ErrorType ?? .unexpectedError }
+      .eraseToAnyPublisher()
+  }
+  
+//  func idAndPasswordValidation(with input: Input) -> Output {
+//    return input
+//      .idTextFieldChanged
+//      
+//      
+//  }
 }

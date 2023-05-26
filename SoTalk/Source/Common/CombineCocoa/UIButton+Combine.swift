@@ -15,4 +15,12 @@ public extension UIButton {
       .map { _ in }
       .eraseToAnyPublisher()
   }
+  
+  func tap<T: Error>(withError error: T) -> AnyPublisher<Void, T> {
+    return tap
+      .tryMap { _ in }
+      .mapError { $0 as? T ?? error }
+      .eraseToAnyPublisher()
+  }
+
 }

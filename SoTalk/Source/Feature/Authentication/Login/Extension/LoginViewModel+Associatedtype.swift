@@ -10,22 +10,19 @@ import Combine
 extension LoginViewModel: ViewModelAssociatedType {
   struct Input {
     let appear: PassthroughSubject<Void, ErrorType>
-    let viewLoad: PassthroughSubject<Void, ErrorType>
     let idTextFieldChanged: AnyPublisher<String, Never>
     let pwTextFieldChanged: AnyPublisher<String, Never>
     let signIn: AnyPublisher<Void, Never>
     let signUp: PassthroughSubject<Void, ErrorType>
     
     init(
-      appear: PassthroughSubject<Void, ErrorType> = PassthroughSubject<Void, ErrorType>(),
-      viewLoad: PassthroughSubject<Void, ErrorType> = PassthroughSubject<Void, ErrorType>(),
+      appear: PassthroughSubject<Void, ErrorType> = .init(),
       idTextFieldChanged: AnyPublisher<String, Never>,
       pwTextFieldChanged: AnyPublisher<String, Never>,
       signIn: AnyPublisher<Void, Never>,
-      signUp: PassthroughSubject<Void, ErrorType> = PassthroughSubject<Void, ErrorType>()
+      signUp: PassthroughSubject<Void, ErrorType> = .init()
     ) {
       self.appear = appear
-      self.viewLoad = viewLoad
       self.idTextFieldChanged = idTextFieldChanged
       self.pwTextFieldChanged = pwTextFieldChanged
       self.signIn = signIn
@@ -40,9 +37,14 @@ extension LoginViewModel: ViewModelAssociatedType {
   
   enum State {
     case appear
-    case viewLoad
     case gotoSignUp
     case gotoChatPage
+    case idInputLengthExcess
+    case pwInputLengthExcess
+    case idInputGood
+    case pwInputGood
+    case idAndPwInputGood
+    case idAndPwInputNotGood
     case none
   }
   

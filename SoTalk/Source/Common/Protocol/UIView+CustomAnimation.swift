@@ -8,7 +8,12 @@
 import UIKit
 
 extension UIView {
-  static func touchAnimate(_ target: UIView, duration: CGFloat = 0.1, scale: CGFloat = 0.95) {
+  static func touchAnimate(
+    _ target: UIView,
+    duration: CGFloat = 0.1,
+    scale: CGFloat = 0.95,
+    _ completionHandler: (() -> Void)? = nil
+  ) {
     animate(
       withDuration: duration,
       delay: 0,
@@ -22,7 +27,9 @@ extension UIView {
           options: .curveEaseInOut,
           animations: {
             target.transform = .identity
-          })
+          }) {_ in
+            completionHandler?()
+          }
       }
   }
 }

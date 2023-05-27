@@ -19,6 +19,10 @@ extension UIColor {
     
     static let selectedPrimary = UIColor(hex: "#FFB340")
     
+    static let primaryHalf = UIColor(hex: "#FF9F0A").withAlphaComponent(0.5)
+    
     static let errorRed = UIColor(hex: "#E47A7A")
+    
+    static let errorRedSystem: UIColor = .systemRed
   }
 }

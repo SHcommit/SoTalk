@@ -24,7 +24,7 @@ extension LoginViewController {
       static let height: CGFloat = 55
       static let spacing = UISpacing(leading: 24, top: 12, trailing: 24)
       static let textSize: CGFloat = 14
-      static let bgColor: UIColor = .Palette.primary
+      static let bgColor: UIColor = .Palette.primaryHalf
       static let cornerRadius: CGFloat = 8
       static let highlightColor: UIColor = .Palette.primary.withAlphaComponent(0.5)
     }

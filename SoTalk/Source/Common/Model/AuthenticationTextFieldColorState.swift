@@ -10,13 +10,13 @@ import UIKit
 enum AuthenticationTextFieldColorState {
   case notEditing
   case editing
-  case invalidString
+  case inputExcess
   
   var color: UIColor {
     switch self {
     case .notEditing: return .Palette.grayLine
     case .editing: return .Palette.primary
-    case .invalidString: return .Palette.errorRed
+    case .inputExcess: return .Palette.errorRed
     }
   }
 }

@@ -39,11 +39,3 @@ extension NavigationControler {
     popViewController(animated: true)
   }
 }
-
-// MARK: - UINavigationBarDelegate
-// extension NavigationControler: UINavigationBarDelegate {
-//  func navigationBar(_ navigationBar: UINavigationBar, shouldPush item: UINavigationItem) -> Bool {
-//    customBackBarButtonItem()
-//    return true
-//  }
-// }

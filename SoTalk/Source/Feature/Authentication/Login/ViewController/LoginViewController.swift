@@ -41,6 +41,7 @@ class LoginViewController: UIViewController {
     $0.backgroundColor = Constant.SignIn.bgColor
     $0.layer.cornerRadius = Constant.SignIn.cornerRadius
     $0.setTitleColor(.white, for: .normal)
+    $0.isUserInteractionEnabled = false
   }
   
   private let forgetView = ForgetView()
@@ -51,8 +52,8 @@ class LoginViewController: UIViewController {
     forgetView.delegate = self
     setupBackgroundBlur()
     setupUI()
+    configureUI()
     bind()
-    input.viewLoad.send()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -114,19 +115,29 @@ private extension LoginViewController {
       }
       .eraseToAnyPublisher()
   }
+  
+  @MainActor
+  func setSignInNotWorking() {
+    signIn.backgroundColor = .Palette.primaryHalf
+    signIn.isUserInteractionEnabled = false
+  }
+  
+  @MainActor
+  func setSignInWorking() {
+    if !(signIn.backgroundColor == .Palette.primary) {
+      UIView.touchAnimate(signIn, scale: 0.96)
+      signIn.backgroundColor = .Palette.primary
+    }
+    signIn.isUserInteractionEnabled = true
+  }
 }
 
 // MARK: - ForgetViewDelegate
 extension LoginViewController: ForgetViewDelegate {
   func didTapForgetView() {
-    UIView.touchAnimate(forgetView.forgetView, duration: 0.1, scale: 0.75)
+    UIView.touchAnimate(forgetView.forgetView, duration: 0.2, scale: 0.75)
     input.signUp.send()
   }
-}
-
-// MARK: - UITextFieldDelegate
-extension LoginViewController: UITextFieldDelegate {
-
 }
 
 // MARK: - ViewBindCase
@@ -155,13 +166,25 @@ extension LoginViewController: ViewBindCase {
       print("none")
     case .appear:
       print("appear")
-    case .viewLoad:
-      configureUI()
     case .gotoSignUp:
       navigationController?
         .pushViewController(SignUpViewController(), animated: true)
     case .gotoChatPage:
       print("goto chat page")
+    case .idInputLengthExcess:
+      idTextField.setValidState(.inputExcess)
+      setSignInNotWorking()
+    case .pwInputLengthExcess:
+      pwTextField.setValidState(.inputExcess)
+      setSignInNotWorking()
+    case .idInputGood:
+      idTextField.setValidState(.editing)
+    case .pwInputGood:
+      pwTextField.setValidState(.editing)
+    case .idAndPwInputNotGood:
+      setSignInNotWorking()
+    case .idAndPwInputGood:
+      setSignInWorking()
     }
   }
   

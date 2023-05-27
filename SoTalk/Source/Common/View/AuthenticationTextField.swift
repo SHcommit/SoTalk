@@ -26,6 +26,10 @@ final class AuthenticationTextField: UIView {
   
   var heightConstraint: NSLayoutConstraint!
   
+  @Published private var validState: ColorState = .notEditing
+  
+  private var subscription = Set<AnyCancellable>()
+    
   // MARK: - Properties
   private override init(frame: CGRect) {
     super.init(frame: frame)
@@ -36,6 +40,7 @@ final class AuthenticationTextField: UIView {
     layer.borderColor = UIColor.Palette.grayLine.cgColor
     textField.delegate = self
     setupUI()
+    bind()
   }
   
   convenience init(with placeholder: String) {
@@ -45,6 +50,10 @@ final class AuthenticationTextField: UIView {
   
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
+  }
+  
+  deinit {
+    _=subscription.map { $0.cancel() }
   }
 }
 
@@ -68,16 +77,17 @@ extension AuthenticationTextField {
     textField.resignFirstResponder()
   }
   
-  @MainActor
-  func setHeight(_ height: CGFloat) {
-    heightConstraint.isActive = false
-    heightConstraint = heightAnchor.constraint(equalToConstant: height)
-    heightConstraint.isActive = true
+  func setValidState(
+    _ state: AuthenticationTextFieldColorState
+  ) {
+    validState = state
   }
   
   @MainActor
-  func setBackgroundColor(_ color: UIColor) {
-    backgroundColor = color
+  func setTextFieldHeight(_ height: CGFloat) {
+    heightConstraint.isActive = false
+    heightConstraint = heightAnchor.constraint(equalToConstant: height)
+    heightConstraint.isActive = true
   }
   
   @MainActor
@@ -95,6 +105,22 @@ extension AuthenticationTextField {
     setBackgroundColor(.white)
     setShadow()
   }
+}
+
+// MARK: - Helpers
+private extension AuthenticationTextField {
+  func bind() {
+    $validState
+      .receive(on: DispatchQueue.main)
+      .sink {
+        self.setBorderColor($0)
+      }.store(in: &subscription)
+  }
+  
+  @MainActor
+  func setBackgroundColor(_ color: UIColor) {
+    backgroundColor = color
+  }
   
   @MainActor
   func setShadow() {
@@ -108,7 +134,11 @@ extension AuthenticationTextField {
 // MARK: - UITextFieldDelegate
 extension AuthenticationTextField: UITextFieldDelegate {
   func textFieldDidBeginEditing(_ textField: UITextField) {
-    setBorderColor(.editing)
+    guard textField.text == "" else {
+      setBorderColor(validState)
+      return
+    }
+    validState = .editing
   }
   
   func textFieldDidEndEditing(_ textField: UITextField) {

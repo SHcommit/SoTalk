@@ -28,19 +28,11 @@ class LoginViewController: UIViewController {
   
   private let idTextField = AuthenticationTextField(with: "아이디")
 
-  private let pwTextField = AuthenticationTextField(with: "비밀번호")
+  private let pwTextField = AuthenticationTextField(with: "비밀번호").set {
+    $0.setTextSecurityPasswordType()
+  }
   
-  private let signIn = UIButton().set {
-    $0.translatesAutoresizingMaskIntoConstraints = false
-    $0.setAttributedTitle(
-      NSMutableAttributedString(
-        string: "로그인",
-        attributes: [
-          NSAttributedString.Key.kern: -0.41]),
-        for: .normal)
-    $0.backgroundColor = Constant.SignIn.bgColor
-    $0.layer.cornerRadius = Constant.SignIn.cornerRadius
-    $0.setTitleColor(.white, for: .normal)
+  private let signIn = AuthenticationButton(with: "로그인").set {
     $0.isUserInteractionEnabled = false
   }
   
@@ -97,13 +89,10 @@ private extension LoginViewController {
   
   func idTextFieldConfigure() {
     idTextField.setWhiteAndShadow()
-    // idTextField.setInputAccessory(with: )
   }
   
   func pwTextFieldConfigure() {
     pwTextField.setWhiteAndShadow()
-    // 추후에 ㄱㄱ
-    // pwTextField.setInputAccessory(with: )
   }
   
   func signInChain() -> AnyPublisher<Void, Never> {
@@ -114,21 +103,6 @@ private extension LoginViewController {
         UIView.touchAnimate(self.signIn)
       }
       .eraseToAnyPublisher()
-  }
-  
-  @MainActor
-  func setSignInNotWorking() {
-    signIn.backgroundColor = .Palette.primaryHalf
-    signIn.isUserInteractionEnabled = false
-  }
-  
-  @MainActor
-  func setSignInWorking() {
-    if !(signIn.backgroundColor == .Palette.primary) {
-      UIView.touchAnimate(signIn, scale: 0.96)
-      signIn.backgroundColor = .Palette.primary
-    }
-    signIn.isUserInteractionEnabled = true
   }
 }
 
@@ -167,24 +141,25 @@ extension LoginViewController: ViewBindCase {
     case .appear:
       print("appear")
     case .gotoSignUp:
-      navigationController?
-        .pushViewController(SignUpViewController(), animated: true)
+      navigationController?.pushViewController(
+          SignUpViewController(),
+          animated: true)
     case .gotoChatPage:
       print("goto chat page")
     case .idInputLengthExcess:
       idTextField.setValidState(.inputExcess)
-      setSignInNotWorking()
+      signIn.setNotWorking()
     case .pwInputLengthExcess:
       pwTextField.setValidState(.inputExcess)
-      setSignInNotWorking()
+      signIn.setNotWorking()
     case .idInputGood:
       idTextField.setValidState(.editing)
     case .pwInputGood:
       pwTextField.setValidState(.editing)
     case .idAndPwInputNotGood:
-      setSignInNotWorking()
+      signIn.setNotWorking()
     case .idAndPwInputGood:
-      setSignInWorking()
+      signIn.setWorking()
     }
   }
   

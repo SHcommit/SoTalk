@@ -8,12 +8,12 @@
 import UIKit
 
 final class SignUpViewController: UIViewController {
+  
   // MARK: - Properties
-  let label = UILabel().set {
-    $0.translatesAutoresizingMaskIntoConstraints = false
-    $0.text = "hihi"
-    $0.font = UIFont.systemFont(ofSize: 14)
-  }
+  private let signUpView = SignUpView()
+  private let vm = SignUpViewModel()
+  private var adapter: SignUpViewAdapter!
+  private var signUpViewCellPrevIndexPath: IndexPath?
   
   // MARK: - Lifecycle
   private override init(
@@ -35,20 +35,118 @@ final class SignUpViewController: UIViewController {
     super.viewDidLoad()
     setupBackgroundBlur()
     setNavigationBar()
-    view.addSubview(label)
-    NSLayoutConstraint.activate([
-      label.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-      label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)])
+    setupUI()
+    setAdapter()
   }
-}
-
-extension SignUpViewController {
-  func setNavigationBar() {
-    print("a")
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
     guard
       let navigationController = navigationController as? NavigationControler else {
       return
     }
-    navigationController.setLeftBackButton(navigationItem)
+    navigationController.deallocateGrayLineBottom()
+  }
+}
+
+// MARK: - Private helper
+extension SignUpViewController {
+  private func setNavigationBar() {
+    let attr: [NSAttributedString.Key: Any] = [
+      .kern: -0.41,
+      .paragraphStyle: NSMutableParagraphStyle()]
+    
+    navigationItem.titleView = UILabel().set {
+      $0.attributedText = NSAttributedString(
+        string: "회원가입",
+        attributes: attr)
+      $0.font = .systemFont(ofSize: 24)
+      $0.textAlignment = .center
+      $0.textColor = .black
+    }
+    
+    guard
+      let navigationController = navigationController as? NavigationControler else {
+      return
+    }
+    navigationController.setLeftBackButton(
+      navigationItem,
+      target: self,
+      action: #selector(goToPrevCell))
+  }
+
+  private func setAdapter() {
+    adapter = SignUpViewAdapter(
+      dataSource: vm,
+      delegate: self)
+    signUpView.dataSource = adapter
+    signUpView.delegate = adapter
+  }   
+}
+
+// MARK: - Action
+extension SignUpViewController {
+  @objc func goToPrevCell() {
+    guard let indexPath = signUpViewCellPrevIndexPath else {
+      navigationController?.popViewController(animated: true)
+      return
+    }
+    guard indexPath.row != -1 else {
+      navigationController?.popViewController(animated: true)
+      return
+    }
+    signUpViewCellPrevIndexPath = IndexPath(
+      row: indexPath.row - 1,
+      section: indexPath.section)
+    signUpView.scrollToItem(
+      at: indexPath,
+      at: .centeredHorizontally,
+      animated: true)
+  }
+}
+
+// MARK: - SignUpViewCellDelegate
+extension SignUpViewController: SignUpViewCellDelegate {
+  func goToNextPage(_ text: String, currentIndexPath indexPath: IndexPath) {
+    signUpViewCellPrevIndexPath = indexPath
+    let nextIndexPath = IndexPath(
+      row: indexPath.row + 1,
+      section: indexPath.section)
+    switch indexPath.row {
+    case 0:
+      vm.setName(text)
+    case 1:
+      vm.setNickname(text)
+    case 2:
+      vm.setId(text)
+    case 3:
+      vm.setPassword(text)
+    case 4:
+      print("a")
+    default: break
+      
+    }
+    
+    signUpView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
+  }
+}
+
+// MARK: - LayoutSupport
+extension SignUpViewController: LayoutSupport {
+  func addSubviews() {
+    view.addSubview(signUpView)
+  }
+  
+  func setConstraints() {
+    NSLayoutConstraint.activate([
+      signUpView.leadingAnchor.constraint(
+        equalTo: view.leadingAnchor),
+      signUpView.topAnchor.constraint(
+        equalTo: view.safeAreaLayoutGuide.topAnchor),
+      signUpView.trailingAnchor.constraint(
+        equalTo: view.trailingAnchor),
+      signUpView.bottomAnchor.constraint(
+        equalTo: view.bottomAnchor)
+    ])
   }
 }

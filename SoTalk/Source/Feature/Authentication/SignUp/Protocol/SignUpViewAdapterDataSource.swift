@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+protocol SignUpViewAdapterDataSource: AnyObject {
+  var numberOfItems: Int { get }
+  func cellItem(
+    at index: Int
+  ) -> String
+}

@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct SignUpModel: Encodable {
+  var id: String = ""
+  var name: String = ""
+  var password: String = ""
+  var nickname: String = ""
+}

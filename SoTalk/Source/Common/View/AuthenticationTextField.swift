@@ -9,6 +9,7 @@ import UIKit
 import Combine
 
 final class AuthenticationTextField: UIView {
+  // MARK: - Constant
   typealias ColorState = AuthenticationTextFieldColorState
   
   // MARK: - Properties
@@ -20,15 +21,26 @@ final class AuthenticationTextField: UIView {
     $0.sizeToFit()
   }
   
+  var text: String {
+    get {
+      textField.text ?? ""
+    }
+    set {
+      textField.text = newValue
+    }
+  }
+  
   var changed: AnyPublisher<String, Never> {
     textField.changed
   }
   
-  var heightConstraint: NSLayoutConstraint!
-  
   @Published private var validState: ColorState = .notEditing
   
   private var subscription = Set<AnyCancellable>()
+  
+  var accessoryView: UIView?
+  
+  var heightConstraint: NSLayoutConstraint!
     
   // MARK: - Properties
   private override init(frame: CGRect) {
@@ -69,20 +81,6 @@ extension AuthenticationTextField {
     layer.borderColor = state.color.cgColor
   }
   
-  func setInputAccessory(with view: UIView) {
-    textField.inputAccessoryView = view
-  }
-  
-  func hideKeyboard() {
-    textField.resignFirstResponder()
-  }
-  
-  func setValidState(
-    _ state: AuthenticationTextFieldColorState
-  ) {
-    validState = state
-  }
-  
   @MainActor
   func setTextFieldHeight(_ height: CGFloat) {
     heightConstraint.isActive = false
@@ -105,6 +103,47 @@ extension AuthenticationTextField {
     setBackgroundColor(.white)
     setShadow()
   }
+  
+  func setContentType(_ type: UITextContentType) {
+    textField.textContentType = type
+  }
+  
+  func hideKeyboard() {
+    textField.resignFirstResponder()
+  }
+  
+  func showKeyboard() {
+    textField.becomeFirstResponder()
+  }
+  
+  func setValidState(
+    _ state: AuthenticationTextFieldColorState
+  ) {
+    validState = state
+  }
+  
+  func setTextSecurityPasswordType() {
+    textField.isSecureTextEntry = true
+    textField.textContentType = .oneTimeCode
+  }
+  
+  func setInputAccessoryView(with height: CGFloat) {
+    accessoryView = UIView(
+      frame: CGRect(
+        x: 0,
+        y: 0,
+        width: UIScreen.main.bounds.width,
+        height: height)).set {
+          $0.translatesAutoresizingMaskIntoConstraints = false
+        }
+    textField.inputAccessoryView = accessoryView
+  }
+  
+  @MainActor
+  func setBackgroundColor(_ color: UIColor) {
+    backgroundColor = color
+  }
+  
 }
 
 // MARK: - Helpers
@@ -115,11 +154,6 @@ private extension AuthenticationTextField {
       .sink {
         self.setBorderColor($0)
       }.store(in: &subscription)
-  }
-  
-  @MainActor
-  func setBackgroundColor(_ color: UIColor) {
-    backgroundColor = color
   }
   
   @MainActor

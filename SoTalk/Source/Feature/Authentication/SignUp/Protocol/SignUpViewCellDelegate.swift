@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol SignUpViewCellDelegate: AnyObject {
+  func goToNextPage(_ text: String, currentIndexPath: IndexPath)
+}

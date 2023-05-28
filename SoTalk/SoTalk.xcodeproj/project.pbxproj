@@ -38,6 +38,16 @@
 		15BB01E72A205F5C0035B486 /* NavigationControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01E62A205F5C0035B486 /* NavigationControler.swift */; };
 		15BB01E92A209ABF0035B486 /* UIColor+iconColorChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01E82A209ABF0035B486 /* UIColor+iconColorChange.swift */; };
 		15BB01EB2A20CA240035B486 /* AuthenticationTextFieldColorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01EA2A20CA240035B486 /* AuthenticationTextFieldColorState.swift */; };
+		15BB021A2A225E380035B486 /* SignUpVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02192A225E380035B486 /* SignUpVIew.swift */; };
+		15BB021C2A225EE30035B486 /* SignUpViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB021B2A225EE30035B486 /* SignUpViewCell.swift */; };
+		15BB021F2A226A230035B486 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB021E2A226A230035B486 /* SignUpViewModel.swift */; };
+		15BB02212A226A910035B486 /* SignUpViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02202A226A910035B486 /* SignUpViewAdapter.swift */; };
+		15BB02252A226B2C0035B486 /* SignUpViewAdapterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02242A226B2C0035B486 /* SignUpViewAdapterDataSource.swift */; };
+		15BB02272A22795C0035B486 /* AuthenticationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02262A22795C0035B486 /* AuthenticationButton.swift */; };
+		15BB022C2A2336AA0035B486 /* SignUpViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB022B2A2336AA0035B486 /* SignUpViewCellDelegate.swift */; };
+		15BB022F2A233CC30035B486 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB022E2A233CC30035B486 /* SignUpModel.swift */; };
+		15BB02372A2347460035B486 /* SignUpViewCell+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02362A2347460035B486 /* SignUpViewCell+Constant.swift */; };
+		15BB023B2A23B0B60035B486 /* SignUpViewCellInputState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB023A2A23B0B60035B486 /* SignUpViewCellInputState.swift */; };
 		15E7C9FD2A1EB01600F1CB49 /* .swiftLint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */; };
 		5E71008154573DB656B961E4 /* Pods_SoTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE089AEF1146D1A3C6EEAEE /* Pods_SoTalk.framework */; };
 /* End PBXBuildFile section */
@@ -76,6 +86,16 @@
 		15BB01E62A205F5C0035B486 /* NavigationControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControler.swift; sourceTree = "<group>"; };
 		15BB01E82A209ABF0035B486 /* UIColor+iconColorChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+iconColorChange.swift"; sourceTree = "<group>"; };
 		15BB01EA2A20CA240035B486 /* AuthenticationTextFieldColorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTextFieldColorState.swift; sourceTree = "<group>"; };
+		15BB02192A225E380035B486 /* SignUpVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVIew.swift; sourceTree = "<group>"; };
+		15BB021B2A225EE30035B486 /* SignUpViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewCell.swift; sourceTree = "<group>"; };
+		15BB021E2A226A230035B486 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		15BB02202A226A910035B486 /* SignUpViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewAdapter.swift; sourceTree = "<group>"; };
+		15BB02242A226B2C0035B486 /* SignUpViewAdapterDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewAdapterDataSource.swift; sourceTree = "<group>"; };
+		15BB02262A22795C0035B486 /* AuthenticationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationButton.swift; sourceTree = "<group>"; };
+		15BB022B2A2336AA0035B486 /* SignUpViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewCellDelegate.swift; sourceTree = "<group>"; };
+		15BB022E2A233CC30035B486 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		15BB02362A2347460035B486 /* SignUpViewCell+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewCell+Constant.swift"; sourceTree = "<group>"; };
+		15BB023A2A23B0B60035B486 /* SignUpViewCellInputState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewCellInputState.swift; sourceTree = "<group>"; };
 		15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftLint.yml; sourceTree = "<group>"; };
 		2463DFC5BC230B7F4B511AF1 /* Pods-SoTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.release.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.release.xcconfig"; sourceTree = "<group>"; };
 		CDACD0805765933D5DC0C8A6 /* Pods-SoTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.debug.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +183,12 @@
 		15856D142A1E9F0F0085FE75 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				15BB02352A23473A0035B486 /* Extension */,
+				15BB022D2A233CB40035B486 /* Model */,
+				15BB02232A226AEB0035B486 /* Protocol */,
+				15BB02222A226A960035B486 /* Adapter */,
+				15BB021D2A226A170035B486 /* ViewModel */,
+				15BB02182A225E270035B486 /* View */,
 				15BB01E12A1F518E0035B486 /* ViewController */,
 			);
 			path = SignUp;
@@ -276,6 +302,7 @@
 				15BB01C92A1F10730035B486 /* AuthenticationTextField.swift */,
 				15BB01D82A1F311E0035B486 /* OneUnitHeightLine.swift */,
 				15BB01E62A205F5C0035B486 /* NavigationControler.swift */,
+				15BB02262A22795C0035B486 /* AuthenticationButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -302,6 +329,57 @@
 				15BB01E22A1F519B0035B486 /* SignUpViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		15BB02182A225E270035B486 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				15BB02192A225E380035B486 /* SignUpVIew.swift */,
+				15BB021B2A225EE30035B486 /* SignUpViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		15BB021D2A226A170035B486 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				15BB021E2A226A230035B486 /* SignUpViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		15BB02222A226A960035B486 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				15BB02202A226A910035B486 /* SignUpViewAdapter.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		15BB02232A226AEB0035B486 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				15BB02242A226B2C0035B486 /* SignUpViewAdapterDataSource.swift */,
+				15BB022B2A2336AA0035B486 /* SignUpViewCellDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		15BB022D2A233CB40035B486 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				15BB022E2A233CC30035B486 /* SignUpModel.swift */,
+				15BB023A2A23B0B60035B486 /* SignUpViewCellInputState.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		15BB02352A23473A0035B486 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				15BB02362A2347460035B486 /* SignUpViewCell+Constant.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		38F98D16A7B7CEAC5182972F /* Frameworks */ = {
@@ -457,13 +535,16 @@
 			files = (
 				1589198F2A1E7B43006796B2 /* LoginViewController.swift in Sources */,
 				15856D082A1E9CAA0085FE75 /* UIControl+CombineInteraction.swift in Sources */,
+				15BB02272A22795C0035B486 /* AuthenticationButton.swift in Sources */,
 				15BB01E92A209ABF0035B486 /* UIColor+iconColorChange.swift in Sources */,
 				15BB01EB2A20CA240035B486 /* AuthenticationTextFieldColorState.swift in Sources */,
 				15BB01DB2A1F31470035B486 /* UIColor+Hex.swift in Sources */,
 				15856D052A1E9CAA0085FE75 /* UIControl+Combine.swift in Sources */,
 				15BB01DE2A1F3DD70035B486 /* BackgroundBlur.swift in Sources */,
+				15BB021C2A225EE30035B486 /* SignUpViewCell.swift in Sources */,
 				15856D092A1E9CAA0085FE75 /* UITextField+Combine.swift in Sources */,
 				15856D102A1E9D150085FE75 /* LayoutSupport.swift in Sources */,
+				15BB022C2A2336AA0035B486 /* SignUpViewCellDelegate.swift in Sources */,
 				1589198B2A1E7B43006796B2 /* AppDelegate.swift in Sources */,
 				15856D0E2A1E9D150085FE75 /* ConvenienceInit.swift in Sources */,
 				15BB01C82A1F0B710035B486 /* UIColor+Palette.swift in Sources */,
@@ -472,17 +553,24 @@
 				15856D182A1E9F490085FE75 /* LoginViewModel.swift in Sources */,
 				15BB01D42A1F25280035B486 /* ForgetViewConstant.swift in Sources */,
 				1589198D2A1E7B43006796B2 /* SceneDelegate.swift in Sources */,
+				15BB021F2A226A230035B486 /* SignUpViewModel.swift in Sources */,
 				15BB01E72A205F5C0035B486 /* NavigationControler.swift in Sources */,
 				15BB01CD2A1F11D70035B486 /* UISpacing.swift in Sources */,
 				15856D1B2A1EA14A0085FE75 /* LoginViewModel+Associatedtype.swift in Sources */,
 				15856D0F2A1E9D150085FE75 /* ViewModelProtocols.swift in Sources */,
+				15BB02212A226A910035B486 /* SignUpViewAdapter.swift in Sources */,
 				15BB01E02A1F480E0035B486 /* UIView+CustomAnimation.swift in Sources */,
+				15BB022F2A233CC30035B486 /* SignUpModel.swift in Sources */,
+				15BB02372A2347460035B486 /* SignUpViewCell+Constant.swift in Sources */,
 				15856D072A1E9CAA0085FE75 /* UIButton+Combine.swift in Sources */,
 				15BB01D72A1F2A070035B486 /* ForgetViewDelegate.swift in Sources */,
 				15BB01CA2A1F10730035B486 /* AuthenticationTextField.swift in Sources */,
 				15BB01E32A1F519B0035B486 /* SignUpViewController.swift in Sources */,
+				15BB02252A226B2C0035B486 /* SignUpViewAdapterDataSource.swift in Sources */,
 				15BB01D92A1F311E0035B486 /* OneUnitHeightLine.swift in Sources */,
+				15BB023B2A23B0B60035B486 /* SignUpViewCellInputState.swift in Sources */,
 				15BB01CF2A1F134A0035B486 /* AuthenticationTextFieldConstant.swift in Sources */,
+				15BB021A2A225E380035B486 /* SignUpVIew.swift in Sources */,
 				15BB01D22A1F24960035B486 /* ForgetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

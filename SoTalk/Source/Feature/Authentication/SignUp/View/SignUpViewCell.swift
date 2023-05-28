@@ -62,7 +62,6 @@ final class SignUpViewCell: UICollectionViewCell {
       return
     }
     pwRemindTextField.isUserInteractionEnabled = false
-    
   }
 }
 
@@ -77,11 +76,19 @@ extension SignUpViewCell {
     }
     if isSignUpPageEnd() {
       _=contentView.subviews.map { $0.removeFromSuperview() }
+      drawSignUpEndPage()
     }
   }
   
   func showKeyboard() {
     textField.showKeyboard()
+  }
+}
+
+// MARK: - Helpers
+private extension SignUpViewCell {
+  func setTitle(with text: String) {
+    title.text = text
   }
   
   func hideKeyboard() {
@@ -90,14 +97,6 @@ extension SignUpViewCell {
       to: nil,
       from: nil,
       for: nil)
-  }
-  
-}
-
-// MARK: - Helpers
-private extension SignUpViewCell {
-  func setTitle(with text: String) {
-    title.text = text
   }
  
   func setNextButtonAccessoryViewFromTextField() {

@@ -8,5 +8,6 @@ target 'SoTalk' do
   # Pods for SoTalk
   pod 'SwiftLint'
   pod 'Swinject'
+  pod 'lottie-ios'
 
 end

@@ -48,6 +48,9 @@
 		15BB022F2A233CC30035B486 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB022E2A233CC30035B486 /* SignUpModel.swift */; };
 		15BB02372A2347460035B486 /* SignUpViewCell+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02362A2347460035B486 /* SignUpViewCell+Constant.swift */; };
 		15BB023B2A23B0B60035B486 /* SignUpViewCellInputState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB023A2A23B0B60035B486 /* SignUpViewCellInputState.swift */; };
+		15BB02402A23DDC70035B486 /* SignUpViewCell+DrawSignUpEndPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB023F2A23DDC70035B486 /* SignUpViewCell+DrawSignUpEndPage.swift */; };
+		15BB02442A23E1170035B486 /* leftCongratulation.json in Resources */ = {isa = PBXBuildFile; fileRef = 15BB02432A23E1170035B486 /* leftCongratulation.json */; };
+		15BB02482A23E3960035B486 /* welcome.json in Resources */ = {isa = PBXBuildFile; fileRef = 15BB02472A23E3960035B486 /* welcome.json */; };
 		15E7C9FD2A1EB01600F1CB49 /* .swiftLint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */; };
 		5E71008154573DB656B961E4 /* Pods_SoTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE089AEF1146D1A3C6EEAEE /* Pods_SoTalk.framework */; };
 /* End PBXBuildFile section */
@@ -96,6 +99,9 @@
 		15BB022E2A233CC30035B486 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		15BB02362A2347460035B486 /* SignUpViewCell+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewCell+Constant.swift"; sourceTree = "<group>"; };
 		15BB023A2A23B0B60035B486 /* SignUpViewCellInputState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewCellInputState.swift; sourceTree = "<group>"; };
+		15BB023F2A23DDC70035B486 /* SignUpViewCell+DrawSignUpEndPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewCell+DrawSignUpEndPage.swift"; sourceTree = "<group>"; };
+		15BB02432A23E1170035B486 /* leftCongratulation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = leftCongratulation.json; sourceTree = "<group>"; };
+		15BB02472A23E3960035B486 /* welcome.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = welcome.json; sourceTree = "<group>"; };
 		15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftLint.yml; sourceTree = "<group>"; };
 		2463DFC5BC230B7F4B511AF1 /* Pods-SoTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.release.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.release.xcconfig"; sourceTree = "<group>"; };
 		CDACD0805765933D5DC0C8A6 /* Pods-SoTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.debug.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.debug.xcconfig"; sourceTree = "<group>"; };
@@ -250,7 +256,7 @@
 		1589199E2A1E979A006796B2 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				158919932A1E7B43006796B2 /* Assets.xcassets */,
+				15BB023C2A23DCE90035B486 /* Resource */,
 				1589198A2A1E7B43006796B2 /* AppDelegate.swift */,
 				158919952A1E7B43006796B2 /* LaunchScreen.storyboard */,
 				1589198C2A1E7B43006796B2 /* SceneDelegate.swift */,
@@ -378,8 +384,19 @@
 			isa = PBXGroup;
 			children = (
 				15BB02362A2347460035B486 /* SignUpViewCell+Constant.swift */,
+				15BB023F2A23DDC70035B486 /* SignUpViewCell+DrawSignUpEndPage.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		15BB023C2A23DCE90035B486 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				15BB02472A23E3960035B486 /* welcome.json */,
+				15BB02432A23E1170035B486 /* leftCongratulation.json */,
+				158919932A1E7B43006796B2 /* Assets.xcassets */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		38F98D16A7B7CEAC5182972F /* Frameworks */ = {
@@ -460,9 +477,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15BB02442A23E1170035B486 /* leftCongratulation.json in Resources */,
 				158919972A1E7B43006796B2 /* LaunchScreen.storyboard in Resources */,
 				158919942A1E7B43006796B2 /* Assets.xcassets in Resources */,
 				15E7C9FD2A1EB01600F1CB49 /* .swiftLint.yml in Resources */,
+				15BB02482A23E3960035B486 /* welcome.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,6 +589,7 @@
 				15BB01D92A1F311E0035B486 /* OneUnitHeightLine.swift in Sources */,
 				15BB023B2A23B0B60035B486 /* SignUpViewCellInputState.swift in Sources */,
 				15BB01CF2A1F134A0035B486 /* AuthenticationTextFieldConstant.swift in Sources */,
+				15BB02402A23DDC70035B486 /* SignUpViewCell+DrawSignUpEndPage.swift in Sources */,
 				15BB021A2A225E380035B486 /* SignUpVIew.swift in Sources */,
 				15BB01D22A1F24960035B486 /* ForgetView.swift in Sources */,
 			);

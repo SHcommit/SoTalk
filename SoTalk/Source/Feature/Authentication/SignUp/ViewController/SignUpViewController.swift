@@ -91,10 +91,11 @@ extension SignUpViewController {
       navigationController?.popViewController(animated: true)
       return
     }
-    guard indexPath.row != -1 else {
+    guard indexPath.row != -1 && indexPath.row != 4 else {
       navigationController?.popViewController(animated: true)
       return
     }
+    
     signUpViewCellPrevIndexPath = IndexPath(
       row: indexPath.row - 1,
       section: indexPath.section)
@@ -121,8 +122,12 @@ extension SignUpViewController: SignUpViewCellDelegate {
       vm.setId(text)
     case 3:
       vm.setPassword(text)
+      // 여기서 서버한테 사용자 회원강비 데이터 보내서 회원가입 시키자 !!
+      //
+      //
+      signUpViewCellPrevIndexPath = nextIndexPath
     case 4:
-      print("a")
+      break
     default: break
       
     }

@@ -7,25 +7,6 @@
 
 import UIKit
 
-extension GroupChatSearch {
-  enum Constant {
-    static let cornerRadius = 17.0
-    enum Icon {
-      static let size = CGSize(width: 14, height: 14)
-      static let spacing: UISpacing = .init(leading: 24)
-      static let name = "search"
-      static let color = UIColor.Palette.primaryHalf
-    }
-    
-    enum TextField {
-      static let spacing: UISpacing = .init(leading: 11, trailing: 25)
-      static let size = 14.0
-      static let textColor = UIColor.Palette.primary
-      static let placeholderColor = UIColor.Palette.primaryHalf
-    }
-  }
-}
-
 final class GroupChatSearch: UIView {
   // MARK: - Properties
   private let textField = UITextField().set {
@@ -74,8 +55,15 @@ final class GroupChatSearch: UIView {
   }
 }
 
-// MARK: - Private helpers
+// MARK: - Helpers
 extension GroupChatSearch {
+  func hideKeyboard() {
+    textField.resignFirstResponder()
+  }
+}
+
+// MARK: - Private helpers
+private extension GroupChatSearch {
   func initInputAccessoryView() {
     // constant
     let height: CGFloat = 75.0
@@ -100,8 +88,8 @@ extension GroupChatSearch {
       spacing: .init(leading: 24, trailing: 24))
   }
   
-  func hideKeyboard() {
-    textField.resignFirstResponder()
+  func bind() {
+    
   }
 }
 

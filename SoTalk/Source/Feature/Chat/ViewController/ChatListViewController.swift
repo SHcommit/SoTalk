@@ -7,19 +7,6 @@
 
 import UIKit
 
-extension ChatListViewController {
-  enum Constant {
-    
-    enum MyProfile {
-      static let size: CGSize = CGSize(width: 46, height: 46)
-    }
-    
-    enum SearchBar {
-      static let spacing: UISpacing = .init(leading: 31, top: 18, trailing: 24)
-    }
-  }
-}
-
 final class ChatListViewController: UIViewController {
   // MARK: - Properties
   ///

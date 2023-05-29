@@ -23,6 +23,8 @@ extension UIColor {
     
     static let selectedPrimary = UIColor(hex: "#FFB340")
     
+    static let searchBG = UIColor(hex: "#F6F1E9")
+    
     static let primaryHalf = UIColor(hex: "#FF9F0A").withAlphaComponent(0.5)
     
     static let errorRed = UIColor(hex: "#E47A7A")

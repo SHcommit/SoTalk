@@ -57,11 +57,8 @@ final class SignUpViewCell: UICollectionViewCell {
     nextButton.isUserInteractionEnabled = false
     nextButton.setNotWorking()
     textField.text = ""
+    passwordRemindTextField = nil
     bind()
-    guard let pwRemindTextField = passwordRemindTextField else {
-      return
-    }
-    pwRemindTextField.isUserInteractionEnabled = false
   }
 }
 
@@ -70,13 +67,18 @@ extension SignUpViewCell {
   func configure(with text: String, indexPath: IndexPath) {
     setTitle(with: text)
     self.indexPath = indexPath
-    if isPasswordInputPage() {
+    switch indexPath.row {
+    case InputState.nickname.value:
+      textField.setContentType(.nickname)
+    case InputState.name.value:
+      textField.setContentType(.name)
+    case InputState.password.value:
       textField.setTextSecurityPasswordType()
       createPasswordRe()
-    }
-    if isSignUpPageEnd() {
+    case InputState.signUpEnd.value:
       _=contentView.subviews.map { $0.removeFromSuperview() }
       drawSignUpEndPage()
+    default: break
     }
   }
   

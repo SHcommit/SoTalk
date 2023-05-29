@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import Lottie
 
 class LoginViewController: UIViewController {
   // MARK: - Properteis
@@ -17,6 +18,12 @@ class LoginViewController: UIViewController {
     signIn: signInChain())
   
   private var subscription = Set<AnyCancellable>()
+  
+  private let animView: LottieAnimationView = .init(name: "loginMessage").set {
+    $0.translatesAutoresizingMaskIntoConstraints = false
+    $0.contentMode = .scaleAspectFill
+    $0.loopMode = .loop
+  }
 
   private let appName: UILabel = UILabel().set {
     $0.translatesAutoresizingMaskIntoConstraints = false
@@ -26,7 +33,9 @@ class LoginViewController: UIViewController {
     $0.textAlignment = .center
   }
   
-  private let idTextField = AuthenticationTextField(with: "아이디")
+  private let idTextField = AuthenticationTextField(with: "아이디").set {
+    $0.setContentType(.name)
+  }
 
   private let pwTextField = AuthenticationTextField(with: "비밀번호").set {
     $0.setTextSecurityPasswordType()
@@ -42,7 +51,6 @@ class LoginViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     forgetView.delegate = self
-    setupBackgroundBlur()
     setupUI()
     configureUI()
     bind()
@@ -51,6 +59,11 @@ class LoginViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(false)
     input.appear.send()
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    animView.stop()
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -76,12 +89,16 @@ class LoginViewController: UIViewController {
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+  
+  deinit {
+    print("LoginVC 삭제")
+  }
 }
 
 // MARK: - Private helpers
 private extension LoginViewController {
   func configureUI() {
-    view.backgroundColor = .white
+    view.backgroundColor = .Palette.bgColor
     idTextFieldConfigure()
     pwTextFieldConfigure()
     forgetView.setForgetPlaceHolderColor(.darkGray)
@@ -137,15 +154,20 @@ extension LoginViewController: ViewBindCase {
   func render(_ state: State) {
     switch state {
     case .none:
-      print("none")
+      break
     case .appear:
-      print("appear")
+      animView.play()
     case .gotoSignUp:
       navigationController?.pushViewController(
           SignUpViewController(),
           animated: true)
     case .gotoChatPage:
-      print("goto chat page")
+      let vc = ChatListViewController()
+      let rootVC = NavigationControler(rootViewController: vc)
+      rootVC.modalPresentationStyle = .fullScreen
+      rootVC.modalTransitionStyle = .crossDissolve
+      present(rootVC, animated: true)
+      
     case .idInputLengthExcess:
       idTextField.setValidState(.inputExcess)
       signIn.setNotWorking()
@@ -176,7 +198,7 @@ extension LoginViewController: ViewBindCase {
 // MARK: - LayoutSupport
 extension LoginViewController: LayoutSupport {
   func addSubviews() {
-    _=[appName, idTextField, pwTextField, signIn, forgetView]
+    _=[appName, animView, idTextField, pwTextField, signIn, forgetView]
       .map { view.addSubview($0) }
   }
   
@@ -185,7 +207,8 @@ extension LoginViewController: LayoutSupport {
        idTextFieldConstraint,
        pwTextFieldConstraint,
        loginButtonConstraint,
-       forgetViewConstraint]
+       forgetViewConstraint,
+       animViewConstraint]
       .map { NSLayoutConstraint.activate($0) }
   }
 }
@@ -246,5 +269,16 @@ extension LoginViewController {
      forgetView.heightAnchor.constraint(equalToConstant: 14),
      forgetView.centerXAnchor.constraint(
       equalTo: view.centerXAnchor)]
+  }
+  
+  var animViewConstraint: [NSLayoutConstraint] {
+    [animView.bottomAnchor.constraint(equalTo: appName.topAnchor),
+     animView.leadingAnchor.constraint(
+      equalTo: appName.trailingAnchor,
+      constant: 10),
+     animView.trailingAnchor.constraint(
+      equalTo: view.trailingAnchor,
+      constant: -24),
+     animView.heightAnchor.constraint(equalToConstant: 70)]
   }
 }

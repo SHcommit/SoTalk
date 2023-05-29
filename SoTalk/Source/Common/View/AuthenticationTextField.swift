@@ -162,6 +162,7 @@ private extension AuthenticationTextField {
     layer.shadowOpacity = 0.2
     layer.shadowOffset = CGSize(width: 0, height: 1)
     layer.shadowRadius = 7
+    layer.shadowPath = UIBezierPath(rect: layer.bounds).cgPath
   }
 }
 

@@ -10,7 +10,7 @@ import UIKit
 final class SignUpViewController: UIViewController {
   
   // MARK: - Properties
-  private let signUpView = SignUpView()
+  private lazy var signUpView = SignUpView()
   private let vm = SignUpViewModel()
   private var adapter: SignUpViewAdapter!
   private var signUpViewCellPrevIndexPath: IndexPath?
@@ -33,10 +33,10 @@ final class SignUpViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupBackgroundBlur()
     setNavigationBar()
     setupUI()
     setAdapter()
+    view.backgroundColor = .Palette.bgColor
   }
   
   override func viewWillDisappear(_ animated: Bool) {
@@ -151,7 +151,7 @@ extension SignUpViewController: LayoutSupport {
       signUpView.trailingAnchor.constraint(
         equalTo: view.trailingAnchor),
       signUpView.bottomAnchor.constraint(
-        equalTo: view.bottomAnchor)
+        equalTo: view.safeAreaLayoutGuide.bottomAnchor)
     ])
   }
 }

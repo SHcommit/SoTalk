@@ -13,6 +13,8 @@ extension UIColor {
     
     static let naviBottomGrayLine = UIColor(hex: "#C9C9C9")
     
+    static let bgColor = UIColor(hex: "#F8F8FA")
+    
     static let placeHolderGray = UIColor(hex: "#D9D9D9")
     
     static let edgeLine: UIColor = .black.withAlphaComponent(0.7)

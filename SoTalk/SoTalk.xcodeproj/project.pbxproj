@@ -51,6 +51,8 @@
 		15BB02402A23DDC70035B486 /* SignUpViewCell+DrawSignUpEndPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB023F2A23DDC70035B486 /* SignUpViewCell+DrawSignUpEndPage.swift */; };
 		15BB02442A23E1170035B486 /* leftCongratulation.json in Resources */ = {isa = PBXBuildFile; fileRef = 15BB02432A23E1170035B486 /* leftCongratulation.json */; };
 		15BB02482A23E3960035B486 /* welcome.json in Resources */ = {isa = PBXBuildFile; fileRef = 15BB02472A23E3960035B486 /* welcome.json */; };
+		15BB024A2A246B660035B486 /* loginMessage.json in Resources */ = {isa = PBXBuildFile; fileRef = 15BB02492A246B660035B486 /* loginMessage.json */; };
+		15BB024E2A2482370035B486 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB024D2A2482370035B486 /* ChatListViewController.swift */; };
 		15E7C9FD2A1EB01600F1CB49 /* .swiftLint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */; };
 		5E71008154573DB656B961E4 /* Pods_SoTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE089AEF1146D1A3C6EEAEE /* Pods_SoTalk.framework */; };
 /* End PBXBuildFile section */
@@ -102,6 +104,8 @@
 		15BB023F2A23DDC70035B486 /* SignUpViewCell+DrawSignUpEndPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewCell+DrawSignUpEndPage.swift"; sourceTree = "<group>"; };
 		15BB02432A23E1170035B486 /* leftCongratulation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = leftCongratulation.json; sourceTree = "<group>"; };
 		15BB02472A23E3960035B486 /* welcome.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = welcome.json; sourceTree = "<group>"; };
+		15BB02492A246B660035B486 /* loginMessage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loginMessage.json; sourceTree = "<group>"; };
+		15BB024D2A2482370035B486 /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftLint.yml; sourceTree = "<group>"; };
 		2463DFC5BC230B7F4B511AF1 /* Pods-SoTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.release.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.release.xcconfig"; sourceTree = "<group>"; };
 		CDACD0805765933D5DC0C8A6 /* Pods-SoTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.debug.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.debug.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 		15856D112A1E9EFD0085FE75 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				15BB024C2A2482220035B486 /* Chat */,
 				15856D122A1E9F030085FE75 /* Authentication */,
 			);
 			path = Feature;
@@ -392,11 +397,20 @@
 		15BB023C2A23DCE90035B486 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				15BB02492A246B660035B486 /* loginMessage.json */,
 				15BB02472A23E3960035B486 /* welcome.json */,
 				15BB02432A23E1170035B486 /* leftCongratulation.json */,
 				158919932A1E7B43006796B2 /* Assets.xcassets */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		15BB024C2A2482220035B486 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				15BB024D2A2482370035B486 /* ChatListViewController.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		38F98D16A7B7CEAC5182972F /* Frameworks */ = {
@@ -478,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				15BB02442A23E1170035B486 /* leftCongratulation.json in Resources */,
+				15BB024A2A246B660035B486 /* loginMessage.json in Resources */,
 				158919972A1E7B43006796B2 /* LaunchScreen.storyboard in Resources */,
 				158919942A1E7B43006796B2 /* Assets.xcassets in Resources */,
 				15E7C9FD2A1EB01600F1CB49 /* .swiftLint.yml in Resources */,
@@ -562,6 +577,7 @@
 				15BB01DE2A1F3DD70035B486 /* BackgroundBlur.swift in Sources */,
 				15BB021C2A225EE30035B486 /* SignUpViewCell.swift in Sources */,
 				15856D092A1E9CAA0085FE75 /* UITextField+Combine.swift in Sources */,
+				15BB024E2A2482370035B486 /* ChatListViewController.swift in Sources */,
 				15856D102A1E9D150085FE75 /* LayoutSupport.swift in Sources */,
 				15BB022C2A2336AA0035B486 /* SignUpViewCellDelegate.swift in Sources */,
 				1589198B2A1E7B43006796B2 /* AppDelegate.swift in Sources */,

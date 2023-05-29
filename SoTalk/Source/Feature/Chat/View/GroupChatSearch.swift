@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 final class GroupChatSearch: UIView {
   // MARK: - Properties
@@ -33,6 +34,8 @@ final class GroupChatSearch: UIView {
   
   private let searchButton = AuthenticationButton(with: "Search")
   
+  private var subscription = Set<AnyCancellable>()
+  
   // MARK: - Initialization
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -48,6 +51,7 @@ final class GroupChatSearch: UIView {
     setupUI()
     initInputAccessoryView()
     setInputAccessoryViewWithButton()
+    bind()
   }
   
   required init?(coder: NSCoder) {
@@ -89,7 +93,27 @@ private extension GroupChatSearch {
   }
   
   func bind() {
+    textField
+      .changed
+      .subscribe(on: DispatchQueue.main)
+      .sink { [weak self] in
+        guard (3...16).contains($0.count) else {
+          self?.searchButton.setNotWorking()
+          return
+        }
+        self?.searchButton.setWorking()
+      }.store(in: &subscription)
     
+    searchButton
+      .tap
+      .receive(on: DispatchQueue.main)
+      .sink { [weak self] in
+        guard let searchButton = self?.searchButton else {
+          return
+        }
+        UIView.touchAnimate(searchButton)
+        print("서버에 값 그룹방 이름 보내주자 \(self?.textField.text ?? "")")
+      }.store(in: &subscription)
   }
 }
 

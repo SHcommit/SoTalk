@@ -144,6 +144,10 @@ extension AuthenticationTextField {
     backgroundColor = color
   }
   
+  func setNotWorkingAuthCorrectionType() {
+    textField.autocorrectionType = .no
+  }
+  
 }
 
 // MARK: - Helpers

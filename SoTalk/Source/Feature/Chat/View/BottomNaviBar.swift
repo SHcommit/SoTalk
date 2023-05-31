@@ -63,7 +63,7 @@ final class BottomNaviBar: UIView {
     $0.sizeToFit()
   }
   
-  private var minimumHeight: CGFloat {
+  var minimumHeight: CGFloat {
     let mainTitleHeightWithtopSpacing = Constant.MainTitle.spacing
       .top + mainTitle.bounds.height
     let searchHeightWithTopBottomSpacing = Constant.SearchBar.spacing
@@ -84,13 +84,6 @@ final class BottomNaviBar: UIView {
     super.init(frame: frame)
     translatesAutoresizingMaskIntoConstraints = false
     backgroundColor = .white
-    layer.cornerRadius = Constant.cornerRadius
-    layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-    layer.shadowOpacity = Constant.shadowOpacity
-    layer.shadowOffset = Constant.shadowOffset
-    layer.shadowRadius = Constant.shadowRadius
-    layer.shadowColor = Constant.shadowColor
-    layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: Constant.cornerRadius).cgPath
     setupUI()
   }
   
@@ -105,21 +98,27 @@ final class BottomNaviBar: UIView {
 }
 
 // MARK: - Helpers
-extension BottomNaviBar {
-  func layoutFrom(rootView view: UIView) {
-    layoutSubviews()
-    view.addSubview(self)
-    NSLayoutConstraint.activate([
-      leadingAnchor.constraint(equalTo: view.leadingAnchor),
-      topAnchor.constraint(
-        equalTo: view.safeAreaLayoutGuide.topAnchor),
-      trailingAnchor.constraint(
-        equalTo: view.trailingAnchor),
-      heightAnchor.constraint(equalToConstant: minimumHeight)])
-  }
-  
+extension BottomNaviBar {  
   func hideKeyboard() {
     searchBar.hideKeyboard()
+  }
+  
+  func setShadow() {
+    guard let superview = superview else { return }
+    superview.layoutIfNeeded()
+    layer.cornerRadius = 32.73
+    layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+    layer.shadowOpacity = 1
+    layer.shadowOffset = CGSize(width: 0, height: 10.91)
+    layer.shadowRadius = 7.0
+    layer.shadowColor = UIColor(
+      red: 0.251, green: 0.157, blue: 0.404, alpha: 0.05).cgColor
+    let shadowRect = CGRect(
+      x: bounds.origin.x,
+      y: bounds.origin.y,
+      width: bounds.width,
+      height: bounds.height + 32.73)
+    layer.shadowPath = UIBezierPath(rect: shadowRect).cgPath
   }
 }
 

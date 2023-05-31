@@ -61,6 +61,20 @@
 		15BB02602A251BF10035B486 /* GroupChatSearch+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB025F2A251BF10035B486 /* GroupChatSearch+Constant.swift */; };
 		15BB02622A251C0D0035B486 /* ChatListLeftNaviItem+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02612A251C0D0035B486 /* ChatListLeftNaviItem+Constant.swift */; };
 		15BB02642A251C430035B486 /* ChatListViewController+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02632A251C430035B486 /* ChatListViewController+Constant.swift */; };
+		15BB027A2A25F1710035B486 /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02792A25F1710035B486 /* GroupView.swift */; };
+		15BB027C2A25F31A0035B486 /* GroupViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB027B2A25F31A0035B486 /* GroupViewCell.swift */; };
+		15BB027F2A25F3690035B486 /* GroupViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB027E2A25F3680035B486 /* GroupViewAdapter.swift */; };
+		15BB02822A25F37E0035B486 /* GroupViewAdapterDataSoruce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02812A25F37E0035B486 /* GroupViewAdapterDataSoruce.swift */; };
+		15BB02842A261D910035B486 /* UIColor+ChatPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02832A261D910035B486 /* UIColor+ChatPalette.swift */; };
+		15BB02892A262C800035B486 /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02882A262C800035B486 /* ChatListViewModel.swift */; };
+		15BB028C2A262D270035B486 /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB028B2A262D270035B486 /* GroupModel.swift */; };
+		15BB028F2A2631040035B486 /* MockGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB028E2A2631040035B486 /* MockGroupModel.swift */; };
+		15BB02A72A264A070035B486 /* FlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02A62A264A070035B486 /* FlowCoordinator.swift */; };
+		15BB02AA2A2650BE0035B486 /* FlowCoordinator+ConvenienceInitSubCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02A92A2650BE0035B486 /* FlowCoordinator+ConvenienceInitSubCoordinator.swift */; };
+		15BB02AC2A2659900035B486 /* ApplicationFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02AB2A2659900035B486 /* ApplicationFlowCoordinator.swift */; };
+		15BB02AF2A2668240035B486 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02AE2A2668240035B486 /* LoginCoordinator.swift */; };
+		15BB02B42A26720A0035B486 /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02B32A26720A0035B486 /* SignUpCoordinator.swift */; };
+		15BB02B72A26785D0035B486 /* ChatListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02B62A26785D0035B486 /* ChatListCoordinator.swift */; };
 		15E7C9FD2A1EB01600F1CB49 /* .swiftLint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */; };
 		5E71008154573DB656B961E4 /* Pods_SoTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE089AEF1146D1A3C6EEAEE /* Pods_SoTalk.framework */; };
 /* End PBXBuildFile section */
@@ -122,6 +136,20 @@
 		15BB025F2A251BF10035B486 /* GroupChatSearch+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupChatSearch+Constant.swift"; sourceTree = "<group>"; };
 		15BB02612A251C0D0035B486 /* ChatListLeftNaviItem+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatListLeftNaviItem+Constant.swift"; sourceTree = "<group>"; };
 		15BB02632A251C430035B486 /* ChatListViewController+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatListViewController+Constant.swift"; sourceTree = "<group>"; };
+		15BB02792A25F1710035B486 /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
+		15BB027B2A25F31A0035B486 /* GroupViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewCell.swift; sourceTree = "<group>"; };
+		15BB027E2A25F3680035B486 /* GroupViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewAdapter.swift; sourceTree = "<group>"; };
+		15BB02812A25F37E0035B486 /* GroupViewAdapterDataSoruce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewAdapterDataSoruce.swift; sourceTree = "<group>"; };
+		15BB02832A261D910035B486 /* UIColor+ChatPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ChatPalette.swift"; sourceTree = "<group>"; };
+		15BB02882A262C800035B486 /* ChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
+		15BB028B2A262D270035B486 /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
+		15BB028E2A2631040035B486 /* MockGroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGroupModel.swift; sourceTree = "<group>"; };
+		15BB02A62A264A070035B486 /* FlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.swift; sourceTree = "<group>"; };
+		15BB02A92A2650BE0035B486 /* FlowCoordinator+ConvenienceInitSubCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlowCoordinator+ConvenienceInitSubCoordinator.swift"; sourceTree = "<group>"; };
+		15BB02AB2A2659900035B486 /* ApplicationFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFlowCoordinator.swift; sourceTree = "<group>"; };
+		15BB02AE2A2668240035B486 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		15BB02B32A26720A0035B486 /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
+		15BB02B62A26785D0035B486 /* ChatListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListCoordinator.swift; sourceTree = "<group>"; };
 		15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftLint.yml; sourceTree = "<group>"; };
 		2463DFC5BC230B7F4B511AF1 /* Pods-SoTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.release.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.release.xcconfig"; sourceTree = "<group>"; };
 		CDACD0805765933D5DC0C8A6 /* Pods-SoTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.debug.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.debug.xcconfig"; sourceTree = "<group>"; };
@@ -197,6 +225,7 @@
 		15856D132A1E9F080085FE75 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				15BB02AD2A26681B0035B486 /* Coordinator */,
 				15BB01D52A1F29F90035B486 /* Protocol */,
 				15BB01C32A1F010D0035B486 /* View */,
 				15BB01C02A1F00F10035B486 /* Constant */,
@@ -210,6 +239,7 @@
 		15856D142A1E9F0F0085FE75 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				15BB02B22A2671FE0035B486 /* Coordinator */,
 				15BB02352A23473A0035B486 /* Extension */,
 				15BB022D2A233CB40035B486 /* Model */,
 				15BB02232A226AEB0035B486 /* Protocol */,
@@ -267,6 +297,7 @@
 		158919892A1E7B43006796B2 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				15BB02A52A2649EC0035B486 /* FlowCoordinator */,
 				157383402A1E9B1A00EDE059 /* Common */,
 				15856D112A1E9EFD0085FE75 /* Feature */,
 				1589199E2A1E979A006796B2 /* Support */,
@@ -310,6 +341,7 @@
 				15BB01C72A1F0B710035B486 /* UIColor+Palette.swift */,
 				15BB01DA2A1F31470035B486 /* UIColor+Hex.swift */,
 				15BB01E82A209ABF0035B486 /* UIColor+iconColorChange.swift */,
+				15BB02832A261D910035B486 /* UIColor+ChatPalette.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -330,7 +362,6 @@
 				15BB01D82A1F311E0035B486 /* OneUnitHeightLine.swift */,
 				15BB01E62A205F5C0035B486 /* NavigationControler.swift */,
 				15BB02262A22795C0035B486 /* AuthenticationButton.swift */,
-				15BB02542A24AF650035B486 /* BottomNaviBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -427,6 +458,12 @@
 		15BB024C2A2482220035B486 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				15BB02B52A2678510035B486 /* Coordinator */,
+				15BB028D2A2630F70035B486 /* Mock */,
+				15BB028A2A262D1D0035B486 /* Model */,
+				15BB02872A262C730035B486 /* ViewModel */,
+				15BB027D2A25F3600035B486 /* Adapter */,
+				15BB02802A25F36E0035B486 /* Protocol */,
 				15BB025E2A251BE00035B486 /* Extension */,
 				15BB02512A2496A10035B486 /* View */,
 				15BB02502A2496980035B486 /* ViewController */,
@@ -445,7 +482,9 @@
 		15BB02512A2496A10035B486 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				15BB02782A25F1640035B486 /* GroupView */,
 				15BB02522A2496B00035B486 /* ChatListLeftNaviItem.swift */,
+				15BB02542A24AF650035B486 /* BottomNaviBar.swift */,
 				15BB025C2A24E3E30035B486 /* GroupChatSearch.swift */,
 			);
 			path = View;
@@ -459,6 +498,97 @@
 				15BB02632A251C430035B486 /* ChatListViewController+Constant.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		15BB02782A25F1640035B486 /* GroupView */ = {
+			isa = PBXGroup;
+			children = (
+				15BB02792A25F1710035B486 /* GroupView.swift */,
+				15BB027B2A25F31A0035B486 /* GroupViewCell.swift */,
+			);
+			path = GroupView;
+			sourceTree = "<group>";
+		};
+		15BB027D2A25F3600035B486 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				15BB027E2A25F3680035B486 /* GroupViewAdapter.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		15BB02802A25F36E0035B486 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				15BB02812A25F37E0035B486 /* GroupViewAdapterDataSoruce.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		15BB02872A262C730035B486 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				15BB02882A262C800035B486 /* ChatListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		15BB028A2A262D1D0035B486 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				15BB028B2A262D270035B486 /* GroupModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		15BB028D2A2630F70035B486 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				15BB028E2A2631040035B486 /* MockGroupModel.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		15BB02A52A2649EC0035B486 /* FlowCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				15BB02A82A2650A50035B486 /* Extension */,
+				15BB02A62A264A070035B486 /* FlowCoordinator.swift */,
+				15BB02AB2A2659900035B486 /* ApplicationFlowCoordinator.swift */,
+			);
+			path = FlowCoordinator;
+			sourceTree = "<group>";
+		};
+		15BB02A82A2650A50035B486 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				15BB02A92A2650BE0035B486 /* FlowCoordinator+ConvenienceInitSubCoordinator.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		15BB02AD2A26681B0035B486 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				15BB02AE2A2668240035B486 /* LoginCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		15BB02B22A2671FE0035B486 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				15BB02B32A26720A0035B486 /* SignUpCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		15BB02B52A2678510035B486 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				15BB02B62A26785D0035B486 /* ChatListCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		38F98D16A7B7CEAC5182972F /* Frameworks */ = {
@@ -619,22 +749,32 @@
 			files = (
 				1589198F2A1E7B43006796B2 /* LoginViewController.swift in Sources */,
 				15856D082A1E9CAA0085FE75 /* UIControl+CombineInteraction.swift in Sources */,
+				15BB027F2A25F3690035B486 /* GroupViewAdapter.swift in Sources */,
+				15BB027A2A25F1710035B486 /* GroupView.swift in Sources */,
 				15BB02272A22795C0035B486 /* AuthenticationButton.swift in Sources */,
+				15BB02B72A26785D0035B486 /* ChatListCoordinator.swift in Sources */,
 				15BB01E92A209ABF0035B486 /* UIColor+iconColorChange.swift in Sources */,
 				15BB01EB2A20CA240035B486 /* AuthenticationTextFieldColorState.swift in Sources */,
 				15BB01DB2A1F31470035B486 /* UIColor+Hex.swift in Sources */,
+				15BB028F2A2631040035B486 /* MockGroupModel.swift in Sources */,
 				15856D052A1E9CAA0085FE75 /* UIControl+Combine.swift in Sources */,
 				15BB01DE2A1F3DD70035B486 /* BackgroundBlur.swift in Sources */,
 				15BB02642A251C430035B486 /* ChatListViewController+Constant.swift in Sources */,
+				15BB02842A261D910035B486 /* UIColor+ChatPalette.swift in Sources */,
 				15BB021C2A225EE30035B486 /* SignUpViewCell.swift in Sources */,
 				15BB02532A2496B00035B486 /* ChatListLeftNaviItem.swift in Sources */,
 				15856D092A1E9CAA0085FE75 /* UITextField+Combine.swift in Sources */,
 				15BB024E2A2482370035B486 /* ChatListViewController.swift in Sources */,
 				15856D102A1E9D150085FE75 /* LayoutSupport.swift in Sources */,
 				15BB02622A251C0D0035B486 /* ChatListLeftNaviItem+Constant.swift in Sources */,
+				15BB02AA2A2650BE0035B486 /* FlowCoordinator+ConvenienceInitSubCoordinator.swift in Sources */,
+				15BB027C2A25F31A0035B486 /* GroupViewCell.swift in Sources */,
 				15BB022C2A2336AA0035B486 /* SignUpViewCellDelegate.swift in Sources */,
 				1589198B2A1E7B43006796B2 /* AppDelegate.swift in Sources */,
+				15BB028C2A262D270035B486 /* GroupModel.swift in Sources */,
 				15856D0E2A1E9D150085FE75 /* ConvenienceInit.swift in Sources */,
+				15BB02892A262C800035B486 /* ChatListViewModel.swift in Sources */,
+				15BB02A72A264A070035B486 /* FlowCoordinator.swift in Sources */,
 				15BB01C82A1F0B710035B486 /* UIColor+Palette.swift in Sources */,
 				15BB01C22A1F01070035B486 /* LoginViewControllerConstant.swift in Sources */,
 				15856D062A1E9CAA0085FE75 /* UISwitch+Combine.swift in Sources */,
@@ -643,14 +783,18 @@
 				1589198D2A1E7B43006796B2 /* SceneDelegate.swift in Sources */,
 				15BB021F2A226A230035B486 /* SignUpViewModel.swift in Sources */,
 				15BB01E72A205F5C0035B486 /* NavigationControler.swift in Sources */,
+				15BB02822A25F37E0035B486 /* GroupViewAdapterDataSoruce.swift in Sources */,
 				15BB01CD2A1F11D70035B486 /* UISpacing.swift in Sources */,
 				15856D1B2A1EA14A0085FE75 /* LoginViewModel+Associatedtype.swift in Sources */,
+				15BB02AC2A2659900035B486 /* ApplicationFlowCoordinator.swift in Sources */,
 				15856D0F2A1E9D150085FE75 /* ViewModelProtocols.swift in Sources */,
 				15BB02212A226A910035B486 /* SignUpViewAdapter.swift in Sources */,
+				15BB02AF2A2668240035B486 /* LoginCoordinator.swift in Sources */,
 				15BB01E02A1F480E0035B486 /* UIView+CustomAnimation.swift in Sources */,
 				15BB02552A24AF650035B486 /* BottomNaviBar.swift in Sources */,
 				15BB02602A251BF10035B486 /* GroupChatSearch+Constant.swift in Sources */,
 				15BB022F2A233CC30035B486 /* SignUpModel.swift in Sources */,
+				15BB02B42A26720A0035B486 /* SignUpCoordinator.swift in Sources */,
 				15BB02372A2347460035B486 /* SignUpViewCell+Constant.swift in Sources */,
 				15856D072A1E9CAA0085FE75 /* UIButton+Combine.swift in Sources */,
 				15BB01D72A1F2A070035B486 /* ForgetViewDelegate.swift in Sources */,

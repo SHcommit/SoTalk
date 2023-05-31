@@ -41,7 +41,6 @@ final class GroupChatSearch: UIView {
     super.init(frame: frame)
     translatesAutoresizingMaskIntoConstraints = false
     layer.cornerRadius = Constant.cornerRadius
-    layer.masksToBounds = true
     backgroundColor = .Palette.searchBG
     textField.delegate = self
   }

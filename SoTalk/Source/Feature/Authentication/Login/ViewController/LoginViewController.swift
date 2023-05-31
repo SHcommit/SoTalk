@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
   }
   
   private let idTextField = AuthenticationTextField(with: "아이디").set {
-    $0.setContentType(.name)
+    $0.setNotWorkingAuthCorrectionType()
   }
 
   private let pwTextField = AuthenticationTextField(with: "비밀번호").set {
@@ -46,6 +46,8 @@ class LoginViewController: UIViewController {
   }
   
   private let forgetView = ForgetView()
+  
+  weak var coordinator: LoginCoordinator?
   
   // MARK: - Lifecycle
   override func viewDidLoad() {
@@ -158,16 +160,11 @@ extension LoginViewController: ViewBindCase {
     case .appear:
       animView.play()
     case .gotoSignUp:
-      navigationController?.pushViewController(
-          SignUpViewController(),
-          animated: true)
+      coordinator?.gotoSignUpPage()
     case .gotoChatPage:
-      let vc = ChatListViewController()
-      let rootVC = NavigationControler(rootViewController: vc)
-      rootVC.modalPresentationStyle = .fullScreen
-      rootVC.modalTransitionStyle = .crossDissolve
-      present(rootVC, animated: true)
-      
+      idTextField.hideKeyboard()
+      pwTextField.hideKeyboard()
+      coordinator?.gotoChatListPage()
     case .idInputLengthExcess:
       idTextField.setValidState(.inputExcess)
       signIn.setNotWorking()

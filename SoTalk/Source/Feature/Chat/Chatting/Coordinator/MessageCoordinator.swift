@@ -1,5 +1,5 @@
 //
-//  ChattingCoordinator.swift
+//  MessageCoordinator.swift
 //  SoTalk
 //
 //  Created by 양승현 on 2023/06/01.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChattingCoordinator: NSObject, FlowCoordinator {
+class MessageCoordinator: NSObject, FlowCoordinator {
   // MARK: - Properties
   var parent: FlowCoordinator!
   var child: [FlowCoordinator] = []
@@ -18,7 +18,7 @@ class ChattingCoordinator: NSObject, FlowCoordinator {
   init(presenter: NavigationControler) {
     self.presenter = presenter
     super.init()
-    let vc = ChattingViewContrller()
+    let vc = MessageViewContrller()
     viewController = vc
     vc.coordinator = self
   }
@@ -33,7 +33,7 @@ class ChattingCoordinator: NSObject, FlowCoordinator {
   }
 }
 
-extension ChattingCoordinator {
+extension MessageCoordinator {
   func gotoChattingPage() {
     presenter.popViewController(animated: true)
     finish()

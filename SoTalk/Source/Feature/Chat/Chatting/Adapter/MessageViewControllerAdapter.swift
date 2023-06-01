@@ -1,5 +1,5 @@
 //
-//  ChattingViewControllerAdapter.swift
+//  MessageViewControllerAdapter.swift
 //  SoTalk
 //
 //  Created by 양승현 on 2023/06/01.
@@ -7,14 +7,14 @@
 
 import UIKit
 
-final class ChattingViewControllerAdapter: NSObject {
+final class MessageViewControllerAdapter: NSObject {
   // MARK: - Properties
-  var dataSource: ChattingViewControllerDataSource?
+  var dataSource: MessageViewControllerDataSource?
   
   // MARK: - Lifecycle
   init(
     collectionView: UICollectionView,
-    dataSource: ChattingViewControllerDataSource? = nil
+    dataSource: MessageViewControllerDataSource? = nil
   ) {
     super.init()
     self.dataSource = dataSource
@@ -24,7 +24,7 @@ final class ChattingViewControllerAdapter: NSObject {
 }
 
 // MARK: - UICollectionViewDataSource
-extension ChattingViewControllerAdapter: UICollectionViewDataSource {
+extension MessageViewControllerAdapter: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return dataSource?.numberOfItems ?? 0
   }
@@ -32,8 +32,8 @@ extension ChattingViewControllerAdapter: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard
       let cell = collectionView.dequeueReusableCell(
-        withReuseIdentifier: ChattingCell.id,
-        for: indexPath) as? ChattingCell,
+        withReuseIdentifier: MessageCell.id,
+        for: indexPath) as? MessageCell,
       let item = dataSource?.cellForRowAt(indexPath)
     else {
       return .init()
@@ -44,7 +44,7 @@ extension ChattingViewControllerAdapter: UICollectionViewDataSource {
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-extension ChattingViewControllerAdapter: UICollectionViewDelegateFlowLayout {
+extension MessageViewControllerAdapter: UICollectionViewDelegateFlowLayout {
   func collectionView(
     _ collectionView: UICollectionView,
     layout collectionViewLayout: UICollectionViewLayout,

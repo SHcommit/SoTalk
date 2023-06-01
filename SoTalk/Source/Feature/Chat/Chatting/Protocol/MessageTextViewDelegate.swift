@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  MessageTextViewDelegate.swift
 //  SoTalk
 //
 //  Created by 양승현 on 2023/06/01.
@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol ChattingTextViewDelegate: AnyObject {
+protocol MessageTextViewDelegate: AnyObject {
   func changed(text: String)
 }

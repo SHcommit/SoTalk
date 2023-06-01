@@ -77,18 +77,22 @@
 		15BB02B72A26785D0035B486 /* ChatListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02B62A26785D0035B486 /* ChatListCoordinator.swift */; };
 		15BB02B92A28407B0035B486 /* BottomNaviBar+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02B82A28407B0035B486 /* BottomNaviBar+Constant.swift */; };
 		15BB02BB2A284D360035B486 /* GroupViewAdapterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02BA2A284D360035B486 /* GroupViewAdapterDelegate.swift */; };
-		15BB02C02A284E8D0035B486 /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02BF2A284E8D0035B486 /* ChattingViewController.swift */; };
-		15BB02C32A2850050035B486 /* ChattingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02C22A2850050035B486 /* ChattingCoordinator.swift */; };
-		15BB02C62A287B1C0035B486 /* ChattingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02C52A287B1C0035B486 /* ChattingTextView.swift */; };
-		15BB02C82A28855D0035B486 /* ChattingSendBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02C72A28855D0035B486 /* ChattingSendBar.swift */; };
-		15BB02CB2A2887140035B486 /* ChattingTextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02CA2A2887140035B486 /* ChattingTextViewDelegate.swift */; };
+		15BB02C02A284E8D0035B486 /* MessageViewContrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02BF2A284E8D0035B486 /* MessageViewContrller.swift */; };
+		15BB02C32A2850050035B486 /* MessageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02C22A2850050035B486 /* MessageCoordinator.swift */; };
+		15BB02C62A287B1C0035B486 /* MessageSendBarInputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02C52A287B1C0035B486 /* MessageSendBarInputTextView.swift */; };
+		15BB02C82A28855D0035B486 /* MessageSendBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02C72A28855D0035B486 /* MessageSendBar.swift */; };
+		15BB02CB2A2887140035B486 /* MessageTextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02CA2A2887140035B486 /* MessageTextViewDelegate.swift */; };
 		15BB02CD2A288DBB0035B486 /* CommentSendInputAccessoryViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02CC2A288DBB0035B486 /* CommentSendInputAccessoryViewDelegate.swift */; };
-		15BB02D02A2895090035B486 /* ChattingViewControllerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02CF2A2895090035B486 /* ChattingViewControllerAdapter.swift */; };
+		15BB02D02A2895090035B486 /* MessageViewControllerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02CF2A2895090035B486 /* MessageViewControllerAdapter.swift */; };
 		15BB02D32A2895700035B486 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02D22A2895700035B486 /* CommentModel.swift */; };
 		15BB02D62A2895EF0035B486 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02D52A2895EF0035B486 /* UserModel.swift */; };
-		15BB02D82A2897020035B486 /* ChattingViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02D72A2897020035B486 /* ChattingViewControllerDataSource.swift */; };
-		15BB02DB2A2897B70035B486 /* ChattingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02DA2A2897B70035B486 /* ChattingViewModel.swift */; };
-		15BB02DD2A28B7FC0035B486 /* ChattingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02DC2A28B7FC0035B486 /* ChattingCell.swift */; };
+		15BB02D82A2897020035B486 /* MessageViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02D72A2897020035B486 /* MessageViewControllerDataSource.swift */; };
+		15BB02DB2A2897B70035B486 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02DA2A2897B70035B486 /* MessageViewModel.swift */; };
+		15BB02DD2A28B7FC0035B486 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02DC2A28B7FC0035B486 /* MessageCell.swift */; };
+		15BB02F22A28E8AB0035B486 /* MessageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02F12A28E8AB0035B486 /* MessageContentView.swift */; };
+		15BB02F42A29067D0035B486 /* MessageContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02F32A29067D0035B486 /* MessageContentModel.swift */; };
+		15BB02F82A29076E0035B486 /* MessageContentView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02F72A29076E0035B486 /* MessageContentView+Constant.swift */; };
+		15BB02FA2A2907870035B486 /* MessageSenderState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02F92A2907870035B486 /* MessageSenderState.swift */; };
 		15E7C9FD2A1EB01600F1CB49 /* .swiftLint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */; };
 		5E71008154573DB656B961E4 /* Pods_SoTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE089AEF1146D1A3C6EEAEE /* Pods_SoTalk.framework */; };
 /* End PBXBuildFile section */
@@ -166,18 +170,22 @@
 		15BB02B62A26785D0035B486 /* ChatListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListCoordinator.swift; sourceTree = "<group>"; };
 		15BB02B82A28407B0035B486 /* BottomNaviBar+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomNaviBar+Constant.swift"; sourceTree = "<group>"; };
 		15BB02BA2A284D360035B486 /* GroupViewAdapterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewAdapterDelegate.swift; sourceTree = "<group>"; };
-		15BB02BF2A284E8D0035B486 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
-		15BB02C22A2850050035B486 /* ChattingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingCoordinator.swift; sourceTree = "<group>"; };
-		15BB02C52A287B1C0035B486 /* ChattingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingTextView.swift; sourceTree = "<group>"; };
-		15BB02C72A28855D0035B486 /* ChattingSendBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingSendBar.swift; sourceTree = "<group>"; };
-		15BB02CA2A2887140035B486 /* ChattingTextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingTextViewDelegate.swift; sourceTree = "<group>"; };
+		15BB02BF2A284E8D0035B486 /* MessageViewContrller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewContrller.swift; sourceTree = "<group>"; };
+		15BB02C22A2850050035B486 /* MessageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCoordinator.swift; sourceTree = "<group>"; };
+		15BB02C52A287B1C0035B486 /* MessageSendBarInputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSendBarInputTextView.swift; sourceTree = "<group>"; };
+		15BB02C72A28855D0035B486 /* MessageSendBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSendBar.swift; sourceTree = "<group>"; };
+		15BB02CA2A2887140035B486 /* MessageTextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTextViewDelegate.swift; sourceTree = "<group>"; };
 		15BB02CC2A288DBB0035B486 /* CommentSendInputAccessoryViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentSendInputAccessoryViewDelegate.swift; sourceTree = "<group>"; };
-		15BB02CF2A2895090035B486 /* ChattingViewControllerAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewControllerAdapter.swift; sourceTree = "<group>"; };
+		15BB02CF2A2895090035B486 /* MessageViewControllerAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewControllerAdapter.swift; sourceTree = "<group>"; };
 		15BB02D22A2895700035B486 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		15BB02D52A2895EF0035B486 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		15BB02D72A2897020035B486 /* ChattingViewControllerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewControllerDataSource.swift; sourceTree = "<group>"; };
-		15BB02DA2A2897B70035B486 /* ChattingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewModel.swift; sourceTree = "<group>"; };
-		15BB02DC2A28B7FC0035B486 /* ChattingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingCell.swift; sourceTree = "<group>"; };
+		15BB02D72A2897020035B486 /* MessageViewControllerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewControllerDataSource.swift; sourceTree = "<group>"; };
+		15BB02DA2A2897B70035B486 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
+		15BB02DC2A28B7FC0035B486 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		15BB02F12A28E8AB0035B486 /* MessageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageContentView.swift; sourceTree = "<group>"; };
+		15BB02F32A29067D0035B486 /* MessageContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageContentModel.swift; sourceTree = "<group>"; };
+		15BB02F72A29076E0035B486 /* MessageContentView+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageContentView+Constant.swift"; sourceTree = "<group>"; };
+		15BB02F92A2907870035B486 /* MessageSenderState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSenderState.swift; sourceTree = "<group>"; };
 		15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftLint.yml; sourceTree = "<group>"; };
 		2463DFC5BC230B7F4B511AF1 /* Pods-SoTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.release.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.release.xcconfig"; sourceTree = "<group>"; };
 		CDACD0805765933D5DC0C8A6 /* Pods-SoTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.debug.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.debug.xcconfig"; sourceTree = "<group>"; };
@@ -634,6 +642,7 @@
 		15BB02BD2A284E5D0035B486 /* Chatting */ = {
 			isa = PBXGroup;
 			children = (
+				15BB02F52A29074D0035B486 /* Extension */,
 				15BB02D92A2897AE0035B486 /* ViewModel */,
 				15BB02D12A2895510035B486 /* Model */,
 				15BB02CE2A2894FF0035B486 /* Adapter */,
@@ -648,7 +657,7 @@
 		15BB02BE2A284E7A0035B486 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				15BB02BF2A284E8D0035B486 /* ChattingViewController.swift */,
+				15BB02BF2A284E8D0035B486 /* MessageViewContrller.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -656,7 +665,7 @@
 		15BB02C12A284FDF0035B486 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				15BB02C22A2850050035B486 /* ChattingCoordinator.swift */,
+				15BB02C22A2850050035B486 /* MessageCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -664,9 +673,10 @@
 		15BB02C42A287B0A0035B486 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				15BB02C52A287B1C0035B486 /* ChattingTextView.swift */,
-				15BB02C72A28855D0035B486 /* ChattingSendBar.swift */,
-				15BB02DC2A28B7FC0035B486 /* ChattingCell.swift */,
+				15BB02C52A287B1C0035B486 /* MessageSendBarInputTextView.swift */,
+				15BB02C72A28855D0035B486 /* MessageSendBar.swift */,
+				15BB02DC2A28B7FC0035B486 /* MessageCell.swift */,
+				15BB02F12A28E8AB0035B486 /* MessageContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -674,9 +684,9 @@
 		15BB02C92A28870B0035B486 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				15BB02CA2A2887140035B486 /* ChattingTextViewDelegate.swift */,
+				15BB02CA2A2887140035B486 /* MessageTextViewDelegate.swift */,
 				15BB02CC2A288DBB0035B486 /* CommentSendInputAccessoryViewDelegate.swift */,
-				15BB02D72A2897020035B486 /* ChattingViewControllerDataSource.swift */,
+				15BB02D72A2897020035B486 /* MessageViewControllerDataSource.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -684,7 +694,7 @@
 		15BB02CE2A2894FF0035B486 /* Adapter */ = {
 			isa = PBXGroup;
 			children = (
-				15BB02CF2A2895090035B486 /* ChattingViewControllerAdapter.swift */,
+				15BB02CF2A2895090035B486 /* MessageViewControllerAdapter.swift */,
 			);
 			path = Adapter;
 			sourceTree = "<group>";
@@ -693,6 +703,8 @@
 			isa = PBXGroup;
 			children = (
 				15BB02D22A2895700035B486 /* CommentModel.swift */,
+				15BB02F32A29067D0035B486 /* MessageContentModel.swift */,
+				15BB02F92A2907870035B486 /* MessageSenderState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -700,9 +712,17 @@
 		15BB02D92A2897AE0035B486 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				15BB02DA2A2897B70035B486 /* ChattingViewModel.swift */,
+				15BB02DA2A2897B70035B486 /* MessageViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		15BB02F52A29074D0035B486 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				15BB02F72A29076E0035B486 /* MessageContentView+Constant.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		38F98D16A7B7CEAC5182972F /* Frameworks */ = {
@@ -862,16 +882,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				1589198F2A1E7B43006796B2 /* LoginViewController.swift in Sources */,
-				15BB02C62A287B1C0035B486 /* ChattingTextView.swift in Sources */,
+				15BB02F22A28E8AB0035B486 /* MessageContentView.swift in Sources */,
+				15BB02C62A287B1C0035B486 /* MessageSendBarInputTextView.swift in Sources */,
 				15856D082A1E9CAA0085FE75 /* UIControl+CombineInteraction.swift in Sources */,
 				15BB027F2A25F3690035B486 /* GroupViewAdapter.swift in Sources */,
 				15BB027A2A25F1710035B486 /* GroupView.swift in Sources */,
 				15BB02272A22795C0035B486 /* AuthenticationButton.swift in Sources */,
 				15BB02B72A26785D0035B486 /* ChatListCoordinator.swift in Sources */,
-				15BB02C82A28855D0035B486 /* ChattingSendBar.swift in Sources */,
+				15BB02F82A29076E0035B486 /* MessageContentView+Constant.swift in Sources */,
+				15BB02C82A28855D0035B486 /* MessageSendBar.swift in Sources */,
 				15BB01E92A209ABF0035B486 /* UIColor+iconColorChange.swift in Sources */,
 				15BB01EB2A20CA240035B486 /* AuthenticationTextFieldColorState.swift in Sources */,
 				15BB01DB2A1F31470035B486 /* UIColor+Hex.swift in Sources */,
+				15BB02FA2A2907870035B486 /* MessageSenderState.swift in Sources */,
 				15BB028F2A2631040035B486 /* MockGroupModel.swift in Sources */,
 				15856D052A1E9CAA0085FE75 /* UIControl+Combine.swift in Sources */,
 				15BB02CD2A288DBB0035B486 /* CommentSendInputAccessoryViewDelegate.swift in Sources */,
@@ -885,6 +908,7 @@
 				15856D102A1E9D150085FE75 /* LayoutSupport.swift in Sources */,
 				15BB02622A251C0D0035B486 /* ChatListLeftNaviItem+Constant.swift in Sources */,
 				15BB02AA2A2650BE0035B486 /* FlowCoordinator+ConvenienceInitSubCoordinator.swift in Sources */,
+				15BB02F42A29067D0035B486 /* MessageContentModel.swift in Sources */,
 				15BB027C2A25F31A0035B486 /* GroupViewCell.swift in Sources */,
 				15BB022C2A2336AA0035B486 /* SignUpViewCellDelegate.swift in Sources */,
 				1589198B2A1E7B43006796B2 /* AppDelegate.swift in Sources */,
@@ -903,25 +927,25 @@
 				15BB01E72A205F5C0035B486 /* NavigationControler.swift in Sources */,
 				15BB02B92A28407B0035B486 /* BottomNaviBar+Constant.swift in Sources */,
 				15BB02822A25F37E0035B486 /* GroupViewAdapterDataSoruce.swift in Sources */,
-				15BB02D02A2895090035B486 /* ChattingViewControllerAdapter.swift in Sources */,
-				15BB02D82A2897020035B486 /* ChattingViewControllerDataSource.swift in Sources */,
+				15BB02D02A2895090035B486 /* MessageViewControllerAdapter.swift in Sources */,
+				15BB02D82A2897020035B486 /* MessageViewControllerDataSource.swift in Sources */,
 				15BB01CD2A1F11D70035B486 /* UISpacing.swift in Sources */,
 				15856D1B2A1EA14A0085FE75 /* LoginViewModel+Associatedtype.swift in Sources */,
 				15BB02AC2A2659900035B486 /* ApplicationFlowCoordinator.swift in Sources */,
-				15BB02C32A2850050035B486 /* ChattingCoordinator.swift in Sources */,
-				15BB02CB2A2887140035B486 /* ChattingTextViewDelegate.swift in Sources */,
+				15BB02C32A2850050035B486 /* MessageCoordinator.swift in Sources */,
+				15BB02CB2A2887140035B486 /* MessageTextViewDelegate.swift in Sources */,
 				15856D0F2A1E9D150085FE75 /* ViewModelProtocols.swift in Sources */,
-				15BB02DB2A2897B70035B486 /* ChattingViewModel.swift in Sources */,
+				15BB02DB2A2897B70035B486 /* MessageViewModel.swift in Sources */,
 				15BB02212A226A910035B486 /* SignUpViewAdapter.swift in Sources */,
 				15BB02AF2A2668240035B486 /* LoginCoordinator.swift in Sources */,
 				15BB01E02A1F480E0035B486 /* UIView+CustomAnimation.swift in Sources */,
 				15BB02D62A2895EF0035B486 /* UserModel.swift in Sources */,
-				15BB02DD2A28B7FC0035B486 /* ChattingCell.swift in Sources */,
+				15BB02DD2A28B7FC0035B486 /* MessageCell.swift in Sources */,
 				15BB02552A24AF650035B486 /* BottomNaviBar.swift in Sources */,
 				15BB02602A251BF10035B486 /* GroupChatSearch+Constant.swift in Sources */,
 				15BB022F2A233CC30035B486 /* SignUpModel.swift in Sources */,
 				15BB02B42A26720A0035B486 /* SignUpCoordinator.swift in Sources */,
-				15BB02C02A284E8D0035B486 /* ChattingViewController.swift in Sources */,
+				15BB02C02A284E8D0035B486 /* MessageViewContrller.swift in Sources */,
 				15BB02372A2347460035B486 /* SignUpViewCell+Constant.swift in Sources */,
 				15BB02D32A2895700035B486 /* CommentModel.swift in Sources */,
 				15856D072A1E9CAA0085FE75 /* UIButton+Combine.swift in Sources */,

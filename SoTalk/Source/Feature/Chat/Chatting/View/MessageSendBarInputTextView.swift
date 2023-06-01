@@ -1,5 +1,5 @@
 //
-//  ChattingTextField.swift
+//  MessageSendBarInputTextView.swift
 //  SoTalk
 //
 //  Created by 양승현 on 2023/06/01.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ChattingTextView: UITextView {
+final class MessageSendBarInputTextView: UITextView {
   // MARK: - Properties
   private let placeholderLabel = UILabel().set {
     $0.translatesAutoresizingMaskIntoConstraints = false
@@ -25,7 +25,7 @@ final class ChattingTextView: UITextView {
     }
   }
   
-  weak var textDelegate: ChattingTextViewDelegate?
+  weak var textDelegate: MessageTextViewDelegate?
   
   // MARK: - Lifecycle
   
@@ -46,7 +46,7 @@ final class ChattingTextView: UITextView {
 }
 
 // MARK: - UITextViewDelegate
-extension ChattingTextView: UITextViewDelegate {
+extension MessageSendBarInputTextView: UITextViewDelegate {
   func textViewDidChange(_ textView: UITextView) {
     guard !textView.text.isEmpty else {
       placeholderLabel.isHidden = false
@@ -59,7 +59,7 @@ extension ChattingTextView: UITextViewDelegate {
 }
 
 // MARK: - LayoutSupport
-extension ChattingTextView: LayoutSupport {
+extension MessageSendBarInputTextView: LayoutSupport {
   func addSubviews() {
     addSubview(placeholderLabel)
   }

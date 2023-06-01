@@ -39,7 +39,7 @@ extension ChatListCoordinator {
   }
   
   func gotoChattingPage() {
-    let child = ChattingCoordinator(presenter: presenter)
+    let child = MessageCoordinator(presenter: presenter)
     addChild(with: child)
   }
 }

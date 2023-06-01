@@ -29,7 +29,7 @@ final class ApplicationFlowCoordinator: FlowCoordinator {
     parent = nil
     guard isSignIn else {
       gotoLoginPage()
-      //gotoChatListpage()
+      // gotoChatListpage()
       return
     }
     gotoChatListpage()

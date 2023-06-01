@@ -1,5 +1,5 @@
 //
-//  ChatViewController.swift
+//  MessageViewContrller.swift
 //  SoTalk
 //
 //  Created by 양승현 on 2023/06/01.
@@ -7,15 +7,15 @@
 
 import UIKit
 
-final class ChattingViewContrller: UICollectionViewController {
+final class MessageViewContrller: UICollectionViewController {
   // MARK: - Properties
-  weak var coordinator: ChattingCoordinator?
+  weak var coordinator: MessageCoordinator?
   
-  var adapter: ChattingViewControllerAdapter!
+  var adapter: MessageViewControllerAdapter!
   
-  var vm: ChattingViewModel!
+  var vm: MessageViewModel!
   
-  private lazy var commentView = ChattingSendBar(
+  private lazy var commentView = MessageSendBar(
     frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50)).set {
       $0.delegate = self
     }
@@ -24,14 +24,14 @@ final class ChattingViewContrller: UICollectionViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     collectionView.register(
-      ChattingCell.self,
-      forCellWithReuseIdentifier: ChattingCell.id)
+      MessageCell.self,
+      forCellWithReuseIdentifier: MessageCell.id)
     collectionView.keyboardDismissMode = .interactive
     collectionView.alwaysBounceVertical = true
     navigationItem.title = "Comments"
     collectionView.backgroundColor = UIColor(hex: "#F8F8FA")
-    vm = ChattingViewModel()
-    adapter = ChattingViewControllerAdapter(
+    vm = MessageViewModel()
+    adapter = MessageViewControllerAdapter(
       collectionView: collectionView,
     dataSource: vm)
     setNavigationBar()
@@ -62,7 +62,7 @@ final class ChattingViewContrller: UICollectionViewController {
 }
 
 // MARK: - Private helper
-private extension ChattingViewContrller {
+private extension MessageViewContrller {
   func setNavigationBar() {
     guard let navi = navigationController as? NavigationControler else {
       return
@@ -72,14 +72,14 @@ private extension ChattingViewContrller {
 }
 
 // MARK: - Action
-extension ChattingViewContrller {
+extension MessageViewContrller {
   @objc func didTapBackButton() {
     navigationController?.popViewController(animated: true)
   }
 }
 
 // MARK: - CommentSendInputAccessoryViewDelegate
-extension ChattingViewContrller: CommentSendInputAccessoryViewDelegate {
+extension MessageViewContrller: CommentSendInputAccessoryViewDelegate {
   func inputView(
     wantsToUploadComment comment: String,
     completionHandler: @escaping (Result<Void, Error>) -> Void

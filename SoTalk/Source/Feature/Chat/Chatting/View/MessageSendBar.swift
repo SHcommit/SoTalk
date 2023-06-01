@@ -1,5 +1,5 @@
 //
-//  CommentSendInputAccessoryView.swift
+//  MessageSendBar.swift
 //  SoTalk
 //
 //  Created by 양승현 on 2023/06/01.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-final class ChattingSendBar: UIView {
+final class MessageSendBar: UIView {
   // MARK: - Constant
   private let sendTitle = "Send"
   
   // MARK: - Properties
-  private let textView = ChattingTextView()
+  private let textView = MessageSendBarInputTextView()
   
   private lazy var sendButton: UIButton = UIButton().set {
     $0.translatesAutoresizingMaskIntoConstraints = false
@@ -43,7 +43,7 @@ final class ChattingSendBar: UIView {
 }
 
 // MARK: - Private helper
-extension ChattingSendBar {
+extension MessageSendBar {
   func setWorkingSendButton() {
     sendButton.isUserInteractionEnabled = true
     sendButton.backgroundColor = .Palette.primary
@@ -72,7 +72,7 @@ extension ChattingSendBar {
 }
 
 // MARK: - ChattingTextViewDelegate
-extension ChattingSendBar: ChattingTextViewDelegate {
+extension MessageSendBar: MessageTextViewDelegate {
   func changed(text: String) {
     guard !text.isEmpty else {
       setNotWorkingSendButton()
@@ -83,7 +83,7 @@ extension ChattingSendBar: ChattingTextViewDelegate {
 }
 
 // MARK: - Action
-extension ChattingSendBar {
+extension MessageSendBar {
   @objc func didTapSend() {
     UIView.animate(
       withDuration: 0.2,
@@ -112,7 +112,7 @@ extension ChattingSendBar {
 }
 
 // MARK: - LayoutSupport
-extension ChattingSendBar: LayoutSupport {
+extension MessageSendBar: LayoutSupport {
   func addSubviews() {
     _=[textView, sendButton].map { addSubview($0) }
   }
@@ -124,7 +124,7 @@ extension ChattingSendBar: LayoutSupport {
   }
 }
 
-private extension ChattingSendBar {
+private extension MessageSendBar {
   var textViewConstraints: [NSLayoutConstraint] {
     [textView.topAnchor.constraint(
       equalTo: topAnchor,

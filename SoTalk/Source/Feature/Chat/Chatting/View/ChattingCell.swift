@@ -11,6 +11,9 @@ final class ChattingCell: UICollectionViewCell {
   // MARK: - Constant
   static let id: String = String(describing: ChattingCell.self)
   
+  // MARK: - Properties
+  
+  
   // MARK: - Lifecycle
   override init(frame: CGRect) {
     super.init(frame: frame)

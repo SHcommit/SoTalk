@@ -29,7 +29,7 @@ final class ChattingViewContrller: UICollectionViewController {
     collectionView.keyboardDismissMode = .interactive
     collectionView.alwaysBounceVertical = true
     navigationItem.title = "Comments"
-    
+    collectionView.backgroundColor = UIColor(hex: "#F8F8FA")
     vm = ChattingViewModel()
     adapter = ChattingViewControllerAdapter(
       collectionView: collectionView,

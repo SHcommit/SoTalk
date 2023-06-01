@@ -27,9 +27,9 @@ final class ChattingSendBar: UIView {
   override init(frame: CGRect) {
     super.init(frame: frame)
     autoresizingMask = .flexibleHeight
+    backgroundColor = .white
     textView.textDelegate = self
     setupUI()
-    setDivider()
     setNotWorkingSendButton()
   }
   
@@ -68,19 +68,6 @@ extension ChattingSendBar {
       attributes,
       range: NSRange(location: 0, length: sendTitle.count))
     sendButton.setAttributedTitle(attrStr, for: .normal)
-  }
-  
-  func setDivider() {
-    _=UIView().set {
-      $0.translatesAutoresizingMaskIntoConstraints = false
-      $0.backgroundColor = .lightGray
-      addSubview($0)
-      NSLayoutConstraint.activate([
-        $0.topAnchor.constraint(equalTo: topAnchor),
-        $0.leadingAnchor.constraint(equalTo: leadingAnchor),
-        $0.trailingAnchor.constraint(equalTo: trailingAnchor),
-        $0.heightAnchor.constraint(equalToConstant: 0.5)])
-    }
   }
 }
 

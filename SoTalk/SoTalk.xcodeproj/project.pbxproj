@@ -290,7 +290,6 @@
 		15856D162A1E9F350085FE75 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				15856D172A1E9F490085FE75 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -338,6 +337,7 @@
 			children = (
 				15BB023C2A23DCE90035B486 /* Resource */,
 				1589198A2A1E7B43006796B2 /* AppDelegate.swift */,
+				15856D172A1E9F490085FE75 /* LoginViewModel.swift */,
 				158919952A1E7B43006796B2 /* LaunchScreen.storyboard */,
 				1589198C2A1E7B43006796B2 /* SceneDelegate.swift */,
 				158919982A1E7B43006796B2 /* Info.plist */,

@@ -75,6 +75,7 @@
 		15BB02AF2A2668240035B486 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02AE2A2668240035B486 /* LoginCoordinator.swift */; };
 		15BB02B42A26720A0035B486 /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02B32A26720A0035B486 /* SignUpCoordinator.swift */; };
 		15BB02B72A26785D0035B486 /* ChatListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02B62A26785D0035B486 /* ChatListCoordinator.swift */; };
+		15BB02B92A28407B0035B486 /* BottomNaviBar+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02B82A28407B0035B486 /* BottomNaviBar+Constant.swift */; };
 		15E7C9FD2A1EB01600F1CB49 /* .swiftLint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */; };
 		5E71008154573DB656B961E4 /* Pods_SoTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE089AEF1146D1A3C6EEAEE /* Pods_SoTalk.framework */; };
 /* End PBXBuildFile section */
@@ -150,6 +151,7 @@
 		15BB02AE2A2668240035B486 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		15BB02B32A26720A0035B486 /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
 		15BB02B62A26785D0035B486 /* ChatListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListCoordinator.swift; sourceTree = "<group>"; };
+		15BB02B82A28407B0035B486 /* BottomNaviBar+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomNaviBar+Constant.swift"; sourceTree = "<group>"; };
 		15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftLint.yml; sourceTree = "<group>"; };
 		2463DFC5BC230B7F4B511AF1 /* Pods-SoTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.release.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.release.xcconfig"; sourceTree = "<group>"; };
 		CDACD0805765933D5DC0C8A6 /* Pods-SoTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.debug.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.debug.xcconfig"; sourceTree = "<group>"; };
@@ -496,6 +498,7 @@
 				15BB025F2A251BF10035B486 /* GroupChatSearch+Constant.swift */,
 				15BB02612A251C0D0035B486 /* ChatListLeftNaviItem+Constant.swift */,
 				15BB02632A251C430035B486 /* ChatListViewController+Constant.swift */,
+				15BB02B82A28407B0035B486 /* BottomNaviBar+Constant.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -783,6 +786,7 @@
 				1589198D2A1E7B43006796B2 /* SceneDelegate.swift in Sources */,
 				15BB021F2A226A230035B486 /* SignUpViewModel.swift in Sources */,
 				15BB01E72A205F5C0035B486 /* NavigationControler.swift in Sources */,
+				15BB02B92A28407B0035B486 /* BottomNaviBar+Constant.swift in Sources */,
 				15BB02822A25F37E0035B486 /* GroupViewAdapterDataSoruce.swift in Sources */,
 				15BB01CD2A1F11D70035B486 /* UISpacing.swift in Sources */,
 				15856D1B2A1EA14A0085FE75 /* LoginViewModel+Associatedtype.swift in Sources */,

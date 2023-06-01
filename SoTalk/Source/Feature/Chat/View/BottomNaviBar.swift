@@ -7,41 +7,6 @@
 
 import UIKit
 
-extension BottomNaviBar {
-  // MARK: - Constant
-  enum Constant {
-    static let width: CGFloat = UIScreen.main.bounds.width
-    
-    static let cornerRadius: CGFloat = 32.73
-    
-    static let shadowOpacity: Float = 1
-    
-    static let shadowOffset: CGSize = CGSize(width: 0, height: 10.91)
-    
-    static let shadowRadius: CGFloat = 4.0
-    
-    static let shadowColor: CGColor = UIColor(
-      red: 0.251, green: 0.157, blue: 0.404, alpha: 0.05).cgColor
-    
-    enum MainTitle {
-      static let fontSize: CGFloat = 30.0
-      static let spacing: UISpacing = .init(leading: 31, top: 32)
-    }
-    
-    enum SearchBar {
-      static let spacing: UISpacing = .init(
-        leading: 32, top: 24, trailing: 32, bottom: 24)
-      
-      static let size = {
-        let height = 42.0
-        let width = UIScreen.main.bounds.width - 25*2.0
-        return CGSize(width: width, height: height)
-      }()
-    }
-    
-  }
-}
-
 final class BottomNaviBar: UIView {
   // MARK: - Properties
   private let mainTitle = UILabel().set {
@@ -106,19 +71,42 @@ extension BottomNaviBar {
   func setShadow() {
     guard let superview = superview else { return }
     superview.layoutIfNeeded()
-    layer.cornerRadius = 32.73
+    layer.cornerRadius = 24
     layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     layer.shadowOpacity = 1
-    layer.shadowOffset = CGSize(width: 0, height: 10.91)
-    layer.shadowRadius = 7.0
-    layer.shadowColor = UIColor(
-      red: 0.251, green: 0.157, blue: 0.404, alpha: 0.05).cgColor
+    layer.shadowOffset = CGSize(width: 0, height: 2)
+    layer.shadowRadius = 12
+    layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.06).cgColor
     let shadowRect = CGRect(
       x: bounds.origin.x,
       y: bounds.origin.y,
       width: bounds.width,
-      height: bounds.height + 32.73)
+      height: bounds.height + 2)
     layer.shadowPath = UIBezierPath(rect: shadowRect).cgPath
+  }
+}
+
+// MARK: - Animation helper
+extension BottomNaviBar {
+  
+  func hideMainTitle() {
+    mainTitle.alpha = 0
+    mainTitle.center.y -= 30
+  }
+  
+  func hideSearchBar() {
+    searchBar.alpha = 0
+    searchBar.center.y -= 30
+  }
+  
+  func showMainTitle() {
+    mainTitle.alpha = 1
+    mainTitle.center.y += 30
+  }
+  
+  func showSearchBar() {
+    searchBar.alpha = 1
+    searchBar.center.y += 30
   }
 }
 

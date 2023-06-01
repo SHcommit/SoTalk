@@ -9,12 +9,22 @@ import UIKit
 
 final class GroupViewAdapter: NSObject {
   weak var dataSource: GroupViewAdapterDataSource?
+  weak var collectionView: GroupView?
   
-  init(dataSource: GroupViewAdapterDataSource? = nil) {
+  init(
+    dataSource: GroupViewAdapterDataSource? = nil,
+    collectionView: GroupView? = nil
+  ) {
+    super.init()
     self.dataSource = dataSource
+    self.collectionView = collectionView
+    collectionView?.delegate = self
+    collectionView?.dataSource = self
+    
   }
 }
 
+// MARK: - UICollectionViewDelegate
 extension GroupViewAdapter: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     dataSource?.numberOfItems ?? 0
@@ -25,15 +35,69 @@ extension GroupViewAdapter: UICollectionViewDataSource {
       let cell = collectionView.dequeueReusableCell(
         withReuseIdentifier: GroupViewCell.id,
         for: indexPath) as? GroupViewCell,
-      let _ = dataSource?.cellItem(at: indexPath.row)
+      let item = dataSource?.cellItem(at: indexPath.row)
     else {
       return .init()
     }
-    cell.configure(with: "hi")
+    cell.configure(with: item)
+    
     return cell
   }
 }
 
-extension GroupViewAdapter: UICollectionViewDelegate {
+// MARK: - UICollectionViewDelegateFlowLayout
+extension GroupViewAdapter: UICollectionViewDelegateFlowLayout {
+  func collectionView(
+    _ collectionView: UICollectionView,
+    layout collectionViewLayout: UICollectionViewLayout,
+    sizeForItemAt indexPath: IndexPath
+  ) -> CGSize {
+    return GroupView.Constant.itemSize
+  }
   
+  func collectionView(
+    _ collectionView: UICollectionView,
+    layout collectionViewLayout: UICollectionViewLayout,
+    minimumInteritemSpacingForSectionAt section: Int
+  ) -> CGFloat {
+    return 0
+  }
+  
+  func collectionView(
+    _ collectionView: UICollectionView,
+    layout collectionViewLayout: UICollectionViewLayout,
+    minimumLineSpacingForSectionAt section: Int
+  ) -> CGFloat {
+    return GroupView.Constant.interLineSpacing
+  }
+}
+
+// MARK: - UIScrollViewDelegate
+extension GroupViewAdapter {
+  func scrollViewWillEndDragging(
+    _ scrollView: UIScrollView,
+    withVelocity velocity: CGPoint,
+    targetContentOffset: UnsafeMutablePointer<CGPoint>
+  ) {
+    print(scrollView.contentSize.width)
+    print(scrollView.contentOffset.x)
+    print(collectionView?.contentSize.width)
+    let itemSize = GroupView.Constant.itemSize.width
+    let interItemSpacing = GroupView.Constant.interLineSpacing
+    let itemAndInterItemSpacingSize = itemSize + interItemSpacing
+    var offset = targetContentOffset.pointee
+    var idx = 0.0
+    if offset.x > GroupView.Constant.edgeInset {
+      idx = round(
+        (offset.x - GroupView
+          .Constant
+          .edgeInset)/itemAndInterItemSpacingSize)
+    }
+    if idx == 0 {
+      offset = CGPoint(x: idx*itemSize - GroupView.Constant.edgeInset, y: 0.0)
+    } else {
+      offset = CGPoint(x: idx*itemSize, y: 0)
+    }
+    targetContentOffset.pointee = offset
+  }
 }

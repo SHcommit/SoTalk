@@ -9,15 +9,16 @@ import UIKit
 
 class ChatListViewController: UIViewController {
   // MARK: - Properties
-  ///
-  /// 이부분 이 화면 올 때 같이 대입해줘야함 첫 로그인 때 내가 저장해보리자
-  private lazy var leftNaviView = ChatListLeftNaviItem(with: "아리아나 그란데말입니다")
-  
-  private lazy var naviBottomView = BottomNaviBar()
+  weak var coordinator: ChatListCoordinator?
   
   private let vm = ChatListViewModel()
   
   private var adapter: GroupViewAdapter!
+  
+  /// 이부분 이 화면 올 때 같이 대입해줘야함 첫 로그인 때 내가 저장해보리자
+  private lazy var leftNaviView = ChatListLeftNaviItem(with: "아리아나 그란데말입니다")
+  
+  private lazy var naviBottomView = BottomNaviBar()
   
   private let profile = UIImageView().set {
     $0.frame = CGRect(
@@ -37,8 +38,6 @@ class ChatListViewController: UIViewController {
     $0.text = "My group"
   }
   
-  weak var coordinator: ChatListCoordinator?
-  
   // MARK: - Lifecycle
   private override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -55,7 +54,50 @@ class ChatListViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     configureUI()
-    adapter = GroupViewAdapter(dataSource: vm)
+    adapter = GroupViewAdapter(dataSource: vm, collectionView: groupView)
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    view.layoutIfNeeded()
+    naviBottomView.hideMainTitle()
+    naviBottomView.hideSearchBar()
+    hideMyGroupLabel()
+    hideGruopView()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    UIView.animate(
+      withDuration: 0.4,
+      delay: 0.3,
+      options: .curveEaseOut,
+      animations: {
+        self.naviBottomView.showMainTitle()
+      }) { _ in
+        UIView.animate(
+          withDuration: 0.4,
+          delay: 0.15,
+          options: .curveEaseOut) {
+            self.naviBottomView.showSearchBar()
+          }
+      }
+    
+    UIView.animate(
+      withDuration: 0.2,
+      delay: 1,
+      options: .curveEaseIn,
+      animations: {
+        self.showMyGroupLabel()
+      }) { _ in
+        UIView.animate(
+          withDuration: 0.2,
+          delay: 0,
+          options: .curveEaseOut) {
+            self.showGroupView()
+          }
+
+      }
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -66,12 +108,15 @@ class ChatListViewController: UIViewController {
       naviBottomView.hideKeyboard()
     }
   }
+  
 }
 
 // MARK: - Private helpers
 private extension ChatListViewController {
   func configureUI() {
+
     view.backgroundColor = UIColor(hex: "#F8F8FA")
+
     setNavigationBar()
     setupUI()
     setNaviBottomViewShadow()
@@ -106,14 +151,35 @@ private extension ChatListViewController {
   }
 }
 
+// MARK: - Animation helpers
+private extension ChatListViewController {
+  func hideMyGroupLabel() {
+    myGroupLabel.alpha = 0
+    myGroupLabel.center.y -= 15
+  }
+  
+  func showMyGroupLabel() {
+    myGroupLabel.alpha = 1
+    myGroupLabel.center.y += 15
+  }
+  
+  func hideGruopView() {
+    groupView.alpha = 0
+  }
+  
+  func showGroupView() {
+    groupView.alpha = 1
+  }
+}
+
 // MARK: - LayoutSupport
 extension ChatListViewController: LayoutSupport {
   func addSubviews() {
-    _=[groupView, naviBottomView].map { view.addSubview($0) }
+    _=[groupView, myGroupLabel, naviBottomView].map { view.addSubview($0) }
   }
   
   func setConstraints() {
-    _=[groupViewConstraints, naviBottomViewConstraints].map { NSLayoutConstraint.activate($0) }
+    _=[groupViewConstraints, myGroupLabelConstraints, naviBottomViewConstraints].map { NSLayoutConstraint.activate($0) }
   }
 }
 
@@ -121,8 +187,8 @@ private extension ChatListViewController {
   var groupViewConstraints: [NSLayoutConstraint] {
     [groupView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
      groupView.topAnchor.constraint(
-      equalTo: naviBottomView.bottomAnchor,
-      constant: 50),
+      equalTo: myGroupLabel.bottomAnchor,
+      constant: Constant.GroupView.spacing.top),
      groupView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
      groupView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)]
   }
@@ -135,4 +201,14 @@ private extension ChatListViewController {
       equalTo: view.trailingAnchor),
      naviBottomView.heightAnchor.constraint(equalToConstant: naviBottomView.minimumHeight)]
   }
+  
+  var myGroupLabelConstraints: [NSLayoutConstraint] {
+    [myGroupLabel.leadingAnchor.constraint(
+      equalTo: view.leadingAnchor,
+      constant: Constant.MyGroupLabel.spacing.leading),
+     myGroupLabel.topAnchor.constraint(
+      equalTo: naviBottomView.bottomAnchor,
+      constant: Constant.MyGroupLabel.spacing.top)]
+  }
+  
 }

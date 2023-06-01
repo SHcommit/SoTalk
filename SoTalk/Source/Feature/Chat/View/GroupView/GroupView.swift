@@ -9,12 +9,13 @@ import UIKit
 
 extension GroupView {
   enum Constant {
-    static let itemSize = CGSize(width: 210, height: 300)
+    static let itemSize = CGSize(width: 250, height: 375)
+    static let edgeInset = 50.0
+    static let interLineSpacing = 50.0
   }
 }
 
 final class GroupView: UICollectionView {
-  
   // MARK: - Initialization
   private override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
     super.init(frame: frame, collectionViewLayout: layout)
@@ -27,12 +28,13 @@ final class GroupView: UICollectionView {
   convenience init() {
     let layout = UICollectionViewFlowLayout()
     layout.scrollDirection = .horizontal
-    layout.minimumInteritemSpacing = 0
-    layout.minimumLineSpacing = 0
     layout.itemSize = Constant.itemSize
     self.init(frame: .zero, collectionViewLayout: layout)
     translatesAutoresizingMaskIntoConstraints = false
-    backgroundColor = .yellow
+    backgroundColor = .none
+    decelerationRate = .fast
+    contentInset = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 50)
+    showsHorizontalScrollIndicator = false
     self.register(
       GroupViewCell.self,
       forCellWithReuseIdentifier: GroupViewCell.id)

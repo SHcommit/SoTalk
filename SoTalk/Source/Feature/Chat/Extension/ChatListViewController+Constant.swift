@@ -18,13 +18,13 @@ extension ChatListViewController {
     }
     
     enum MyGroupLabel {
-      static let spacing: UISpacing = .init(leading: 31, top: 36)
-      static let size: CGFloat = 16
+      static let spacing: UISpacing = .init(leading: 31, top: 21)
+      static let size: CGFloat = 18
       static let textColor: UIColor = .Palette.primary
     }
     
     enum GroupView {
-      static let spacing: UISpacing = .init(top: 31)
+      static let spacing: UISpacing = .init(top: 0)
     }
   }
 }

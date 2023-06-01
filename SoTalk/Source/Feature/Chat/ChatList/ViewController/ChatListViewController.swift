@@ -54,7 +54,10 @@ class ChatListViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     configureUI()
-    adapter = GroupViewAdapter(dataSource: vm, collectionView: groupView)
+    adapter = GroupViewAdapter(
+      dataSource: vm,
+      collectionView: groupView,
+      delegate: self)
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -108,7 +111,6 @@ class ChatListViewController: UIViewController {
       naviBottomView.hideKeyboard()
     }
   }
-  
 }
 
 // MARK: - Private helpers
@@ -170,6 +172,15 @@ private extension ChatListViewController {
   func showGroupView() {
     groupView.alpha = 1
   }
+}
+
+extension ChatListViewController: GroupViewAdapterDelegate {
+  func didSelectItemAt(_ indexPath: IndexPath) {
+    // 요기서 채팅 화면으로 이동
+    
+  }
+  
+  
 }
 
 // MARK: - LayoutSupport

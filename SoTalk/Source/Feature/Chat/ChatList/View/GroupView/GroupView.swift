@@ -33,7 +33,11 @@ final class GroupView: UICollectionView {
     translatesAutoresizingMaskIntoConstraints = false
     backgroundColor = .none
     decelerationRate = .fast
-    contentInset = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 50)
+    contentInset = UIEdgeInsets(
+      top: 0,
+      left: GroupView.Constant.interLineSpacing,
+      bottom: 0,
+      right: GroupView.Constant.interLineSpacing)
     showsHorizontalScrollIndicator = false
     self.register(
       GroupViewCell.self,

@@ -10,21 +10,23 @@ import UIKit
 final class GroupViewAdapter: NSObject {
   weak var dataSource: GroupViewAdapterDataSource?
   weak var collectionView: GroupView?
+  weak var delegate: GroupViewAdapterDelegate?
   
   init(
     dataSource: GroupViewAdapterDataSource? = nil,
-    collectionView: GroupView? = nil
+    collectionView: GroupView? = nil,
+    delegate: GroupViewAdapterDelegate?
   ) {
     super.init()
     self.dataSource = dataSource
     self.collectionView = collectionView
+    self.delegate = delegate
     collectionView?.delegate = self
     collectionView?.dataSource = self
-    
   }
 }
 
-// MARK: - UICollectionViewDelegate
+// MARK: - UICollectionViewDataSource
 extension GroupViewAdapter: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     dataSource?.numberOfItems ?? 0
@@ -42,6 +44,25 @@ extension GroupViewAdapter: UICollectionViewDataSource {
     cell.configure(with: item)
     
     return cell
+  }
+}
+
+// MARK: - UICollectionViewDelegate
+extension GroupViewAdapter {
+  func collectionView(
+    _ collectionView: UICollectionView,
+    didSelectItemAt indexPath: IndexPath
+  ) {
+    guard let cell = collectionView.cellForItem(at: indexPath) as? GroupViewCell else {
+      return
+    }
+    UIView.animate(withDuration: 0.1, animations: {
+      cell.transform = CGAffineTransform(scaleX: 0.96, y: 0.96)
+    }) { [weak self] _ in
+      self?.delegate?.didSelectItemAt(indexPath)
+      cell.transform = .identity
+    }
+
   }
 }
 
@@ -79,9 +100,6 @@ extension GroupViewAdapter {
     withVelocity velocity: CGPoint,
     targetContentOffset: UnsafeMutablePointer<CGPoint>
   ) {
-    print(scrollView.contentSize.width)
-    print(scrollView.contentOffset.x)
-    print(collectionView?.contentSize.width)
     let itemSize = GroupView.Constant.itemSize.width
     let interItemSpacing = GroupView.Constant.interLineSpacing
     let itemAndInterItemSpacingSize = itemSize + interItemSpacing

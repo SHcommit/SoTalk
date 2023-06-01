@@ -9,13 +9,16 @@ import UIKit
 
 class NavigationControler: UINavigationController {
   // MARK: - Propertiese
-  var line: OneUnitHeightLine?
-  
-  private var backButtonImage: UIImage {
-    guard let img = UIImage(named: "backButtonImage")?.withRenderingMode(.alwaysOriginal) else {
+  private var backBtnImage: UIImage {
+    guard let img = UIImage(named: "backBtn")?.withRenderingMode(.alwaysOriginal) else {
       return UIImage()
     }
-    return img
+    let scaledSize = CGSize(width: 24, height: 24)
+    UIGraphicsBeginImageContextWithOptions(scaledSize, false, 0.0)
+    img.draw(in: CGRect(origin: .zero, size: scaledSize))
+    let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    return resizedImage?.withTintColor(.black, renderingMode: .alwaysOriginal) ?? UIImage()
   }
   
   // MARK: - Initialization
@@ -34,31 +37,13 @@ class NavigationControler: UINavigationController {
   func setLeftBackButton(
     _ item: UINavigationItem,
     target: Any,
-    action: Selector? = #selector(popViewControllerWithAnimated)
+    action: Selector
   ) {
     let backButton = UIBarButtonItem(
-      image: backButtonImage,
+      image: backBtnImage,
       style: .done,
       target: target,
       action: action)
     item.leftBarButtonItem = backButton
-  }
-  
-  func setGrayLineBottom(with color: UIColor) {
-    line = OneUnitHeightLine(color: color)
-    line?.setConstraint(
-      fromSuperView: self.navigationBar,
-      spacing: .init(leading: 24, trailing: 24))
-  }
-  
-  func deallocateGrayLineBottom() {
-    line?.removeFromSuperview()
-  }
-}
-
-// MARK: - Action
-extension NavigationControler {
-  @objc func popViewControllerWithAnimated() {
-    popViewController(animated: true)
   }
 }

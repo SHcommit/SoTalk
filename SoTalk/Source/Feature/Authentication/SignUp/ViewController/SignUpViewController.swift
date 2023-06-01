@@ -39,15 +39,6 @@ final class SignUpViewController: UIViewController {
     setAdapter()
     view.backgroundColor = .Palette.bgColor
   }
-  
-  override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(animated)
-    guard
-      let navigationController = navigationController as? NavigationControler else {
-      return
-    }
-    navigationController.deallocateGrayLineBottom()
-  }
 }
 
 // MARK: - Private helper

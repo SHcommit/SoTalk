@@ -14,6 +14,7 @@ final class SignUpViewController: UIViewController {
   private let vm = SignUpViewModel()
   private var adapter: SignUpViewAdapter!
   private var signUpViewCellPrevIndexPath: IndexPath?
+  weak var coordinator: SignUpCoordinator?
   
   // MARK: - Lifecycle
   private override init(

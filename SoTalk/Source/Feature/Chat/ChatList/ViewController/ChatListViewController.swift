@@ -9,6 +9,8 @@ import UIKit
 
 class ChatListViewController: UIViewController {
   // MARK: - Properties
+  
+  private var isViewDidLoad = false
   weak var coordinator: ChatListCoordinator?
   
   private let vm = ChatListViewModel()
@@ -62,45 +64,51 @@ class ChatListViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    view.layoutIfNeeded()
-    naviBottomView.hideMainTitle()
-    naviBottomView.hideSearchBar()
-    hideMyGroupLabel()
-    hideGruopView()
+
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    UIView.animate(
-      withDuration: 0.4,
-      delay: 0.3,
-      options: .curveEaseOut,
-      animations: {
-        self.naviBottomView.showMainTitle()
-      }) { _ in
-        UIView.animate(
-          withDuration: 0.4,
-          delay: 0.15,
-          options: .curveEaseOut) {
-            self.naviBottomView.showSearchBar()
-          }
-      }
-    
-    UIView.animate(
-      withDuration: 0.2,
-      delay: 1,
-      options: .curveEaseIn,
-      animations: {
-        self.showMyGroupLabel()
-      }) { _ in
-        UIView.animate(
-          withDuration: 0.2,
-          delay: 0,
-          options: .curveEaseOut) {
-            self.showGroupView()
-          }
-
-      }
+    if !isViewDidLoad {
+      view.layoutIfNeeded()
+      naviBottomView.layoutIfNeeded()
+      naviBottomView.hideMainTitle()
+      naviBottomView.hideSearchBar()
+      hideMyGroupLabel()
+      hideGruopView()
+    }
+    if !isViewDidLoad {
+      UIView.animate(
+        withDuration: 0.4,
+        delay: 0.3,
+        options: .curveEaseOut,
+        animations: {
+          self.naviBottomView.showMainTitle()
+        }) { _ in
+          UIView.animate(
+            withDuration: 0.4,
+            delay: 0.15,
+            options: .curveEaseOut) {
+              self.naviBottomView.showSearchBar()
+            }
+        }
+      
+      UIView.animate(
+        withDuration: 0.2,
+        delay: 1,
+        options: .curveEaseIn,
+        animations: {
+          self.showMyGroupLabel()
+        }) { _ in
+          UIView.animate(
+            withDuration: 0.2,
+            delay: 0,
+            options: .curveEaseOut) {
+              self.showGroupView()
+            }
+        }
+      isViewDidLoad = true
+    }
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -156,8 +164,8 @@ private extension ChatListViewController {
 // MARK: - Animation helpers
 private extension ChatListViewController {
   func hideMyGroupLabel() {
-    myGroupLabel.alpha = 0
     myGroupLabel.center.y -= 15
+    myGroupLabel.alpha = 0
   }
   
   func showMyGroupLabel() {
@@ -174,13 +182,11 @@ private extension ChatListViewController {
   }
 }
 
+// MARK: - GroupViewAdapterDelegate
 extension ChatListViewController: GroupViewAdapterDelegate {
   func didSelectItemAt(_ indexPath: IndexPath) {
-    // 요기서 채팅 화면으로 이동
-    
+    coordinator?.gotoChattingPage()
   }
-  
-  
 }
 
 // MARK: - LayoutSupport
@@ -221,5 +227,4 @@ private extension ChatListViewController {
       equalTo: naviBottomView.bottomAnchor,
       constant: Constant.MyGroupLabel.spacing.top)]
   }
-  
 }

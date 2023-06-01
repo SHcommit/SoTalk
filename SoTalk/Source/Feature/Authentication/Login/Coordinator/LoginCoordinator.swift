@@ -11,7 +11,7 @@ final class LoginCoordinator: NSObject, FlowCoordinator {
   // MARK: - Properties
   var parent: FlowCoordinator!
   var child: [FlowCoordinator] = []
-  var presenter: UINavigationController
+  var presenter: NavigationControler
   var viewController: UIViewController!
   
   // MARK: - Initialization

@@ -23,13 +23,17 @@ class NavigationControler: UINavigationController {
     super.init(rootViewController: rootViewController)
   }
   
+  convenience init() {
+    self.init(rootViewController: UIViewController())
+  }
+  
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
   
   func setLeftBackButton(
     _ item: UINavigationItem,
-    target: Any? = NavigationControler.self,
+    target: Any,
     action: Selector? = #selector(popViewControllerWithAnimated)
   ) {
     let backButton = UIBarButtonItem(

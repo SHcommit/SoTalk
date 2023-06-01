@@ -1,13 +1,13 @@
 //
-//  SignUpCoordinator.swift
+//  ChattingCoordinator.swift
 //  SoTalk
 //
-//  Created by 양승현 on 2023/05/31.
+//  Created by 양승현 on 2023/06/01.
 //
 
 import UIKit
 
-class SignUpCoordinator: NSObject, FlowCoordinator {
+class ChattingCoordinator: NSObject, FlowCoordinator {
   // MARK: - Properties
   var parent: FlowCoordinator!
   var child: [FlowCoordinator] = []
@@ -18,7 +18,7 @@ class SignUpCoordinator: NSObject, FlowCoordinator {
   init(presenter: NavigationControler) {
     self.presenter = presenter
     super.init()
-    let vc = SignUpViewController()
+    let vc = ChattingViewContrller()
     viewController = vc
     vc.coordinator = self
   }
@@ -33,8 +33,8 @@ class SignUpCoordinator: NSObject, FlowCoordinator {
   }
 }
 
-extension SignUpCoordinator {
-  func gotoLoginPage() {
+extension ChattingCoordinator {
+  func gotoChattingPage() {
     presenter.popViewController(animated: true)
     finish()
   }

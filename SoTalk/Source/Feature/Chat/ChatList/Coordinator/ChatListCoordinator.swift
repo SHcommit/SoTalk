@@ -11,13 +11,12 @@ final class ChatListCoordinator: NSObject, FlowCoordinator {
   // MARK: - Properties
   var parent: FlowCoordinator!
   var child: [FlowCoordinator] = []
-  var presenter: UINavigationController
+  var presenter: NavigationControler
   var viewController: UIViewController!
   
   override init() {
     let chatListViewController = ChatListViewController()
-    // presenter = NavigationControler(rootViewController: chatListViewController)
-    presenter = UINavigationController(rootViewController: chatListViewController)
+    presenter = NavigationControler(rootViewController: chatListViewController)
     viewController = chatListViewController
     super.init()
     chatListViewController.coordinator = self
@@ -37,5 +36,10 @@ extension ChatListCoordinator {
   func gotoLoginPage() {
     guard let parent = parent as? ApplicationFlowCoordinator else { return }
     parent.gotoLoginPage(withDelete: self)
+  }
+  
+  func gotoChattingPage() {
+    let child = ChattingCoordinator(presenter: presenter)
+    addChild(with: child)
   }
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 
+// 이제 스크롤이아닌 터치했을 때 resignResponder해야함TODO: - resignResponder
 final class MessageViewContrller: UICollectionViewController {
   // MARK: - Properties
   weak var coordinator: MessageCoordinator?

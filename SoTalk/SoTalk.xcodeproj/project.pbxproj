@@ -262,12 +262,11 @@
 			isa = PBXGroup;
 			children = (
 				15BB02AD2A26681B0035B486 /* Coordinator */,
+				15856D192A1E9F7C0085FE75 /* Extension */,
 				15BB01D52A1F29F90035B486 /* Protocol */,
 				15BB01C32A1F010D0035B486 /* View */,
-				15BB01C02A1F00F10035B486 /* Constant */,
-				15856D192A1E9F7C0085FE75 /* Extension */,
-				15856D162A1E9F350085FE75 /* ViewModel */,
 				15856D152A1E9F2D0085FE75 /* ViewController */,
+				15856D162A1E9F350085FE75 /* ViewModel */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -305,6 +304,7 @@
 		15856D192A1E9F7C0085FE75 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				15BB01C02A1F00F10035B486 /* Constant */,
 				15856D1A2A1EA14A0085FE75 /* LoginViewModel+Associatedtype.swift */,
 			);
 			path = Extension;
@@ -626,15 +626,15 @@
 		15BB02BC2A284E2B0035B486 /* ChatList */ = {
 			isa = PBXGroup;
 			children = (
-				15BB02502A2496980035B486 /* ViewController */,
-				15BB02512A2496A10035B486 /* View */,
-				15BB025E2A251BE00035B486 /* Extension */,
 				15BB027D2A25F3600035B486 /* Adapter */,
-				15BB02802A25F36E0035B486 /* Protocol */,
-				15BB02872A262C730035B486 /* ViewModel */,
-				15BB028A2A262D1D0035B486 /* Model */,
-				15BB028D2A2630F70035B486 /* Mock */,
 				15BB02B52A2678510035B486 /* Coordinator */,
+				15BB025E2A251BE00035B486 /* Extension */,
+				15BB028D2A2630F70035B486 /* Mock */,
+				15BB028A2A262D1D0035B486 /* Model */,
+				15BB02802A25F36E0035B486 /* Protocol */,
+				15BB02512A2496A10035B486 /* View */,
+				15BB02502A2496980035B486 /* ViewController */,
+				15BB02872A262C730035B486 /* ViewModel */,
 			);
 			path = ChatList;
 			sourceTree = "<group>";
@@ -642,14 +642,14 @@
 		15BB02BD2A284E5D0035B486 /* Chatting */ = {
 			isa = PBXGroup;
 			children = (
-				15BB02F52A29074D0035B486 /* Extension */,
-				15BB02D92A2897AE0035B486 /* ViewModel */,
-				15BB02D12A2895510035B486 /* Model */,
 				15BB02CE2A2894FF0035B486 /* Adapter */,
+				15BB02C12A284FDF0035B486 /* Coordinator */,
+				15BB02F52A29074D0035B486 /* Extension */,
+				15BB02D12A2895510035B486 /* Model */,
 				15BB02C92A28870B0035B486 /* Protocol */,
 				15BB02C42A287B0A0035B486 /* View */,
-				15BB02C12A284FDF0035B486 /* Coordinator */,
 				15BB02BE2A284E7A0035B486 /* ViewController */,
+				15BB02D92A2897AE0035B486 /* ViewModel */,
 			);
 			path = Chatting;
 			sourceTree = "<group>";

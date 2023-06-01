@@ -11,7 +11,7 @@ extension MessageCell {
   static let id: String = String(describing: MessageCell.self)
   
   enum Constant {
-    
+
     // 여기서 나인지 상대인지에 따라 spacing이 달라야함.
     // 카카오톡 대화창 대충 자로 재봤는데 상대 1 : 5 : 1.5 비율
     // 나는 2.5 : 5
@@ -73,4 +73,19 @@ extension MessageCell {
   func configure(with data: CommentModel) {
     
   }
+}
+
+// MARK: - LayoutSupport
+extension MessageCell: LayoutSupport {
+  func addSubviews() {
+    _=[profile, messageContentView].map {
+      addSubview($0)
+    }
+  }
+  
+  func setConstraints() {
+    <#code#>
+  }
+  
+  
 }

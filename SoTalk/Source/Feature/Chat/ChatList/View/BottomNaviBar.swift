@@ -72,7 +72,8 @@ extension BottomNaviBar {
     guard let superview = superview else { return }
     superview.layoutIfNeeded()
     layer.cornerRadius = 24
-    layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+    layer.maskedCorners = [
+      .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     layer.shadowOpacity = 1
     layer.shadowOffset = CGSize(width: 0, height: 2)
     layer.shadowRadius = 12

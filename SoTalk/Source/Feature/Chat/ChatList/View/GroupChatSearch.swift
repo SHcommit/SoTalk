@@ -116,6 +116,7 @@ private extension GroupChatSearch {
   }
 }
 
+// MARK: - UITextFIeldDelegate
 extension GroupChatSearch: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     textField.resignFirstResponder()

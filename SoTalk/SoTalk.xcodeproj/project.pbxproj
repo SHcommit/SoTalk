@@ -83,7 +83,7 @@
 		15BB02C82A28855D0035B486 /* MessageSendBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02C72A28855D0035B486 /* MessageSendBar.swift */; };
 		15BB02CB2A2887140035B486 /* MessageTextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02CA2A2887140035B486 /* MessageTextViewDelegate.swift */; };
 		15BB02CD2A288DBB0035B486 /* CommentSendInputAccessoryViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02CC2A288DBB0035B486 /* CommentSendInputAccessoryViewDelegate.swift */; };
-		15BB02D02A2895090035B486 /* MessageViewControllerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02CF2A2895090035B486 /* MessageViewControllerAdapter.swift */; };
+		15BB02D02A2895090035B486 /* MessageViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02CF2A2895090035B486 /* MessageViewAdapter.swift */; };
 		15BB02D32A2895700035B486 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02D22A2895700035B486 /* CommentModel.swift */; };
 		15BB02D62A2895EF0035B486 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02D52A2895EF0035B486 /* UserModel.swift */; };
 		15BB02D82A2897020035B486 /* MessageViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02D72A2897020035B486 /* MessageViewControllerDataSource.swift */; };
@@ -176,7 +176,7 @@
 		15BB02C72A28855D0035B486 /* MessageSendBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSendBar.swift; sourceTree = "<group>"; };
 		15BB02CA2A2887140035B486 /* MessageTextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTextViewDelegate.swift; sourceTree = "<group>"; };
 		15BB02CC2A288DBB0035B486 /* CommentSendInputAccessoryViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentSendInputAccessoryViewDelegate.swift; sourceTree = "<group>"; };
-		15BB02CF2A2895090035B486 /* MessageViewControllerAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewControllerAdapter.swift; sourceTree = "<group>"; };
+		15BB02CF2A2895090035B486 /* MessageViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewAdapter.swift; sourceTree = "<group>"; };
 		15BB02D22A2895700035B486 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		15BB02D52A2895EF0035B486 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		15BB02D72A2897020035B486 /* MessageViewControllerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewControllerDataSource.swift; sourceTree = "<group>"; };
@@ -694,7 +694,7 @@
 		15BB02CE2A2894FF0035B486 /* Adapter */ = {
 			isa = PBXGroup;
 			children = (
-				15BB02CF2A2895090035B486 /* MessageViewControllerAdapter.swift */,
+				15BB02CF2A2895090035B486 /* MessageViewAdapter.swift */,
 			);
 			path = Adapter;
 			sourceTree = "<group>";
@@ -927,7 +927,7 @@
 				15BB01E72A205F5C0035B486 /* NavigationControler.swift in Sources */,
 				15BB02B92A28407B0035B486 /* BottomNaviBar+Constant.swift in Sources */,
 				15BB02822A25F37E0035B486 /* GroupViewAdapterDataSoruce.swift in Sources */,
-				15BB02D02A2895090035B486 /* MessageViewControllerAdapter.swift in Sources */,
+				15BB02D02A2895090035B486 /* MessageViewAdapter.swift in Sources */,
 				15BB02D82A2897020035B486 /* MessageViewControllerDataSource.swift in Sources */,
 				15BB01CD2A1F11D70035B486 /* UISpacing.swift in Sources */,
 				15856D1B2A1EA14A0085FE75 /* LoginViewModel+Associatedtype.swift in Sources */,

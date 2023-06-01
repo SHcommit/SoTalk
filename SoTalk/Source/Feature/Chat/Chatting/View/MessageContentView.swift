@@ -13,6 +13,7 @@ final class MessageContentView: UIView {
     $0.translatesAutoresizingMaskIntoConstraints = false
     $0.font = .boldSystemFont(ofSize: Constant.NameLabel.fontSize)
     $0.text = "익명"
+    $0.textColor = .black
     $0.numberOfLines = 1
   }
   
@@ -20,7 +21,9 @@ final class MessageContentView: UIView {
     $0.translatesAutoresizingMaskIntoConstraints = false
     $0.font = .systemFont(ofSize: Constant.NameLabel.fontSize)
     $0.text = "빈 텍스트"
+    $0.textColor = .black
     $0.numberOfLines = 0
+    $0.textAlignment = .natural
   }
   
   private var messageLabelTopConstraint: NSLayoutConstraint?
@@ -28,6 +31,16 @@ final class MessageContentView: UIView {
   // MARK: - Lifecycle
   private override init(frame: CGRect) {
     super.init(frame: frame)
+    setupUI()
+    translatesAutoresizingMaskIntoConstraints = false
+    layer.cornerRadius = 7
+    let randColor: UIColor = .ChatPalette.randColor
+    backgroundColor = randColor
+    layer.shadowOffset = CGSize(width: 0, height: 1)
+    layer.shadowColor = randColor.cgColor
+    layer.shadowOpacity = 1
+    layer.shadowRadius = 9
+    
   }
   
   required init?(coder: NSCoder) {
@@ -53,11 +66,12 @@ extension MessageContentView {
   func setMessageLabelTopAnchor(with state: MessageSenderState) {
     switch state {
     case .me:
-      messageLabelTopConstraint?.isActive = false
+      guard var messageLabelTopConstraint = messageLabelTopConstraint else { return }
+      messageLabelTopConstraint.isActive = false
       messageLabelTopConstraint = messageLabel.topAnchor.constraint(
         equalTo: topAnchor,
         constant: Constant.MessageLabel.spacing.top)
-      messageLabelTopConstraint?.isActive = true
+      messageLabelTopConstraint.isActive = true
       nameLabel.isHidden = true
     case .other:
       break
@@ -66,10 +80,13 @@ extension MessageContentView {
   
   func setNameLabel(with userName: String) {
     nameLabel.text = userName
+    nameLabel.sizeToFit()
+    nameLabel.heightAnchor.constraint(equalToConstant: nameLabel.bounds.height).isActive = true
   }
   
   func setMessageLabel(with message: String) {
     messageLabel.text = message
+    messageLabel.sizeToFit()
   }
 }
 
@@ -93,7 +110,8 @@ private extension MessageContentView {
       constant: Constant.NameLabel.spacing.leading),
      nameLabel.topAnchor.constraint(
       equalTo: topAnchor,
-      constant: Constant.NameLabel.spacing.top)]
+      constant: Constant.NameLabel.spacing.top),
+     nameLabel.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor)]
   }
   
   var messageLabelConstraints: [NSLayoutConstraint] {

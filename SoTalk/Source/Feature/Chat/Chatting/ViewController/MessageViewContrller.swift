@@ -11,7 +11,7 @@ final class MessageViewContrller: UICollectionViewController {
   // MARK: - Properties
   weak var coordinator: MessageCoordinator?
   
-  var adapter: MessageViewControllerAdapter!
+  var adapter: MessageViewAdapter!
   
   var vm: MessageViewModel!
   
@@ -31,7 +31,7 @@ final class MessageViewContrller: UICollectionViewController {
     navigationItem.title = "Comments"
     collectionView.backgroundColor = UIColor(hex: "#F8F8FA")
     vm = MessageViewModel()
-    adapter = MessageViewControllerAdapter(
+    adapter = MessageViewAdapter(
       collectionView: collectionView,
     dataSource: vm)
     setNavigationBar()

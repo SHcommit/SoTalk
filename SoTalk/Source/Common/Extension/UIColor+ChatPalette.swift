@@ -24,5 +24,9 @@ extension UIColor {
     static let colors: [UIColor] = (0..<count).map {
       UIColor(hex: colorHexList[$0])
     }
+    
+    static var randColor: UIColor {
+      colors[randInt]
+    }
   }
 }

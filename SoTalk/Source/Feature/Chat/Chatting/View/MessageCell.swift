@@ -77,7 +77,7 @@ extension MessageCell {
     // 로그인 사용자의 프로필 url과 유효한지 ( 사용자인가? 다른사람의 채팅인가 )
     // 여기서 url로 사용자 일치 여불르 비교하면안되겠다. 이미지 안올릴경우.....
     // 일단 임시로 userName으로 해보자
-    if data.username == "짱구를 잘말려" {
+    if data.username == "홍길동" {
       messageSenderState = .me
       profile.isHidden = true
     }

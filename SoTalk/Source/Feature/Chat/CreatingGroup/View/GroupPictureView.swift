@@ -35,8 +35,8 @@ final class GroupPictureView: UIImageView {
     backgroundColor = .lightGray
     contentMode = .scaleAspectFill
     layer.cornerRadius = Constant.cornerRadius
-    clipsToBounds = true
     image = previewPictureManager.getImage()
+    clipsToBounds = true
     setupUI()
     setCameraImageViewLayoutIntoContainerView()
   }
@@ -48,7 +48,7 @@ final class GroupPictureView: UIImageView {
 extension GroupPictureView {
   @MainActor
   func setImageView(with image: UIImage) {
-    cameraImageView.image = image
+    self.image = image
   }
   
   func setTapRecognizer(target: Any?, action: Selector) {
@@ -56,25 +56,10 @@ extension GroupPictureView {
     let tap = UITapGestureRecognizer(target: target, action: action)
     addGestureRecognizer(tap)
   }
-  
-  func setShadow() {
-    layer.shadowOffset = CGSize(width: 1, height: 1)
-    layer.shadowColor = UIColor.lightGray.cgColor
-    layer.cornerRadius = 7.0
-    layer.shadowOpacity = 1
-    let origin = CGPoint(
-      x: bounds.origin.x,
-      y: bounds.origin.y)
-    let size = CGSize(
-      width: bounds.width + 2,
-      height: bounds.height + 2)
-    layer.shadowPath = UIBezierPath(roundedRect: CGRect(origin: origin, size: size), cornerRadius: 7).cgPath
-  }
 }
 
 // MARK: - Private helper
 extension GroupPictureView {
-
   func setCameraImageViewLayoutIntoContainerView() {
     cameraImageViewContainerView.addSubview(cameraImageView)
     NSLayoutConstraint.activate([

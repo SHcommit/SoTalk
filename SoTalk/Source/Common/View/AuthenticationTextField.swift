@@ -8,6 +8,12 @@
 import UIKit
 import Combine
 
+protocol AuthenticationTextFieldDelegate: AnyObject {
+  func textFieldDidBeginEditing(_ textField: UITextField)
+  func textFieldDidEndEditing(_ textField: UITextField)
+  func textFieldShouldReturn(_ textField: UITextField)
+}
+
 final class AuthenticationTextField: UIView {
   // MARK: - Constant
   typealias ColorState = AuthenticationTextFieldColorState
@@ -20,6 +26,8 @@ final class AuthenticationTextField: UIView {
     $0.font = UIFont.systemFont(ofSize: Constant.textSize)
     $0.sizeToFit()
   }
+  
+  private var textfieldMaximumTextLength: Int = 0
   
   var text: String {
     get {
@@ -41,6 +49,8 @@ final class AuthenticationTextField: UIView {
   var accessoryView: UIView?
   
   var heightConstraint: NSLayoutConstraint!
+  
+  weak var delegate: AuthenticationTextFieldDelegate?
     
   // MARK: - Properties
   private override init(frame: CGRect) {
@@ -55,8 +65,9 @@ final class AuthenticationTextField: UIView {
     bind()
   }
   
-  convenience init(with placeholder: String) {
+  convenience init(with placeholder: String, _ textfieldMaximumTextLength: Int = 40) {
     self.init(frame: .zero)
+    self.textfieldMaximumTextLength = textfieldMaximumTextLength
     textField.placeholder = placeholder
   }
   
@@ -178,18 +189,33 @@ extension AuthenticationTextField: UITextFieldDelegate {
       return
     }
     validState = .editing
+    delegate?.textFieldDidEndEditing(textField)
   }
   
   func textFieldDidEndEditing(_ textField: UITextField) {
     setBorderColor(.notEditing)
     textField.resignFirstResponder()
+    delegate?.textFieldDidEndEditing(textField)
   }
   
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     setBorderColor(.notEditing)
     textField.resignFirstResponder()
+    delegate?.textFieldShouldReturn(textField)
     return true
   }
+  
+  func textField(
+    _ textField: UITextField,
+    shouldChangeCharactersIn range: NSRange,
+    replacementString string: String
+  ) -> Bool {
+    let currentText = textField.text ?? ""
+    let newText = (currentText as NSString).replacingCharacters(in: range, with: string)
+    
+    return newText.count <= textfieldMaximumTextLength
+  }
+
 }
 
 // MARK: - LayoutSupport

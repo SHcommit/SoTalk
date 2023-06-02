@@ -42,4 +42,9 @@ extension ChatListCoordinator {
     let child = MessageCoordinator(presenter: presenter)
     addChild(with: child)
   }
+  
+  func gotoCreatingGrupPage() {
+    let child = CreatingGroupCoordinator(presenter: presenter)
+    addChild(with: child)
+  }
 }

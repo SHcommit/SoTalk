@@ -174,10 +174,11 @@ private extension ChatListViewController {
     addGroupButton
       .tap
       .receive(on: DispatchQueue.main)
-      .sink { _ in
+      .sink {[unowned self] _ in
         UIView.touchAnimate(self.addGroupButton) {
           // 버튼 터치했으니 그룹 만드는 화면 ㄱㄱ
           print("group add touch")
+          self.coordinator?.gotoCreatingGrupPage()
         }
       }.store(in: &subscription)
   }

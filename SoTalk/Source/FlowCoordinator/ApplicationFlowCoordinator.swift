@@ -28,7 +28,7 @@ final class ApplicationFlowCoordinator: FlowCoordinator {
   func start() {
     parent = nil
     guard isSignIn else {
-      //gotoLoginPage()
+      // gotoLoginPage()
       gotoChatListpage()
       return
     }
@@ -64,38 +64,3 @@ extension ApplicationFlowCoordinator {
     prevCoordinator?.finish()
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

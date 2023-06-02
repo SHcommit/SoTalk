@@ -93,6 +93,8 @@
 		15BB02F42A29067D0035B486 /* MessageContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02F32A29067D0035B486 /* MessageContentModel.swift */; };
 		15BB02F82A29076E0035B486 /* MessageContentView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02F72A29076E0035B486 /* MessageContentView+Constant.swift */; };
 		15BB02FA2A2907870035B486 /* MessageSenderState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02F92A2907870035B486 /* MessageSenderState.swift */; };
+		15BD2D9B2A29CADA00095214 /* CreatingGroupBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BD2D9A2A29CADA00095214 /* CreatingGroupBottomSheetViewController.swift */; };
+		15BD2DA22A29CD6F00095214 /* CreatingGroupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BD2DA12A29CD6F00095214 /* CreatingGroupCoordinator.swift */; };
 		15E7C9FD2A1EB01600F1CB49 /* .swiftLint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */; };
 		5E71008154573DB656B961E4 /* Pods_SoTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE089AEF1146D1A3C6EEAEE /* Pods_SoTalk.framework */; };
 /* End PBXBuildFile section */
@@ -186,6 +188,8 @@
 		15BB02F32A29067D0035B486 /* MessageContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageContentModel.swift; sourceTree = "<group>"; };
 		15BB02F72A29076E0035B486 /* MessageContentView+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageContentView+Constant.swift"; sourceTree = "<group>"; };
 		15BB02F92A2907870035B486 /* MessageSenderState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSenderState.swift; sourceTree = "<group>"; };
+		15BD2D9A2A29CADA00095214 /* CreatingGroupBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingGroupBottomSheetViewController.swift; sourceTree = "<group>"; };
+		15BD2DA12A29CD6F00095214 /* CreatingGroupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingGroupCoordinator.swift; sourceTree = "<group>"; };
 		15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftLint.yml; sourceTree = "<group>"; };
 		2463DFC5BC230B7F4B511AF1 /* Pods-SoTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.release.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.release.xcconfig"; sourceTree = "<group>"; };
 		CDACD0805765933D5DC0C8A6 /* Pods-SoTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.debug.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.debug.xcconfig"; sourceTree = "<group>"; };
@@ -495,6 +499,7 @@
 		15BB024C2A2482220035B486 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				15BD2D9E2A29CD4100095214 /* CreatingGroup */,
 				15BB02BD2A284E5D0035B486 /* Chatting */,
 				15BB02BC2A284E2B0035B486 /* ChatList */,
 			);
@@ -725,6 +730,31 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		15BD2D9E2A29CD4100095214 /* CreatingGroup */ = {
+			isa = PBXGroup;
+			children = (
+				15BD2DA02A29CD5F00095214 /* Coordinator */,
+				15BD2D9F2A29CD5100095214 /* ViewController */,
+			);
+			path = CreatingGroup;
+			sourceTree = "<group>";
+		};
+		15BD2D9F2A29CD5100095214 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				15BD2D9A2A29CADA00095214 /* CreatingGroupBottomSheetViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		15BD2DA02A29CD5F00095214 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				15BD2DA12A29CD6F00095214 /* CreatingGroupCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		38F98D16A7B7CEAC5182972F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -891,6 +921,7 @@
 				15BB02B72A26785D0035B486 /* ChatListCoordinator.swift in Sources */,
 				15BB02F82A29076E0035B486 /* MessageContentView+Constant.swift in Sources */,
 				15BB02C82A28855D0035B486 /* MessageSendBar.swift in Sources */,
+				15BD2DA22A29CD6F00095214 /* CreatingGroupCoordinator.swift in Sources */,
 				15BB01E92A209ABF0035B486 /* UIColor+iconColorChange.swift in Sources */,
 				15BB01EB2A20CA240035B486 /* AuthenticationTextFieldColorState.swift in Sources */,
 				15BB01DB2A1F31470035B486 /* UIColor+Hex.swift in Sources */,
@@ -932,6 +963,7 @@
 				15BB01CD2A1F11D70035B486 /* UISpacing.swift in Sources */,
 				15856D1B2A1EA14A0085FE75 /* LoginViewModel+Associatedtype.swift in Sources */,
 				15BB02AC2A2659900035B486 /* ApplicationFlowCoordinator.swift in Sources */,
+				15BD2D9B2A29CADA00095214 /* CreatingGroupBottomSheetViewController.swift in Sources */,
 				15BB02C32A2850050035B486 /* MessageCoordinator.swift in Sources */,
 				15BB02CB2A2887140035B486 /* MessageTextViewDelegate.swift in Sources */,
 				15856D0F2A1E9D150085FE75 /* ViewModelProtocols.swift in Sources */,

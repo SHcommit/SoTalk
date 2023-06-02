@@ -10,7 +10,8 @@ import UIKit
 final class MessageViewModel {
   // MARK: - Properties
   let data = [
-    CommentModel(uid: "1", comment: "앱개발자 될끄야!!!! 앱으로 대박나야지\n This is me!!!!!! 난 럭키가이", username: "곧 졸업", profileImageUrl: "4"),
+    CommentModel(
+      uid: "1", comment: "앱개발자 될끄야!!!! 앱으로 대박나야지\n This is me!!!!!! 난 럭키가이", username: "곧 졸업", profileImageUrl: "4"),
     CommentModel(uid: "5", comment: """
 맥주 줄여야겠다. 마지막으로 한캔?...
 그 전에 맥주 세계 선호도 5위까지 브랜드를 지삐티한테 물어봤어

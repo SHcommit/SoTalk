@@ -8,6 +8,7 @@
 import Foundation
 
 struct CommentModel {
+  // 사용자 id
   let uid: String
   let comment: String
   let username: String

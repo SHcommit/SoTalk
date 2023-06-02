@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import Combine
 
 class ChatListViewController: UIViewController {
   // MARK: - Properties
   
   private var isViewDidLoad = false
+  
   weak var coordinator: ChatListCoordinator?
   
   private let vm = ChatListViewModel()
@@ -40,6 +42,26 @@ class ChatListViewController: UIViewController {
     $0.text = "My group"
   }
   
+  private let addGroupButton: UIButton = UIButton().set {
+    $0.translatesAutoresizingMaskIntoConstraints = false
+    let text = "그룹 추가"
+    let attrString = NSMutableAttributedString(string: text)
+    let attributes: [NSAttributedString.Key: Any] = [
+      .foregroundColor: UIColor.white,
+      .font: UIFont.systemFont(ofSize: 14)]
+    attrString.addAttributes(
+      attributes,
+      range: NSRange(
+        location: 0, length: text.count))
+    $0.setAttributedTitle(
+      attrString,
+      for: .normal)
+    $0.layer.cornerRadius = 21
+    $0.backgroundColor = .Palette.primary
+  }
+  
+  private var subscription = Set<AnyCancellable>()
+  
   // MARK: - Lifecycle
   private override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -60,6 +82,7 @@ class ChatListViewController: UIViewController {
       dataSource: vm,
       collectionView: groupView,
       delegate: self)
+    eventBind()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -76,6 +99,7 @@ class ChatListViewController: UIViewController {
       naviBottomView.hideSearchBar()
       hideMyGroupLabel()
       hideGruopView()
+      addGroupButton.isHidden = true
     }
     if !isViewDidLoad {
       UIView.animate(
@@ -103,9 +127,17 @@ class ChatListViewController: UIViewController {
           UIView.animate(
             withDuration: 0.2,
             delay: 0,
-            options: .curveEaseOut) {
-              self.showGroupView()
-            }
+            options: .curveEaseOut,
+            animations: {
+              self.showGroupView()}) {_ in
+                UIView.animate(
+                  withDuration: 0.2,
+                  delay: 1.0,
+                  options: .curveEaseOut) {
+                    self.addGroupButton.isHidden = false
+                  }
+              }
+          
         }
       isViewDidLoad = true
     }
@@ -119,17 +151,35 @@ class ChatListViewController: UIViewController {
       naviBottomView.hideKeyboard()
     }
   }
+  
+  override func viewDidLayoutSubviews() {
+  }
 }
 
 // MARK: - Private helpers
 private extension ChatListViewController {
   func configureUI() {
-
     view.backgroundColor = UIColor(hex: "#F8F8FA")
-
     setNavigationBar()
     setupUI()
     setNaviBottomViewShadow()
+    setAddGroupButtonShadow()
+  }
+  
+  func eventBind() {
+    addGroupButtonBind()
+  }
+  
+  func addGroupButtonBind() {
+    addGroupButton
+      .tap
+      .receive(on: DispatchQueue.main)
+      .sink { _ in
+        UIView.touchAnimate(self.addGroupButton) {
+          // 버튼 터치했으니 그룹 만드는 화면 ㄱㄱ
+          print("group add touch")
+        }
+      }.store(in: &subscription)
   }
   
   func setNavigationBar() {
@@ -158,6 +208,23 @@ private extension ChatListViewController {
   
   func setNaviBottomViewShadow() {
     naviBottomView.setShadow()
+  }
+
+  func setAddGroupButtonShadow() {
+    addGroupButton.layer.shadowOffset = CGSize(width: 0, height: 0)
+    addGroupButton.layer.shadowColor = UIColor.Palette.primary.cgColor
+    addGroupButton.layer.shadowRadius = 6.0
+    addGroupButton.layer.shadowOpacity = 0.3
+    let width = addGroupButton.bounds.width
+    let height = addGroupButton.bounds.height
+    let rect = CGSize(width: width, height: height)
+    let origin = CGPoint(
+      x: addGroupButton.bounds.origin.x,
+      y: addGroupButton.bounds.origin.y)
+    
+    addGroupButton.layer.shadowPath = UIBezierPath(
+      roundedRect: CGRect(origin: origin, size: rect),
+      cornerRadius: 6.0).cgPath
   }
 }
 
@@ -192,11 +259,15 @@ extension ChatListViewController: GroupViewAdapterDelegate {
 // MARK: - LayoutSupport
 extension ChatListViewController: LayoutSupport {
   func addSubviews() {
-    _=[groupView, myGroupLabel, naviBottomView].map { view.addSubview($0) }
+    _=[groupView, myGroupLabel, naviBottomView, addGroupButton].map { view.addSubview($0)
+    }
   }
   
   func setConstraints() {
-    _=[groupViewConstraints, myGroupLabelConstraints, naviBottomViewConstraints].map { NSLayoutConstraint.activate($0) }
+    _=[groupViewConstraints,
+       myGroupLabelConstraints,
+       naviBottomViewConstraints,
+       addGroupButtonConstraints].map { NSLayoutConstraint.activate($0) }
   }
 }
 
@@ -226,5 +297,14 @@ private extension ChatListViewController {
      myGroupLabel.topAnchor.constraint(
       equalTo: naviBottomView.bottomAnchor,
       constant: Constant.MyGroupLabel.spacing.top)]
+  }
+ 
+  var addGroupButtonConstraints: [NSLayoutConstraint] {
+    [addGroupButton.trailingAnchor.constraint(
+      equalTo: view.trailingAnchor,
+      constant: -15),
+     addGroupButton.centerYAnchor.constraint(equalTo: myGroupLabel.centerYAnchor),
+     addGroupButton.widthAnchor.constraint(equalToConstant: 100),
+     addGroupButton.heightAnchor.constraint(equalToConstant: 40)]
   }
 }

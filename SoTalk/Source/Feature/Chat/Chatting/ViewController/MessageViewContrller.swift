@@ -20,7 +20,7 @@ final class MessageViewContrller: UICollectionViewController {
     frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50)).set {
       $0.delegate = self
     }
-  
+    
   // MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()

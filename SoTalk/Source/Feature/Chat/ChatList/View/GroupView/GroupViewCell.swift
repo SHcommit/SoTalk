@@ -13,20 +13,32 @@ final class GroupViewCell: UICollectionViewCell {
   static let cornerRadius = 24.0
   
   // MARK: - Properties
-  let imageView: UIImageView = UIImageView().set {
+  private let imageView: UIImageView = UIImageView().set {
     $0.translatesAutoresizingMaskIntoConstraints = false
     $0.layer.cornerRadius = cornerRadius
     $0.clipsToBounds = true
-    $0.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     $0.contentMode = .scaleAspectFill
     $0.backgroundColor = .lightGray
   }
   
-  let groupName = UILabel().set {
+  private let bluredView: UIView = {
+    let blur = UIBlurEffect(style: .light)
+    let bluredView = UIVisualEffectView(effect: blur)
+    bluredView.translatesAutoresizingMaskIntoConstraints = false
+    bluredView.layer.cornerRadius = GroupViewCell.cornerRadius
+    bluredView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+    return bluredView
+  }()
+  
+  private let groupName = UILabel().set {
     $0.translatesAutoresizingMaskIntoConstraints = false
-    $0.font = .boldSystemFont(ofSize: 14)
+    $0.font = .boldSystemFont(ofSize: 20)
     $0.numberOfLines = 2
-    $0.text = "Title is empty\n Hahaah"
+    $0.clipsToBounds = true
+    $0.layer.cornerRadius = GroupViewCell.cornerRadius
+    $0.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+    $0.backgroundColor = .none
+    $0.text = "Empty"
   }
   
   // MARK: - Initialization
@@ -34,6 +46,7 @@ final class GroupViewCell: UICollectionViewCell {
     super.init(frame: frame)
     layer.cornerRadius = GroupViewCell.cornerRadius
     setupUI()
+    setBlurFromImageView()
   }
   
   required init?(coder: NSCoder) {
@@ -41,11 +54,23 @@ final class GroupViewCell: UICollectionViewCell {
   }
 }
 
-// MARK: - Helpers
+// MARK: - Helper
 extension GroupViewCell {
   func configure(with data: GroupModel) {
     backgroundColor = .white
     setShadow()
+  }
+}
+
+// MARK: - Private helper
+extension GroupViewCell {
+  @MainActor
+  func setImageView(with image: UIImage) {
+    imageView.image = image
+  }
+  
+  func setGroupName(with title: String) {
+    groupName.text = title
   }
   
   func setShadow() {
@@ -60,6 +85,19 @@ extension GroupViewCell {
       height: contentView.frame.height + 3)
     layer.shadowPath = UIBezierPath(rect: shadowRect).cgPath
   }
+  
+  func setBlurFromImageView() {
+    imageView.addSubview(bluredView)
+    NSLayoutConstraint.activate([
+      bluredView.centerXAnchor.constraint(
+        equalTo: groupName.centerXAnchor),
+      bluredView.centerYAnchor.constraint(
+        equalTo: groupName.centerYAnchor),
+      bluredView.widthAnchor.constraint(
+        equalToConstant: groupName.bounds.width),
+      bluredView.heightAnchor.constraint(
+        equalToConstant: groupName.bounds.height - groupName.bounds.width)])
+  }
 }
 
 // MARK: - LayoutSupport
@@ -71,6 +109,7 @@ extension GroupViewCell: LayoutSupport {
   func setConstraints() {
     _=[imageViewConstraints, groupNameConstraints].map {
       NSLayoutConstraint.activate($0)
+      contentView.bringSubviewToFront(groupName)
     }
   }
 }
@@ -84,19 +123,18 @@ private extension GroupViewCell {
         equalTo: contentView.topAnchor),
       imageView.trailingAnchor.constraint(
         equalTo: contentView.trailingAnchor),
-      imageView.heightAnchor.constraint(
-        equalToConstant: contentView.bounds.width)
-    ]
+      imageView.bottomAnchor.constraint(
+        equalTo: contentView.bottomAnchor)]
   }
   
   var groupNameConstraints: [NSLayoutConstraint] {
     [groupName.leadingAnchor.constraint(
       equalTo: contentView.leadingAnchor),
-     groupName.topAnchor.constraint(
-      equalTo: imageView.bottomAnchor),
      groupName.trailingAnchor.constraint(
       equalTo: contentView.trailingAnchor),
      groupName.bottomAnchor.constraint(
-      equalTo: contentView.bottomAnchor)]
+      equalTo: contentView.bottomAnchor),
+     groupName.heightAnchor.constraint(
+      equalToConstant: contentView.bounds.height-contentView.bounds.width)]
   }
 }

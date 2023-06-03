@@ -38,7 +38,9 @@ final class CreatingGroupCoordinator: NSObject, FlowCoordinator {
 
 extension CreatingGroupCoordinator {
   func gotoMessageListPage() {
-    presenter.popViewController(animated: false)
+    // 여기서 데이터!! 가지고 돌아갈 수도 있고!!
+    // cell에 추가 or 그냥 닫기!!
+    viewController.dismiss(animated: true)
     finish()
   }
   

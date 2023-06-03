@@ -193,7 +193,7 @@ private extension CreatingGroupBottomSheetViewController {
         self?.textCountPlaceholder.text = "\((self?.textField.text ?? "").count)/\(maxLength) 글자"
         
         print("완료 했고 서버로 보낸 뒤 쳇 리스트에 추가")
-        
+        self?.coordinator?.gotoMessageListPage()
       }.store(in: &subscription)
   }
 }

@@ -92,7 +92,7 @@ private extension CreatingGroupBottomSheetViewController {
     let attrStr = NSMutableAttributedString(string: text)
     let attributes: [NSAttributedString.Key: Any] = [
       .foregroundColor: UIColor.lightGray,
-      .font: UIFont.boldSystemFont(ofSize: 14)]
+      .font: UIFont.boldSystemFont(ofSize: 16)]
     attrStr.addAttributes(
       attributes,
       range: NSRange(location: 0, length: text.count))
@@ -107,7 +107,7 @@ private extension CreatingGroupBottomSheetViewController {
     let attrStr = NSMutableAttributedString(string: text)
     let attributes: [NSAttributedString.Key: Any] = [
       .foregroundColor: UIColor.Palette.primary,
-      .font: UIFont.boldSystemFont(ofSize: 14)]
+      .font: UIFont.boldSystemFont(ofSize: 16)]
     attrStr.addAttributes(
       attributes,
       range: NSRange(location: 0, length: text.count))
@@ -185,8 +185,15 @@ private extension CreatingGroupBottomSheetViewController {
     completionButton
       .tap
       .receive(on: DispatchQueue.main)
-      .sink { _ in
+      .sink { [weak self] _ in
+        // 만약 누른 return안누르고 바로 이 버튼 누를 수 있어서
+        self?.textField.text = (self?.textField.text ?? "")
+          .trimmingCharacters(in: .whitespaces)
+        let maxLength = Constant.TextCountPlaceholder.maximumTextLength
+        self?.textCountPlaceholder.text = "\((self?.textField.text ?? "").count)/\(maxLength) 글자"
+        
         print("완료 했고 서버로 보낸 뒤 쳇 리스트에 추가")
+        
       }.store(in: &subscription)
   }
 }

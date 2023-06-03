@@ -1,3 +1,0 @@
-﻿  UDPBroadReceiver.cpp
-\\Mac\Home\NetworkSocketProgrammingWithBSD\UDP-server-client-echo-services\with-C-language\UDPBroadCastReceiver\UDPBroadCastReceiver\UDPBroadReceiver.cpp(50,30): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-  UDPBroadCastReceiver.vcxproj -> \\Mac\Home\NetworkSocketProgrammingWithBSD\UDP-server-client-echo-services\with-C-language\UDPBroadCastReceiver\arm64\Debug\UDPBroadCastReceiver.exe

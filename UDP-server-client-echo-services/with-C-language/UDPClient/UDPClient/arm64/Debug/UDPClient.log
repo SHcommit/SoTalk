@@ -1,5 +1,0 @@
-﻿  UDPEchoClient.cpp
-\\Mac\Home\NetworkSocketProgrammingWithBSD\UDP-server-client-echo-services\with-C-language\UDPClient\UDPClient\UDPEchoClient.cpp(39,20): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-\\Mac\Home\NetworkSocketProgrammingWithBSD\UDP-server-client-echo-services\with-C-language\UDPClient\UDPClient\UDPEchoClient.cpp(28,34): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-\\Mac\Home\NetworkSocketProgrammingWithBSD\UDP-server-client-echo-services\with-C-language\UDPClient\UDPClient\UDPEchoClient.cpp(32,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  UDPClient.vcxproj -> \\Mac\Home\NetworkSocketProgrammingWithBSD\UDP-server-client-echo-services\with-C-language\UDPClient\arm64\Debug\UDPClient.exe

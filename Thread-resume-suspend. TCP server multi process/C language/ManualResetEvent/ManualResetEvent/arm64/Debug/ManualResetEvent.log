@@ -1,5 +1,0 @@
-﻿  ManualResetEvent.cpp
-\\Mac\Home\NetworkSocketProgrammingWithBSD\Thread-resume-suspend. TCP server multi process\C language\ManualResetEvent\ManualResetEvent\ManualResetEvent.cpp(6,21): warning C4311: '형식 캐스트': 'LPVOID'에서 'int'(으)로 포인터가 잘립니다.
-\\Mac\Home\NetworkSocketProgrammingWithBSD\Thread-resume-suspend. TCP server multi process\C language\ManualResetEvent\ManualResetEvent\ManualResetEvent.cpp(6,21): warning C4302: '형식 캐스트': 'LPVOID'에서 'int'(으)로 잘립니다.
-\\Mac\Home\NetworkSocketProgrammingWithBSD\Thread-resume-suspend. TCP server multi process\C language\ManualResetEvent\ManualResetEvent\ManualResetEvent.cpp(22,59): warning C4312: '형식 캐스트': 'int'에서 더 큰 'LPVOID'(으)로의 변환입니다.
-  ManualResetEvent.vcxproj -> \\Mac\Home\NetworkSocketProgrammingWithBSD\Thread-resume-suspend. TCP server multi process\C language\ManualResetEvent\arm64\Debug\ManualResetEvent.exe

@@ -1,5 +1,0 @@
-﻿  IP_ADDR.cpp
-\\Mac\Home\NetworkSocketProgrammingWithBSD\3Week\IP_ADDR\IP_ADDR\IP_ADDR.cpp(32,37): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-\\Mac\Home\NetworkSocketProgrammingWithBSD\3Week\IP_ADDR\IP_ADDR\IP_ADDR.cpp(37,21): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-\\Mac\Home\NetworkSocketProgrammingWithBSD\3Week\IP_ADDR\IP_ADDR\IP_ADDR.cpp(38,36): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-  IP_ADDR.vcxproj -> \\Mac\Home\NetworkSocketProgrammingWithBSD\3Week\IP_ADDR\arm64\Debug\IP_ADDR.exe

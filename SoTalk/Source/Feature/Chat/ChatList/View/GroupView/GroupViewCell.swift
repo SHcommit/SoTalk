@@ -75,10 +75,10 @@ extension GroupViewCell {
   }
   
   func setShadow() {
-    layer.shadowOpacity = 1
+    layer.shadowOpacity = 0.5
     layer.shadowOffset = CGSize(width: 1, height: 1)
     layer.shadowRadius = 12
-    layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.06).cgColor
+    layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
     let shadowRect = CGRect(
       x: contentView.frame.origin.x,
       y: contentView.frame.origin.y,

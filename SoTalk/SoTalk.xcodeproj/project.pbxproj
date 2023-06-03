@@ -14,6 +14,7 @@
 		157317942A2A66890061F914 /* PreviewGroupPictureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157317932A2A66890061F914 /* PreviewGroupPictureManager.swift */; };
 		157317962A2A68AF0061F914 /* UIImage+JPEGCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157317952A2A68AF0061F914 /* UIImage+JPEGCompression.swift */; };
 		157317982A2A69D90061F914 /* GroupPictureView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157317972A2A69D90061F914 /* GroupPictureView+Constant.swift */; };
+		1573179A2A2B3D000061F914 /* UIImage+AverageColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157317992A2B3D000061F914 /* UIImage+AverageColor.swift */; };
 		15856D052A1E9CAA0085FE75 /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D002A1E9CAA0085FE75 /* UIControl+Combine.swift */; };
 		15856D062A1E9CAA0085FE75 /* UISwitch+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D012A1E9CAA0085FE75 /* UISwitch+Combine.swift */; };
 		15856D072A1E9CAA0085FE75 /* UIButton+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D022A1E9CAA0085FE75 /* UIButton+Combine.swift */; };
@@ -114,6 +115,7 @@
 		157317932A2A66890061F914 /* PreviewGroupPictureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewGroupPictureManager.swift; sourceTree = "<group>"; };
 		157317952A2A68AF0061F914 /* UIImage+JPEGCompression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+JPEGCompression.swift"; sourceTree = "<group>"; };
 		157317972A2A69D90061F914 /* GroupPictureView+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupPictureView+Constant.swift"; sourceTree = "<group>"; };
+		157317992A2B3D000061F914 /* UIImage+AverageColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+AverageColor.swift"; sourceTree = "<group>"; };
 		15856D002A1E9CAA0085FE75 /* UIControl+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
 		15856D012A1E9CAA0085FE75 /* UISwitch+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISwitch+Combine.swift"; sourceTree = "<group>"; };
 		15856D022A1E9CAA0085FE75 /* UIButton+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Combine.swift"; sourceTree = "<group>"; };
@@ -416,12 +418,13 @@
 		15BB01C62A1F0B5A0035B486 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				15BB01C72A1F0B710035B486 /* UIColor+Palette.swift */,
+				15BB02832A261D910035B486 /* UIColor+ChatPalette.swift */,
 				15BB01DA2A1F31470035B486 /* UIColor+Hex.swift */,
 				15BB01E82A209ABF0035B486 /* UIColor+iconColorChange.swift */,
-				15BB02832A261D910035B486 /* UIColor+ChatPalette.swift */,
-				155114062A2A19CD009E0103 /* UIImage+resized.swift */,
+				15BB01C72A1F0B710035B486 /* UIColor+Palette.swift */,
 				157317952A2A68AF0061F914 /* UIImage+JPEGCompression.swift */,
+				155114062A2A19CD009E0103 /* UIImage+resized.swift */,
+				157317992A2B3D000061F914 /* UIImage+AverageColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -972,6 +975,7 @@
 				15BB01DB2A1F31470035B486 /* UIColor+Hex.swift in Sources */,
 				15BB02FA2A2907870035B486 /* MessageSenderState.swift in Sources */,
 				15BB028F2A2631040035B486 /* MockGroupModel.swift in Sources */,
+				1573179A2A2B3D000061F914 /* UIImage+AverageColor.swift in Sources */,
 				15856D052A1E9CAA0085FE75 /* UIControl+Combine.swift in Sources */,
 				15BB02CD2A288DBB0035B486 /* CommentSendInputAccessoryViewDelegate.swift in Sources */,
 				15BB01DE2A1F3DD70035B486 /* BackgroundBlur.swift in Sources */,

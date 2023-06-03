@@ -10,22 +10,14 @@ import Foundation
 struct SecretManager {
   static let shared = SecretManager()
   
-  let apiKey: String
-  let test: String
+  let serverAddress: String
   
   private init() {
     let stored: [String: Any]? = Bundle.main.infoDictionary
-    if let keyPath = stored?["API_KEY"] as? String {
-      self.apiKey = keyPath
-      print(keyPath)
+    if let servAddr = stored?["API_KEY"] as? String {
+      self.serverAddress = servAddr
     } else {
-      apiKey = ""
-    }
-    if let test = stored?["Test"] as? String {
-      self.test = test
-      print(test)
-    } else {
-      test = ""
+      serverAddress = ""
     }
   }
   

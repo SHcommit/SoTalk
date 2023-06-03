@@ -12,7 +12,7 @@ final class ChatListViewModel {
   var model: [GroupModel]?
   
   init(model: [GroupModel]? = nil) {
-    self.model = MockGroupModel().mockData
+    self.model = MockGroupModel().mockData()
   }
 }
 

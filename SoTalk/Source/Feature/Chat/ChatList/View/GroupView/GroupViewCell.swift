@@ -33,11 +33,10 @@ final class GroupViewCell: UICollectionViewCell {
   private let groupName = UILabel().set {
     $0.translatesAutoresizingMaskIntoConstraints = false
     $0.font = .boldSystemFont(ofSize: 20)
-    $0.numberOfLines = 2
-    $0.clipsToBounds = true
+    $0.numberOfLines = 3
+    $0.textColor = .white
     $0.layer.cornerRadius = GroupViewCell.cornerRadius
     $0.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-    $0.backgroundColor = .none
     $0.text = "Empty"
   }
   
@@ -46,6 +45,8 @@ final class GroupViewCell: UICollectionViewCell {
     super.init(frame: frame)
     layer.cornerRadius = GroupViewCell.cornerRadius
     setupUI()
+    setShadow()
+    layoutIfNeeded()
     setBlurFromImageView()
   }
   
@@ -57,15 +58,15 @@ final class GroupViewCell: UICollectionViewCell {
 // MARK: - Helper
 extension GroupViewCell {
   func configure(with data: GroupModel) {
-    backgroundColor = .white
-    setShadow()
+    setImageView(with: data.gorupImage)
+    setGroupName(with: data.groupName)
   }
 }
 
 // MARK: - Private helper
 extension GroupViewCell {
   @MainActor
-  func setImageView(with image: UIImage) {
+  func setImageView(with image: UIImage?) {
     imageView.image = image
   }
   
@@ -89,14 +90,15 @@ extension GroupViewCell {
   func setBlurFromImageView() {
     imageView.addSubview(bluredView)
     NSLayoutConstraint.activate([
-      bluredView.centerXAnchor.constraint(
-        equalTo: groupName.centerXAnchor),
-      bluredView.centerYAnchor.constraint(
-        equalTo: groupName.centerYAnchor),
-      bluredView.widthAnchor.constraint(
-        equalToConstant: groupName.bounds.width),
+      bluredView.leadingAnchor.constraint(
+        equalTo: imageView.leadingAnchor),
+      bluredView.trailingAnchor.constraint(
+        equalTo: imageView.trailingAnchor),
+      bluredView.bottomAnchor.constraint(
+        equalTo: imageView.bottomAnchor),
       bluredView.heightAnchor.constraint(
-        equalToConstant: groupName.bounds.height - groupName.bounds.width)])
+        equalToConstant: imageView.bounds.height - imageView.bounds.width)])
+    bringSubviewToFront(bluredView)
   }
 }
 
@@ -129,11 +131,14 @@ private extension GroupViewCell {
   
   var groupNameConstraints: [NSLayoutConstraint] {
     [groupName.leadingAnchor.constraint(
-      equalTo: contentView.leadingAnchor),
+      equalTo: contentView.leadingAnchor,
+    constant: 12),
      groupName.trailingAnchor.constraint(
-      equalTo: contentView.trailingAnchor),
+      equalTo: contentView.trailingAnchor,
+     constant: -12),
      groupName.bottomAnchor.constraint(
-      equalTo: contentView.bottomAnchor),
+      equalTo: contentView.bottomAnchor,
+     constant: -12),
      groupName.heightAnchor.constraint(
       equalToConstant: contentView.bounds.height-contentView.bounds.width)]
   }

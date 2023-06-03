@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		155114072A2A19CD009E0103 /* UIImage+resized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155114062A2A19CD009E0103 /* UIImage+resized.swift */; };
+		1551140A2A2A29F1009E0103 /* GroupPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155114092A2A29F1009E0103 /* GroupPictureView.swift */; };
+		1551140D2A2A2A93009E0103 /* MessageCell+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1551140C2A2A2A93009E0103 /* MessageCell+Constant.swift */; };
+		1551140F2A2A2EC1009E0103 /* CreatingGroupBottomSheetViewController+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1551140E2A2A2EC1009E0103 /* CreatingGroupBottomSheetViewController+Constant.swift */; };
+		157317942A2A66890061F914 /* PreviewGroupPictureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157317932A2A66890061F914 /* PreviewGroupPictureManager.swift */; };
+		157317962A2A68AF0061F914 /* UIImage+JPEGCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157317952A2A68AF0061F914 /* UIImage+JPEGCompression.swift */; };
+		157317982A2A69D90061F914 /* GroupPictureView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157317972A2A69D90061F914 /* GroupPictureView+Constant.swift */; };
 		15856D052A1E9CAA0085FE75 /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D002A1E9CAA0085FE75 /* UIControl+Combine.swift */; };
 		15856D062A1E9CAA0085FE75 /* UISwitch+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D012A1E9CAA0085FE75 /* UISwitch+Combine.swift */; };
 		15856D072A1E9CAA0085FE75 /* UIButton+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D022A1E9CAA0085FE75 /* UIButton+Combine.swift */; };
@@ -100,6 +107,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		155114062A2A19CD009E0103 /* UIImage+resized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+resized.swift"; sourceTree = "<group>"; };
+		155114092A2A29F1009E0103 /* GroupPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPictureView.swift; sourceTree = "<group>"; };
+		1551140C2A2A2A93009E0103 /* MessageCell+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageCell+Constant.swift"; sourceTree = "<group>"; };
+		1551140E2A2A2EC1009E0103 /* CreatingGroupBottomSheetViewController+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreatingGroupBottomSheetViewController+Constant.swift"; sourceTree = "<group>"; };
+		157317932A2A66890061F914 /* PreviewGroupPictureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewGroupPictureManager.swift; sourceTree = "<group>"; };
+		157317952A2A68AF0061F914 /* UIImage+JPEGCompression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+JPEGCompression.swift"; sourceTree = "<group>"; };
+		157317972A2A69D90061F914 /* GroupPictureView+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupPictureView+Constant.swift"; sourceTree = "<group>"; };
 		15856D002A1E9CAA0085FE75 /* UIControl+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
 		15856D012A1E9CAA0085FE75 /* UISwitch+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISwitch+Combine.swift"; sourceTree = "<group>"; };
 		15856D022A1E9CAA0085FE75 /* UIButton+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Combine.swift"; sourceTree = "<group>"; };
@@ -208,6 +222,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		155114082A2A258F009E0103 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1551140E2A2A2EC1009E0103 /* CreatingGroupBottomSheetViewController+Constant.swift */,
+				157317972A2A69D90061F914 /* GroupPictureView+Constant.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		1551140B2A2A2A0C009E0103 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				155114092A2A29F1009E0103 /* GroupPictureView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		157317922A2A667C0061F914 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				157317932A2A66890061F914 /* PreviewGroupPictureManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		157383402A1E9B1A00EDE059 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,6 +420,8 @@
 				15BB01DA2A1F31470035B486 /* UIColor+Hex.swift */,
 				15BB01E82A209ABF0035B486 /* UIColor+iconColorChange.swift */,
 				15BB02832A261D910035B486 /* UIColor+ChatPalette.swift */,
+				155114062A2A19CD009E0103 /* UIImage+resized.swift */,
+				157317952A2A68AF0061F914 /* UIImage+JPEGCompression.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -726,6 +767,7 @@
 			isa = PBXGroup;
 			children = (
 				15BB02F72A29076E0035B486 /* MessageContentView+Constant.swift */,
+				1551140C2A2A2A93009E0103 /* MessageCell+Constant.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -733,6 +775,9 @@
 		15BD2D9E2A29CD4100095214 /* CreatingGroup */ = {
 			isa = PBXGroup;
 			children = (
+				157317922A2A667C0061F914 /* Manager */,
+				1551140B2A2A2A0C009E0103 /* View */,
+				155114082A2A258F009E0103 /* Extension */,
 				15BD2DA02A29CD5F00095214 /* Coordinator */,
 				15BD2D9F2A29CD5100095214 /* ViewController */,
 			);
@@ -946,17 +991,22 @@
 				15BB028C2A262D270035B486 /* GroupModel.swift in Sources */,
 				15856D0E2A1E9D150085FE75 /* ConvenienceInit.swift in Sources */,
 				15BB02892A262C800035B486 /* ChatListViewModel.swift in Sources */,
+				1551140A2A2A29F1009E0103 /* GroupPictureView.swift in Sources */,
 				15BB02A72A264A070035B486 /* FlowCoordinator.swift in Sources */,
 				15BB01C82A1F0B710035B486 /* UIColor+Palette.swift in Sources */,
 				15BB01C22A1F01070035B486 /* LoginViewControllerConstant.swift in Sources */,
+				155114072A2A19CD009E0103 /* UIImage+resized.swift in Sources */,
 				15856D062A1E9CAA0085FE75 /* UISwitch+Combine.swift in Sources */,
 				15856D182A1E9F490085FE75 /* LoginViewModel.swift in Sources */,
+				1551140F2A2A2EC1009E0103 /* CreatingGroupBottomSheetViewController+Constant.swift in Sources */,
+				157317982A2A69D90061F914 /* GroupPictureView+Constant.swift in Sources */,
 				15BB01D42A1F25280035B486 /* ForgetViewConstant.swift in Sources */,
 				1589198D2A1E7B43006796B2 /* SceneDelegate.swift in Sources */,
 				15BB021F2A226A230035B486 /* SignUpViewModel.swift in Sources */,
 				15BB02BB2A284D360035B486 /* GroupViewAdapterDelegate.swift in Sources */,
 				15BB01E72A205F5C0035B486 /* NavigationControler.swift in Sources */,
 				15BB02B92A28407B0035B486 /* BottomNaviBar+Constant.swift in Sources */,
+				157317942A2A66890061F914 /* PreviewGroupPictureManager.swift in Sources */,
 				15BB02822A25F37E0035B486 /* GroupViewAdapterDataSoruce.swift in Sources */,
 				15BB02D02A2895090035B486 /* MessageViewAdapter.swift in Sources */,
 				15BB02D82A2897020035B486 /* MessageViewControllerDataSource.swift in Sources */,
@@ -967,6 +1017,7 @@
 				15BB02C32A2850050035B486 /* MessageCoordinator.swift in Sources */,
 				15BB02CB2A2887140035B486 /* MessageTextViewDelegate.swift in Sources */,
 				15856D0F2A1E9D150085FE75 /* ViewModelProtocols.swift in Sources */,
+				157317962A2A68AF0061F914 /* UIImage+JPEGCompression.swift in Sources */,
 				15BB02DB2A2897B70035B486 /* MessageViewModel.swift in Sources */,
 				15BB02212A226A910035B486 /* SignUpViewAdapter.swift in Sources */,
 				15BB02AF2A2668240035B486 /* LoginCoordinator.swift in Sources */,
@@ -976,6 +1027,7 @@
 				15BB02552A24AF650035B486 /* BottomNaviBar.swift in Sources */,
 				15BB02602A251BF10035B486 /* GroupChatSearch+Constant.swift in Sources */,
 				15BB022F2A233CC30035B486 /* SignUpModel.swift in Sources */,
+				1551140D2A2A2A93009E0103 /* MessageCell+Constant.swift in Sources */,
 				15BB02B42A26720A0035B486 /* SignUpCoordinator.swift in Sources */,
 				15BB02C02A284E8D0035B486 /* MessageViewContrller.swift in Sources */,
 				15BB02372A2347460035B486 /* SignUpViewCell+Constant.swift in Sources */,

@@ -373,7 +373,7 @@
 		4FB6307442E7188628CB2975C9518C35 /* Pods-SoTalk-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SoTalk-frameworks.sh"; sourceTree = "<group>"; };
 		516EE2AC9B1E9A5947029667A9597B15 /* AssetLibrary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssetLibrary.swift; path = Sources/Private/Model/Assets/AssetLibrary.swift; sourceTree = "<group>"; };
 		517E6957F5B1874750A15DAF96595DC5 /* DotLottieCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DotLottieCache.swift; path = Sources/Public/DotLottie/Cache/DotLottieCache.swift; sourceTree = "<group>"; };
-		51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51BA97E8B5085EFFB47BC9C0B785CEA7 /* lottie-ios */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "lottie-ios"; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51F5A36FF3A842A800C5E331441C759E /* Archive+WritingDeprecated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Archive+WritingDeprecated.swift"; path = "Sources/Private/Model/DotLottie/ZipFoundation/Archive+WritingDeprecated.swift"; sourceTree = "<group>"; };
 		520E8617AABEB2563507DE683B4FBE3F /* GradientValueProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientValueProvider.swift; path = Sources/Public/DynamicProperties/ValueProviders/GradientValueProvider.swift; sourceTree = "<group>"; };
 		53DDF268A421226616729162D4E6A30D /* ShapeItemLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShapeItemLayer.swift; path = Sources/Private/CoreAnimation/Layers/ShapeItemLayer.swift; sourceTree = "<group>"; };
@@ -668,7 +668,7 @@
 		9D8DD050B7E896B6B50ED785A97AB719 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */,
+				51BA97E8B5085EFFB47BC9C0B785CEA7 /* lottie-ios */,
 				1C2646822FCCB776FBB733ACD1181AB4 /* Pods-SoTalk */,
 				8ACA110EF3B35B3FCC08297B3799D9AD /* Swinject.framework */,
 			);
@@ -1015,7 +1015,7 @@
 			);
 			name = "lottie-ios";
 			productName = Lottie;
-			productReference = 51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */;
+			productReference = 51BA97E8B5085EFFB47BC9C0B785CEA7 /* lottie-ios */;
 			productType = "com.apple.product-type.framework";
 		};
 		46065AF968A5A92D450BB21F7F24367D /* Swinject */ = {

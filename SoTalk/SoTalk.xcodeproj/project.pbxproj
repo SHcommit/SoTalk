@@ -15,6 +15,8 @@
 		157317962A2A68AF0061F914 /* UIImage+JPEGCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157317952A2A68AF0061F914 /* UIImage+JPEGCompression.swift */; };
 		157317982A2A69D90061F914 /* GroupPictureView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157317972A2A69D90061F914 /* GroupPictureView+Constant.swift */; };
 		1573179A2A2B3D000061F914 /* UIImage+AverageColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157317992A2B3D000061F914 /* UIImage+AverageColor.swift */; };
+		157317AF2A2B8AAE0061F914 /* LoginRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157317AE2A2B8AAE0061F914 /* LoginRequestModel.swift */; };
+		157317B22A2B90F30061F914 /* SecretManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157317B12A2B90F30061F914 /* SecretManager.swift */; };
 		15856D052A1E9CAA0085FE75 /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D002A1E9CAA0085FE75 /* UIControl+Combine.swift */; };
 		15856D062A1E9CAA0085FE75 /* UISwitch+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D012A1E9CAA0085FE75 /* UISwitch+Combine.swift */; };
 		15856D072A1E9CAA0085FE75 /* UIButton+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D022A1E9CAA0085FE75 /* UIButton+Combine.swift */; };
@@ -116,6 +118,9 @@
 		157317952A2A68AF0061F914 /* UIImage+JPEGCompression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+JPEGCompression.swift"; sourceTree = "<group>"; };
 		157317972A2A69D90061F914 /* GroupPictureView+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupPictureView+Constant.swift"; sourceTree = "<group>"; };
 		157317992A2B3D000061F914 /* UIImage+AverageColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+AverageColor.swift"; sourceTree = "<group>"; };
+		157317AE2A2B8AAE0061F914 /* LoginRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestModel.swift; sourceTree = "<group>"; };
+		157317B02A2B8E530061F914 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		157317B12A2B90F30061F914 /* SecretManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretManager.swift; sourceTree = "<group>"; };
 		15856D002A1E9CAA0085FE75 /* UIControl+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
 		15856D012A1E9CAA0085FE75 /* UISwitch+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISwitch+Combine.swift"; sourceTree = "<group>"; };
 		15856D022A1E9CAA0085FE75 /* UIButton+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Combine.swift"; sourceTree = "<group>"; };
@@ -358,6 +363,7 @@
 		1589197E2A1E7B43006796B2 = {
 			isa = PBXGroup;
 			children = (
+				157317B02A2B8E530061F914 /* Secrets.xcconfig */,
 				15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */,
 				158919892A1E7B43006796B2 /* Source */,
 				158919882A1E7B43006796B2 /* Products */,
@@ -462,6 +468,7 @@
 			isa = PBXGroup;
 			children = (
 				15BB01DD2A1F3DD70035B486 /* BackgroundBlur.swift */,
+				157317B12A2B90F30061F914 /* SecretManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -514,6 +521,7 @@
 			children = (
 				15BB022E2A233CC30035B486 /* SignUpModel.swift */,
 				15BB023A2A23B0B60035B486 /* SignUpViewCellInputState.swift */,
+				157317AE2A2B8AAE0061F914 /* LoginRequestModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1044,7 +1052,9 @@
 				15BB02252A226B2C0035B486 /* SignUpViewAdapterDataSource.swift in Sources */,
 				15BB01D92A1F311E0035B486 /* OneUnitHeightLine.swift in Sources */,
 				15BB023B2A23B0B60035B486 /* SignUpViewCellInputState.swift in Sources */,
+				157317AF2A2B8AAE0061F914 /* LoginRequestModel.swift in Sources */,
 				15BB01CF2A1F134A0035B486 /* AuthenticationTextFieldConstant.swift in Sources */,
+				157317B22A2B90F30061F914 /* SecretManager.swift in Sources */,
 				15BB02402A23DDC70035B486 /* SignUpViewCell+DrawSignUpEndPage.swift in Sources */,
 				15BB021A2A225E380035B486 /* SignUpVIew.swift in Sources */,
 				15BB01D22A1F24960035B486 /* ForgetView.swift in Sources */,
@@ -1067,6 +1077,7 @@
 /* Begin XCBuildConfiguration section */
 		158919992A1E7B43006796B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 157317B02A2B8E530061F914 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1127,6 +1138,7 @@
 		};
 		1589199A2A1E7B43006796B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 157317B02A2B8E530061F914 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

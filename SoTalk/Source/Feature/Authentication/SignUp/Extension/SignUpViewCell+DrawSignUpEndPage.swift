@@ -60,9 +60,6 @@ extension SignUpViewCell {
       leftAnimView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width/2.0)])
     
     helloAnimView.play()
-    leftAnimView.play {_ in
-      leftAnimView.isHidden = true
-      leftAnimView.stop()
-    }
+    leftAnimView.play()
   }
 }

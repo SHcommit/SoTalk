@@ -27,8 +27,8 @@ final class AuthenticationTextField: UIView {
     $0.sizeToFit()
   }
   
-  private var textfieldMaximumTextLength: Int = 0
-  
+  private var textMaxLength: Int = 0
+  private var textMinLength: Int = 0
   var text: String {
     get {
       textField.text ?? ""
@@ -65,9 +65,13 @@ final class AuthenticationTextField: UIView {
     bind()
   }
   
-  convenience init(with placeholder: String, _ textfieldMaximumTextLength: Int = 40) {
+  convenience init(
+    with placeholder: String,
+    textMaxLength: Int = 40,
+    textMinLength: Int = 0) {
     self.init(frame: .zero)
-    self.textfieldMaximumTextLength = textfieldMaximumTextLength
+    self.textMaxLength = textMaxLength
+    self.textMinLength = textMinLength
     textField.placeholder = placeholder
   }
   
@@ -184,8 +188,12 @@ private extension AuthenticationTextField {
 // MARK: - UITextFieldDelegate
 extension AuthenticationTextField: UITextFieldDelegate {
   func textFieldDidBeginEditing(_ textField: UITextField) {
-    guard textField.text == "" else {
-      setBorderColor(validState)
+    guard
+      (textMinLength...textMaxLength)
+        .contains((textField.text ?? "").count)
+    else {
+      validState = .inputExcess
+      delegate?.textFieldDidEndEditing(textField)
       return
     }
     validState = .editing
@@ -193,13 +201,19 @@ extension AuthenticationTextField: UITextFieldDelegate {
   }
   
   func textFieldDidEndEditing(_ textField: UITextField) {
-    setBorderColor(.notEditing)
+    if validState != .inputExcess {
+      setBorderColor(.notEditing)
+    }
+    textField.text = (textField.text ?? "").trimmingCharacters(in: .whitespaces)
     textField.resignFirstResponder()
     delegate?.textFieldDidEndEditing(textField)
   }
   
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    setBorderColor(.notEditing)
+    if validState != .inputExcess {
+      setBorderColor(.notEditing)
+    }
+    textField.text = (textField.text ?? "").trimmingCharacters(in: .whitespaces)
     textField.resignFirstResponder()
     delegate?.textFieldShouldReturn(textField)
     return true
@@ -213,7 +227,7 @@ extension AuthenticationTextField: UITextFieldDelegate {
     let currentText = textField.text ?? ""
     let newText = (currentText as NSString).replacingCharacters(in: range, with: string)
     
-    return newText.count <= textfieldMaximumTextLength
+    return newText.count <= textMaxLength
   }
 
 }

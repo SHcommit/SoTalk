@@ -41,4 +41,16 @@ extension CreatingGroupCoordinator {
     presenter.popViewController(animated: false)
     finish()
   }
+  
+  func gotoImagePicker<ViewController>(
+    _ prevVC: ViewController
+  ) where ViewController: UIImagePickerControllerDelegate,
+          ViewController: UINavigationControllerDelegate,
+          ViewController: UIViewController {
+    let imagePicker = UIImagePickerController()
+    imagePicker.sourceType = .photoLibrary
+    imagePicker.allowsEditing = true
+    imagePicker.delegate = prevVC
+    prevVC.present(imagePicker, animated: true)
+  }
 }

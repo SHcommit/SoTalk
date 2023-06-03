@@ -47,7 +47,7 @@ final class GroupPictureView: UIImageView {
 // MARK: - Helper
 extension GroupPictureView {
   @MainActor
-  func setImageView(with image: UIImage) {
+  func setImageView(with image: UIImage?) {
     self.image = image
   }
   

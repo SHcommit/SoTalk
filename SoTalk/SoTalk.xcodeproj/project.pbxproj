@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05B1483A229CC255E3F1C90F /* Pods_SoTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B127E9135ABF1C789220762F /* Pods_SoTalk.framework */; };
 		155114072A2A19CD009E0103 /* UIImage+resized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155114062A2A19CD009E0103 /* UIImage+resized.swift */; };
 		1551140A2A2A29F1009E0103 /* GroupPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155114092A2A29F1009E0103 /* GroupPictureView.swift */; };
 		1551140D2A2A2A93009E0103 /* MessageCell+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1551140C2A2A2A93009E0103 /* MessageCell+Constant.swift */; };
@@ -106,7 +107,6 @@
 		15BD2D9B2A29CADA00095214 /* CreatingGroupBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BD2D9A2A29CADA00095214 /* CreatingGroupBottomSheetViewController.swift */; };
 		15BD2DA22A29CD6F00095214 /* CreatingGroupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BD2DA12A29CD6F00095214 /* CreatingGroupCoordinator.swift */; };
 		15E7C9FD2A1EB01600F1CB49 /* .swiftLint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */; };
-		5E71008154573DB656B961E4 /* Pods_SoTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE089AEF1146D1A3C6EEAEE /* Pods_SoTalk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,8 +119,8 @@
 		157317972A2A69D90061F914 /* GroupPictureView+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupPictureView+Constant.swift"; sourceTree = "<group>"; };
 		157317992A2B3D000061F914 /* UIImage+AverageColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+AverageColor.swift"; sourceTree = "<group>"; };
 		157317AE2A2B8AAE0061F914 /* LoginRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestModel.swift; sourceTree = "<group>"; };
-		157317B02A2B8E530061F914 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		157317B12A2B90F30061F914 /* SecretManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretManager.swift; sourceTree = "<group>"; };
+		157317B52A2BA3570061F914 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		15856D002A1E9CAA0085FE75 /* UIControl+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
 		15856D012A1E9CAA0085FE75 /* UISwitch+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISwitch+Combine.swift"; sourceTree = "<group>"; };
 		15856D022A1E9CAA0085FE75 /* UIButton+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Combine.swift"; sourceTree = "<group>"; };
@@ -212,9 +212,9 @@
 		15BD2D9A2A29CADA00095214 /* CreatingGroupBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingGroupBottomSheetViewController.swift; sourceTree = "<group>"; };
 		15BD2DA12A29CD6F00095214 /* CreatingGroupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingGroupCoordinator.swift; sourceTree = "<group>"; };
 		15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftLint.yml; sourceTree = "<group>"; };
-		2463DFC5BC230B7F4B511AF1 /* Pods-SoTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.release.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.release.xcconfig"; sourceTree = "<group>"; };
-		CDACD0805765933D5DC0C8A6 /* Pods-SoTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.debug.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.debug.xcconfig"; sourceTree = "<group>"; };
-		FCE089AEF1146D1A3C6EEAEE /* Pods_SoTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		500979639FE6B4FD2A8AC0BE /* Pods-SoTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.release.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.release.xcconfig"; sourceTree = "<group>"; };
+		AEE3D2057D4056143228673B /* Pods-SoTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.debug.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.debug.xcconfig"; sourceTree = "<group>"; };
+		B127E9135ABF1C789220762F /* Pods_SoTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,7 +222,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E71008154573DB656B961E4 /* Pods_SoTalk.framework in Frameworks */,
+				05B1483A229CC255E3F1C90F /* Pods_SoTalk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,12 +363,12 @@
 		1589197E2A1E7B43006796B2 = {
 			isa = PBXGroup;
 			children = (
-				157317B02A2B8E530061F914 /* Secrets.xcconfig */,
+				157317B52A2BA3570061F914 /* Secrets.xcconfig */,
 				15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */,
 				158919892A1E7B43006796B2 /* Source */,
 				158919882A1E7B43006796B2 /* Products */,
 				FB162AD42CBF726F528DAA83 /* Pods */,
-				38F98D16A7B7CEAC5182972F /* Frameworks */,
+				347CEEE0C8170DE2975487EC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -811,10 +811,10 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		38F98D16A7B7CEAC5182972F /* Frameworks */ = {
+		347CEEE0C8170DE2975487EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FCE089AEF1146D1A3C6EEAEE /* Pods_SoTalk.framework */,
+				B127E9135ABF1C789220762F /* Pods_SoTalk.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -822,8 +822,8 @@
 		FB162AD42CBF726F528DAA83 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CDACD0805765933D5DC0C8A6 /* Pods-SoTalk.debug.xcconfig */,
-				2463DFC5BC230B7F4B511AF1 /* Pods-SoTalk.release.xcconfig */,
+				AEE3D2057D4056143228673B /* Pods-SoTalk.debug.xcconfig */,
+				500979639FE6B4FD2A8AC0BE /* Pods-SoTalk.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -835,12 +835,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1589199B2A1E7B43006796B2 /* Build configuration list for PBXNativeTarget "SoTalk" */;
 			buildPhases = (
-				E4FC303DB78A08D05D6AA3F5 /* [CP] Check Pods Manifest.lock */,
+				3235976FEA1248D8DE59DC21 /* [CP] Check Pods Manifest.lock */,
 				158919832A1E7B43006796B2 /* Sources */,
 				158919842A1E7B43006796B2 /* Frameworks */,
 				158919852A1E7B43006796B2 /* Resources */,
-				77BA663CACF89937122A8C43 /* [CP] Embed Pods Frameworks */,
 				15BB01AD2A1EB1420035B486 /* ShellScript */,
+				CBDA6A3C36C5A02FE10221CA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -921,24 +921,7 @@
 			shellPath = /bin/sh;
 			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
-		77BA663CACF89937122A8C43 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SoTalk/Pods-SoTalk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SoTalk/Pods-SoTalk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SoTalk/Pods-SoTalk-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E4FC303DB78A08D05D6AA3F5 /* [CP] Check Pods Manifest.lock */ = {
+		3235976FEA1248D8DE59DC21 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -958,6 +941,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBDA6A3C36C5A02FE10221CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoTalk/Pods-SoTalk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoTalk/Pods-SoTalk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SoTalk/Pods-SoTalk-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1077,7 +1077,7 @@
 /* Begin XCBuildConfiguration section */
 		158919992A1E7B43006796B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 157317B02A2B8E530061F914 /* Secrets.xcconfig */;
+			baseConfigurationReference = 157317B52A2BA3570061F914 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1138,7 +1138,7 @@
 		};
 		1589199A2A1E7B43006796B2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 157317B02A2B8E530061F914 /* Secrets.xcconfig */;
+			baseConfigurationReference = 157317B52A2BA3570061F914 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1193,7 +1193,7 @@
 		};
 		1589199C2A1E7B43006796B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDACD0805765933D5DC0C8A6 /* Pods-SoTalk.debug.xcconfig */;
+			baseConfigurationReference = AEE3D2057D4056143228673B /* Pods-SoTalk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1220,7 +1220,7 @@
 		};
 		1589199D2A1E7B43006796B2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2463DFC5BC230B7F4B511AF1 /* Pods-SoTalk.release.xcconfig */;
+			baseConfigurationReference = 500979639FE6B4FD2A8AC0BE /* Pods-SoTalk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

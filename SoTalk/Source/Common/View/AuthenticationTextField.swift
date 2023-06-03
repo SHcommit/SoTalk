@@ -27,7 +27,7 @@ final class AuthenticationTextField: UIView {
     $0.sizeToFit()
   }
   
-  private var textMaxLength: Int = 0
+  private var textMaxLength: Int = 40
   private var textMinLength: Int = 0
   var text: String {
     get {
@@ -165,7 +165,7 @@ extension AuthenticationTextField {
   
 }
 
-// MARK: - Helpers
+// MARK: - Private Helper
 private extension AuthenticationTextField {
   func bind() {
     $validState

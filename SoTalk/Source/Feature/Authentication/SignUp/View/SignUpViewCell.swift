@@ -62,14 +62,14 @@ final class SignUpViewCell: UICollectionViewCell {
   }
 }
 
-// MARK: - Public helpers
+// MARK: - Helper
 extension SignUpViewCell {
   func configure(with text: String, indexPath: IndexPath) {
     setTitle(with: text)
     self.indexPath = indexPath
     switch indexPath.row {
     case InputState.nickname.value:
-      textField.setContentType(.nickname)
+      textField.setContentType(.name)
     case InputState.name.value:
       textField.setContentType(.name)
     case InputState.password.value:
@@ -87,7 +87,7 @@ extension SignUpViewCell {
   }
 }
 
-// MARK: - Helpers
+// MARK: - Private helper
 private extension SignUpViewCell {
   func setTitle(with text: String) {
     title.text = text
@@ -207,6 +207,7 @@ private extension SignUpViewCell {
   }
 }
 
+// MARK: - LayoutSupport
 extension SignUpViewCell: LayoutSupport {
   func addSubviews() {
     _=[title, textField].map { contentView.addSubview($0) }
@@ -217,6 +218,7 @@ extension SignUpViewCell: LayoutSupport {
   }
 }
 
+// MARK: - Layout support private extension
 private extension SignUpViewCell {
   var titleCosntraint: [NSLayoutConstraint] {
     [title.leadingAnchor.constraint(

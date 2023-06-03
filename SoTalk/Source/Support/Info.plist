@@ -9,6 +9,8 @@
 			<string></string>
 		</dict>
 	</array>
+	<key>ServerPort</key>
+	<string>$(ServerPort)</string>
 	<key>ServerAddress</key>
 	<string>$(ServerAddress)</string>
 	<key>UIApplicationSceneManifest</key>

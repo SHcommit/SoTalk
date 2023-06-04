@@ -1,5 +1,5 @@
 //
-//  ChatListLeftNaviItem.swift
+//  MessageListLeftNaviItem.swift
 //  SoTalk
 //
 //  Created by 양승현 on 2023/05/29.
@@ -8,7 +8,7 @@
 import UIKit
 import Lottie
 
-final class ChatListLeftNaviItem: UIView {
+final class MessageListLeftNaviItem: UIView {
   // MARK: - Properties
   let bottleView = LottieAnimationView(name: Constant.BottleView.imageName).set {
     $0.translatesAutoresizingMaskIntoConstraints = false
@@ -37,7 +37,7 @@ final class ChatListLeftNaviItem: UIView {
 }
 
 // MARK: - Private helpers
-extension ChatListLeftNaviItem {
+extension MessageListLeftNaviItem {
   func configure(with name: String) {
     let attrString = NSMutableAttributedString(
       string: "Hello,\n\(name)님!")
@@ -70,7 +70,7 @@ extension ChatListLeftNaviItem {
 }
 
 // MARK: - LayoutSupport
-extension ChatListLeftNaviItem: LayoutSupport {
+extension MessageListLeftNaviItem: LayoutSupport {
   func addSubviews() {
     _=[bottleView, userNameLabel].map { addSubview($0) }
   }
@@ -81,7 +81,7 @@ extension ChatListLeftNaviItem: LayoutSupport {
   }
 }
 
-private extension ChatListLeftNaviItem {
+private extension MessageListLeftNaviItem {
   var menuViewConstraints: [NSLayoutConstraint] {
     [bottleView.leadingAnchor.constraint(
       equalTo: leadingAnchor,

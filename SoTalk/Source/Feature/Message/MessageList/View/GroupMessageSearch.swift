@@ -1,5 +1,5 @@
 //
-//  GroupChatSearch.swift
+//  GroupMessageSearch.swift
 //  SoTalk
 //
 //  Created by 양승현 on 2023/05/29.
@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-final class GroupChatSearch: UIView {
+final class GroupMessageSearch: UIView {
   // MARK: - Properties
   private let textField = UITextField().set {
     $0.translatesAutoresizingMaskIntoConstraints = false
@@ -59,14 +59,14 @@ final class GroupChatSearch: UIView {
 }
 
 // MARK: - Helpers
-extension GroupChatSearch {
+extension GroupMessageSearch {
   func hideKeyboard() {
     textField.resignFirstResponder()
   }
 }
 
 // MARK: - Private helpers
-private extension GroupChatSearch {
+private extension GroupMessageSearch {
   func initInputAccessoryView() {
     // constant
     let height: CGFloat = 75.0
@@ -117,7 +117,7 @@ private extension GroupChatSearch {
 }
 
 // MARK: - UITextFIeldDelegate
-extension GroupChatSearch: UITextFieldDelegate {
+extension GroupMessageSearch: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     textField.resignFirstResponder()
   }
@@ -128,7 +128,7 @@ extension GroupChatSearch: UITextFieldDelegate {
 }
 
 // MARK: - LayoutSupport
-extension GroupChatSearch: LayoutSupport {
+extension GroupMessageSearch: LayoutSupport {
   func addSubviews() {
     _=[icon, textField].map { addSubview($0) }
   }
@@ -138,7 +138,7 @@ extension GroupChatSearch: LayoutSupport {
   }
 }
 
-private extension GroupChatSearch {
+private extension GroupMessageSearch {
   var iconConstraints: [NSLayoutConstraint] {
     [icon.leadingAnchor.constraint(
       equalTo: leadingAnchor,

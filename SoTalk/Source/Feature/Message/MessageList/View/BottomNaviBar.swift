@@ -38,9 +38,9 @@ final class BottomNaviBar: UIView {
     return mainTitleHeightWithtopSpacing + searchHeightWithTopBottomSpacing
   }
   
-  private let searchBar = GroupChatSearch()
+  private let searchBar = GroupMessageSearch()
   
-  var searchBarView: GroupChatSearch {
+  var searchBarView: GroupMessageSearch {
     searchBar
   }
   

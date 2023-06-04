@@ -1,5 +1,5 @@
 //
-//  ChatListViewController+Constant.swift
+//  MessageListViewController+Constant.swift
 //  SoTalk
 //
 //  Created by 양승현 on 2023/05/30.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension ChatListViewController {
+extension MessageListViewController {
   enum Constant {
     enum MyProfile {
       static let size: CGSize = CGSize(width: 46, height: 46)

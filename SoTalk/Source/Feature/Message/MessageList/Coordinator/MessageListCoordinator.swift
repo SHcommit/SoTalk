@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ChatListCoordinator: NSObject, FlowCoordinator {
+final class MessageListCoordinator: NSObject, FlowCoordinator {
   // MARK: - Properties
   var parent: FlowCoordinator!
   var child: [FlowCoordinator] = []
@@ -15,7 +15,7 @@ final class ChatListCoordinator: NSObject, FlowCoordinator {
   var viewController: UIViewController!
   
   override init() {
-    let chatListViewController = ChatListViewController()
+    let chatListViewController = MessageListViewController()
     presenter = NavigationControler(rootViewController: chatListViewController)
     viewController = chatListViewController
     super.init()
@@ -32,7 +32,7 @@ final class ChatListCoordinator: NSObject, FlowCoordinator {
   }
 }
 
-extension ChatListCoordinator {
+extension MessageListCoordinator {
   func gotoLoginPage() {
     guard let parent = parent as? ApplicationFlowCoordinator else { return }
     parent.gotoLoginPage(withDelete: self)

@@ -1,5 +1,5 @@
 //
-//  ChatListLeftNaviItem+Constant.swift
+//  MessageListLeftNaviItem+Constant.swift
 //  SoTalk
 //
 //  Created by 양승현 on 2023/05/30.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension ChatListLeftNaviItem {
+extension MessageListLeftNaviItem {
   enum Constant {
     enum BottleView {
       static let size = CGSize(width: 80, height: 80)

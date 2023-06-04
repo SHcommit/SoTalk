@@ -73,21 +73,20 @@
 		15BB02442A23E1170035B486 /* leftCongratulation.json in Resources */ = {isa = PBXBuildFile; fileRef = 15BB02432A23E1170035B486 /* leftCongratulation.json */; };
 		15BB02482A23E3960035B486 /* welcome.json in Resources */ = {isa = PBXBuildFile; fileRef = 15BB02472A23E3960035B486 /* welcome.json */; };
 		15BB024A2A246B660035B486 /* loginMessage.json in Resources */ = {isa = PBXBuildFile; fileRef = 15BB02492A246B660035B486 /* loginMessage.json */; };
-		15BB024E2A2482370035B486 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB024D2A2482370035B486 /* ChatListViewController.swift */; };
-		15BB02532A2496B00035B486 /* ChatListLeftNaviItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02522A2496B00035B486 /* ChatListLeftNaviItem.swift */; };
+		15BB02532A2496B00035B486 /* MessageListLeftNaviItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02522A2496B00035B486 /* MessageListLeftNaviItem.swift */; };
 		15BB02552A24AF650035B486 /* BottomNaviBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02542A24AF650035B486 /* BottomNaviBar.swift */; };
 		15BB02592A24DC550035B486 /* helloNavi.json in Resources */ = {isa = PBXBuildFile; fileRef = 15BB02582A24DC540035B486 /* helloNavi.json */; };
 		15BB025B2A24E1CE0035B486 /* bottle.json in Resources */ = {isa = PBXBuildFile; fileRef = 15BB025A2A24E1CE0035B486 /* bottle.json */; };
-		15BB025D2A24E3E30035B486 /* GroupChatSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB025C2A24E3E30035B486 /* GroupChatSearch.swift */; };
-		15BB02602A251BF10035B486 /* GroupChatSearch+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB025F2A251BF10035B486 /* GroupChatSearch+Constant.swift */; };
-		15BB02622A251C0D0035B486 /* ChatListLeftNaviItem+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02612A251C0D0035B486 /* ChatListLeftNaviItem+Constant.swift */; };
-		15BB02642A251C430035B486 /* ChatListViewController+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02632A251C430035B486 /* ChatListViewController+Constant.swift */; };
+		15BB025D2A24E3E30035B486 /* GroupMessageSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB025C2A24E3E30035B486 /* GroupMessageSearch.swift */; };
+		15BB02602A251BF10035B486 /* GroupMessageSearch+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB025F2A251BF10035B486 /* GroupMessageSearch+Constant.swift */; };
+		15BB02622A251C0D0035B486 /* MessageListLeftNaviItem+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02612A251C0D0035B486 /* MessageListLeftNaviItem+Constant.swift */; };
+		15BB02642A251C430035B486 /* MessageListViewController+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02632A251C430035B486 /* MessageListViewController+Constant.swift */; };
 		15BB027A2A25F1710035B486 /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02792A25F1710035B486 /* GroupView.swift */; };
 		15BB027C2A25F31A0035B486 /* GroupViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB027B2A25F31A0035B486 /* GroupViewCell.swift */; };
 		15BB027F2A25F3690035B486 /* GroupViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB027E2A25F3680035B486 /* GroupViewAdapter.swift */; };
 		15BB02822A25F37E0035B486 /* GroupViewAdapterDataSoruce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02812A25F37E0035B486 /* GroupViewAdapterDataSoruce.swift */; };
 		15BB02842A261D910035B486 /* UIColor+ChatPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02832A261D910035B486 /* UIColor+ChatPalette.swift */; };
-		15BB02892A262C800035B486 /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02882A262C800035B486 /* ChatListViewModel.swift */; };
+		15BB02892A262C800035B486 /* MessageListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02882A262C800035B486 /* MessageListViewModel.swift */; };
 		15BB028C2A262D270035B486 /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB028B2A262D270035B486 /* GroupModel.swift */; };
 		15BB028F2A2631040035B486 /* MockGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB028E2A2631040035B486 /* MockGroupModel.swift */; };
 		15BB02A72A264A070035B486 /* FlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02A62A264A070035B486 /* FlowCoordinator.swift */; };
@@ -95,7 +94,7 @@
 		15BB02AC2A2659900035B486 /* ApplicationFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02AB2A2659900035B486 /* ApplicationFlowCoordinator.swift */; };
 		15BB02AF2A2668240035B486 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02AE2A2668240035B486 /* LoginCoordinator.swift */; };
 		15BB02B42A26720A0035B486 /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02B32A26720A0035B486 /* SignUpCoordinator.swift */; };
-		15BB02B72A26785D0035B486 /* ChatListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02B62A26785D0035B486 /* ChatListCoordinator.swift */; };
+		15BB02B72A26785D0035B486 /* MessageListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02B62A26785D0035B486 /* MessageListCoordinator.swift */; };
 		15BB02B92A28407B0035B486 /* BottomNaviBar+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02B82A28407B0035B486 /* BottomNaviBar+Constant.swift */; };
 		15BB02BB2A284D360035B486 /* GroupViewAdapterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02BA2A284D360035B486 /* GroupViewAdapterDelegate.swift */; };
 		15BB02C02A284E8D0035B486 /* MessageViewContrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02BF2A284E8D0035B486 /* MessageViewContrller.swift */; };
@@ -117,6 +116,7 @@
 		15BD2D9B2A29CADA00095214 /* CreatingGroupBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BD2D9A2A29CADA00095214 /* CreatingGroupBottomSheetViewController.swift */; };
 		15BD2DA22A29CD6F00095214 /* CreatingGroupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BD2DA12A29CD6F00095214 /* CreatingGroupCoordinator.swift */; };
 		15E7C9FD2A1EB01600F1CB49 /* .swiftLint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */; };
+		15E8A29B2A2C78CB002ECFDB /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A29A2A2C78CB002ECFDB /* MessageListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -188,21 +188,20 @@
 		15BB02432A23E1170035B486 /* leftCongratulation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = leftCongratulation.json; sourceTree = "<group>"; };
 		15BB02472A23E3960035B486 /* welcome.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = welcome.json; sourceTree = "<group>"; };
 		15BB02492A246B660035B486 /* loginMessage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loginMessage.json; sourceTree = "<group>"; };
-		15BB024D2A2482370035B486 /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
-		15BB02522A2496B00035B486 /* ChatListLeftNaviItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListLeftNaviItem.swift; sourceTree = "<group>"; };
+		15BB02522A2496B00035B486 /* MessageListLeftNaviItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListLeftNaviItem.swift; sourceTree = "<group>"; };
 		15BB02542A24AF650035B486 /* BottomNaviBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNaviBar.swift; sourceTree = "<group>"; };
 		15BB02582A24DC540035B486 /* helloNavi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = helloNavi.json; sourceTree = "<group>"; };
 		15BB025A2A24E1CE0035B486 /* bottle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bottle.json; sourceTree = "<group>"; };
-		15BB025C2A24E3E30035B486 /* GroupChatSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatSearch.swift; sourceTree = "<group>"; };
-		15BB025F2A251BF10035B486 /* GroupChatSearch+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupChatSearch+Constant.swift"; sourceTree = "<group>"; };
-		15BB02612A251C0D0035B486 /* ChatListLeftNaviItem+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatListLeftNaviItem+Constant.swift"; sourceTree = "<group>"; };
-		15BB02632A251C430035B486 /* ChatListViewController+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatListViewController+Constant.swift"; sourceTree = "<group>"; };
+		15BB025C2A24E3E30035B486 /* GroupMessageSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMessageSearch.swift; sourceTree = "<group>"; };
+		15BB025F2A251BF10035B486 /* GroupMessageSearch+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupMessageSearch+Constant.swift"; sourceTree = "<group>"; };
+		15BB02612A251C0D0035B486 /* MessageListLeftNaviItem+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageListLeftNaviItem+Constant.swift"; sourceTree = "<group>"; };
+		15BB02632A251C430035B486 /* MessageListViewController+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageListViewController+Constant.swift"; sourceTree = "<group>"; };
 		15BB02792A25F1710035B486 /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
 		15BB027B2A25F31A0035B486 /* GroupViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewCell.swift; sourceTree = "<group>"; };
 		15BB027E2A25F3680035B486 /* GroupViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewAdapter.swift; sourceTree = "<group>"; };
 		15BB02812A25F37E0035B486 /* GroupViewAdapterDataSoruce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewAdapterDataSoruce.swift; sourceTree = "<group>"; };
 		15BB02832A261D910035B486 /* UIColor+ChatPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ChatPalette.swift"; sourceTree = "<group>"; };
-		15BB02882A262C800035B486 /* ChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
+		15BB02882A262C800035B486 /* MessageListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListViewModel.swift; sourceTree = "<group>"; };
 		15BB028B2A262D270035B486 /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 		15BB028E2A2631040035B486 /* MockGroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGroupModel.swift; sourceTree = "<group>"; };
 		15BB02A62A264A070035B486 /* FlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.swift; sourceTree = "<group>"; };
@@ -210,7 +209,7 @@
 		15BB02AB2A2659900035B486 /* ApplicationFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFlowCoordinator.swift; sourceTree = "<group>"; };
 		15BB02AE2A2668240035B486 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		15BB02B32A26720A0035B486 /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
-		15BB02B62A26785D0035B486 /* ChatListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListCoordinator.swift; sourceTree = "<group>"; };
+		15BB02B62A26785D0035B486 /* MessageListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListCoordinator.swift; sourceTree = "<group>"; };
 		15BB02B82A28407B0035B486 /* BottomNaviBar+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomNaviBar+Constant.swift"; sourceTree = "<group>"; };
 		15BB02BA2A284D360035B486 /* GroupViewAdapterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewAdapterDelegate.swift; sourceTree = "<group>"; };
 		15BB02BF2A284E8D0035B486 /* MessageViewContrller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewContrller.swift; sourceTree = "<group>"; };
@@ -232,6 +231,7 @@
 		15BD2D9A2A29CADA00095214 /* CreatingGroupBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingGroupBottomSheetViewController.swift; sourceTree = "<group>"; };
 		15BD2DA12A29CD6F00095214 /* CreatingGroupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingGroupCoordinator.swift; sourceTree = "<group>"; };
 		15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftLint.yml; sourceTree = "<group>"; };
+		15E8A29A2A2C78CB002ECFDB /* MessageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
 		500979639FE6B4FD2A8AC0BE /* Pods-SoTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.release.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.release.xcconfig"; sourceTree = "<group>"; };
 		AEE3D2057D4056143228673B /* Pods-SoTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.debug.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.debug.xcconfig"; sourceTree = "<group>"; };
 		B127E9135ABF1C789220762F /* Pods_SoTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -376,7 +376,7 @@
 		15856D112A1E9EFD0085FE75 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				15BB024C2A2482220035B486 /* Chat */,
+				15BB024C2A2482220035B486 /* Message */,
 				15856D122A1E9F030085FE75 /* Authentication */,
 			);
 			path = Feature;
@@ -633,31 +633,23 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		15BB024C2A2482220035B486 /* Chat */ = {
+		15BB024C2A2482220035B486 /* Message */ = {
 			isa = PBXGroup;
 			children = (
 				15BD2D9E2A29CD4100095214 /* CreatingGroup */,
 				15BB02BD2A284E5D0035B486 /* Chatting */,
-				15BB02BC2A284E2B0035B486 /* ChatList */,
+				15BB02BC2A284E2B0035B486 /* MessageList */,
 			);
-			path = Chat;
-			sourceTree = "<group>";
-		};
-		15BB02502A2496980035B486 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				15BB024D2A2482370035B486 /* ChatListViewController.swift */,
-			);
-			path = ViewController;
+			path = Message;
 			sourceTree = "<group>";
 		};
 		15BB02512A2496A10035B486 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				15BB02782A25F1640035B486 /* GroupView */,
-				15BB02522A2496B00035B486 /* ChatListLeftNaviItem.swift */,
+				15BB02522A2496B00035B486 /* MessageListLeftNaviItem.swift */,
 				15BB02542A24AF650035B486 /* BottomNaviBar.swift */,
-				15BB025C2A24E3E30035B486 /* GroupChatSearch.swift */,
+				15BB025C2A24E3E30035B486 /* GroupMessageSearch.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -665,9 +657,9 @@
 		15BB025E2A251BE00035B486 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				15BB025F2A251BF10035B486 /* GroupChatSearch+Constant.swift */,
-				15BB02612A251C0D0035B486 /* ChatListLeftNaviItem+Constant.swift */,
-				15BB02632A251C430035B486 /* ChatListViewController+Constant.swift */,
+				15BB025F2A251BF10035B486 /* GroupMessageSearch+Constant.swift */,
+				15BB02612A251C0D0035B486 /* MessageListLeftNaviItem+Constant.swift */,
+				15BB02632A251C430035B486 /* MessageListViewController+Constant.swift */,
 				15BB02B82A28407B0035B486 /* BottomNaviBar+Constant.swift */,
 			);
 			path = Extension;
@@ -702,7 +694,7 @@
 		15BB02872A262C730035B486 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				15BB02882A262C800035B486 /* ChatListViewModel.swift */,
+				15BB02882A262C800035B486 /* MessageListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -760,14 +752,15 @@
 		15BB02B52A2678510035B486 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				15BB02B62A26785D0035B486 /* ChatListCoordinator.swift */,
+				15BB02B62A26785D0035B486 /* MessageListCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		15BB02BC2A284E2B0035B486 /* ChatList */ = {
+		15BB02BC2A284E2B0035B486 /* MessageList */ = {
 			isa = PBXGroup;
 			children = (
+				15E8A2992A2C78C3002ECFDB /* ViewController */,
 				15BB027D2A25F3600035B486 /* Adapter */,
 				15BB02B52A2678510035B486 /* Coordinator */,
 				15BB025E2A251BE00035B486 /* Extension */,
@@ -775,10 +768,9 @@
 				15BB028A2A262D1D0035B486 /* Model */,
 				15BB02802A25F36E0035B486 /* Protocol */,
 				15BB02512A2496A10035B486 /* View */,
-				15BB02502A2496980035B486 /* ViewController */,
 				15BB02872A262C730035B486 /* ViewModel */,
 			);
-			path = ChatList;
+			path = MessageList;
 			sourceTree = "<group>";
 		};
 		15BB02BD2A284E5D0035B486 /* Chatting */ = {
@@ -895,6 +887,14 @@
 				15BD2DA12A29CD6F00095214 /* CreatingGroupCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		15E8A2992A2C78C3002ECFDB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				15E8A29A2A2C78CB002ECFDB /* MessageListViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		347CEEE0C8170DE2975487EC /* Frameworks */ = {
@@ -1062,7 +1062,7 @@
 				15BB027F2A25F3690035B486 /* GroupViewAdapter.swift in Sources */,
 				15BB027A2A25F1710035B486 /* GroupView.swift in Sources */,
 				15BB02272A22795C0035B486 /* AuthenticationButton.swift in Sources */,
-				15BB02B72A26785D0035B486 /* ChatListCoordinator.swift in Sources */,
+				15BB02B72A26785D0035B486 /* MessageListCoordinator.swift in Sources */,
 				15BB02F82A29076E0035B486 /* MessageContentView+Constant.swift in Sources */,
 				15BB02C82A28855D0035B486 /* MessageSendBar.swift in Sources */,
 				15BD2DA22A29CD6F00095214 /* CreatingGroupCoordinator.swift in Sources */,
@@ -1078,16 +1078,15 @@
 				15BB01DE2A1F3DD70035B486 /* BackgroundBlur.swift in Sources */,
 				152E526D2A2C4F5600987CA8 /* Encodable+toDictionary.swift in Sources */,
 				152E52732A2C550F00987CA8 /* EndpointProvider.swift in Sources */,
-				15BB02642A251C430035B486 /* ChatListViewController+Constant.swift in Sources */,
+				15BB02642A251C430035B486 /* MessageListViewController+Constant.swift in Sources */,
 				15BB02842A261D910035B486 /* UIColor+ChatPalette.swift in Sources */,
 				15BB021C2A225EE30035B486 /* SignUpViewCell.swift in Sources */,
 				152E52682A2BC76E00987CA8 /* Endpoint.swift in Sources */,
-				15BB02532A2496B00035B486 /* ChatListLeftNaviItem.swift in Sources */,
+				15BB02532A2496B00035B486 /* MessageListLeftNaviItem.swift in Sources */,
 				15856D092A1E9CAA0085FE75 /* UITextField+Combine.swift in Sources */,
-				15BB024E2A2482370035B486 /* ChatListViewController.swift in Sources */,
 				15856D102A1E9D150085FE75 /* LayoutSupport.swift in Sources */,
 				152E526A2A2BC8EA00987CA8 /* HTTPMethod.swift in Sources */,
-				15BB02622A251C0D0035B486 /* ChatListLeftNaviItem+Constant.swift in Sources */,
+				15BB02622A251C0D0035B486 /* MessageListLeftNaviItem+Constant.swift in Sources */,
 				15BB02AA2A2650BE0035B486 /* FlowCoordinator+ConvenienceInitSubCoordinator.swift in Sources */,
 				15BB02F42A29067D0035B486 /* MessageContentModel.swift in Sources */,
 				15BB027C2A25F31A0035B486 /* GroupViewCell.swift in Sources */,
@@ -1095,7 +1094,7 @@
 				1589198B2A1E7B43006796B2 /* AppDelegate.swift in Sources */,
 				15BB028C2A262D270035B486 /* GroupModel.swift in Sources */,
 				15856D0E2A1E9D150085FE75 /* ConvenienceInit.swift in Sources */,
-				15BB02892A262C800035B486 /* ChatListViewModel.swift in Sources */,
+				15BB02892A262C800035B486 /* MessageListViewModel.swift in Sources */,
 				1551140A2A2A29F1009E0103 /* GroupPictureView.swift in Sources */,
 				15BB02A72A264A070035B486 /* FlowCoordinator.swift in Sources */,
 				15BB01C82A1F0B710035B486 /* UIColor+Palette.swift in Sources */,
@@ -1121,6 +1120,7 @@
 				15BB02AC2A2659900035B486 /* ApplicationFlowCoordinator.swift in Sources */,
 				15BD2D9B2A29CADA00095214 /* CreatingGroupBottomSheetViewController.swift in Sources */,
 				15BB02C32A2850050035B486 /* MessageCoordinator.swift in Sources */,
+				15E8A29B2A2C78CB002ECFDB /* MessageListViewController.swift in Sources */,
 				15BB02CB2A2887140035B486 /* MessageTextViewDelegate.swift in Sources */,
 				15856D0F2A1E9D150085FE75 /* ViewModelProtocols.swift in Sources */,
 				157317962A2A68AF0061F914 /* UIImage+JPEGCompression.swift in Sources */,
@@ -1133,7 +1133,7 @@
 				15BB02DD2A28B7FC0035B486 /* MessageCell.swift in Sources */,
 				15BB02552A24AF650035B486 /* BottomNaviBar.swift in Sources */,
 				152E52662A2BC76800987CA8 /* Responsable.swift in Sources */,
-				15BB02602A251BF10035B486 /* GroupChatSearch+Constant.swift in Sources */,
+				15BB02602A251BF10035B486 /* GroupMessageSearch+Constant.swift in Sources */,
 				15BB022F2A233CC30035B486 /* SignUpModel.swift in Sources */,
 				1551140D2A2A2A93009E0103 /* MessageCell+Constant.swift in Sources */,
 				15BB02B42A26720A0035B486 /* SignUpCoordinator.swift in Sources */,
@@ -1143,7 +1143,7 @@
 				15856D072A1E9CAA0085FE75 /* UIButton+Combine.swift in Sources */,
 				15BB01D72A1F2A070035B486 /* ForgetViewDelegate.swift in Sources */,
 				15BB01CA2A1F10730035B486 /* AuthenticationTextField.swift in Sources */,
-				15BB025D2A24E3E30035B486 /* GroupChatSearch.swift in Sources */,
+				15BB025D2A24E3E30035B486 /* GroupMessageSearch.swift in Sources */,
 				15BB01E32A1F519B0035B486 /* SignUpViewController.swift in Sources */,
 				15BB02252A226B2C0035B486 /* SignUpViewAdapterDataSource.swift in Sources */,
 				15BB01D92A1F311E0035B486 /* OneUnitHeightLine.swift in Sources */,

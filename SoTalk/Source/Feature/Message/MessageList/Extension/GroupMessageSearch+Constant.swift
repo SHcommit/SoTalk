@@ -1,5 +1,5 @@
 //
-//  GroupChatSearch+Constant.swift
+//  GroupMessageSearch+Constant.swift
 //  SoTalk
 //
 //  Created by 양승현 on 2023/05/30.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension GroupChatSearch {
+extension GroupMessageSearch {
   enum Constant {
     static let cornerRadius = 17.0
     enum Icon {

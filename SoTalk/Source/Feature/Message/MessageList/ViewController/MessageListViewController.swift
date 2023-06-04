@@ -1,5 +1,5 @@
 //
-//  ChatListViewController.swift
+//  MessageListViewController.swift
 //  SoTalk
 //
 //  Created by 양승현 on 2023/05/29.
@@ -8,19 +8,19 @@
 import UIKit
 import Combine
 
-class ChatListViewController: UIViewController {
+class MessageListViewController: UIViewController {
   // MARK: - Properties
   
   private var isViewDidLoad = false
   
-  weak var coordinator: ChatListCoordinator?
+  weak var coordinator: MessageListCoordinator?
   
-  private let vm = ChatListViewModel()
+  private let vm = MessageListViewModel()
   
   private var adapter: GroupViewAdapter!
   
   /// 이부분 이 화면 올 때 같이 대입해줘야함 첫 로그인 때 내가 저장해보리자
-  private lazy var leftNaviView = ChatListLeftNaviItem(with: "아리아나 그란데말입니다")
+  private lazy var leftNaviView = MessageListLeftNaviItem(with: "아리아나 그란데말입니다")
   
   private lazy var naviBottomView = BottomNaviBar()
   
@@ -157,7 +157,7 @@ class ChatListViewController: UIViewController {
 }
 
 // MARK: - Private helpers
-private extension ChatListViewController {
+private extension MessageListViewController {
   func configureUI() {
     view.backgroundColor = UIColor(hex: "#F8F8FA")
     setNavigationBar()
@@ -230,7 +230,7 @@ private extension ChatListViewController {
 }
 
 // MARK: - Animation helpers
-private extension ChatListViewController {
+private extension MessageListViewController {
   func hideMyGroupLabel() {
     myGroupLabel.center.y -= 15
     myGroupLabel.alpha = 0
@@ -251,14 +251,14 @@ private extension ChatListViewController {
 }
 
 // MARK: - GroupViewAdapterDelegate
-extension ChatListViewController: GroupViewAdapterDelegate {
+extension MessageListViewController: GroupViewAdapterDelegate {
   func didSelectItemAt(_ indexPath: IndexPath) {
     coordinator?.gotoChattingPage()
   }
 }
 
 // MARK: - LayoutSupport
-extension ChatListViewController: LayoutSupport {
+extension MessageListViewController: LayoutSupport {
   func addSubviews() {
     _=[groupView, myGroupLabel, naviBottomView, addGroupButton].map { view.addSubview($0)
     }
@@ -272,7 +272,7 @@ extension ChatListViewController: LayoutSupport {
   }
 }
 
-private extension ChatListViewController {
+private extension MessageListViewController {
   var groupViewConstraints: [NSLayoutConstraint] {
     [groupView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
      groupView.topAnchor.constraint(

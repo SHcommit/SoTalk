@@ -1,5 +1,5 @@
 //
-//  ChatListViewModel.swift
+//  MessageListViewModel.swift
 //  SoTalk
 //
 //  Created by 양승현 on 2023/05/30.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ChatListViewModel {
+final class MessageListViewModel {
   // MARK: - Properties
   var model: [GroupModel]?
   
@@ -17,7 +17,7 @@ final class ChatListViewModel {
 }
 
 // MARK: - GroupViewAdapterDataSource
-extension ChatListViewModel: GroupViewAdapterDataSource {
+extension MessageListViewModel: GroupViewAdapterDataSource {
   var numberOfItems: Int {
     model?.count ?? 0
   }

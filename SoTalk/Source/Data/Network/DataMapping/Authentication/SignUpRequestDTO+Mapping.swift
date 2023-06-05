@@ -8,10 +8,10 @@
 import Foundation
 
 struct SignUpRequestDTO: Codable {
-  var id: String = ""
-  var name: String = ""
-  var password: String = ""
-  var nickname: String = ""
+  let id: String
+  let name: String
+  let password: String
+  let nickname: String
   
   enum CodingKeys: String, CodingKey {
     case id = "userId"

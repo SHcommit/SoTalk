@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SignInRequestDTO {
+struct LoginRequestDTO {
   let id: String
   let password: String
   
@@ -17,7 +17,7 @@ struct SignInRequestDTO {
   }
 }
 
-extension SignInRequestDTO: Encodable {
+extension LoginRequestDTO: Encodable {
   func encode(to encoder: Encoder) throws {
     var container = encoder.container(keyedBy: CodingKeys.self)
     try container.encode(id, forKey: .id)

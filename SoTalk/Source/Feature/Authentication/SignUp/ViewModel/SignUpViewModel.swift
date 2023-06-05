@@ -11,7 +11,7 @@ final class SignUpViewModel {
   // MARK: - Properties
   private let data = ["이름을 입력해주세요.", "닉네임을 입력해주세요.", "아이디를 입력해주세요.", "비밀번호를 입력해주세요.", "회원가입 성공"]
   
-  private var signUpModel = SignUpModel()
+  var signUpModel = SignUpRequestDTO()
 }
 
 // MARK: - SignUpViewAdapterDataSource

@@ -20,15 +20,17 @@ final class Endpoint<R>: HTTPMessage {
   var bodyParameters: Encodable?
   var headers: [String: String]?
   var sampleData: Data?
+  var multipartDTO: MultipartInputDTO?
   init(
     entryProtocol: String = "https://",
-    servIP: String = "",
+    servIP: String = SecretManager.shared.serverAddress,
     path: String = "",
     method: HTTPMethod = .get,
     queryParameters: Encodable? = nil,
     bodyParameters: Encodable? = nil,
     headers: [String: String]? = nil,
-    sampleData: Data? = nil
+    sampleData: Data? = nil,
+    multipartDTO: MultipartInputDTO? = nil
   ) {
     self.entryProtocol = entryProtocol
     self.servIP = servIP
@@ -38,5 +40,6 @@ final class Endpoint<R>: HTTPMessage {
     self.bodyParameters = bodyParameters
     self.headers = headers
     self.sampleData = sampleData
+    self.multipartDTO = multipartDTO
   }
 }

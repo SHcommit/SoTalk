@@ -26,7 +26,7 @@
 		157317962A2A68AF0061F914 /* UIImage+JPEGCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157317952A2A68AF0061F914 /* UIImage+JPEGCompression.swift */; };
 		157317982A2A69D90061F914 /* GroupPictureView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157317972A2A69D90061F914 /* GroupPictureView+Constant.swift */; };
 		1573179A2A2B3D000061F914 /* UIImage+AverageColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157317992A2B3D000061F914 /* UIImage+AverageColor.swift */; };
-		157317AF2A2B8AAE0061F914 /* LoginRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157317AE2A2B8AAE0061F914 /* LoginRequestModel.swift */; };
+		157317AF2A2B8AAE0061F914 /* LoginRequestDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157317AE2A2B8AAE0061F914 /* LoginRequestDTO+Mapping.swift */; };
 		157317B22A2B90F30061F914 /* SecretManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157317B12A2B90F30061F914 /* SecretManager.swift */; };
 		15856D052A1E9CAA0085FE75 /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D002A1E9CAA0085FE75 /* UIControl+Combine.swift */; };
 		15856D062A1E9CAA0085FE75 /* UISwitch+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D012A1E9CAA0085FE75 /* UISwitch+Combine.swift */; };
@@ -66,7 +66,7 @@
 		15BB02252A226B2C0035B486 /* SignUpViewAdapterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02242A226B2C0035B486 /* SignUpViewAdapterDataSource.swift */; };
 		15BB02272A22795C0035B486 /* AuthenticationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02262A22795C0035B486 /* AuthenticationButton.swift */; };
 		15BB022C2A2336AA0035B486 /* SignUpViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB022B2A2336AA0035B486 /* SignUpViewCellDelegate.swift */; };
-		15BB022F2A233CC30035B486 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB022E2A233CC30035B486 /* SignUpModel.swift */; };
+		15BB022F2A233CC30035B486 /* SignUpRequestDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB022E2A233CC30035B486 /* SignUpRequestDTO+Mapping.swift */; };
 		15BB02372A2347460035B486 /* SignUpViewCell+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02362A2347460035B486 /* SignUpViewCell+Constant.swift */; };
 		15BB023B2A23B0B60035B486 /* SignUpViewCellInputState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB023A2A23B0B60035B486 /* SignUpViewCellInputState.swift */; };
 		15BB02402A23DDC70035B486 /* SignUpViewCell+DrawSignUpEndPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB023F2A23DDC70035B486 /* SignUpViewCell+DrawSignUpEndPage.swift */; };
@@ -117,6 +117,13 @@
 		15BD2DA22A29CD6F00095214 /* CreatingGroupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BD2DA12A29CD6F00095214 /* CreatingGroupCoordinator.swift */; };
 		15E7C9FD2A1EB01600F1CB49 /* .swiftLint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */; };
 		15E8A29B2A2C78CB002ECFDB /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A29A2A2C78CB002ECFDB /* MessageListViewController.swift */; };
+		15E8A2A92A2CEF93002ECFDB /* UserIdRequestDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A2A82A2CEF93002ECFDB /* UserIdRequestDTO+Mapping.swift */; };
+		15E8A2AE2A2D00FD002ECFDB /* UserAPIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A2AD2A2D00FD002ECFDB /* UserAPIEndpoints.swift */; };
+		15E8A2B32A2D01A9002ECFDB /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A2B22A2D01A9002ECFDB /* SignInModel.swift */; };
+		15E8A2B72A2D0F7A002ECFDB /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A2B62A2D0F7A002ECFDB /* UserInfoModel.swift */; };
+		15E8A2B92A2D126A002ECFDB /* ProfileUploadRequestDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A2B82A2D126A002ECFDB /* ProfileUploadRequestDTO+Mapping.swift */; };
+		15E8A2BE2A2DAEA0002ECFDB /* MultipartInputDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A2BD2A2DAEA0002ECFDB /* MultipartInputDTO.swift */; };
+		15E8A2C62A2DC960002ECFDB /* GroupAPIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A2C52A2DC960002ECFDB /* GroupAPIEndpoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,7 +145,7 @@
 		157317952A2A68AF0061F914 /* UIImage+JPEGCompression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+JPEGCompression.swift"; sourceTree = "<group>"; };
 		157317972A2A69D90061F914 /* GroupPictureView+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupPictureView+Constant.swift"; sourceTree = "<group>"; };
 		157317992A2B3D000061F914 /* UIImage+AverageColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+AverageColor.swift"; sourceTree = "<group>"; };
-		157317AE2A2B8AAE0061F914 /* LoginRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestModel.swift; sourceTree = "<group>"; };
+		157317AE2A2B8AAE0061F914 /* LoginRequestDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginRequestDTO+Mapping.swift"; sourceTree = "<group>"; };
 		157317B12A2B90F30061F914 /* SecretManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretManager.swift; sourceTree = "<group>"; };
 		157317B52A2BA3570061F914 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		15856D002A1E9CAA0085FE75 /* UIControl+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
@@ -181,7 +188,7 @@
 		15BB02242A226B2C0035B486 /* SignUpViewAdapterDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewAdapterDataSource.swift; sourceTree = "<group>"; };
 		15BB02262A22795C0035B486 /* AuthenticationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationButton.swift; sourceTree = "<group>"; };
 		15BB022B2A2336AA0035B486 /* SignUpViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewCellDelegate.swift; sourceTree = "<group>"; };
-		15BB022E2A233CC30035B486 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		15BB022E2A233CC30035B486 /* SignUpRequestDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpRequestDTO+Mapping.swift"; sourceTree = "<group>"; };
 		15BB02362A2347460035B486 /* SignUpViewCell+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewCell+Constant.swift"; sourceTree = "<group>"; };
 		15BB023A2A23B0B60035B486 /* SignUpViewCellInputState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewCellInputState.swift; sourceTree = "<group>"; };
 		15BB023F2A23DDC70035B486 /* SignUpViewCell+DrawSignUpEndPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewCell+DrawSignUpEndPage.swift"; sourceTree = "<group>"; };
@@ -232,6 +239,13 @@
 		15BD2DA12A29CD6F00095214 /* CreatingGroupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingGroupCoordinator.swift; sourceTree = "<group>"; };
 		15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftLint.yml; sourceTree = "<group>"; };
 		15E8A29A2A2C78CB002ECFDB /* MessageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
+		15E8A2A82A2CEF93002ECFDB /* UserIdRequestDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserIdRequestDTO+Mapping.swift"; sourceTree = "<group>"; };
+		15E8A2AD2A2D00FD002ECFDB /* UserAPIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIEndpoints.swift; sourceTree = "<group>"; };
+		15E8A2B22A2D01A9002ECFDB /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
+		15E8A2B62A2D0F7A002ECFDB /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
+		15E8A2B82A2D126A002ECFDB /* ProfileUploadRequestDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileUploadRequestDTO+Mapping.swift"; sourceTree = "<group>"; };
+		15E8A2BD2A2DAEA0002ECFDB /* MultipartInputDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartInputDTO.swift; sourceTree = "<group>"; };
+		15E8A2C52A2DC960002ECFDB /* GroupAPIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupAPIEndpoints.swift; sourceTree = "<group>"; };
 		500979639FE6B4FD2A8AC0BE /* Pods-SoTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.release.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.release.xcconfig"; sourceTree = "<group>"; };
 		AEE3D2057D4056143228673B /* Pods-SoTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoTalk.debug.xcconfig"; path = "Target Support Files/Pods-SoTalk/Pods-SoTalk.debug.xcconfig"; sourceTree = "<group>"; };
 		B127E9135ABF1C789220762F /* Pods_SoTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -340,6 +354,7 @@
 		157383402A1E9B1A00EDE059 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				152E525E2A2BC73A00987CA8 /* Network */,
 				15BB01DC2A1F3C9F0035B486 /* Utils */,
 				15BB01D02A1F248B0035B486 /* View */,
 				15BB01CB2A1F11C40035B486 /* Model */,
@@ -430,6 +445,7 @@
 		15856D162A1E9F350085FE75 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				15856D172A1E9F490085FE75 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -466,7 +482,8 @@
 		158919892A1E7B43006796B2 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				152E525E2A2BC73A00987CA8 /* Network */,
+				15E8A2C72A2DE92E002ECFDB /* Data */,
+				15E8A2B42A2D0F15002ECFDB /* Domain */,
 				15BB02A52A2649EC0035B486 /* FlowCoordinator */,
 				157383402A1E9B1A00EDE059 /* Common */,
 				15856D112A1E9EFD0085FE75 /* Feature */,
@@ -578,7 +595,6 @@
 		15BB021D2A226A170035B486 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				15856D172A1E9F490085FE75 /* LoginViewModel.swift */,
 				15BB021E2A226A230035B486 /* SignUpViewModel.swift */,
 			);
 			path = ViewModel;
@@ -604,9 +620,7 @@
 		15BB022D2A233CB40035B486 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				15BB022E2A233CC30035B486 /* SignUpModel.swift */,
 				15BB023A2A23B0B60035B486 /* SignUpViewCellInputState.swift */,
-				157317AE2A2B8AAE0061F914 /* LoginRequestModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -897,6 +911,93 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		15E8A2AC2A2D00F3002ECFDB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				15E8A2C42A2DC937002ECFDB /* Endpoint */,
+				15E8A2AF2A2D0108002ECFDB /* DataMapping */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		15E8A2AF2A2D0108002ECFDB /* DataMapping */ = {
+			isa = PBXGroup;
+			children = (
+				15E8A2BF2A2DC46E002ECFDB /* Common */,
+				15E8A2C02A2DC6B9002ECFDB /* User */,
+				15E8A2B02A2D012A002ECFDB /* Authentication */,
+			);
+			path = DataMapping;
+			sourceTree = "<group>";
+		};
+		15E8A2B02A2D012A002ECFDB /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				157317AE2A2B8AAE0061F914 /* LoginRequestDTO+Mapping.swift */,
+				15BB022E2A233CC30035B486 /* SignUpRequestDTO+Mapping.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		15E8A2B12A2D0177002ECFDB /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				15E8A2B52A2D0F2B002ECFDB /* Authentication */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		15E8A2B42A2D0F15002ECFDB /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				15E8A2B12A2D0177002ECFDB /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		15E8A2B52A2D0F2B002ECFDB /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				15E8A2B22A2D01A9002ECFDB /* SignInModel.swift */,
+				15E8A2B62A2D0F7A002ECFDB /* UserInfoModel.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		15E8A2BF2A2DC46E002ECFDB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				15E8A2BD2A2DAEA0002ECFDB /* MultipartInputDTO.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		15E8A2C02A2DC6B9002ECFDB /* User */ = {
+			isa = PBXGroup;
+			children = (
+				15E8A2A82A2CEF93002ECFDB /* UserIdRequestDTO+Mapping.swift */,
+				15E8A2B82A2D126A002ECFDB /* ProfileUploadRequestDTO+Mapping.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		15E8A2C42A2DC937002ECFDB /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				15E8A2AD2A2D00FD002ECFDB /* UserAPIEndpoints.swift */,
+				15E8A2C52A2DC960002ECFDB /* GroupAPIEndpoints.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		15E8A2C72A2DE92E002ECFDB /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				15E8A2AC2A2D00F3002ECFDB /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		347CEEE0C8170DE2975487EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1067,6 +1168,7 @@
 				15BB02C82A28855D0035B486 /* MessageSendBar.swift in Sources */,
 				15BD2DA22A29CD6F00095214 /* CreatingGroupCoordinator.swift in Sources */,
 				15BB01E92A209ABF0035B486 /* UIColor+iconColorChange.swift in Sources */,
+				15E8A2B92A2D126A002ECFDB /* ProfileUploadRequestDTO+Mapping.swift in Sources */,
 				15BB01EB2A20CA240035B486 /* AuthenticationTextFieldColorState.swift in Sources */,
 				15BB01DB2A1F31470035B486 /* UIColor+Hex.swift in Sources */,
 				15BB02FA2A2907870035B486 /* MessageSenderState.swift in Sources */,
@@ -1101,6 +1203,7 @@
 				15BB01C22A1F01070035B486 /* LoginViewControllerConstant.swift in Sources */,
 				155114072A2A19CD009E0103 /* UIImage+resized.swift in Sources */,
 				15856D062A1E9CAA0085FE75 /* UISwitch+Combine.swift in Sources */,
+				15E8A2B72A2D0F7A002ECFDB /* UserInfoModel.swift in Sources */,
 				152E52612A2BC74C00987CA8 /* NetworkError.swift in Sources */,
 				15856D182A1E9F490085FE75 /* LoginViewModel.swift in Sources */,
 				1551140F2A2A2EC1009E0103 /* CreatingGroupBottomSheetViewController+Constant.swift in Sources */,
@@ -1111,10 +1214,12 @@
 				15BB02BB2A284D360035B486 /* GroupViewAdapterDelegate.swift in Sources */,
 				15BB01E72A205F5C0035B486 /* NavigationControler.swift in Sources */,
 				15BB02B92A28407B0035B486 /* BottomNaviBar+Constant.swift in Sources */,
+				15E8A2B32A2D01A9002ECFDB /* SignInModel.swift in Sources */,
 				157317942A2A66890061F914 /* PreviewGroupPictureManager.swift in Sources */,
 				15BB02822A25F37E0035B486 /* GroupViewAdapterDataSoruce.swift in Sources */,
 				15BB02D02A2895090035B486 /* MessageViewAdapter.swift in Sources */,
 				15BB02D82A2897020035B486 /* MessageViewControllerDataSource.swift in Sources */,
+				15E8A2BE2A2DAEA0002ECFDB /* MultipartInputDTO.swift in Sources */,
 				15BB01CD2A1F11D70035B486 /* UISpacing.swift in Sources */,
 				15856D1B2A1EA14A0085FE75 /* LoginViewModel+Associatedtype.swift in Sources */,
 				15BB02AC2A2659900035B486 /* ApplicationFlowCoordinator.swift in Sources */,
@@ -1134,7 +1239,8 @@
 				15BB02552A24AF650035B486 /* BottomNaviBar.swift in Sources */,
 				152E52662A2BC76800987CA8 /* Responsable.swift in Sources */,
 				15BB02602A251BF10035B486 /* GroupMessageSearch+Constant.swift in Sources */,
-				15BB022F2A233CC30035B486 /* SignUpModel.swift in Sources */,
+				15BB022F2A233CC30035B486 /* SignUpRequestDTO+Mapping.swift in Sources */,
+				15E8A2C62A2DC960002ECFDB /* GroupAPIEndpoints.swift in Sources */,
 				1551140D2A2A2A93009E0103 /* MessageCell+Constant.swift in Sources */,
 				15BB02B42A26720A0035B486 /* SignUpCoordinator.swift in Sources */,
 				15BB02C02A284E8D0035B486 /* MessageViewContrller.swift in Sources */,
@@ -1148,8 +1254,10 @@
 				15BB02252A226B2C0035B486 /* SignUpViewAdapterDataSource.swift in Sources */,
 				15BB01D92A1F311E0035B486 /* OneUnitHeightLine.swift in Sources */,
 				15BB023B2A23B0B60035B486 /* SignUpViewCellInputState.swift in Sources */,
-				157317AF2A2B8AAE0061F914 /* LoginRequestModel.swift in Sources */,
+				15E8A2A92A2CEF93002ECFDB /* UserIdRequestDTO+Mapping.swift in Sources */,
+				157317AF2A2B8AAE0061F914 /* LoginRequestDTO+Mapping.swift in Sources */,
 				15BB01CF2A1F134A0035B486 /* AuthenticationTextFieldConstant.swift in Sources */,
+				15E8A2AE2A2D00FD002ECFDB /* UserAPIEndpoints.swift in Sources */,
 				157317B22A2B90F30061F914 /* SecretManager.swift in Sources */,
 				15BB02402A23DDC70035B486 /* SignUpViewCell+DrawSignUpEndPage.swift in Sources */,
 				15BB021A2A225E380035B486 /* SignUpVIew.swift in Sources */,

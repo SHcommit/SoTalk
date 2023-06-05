@@ -114,6 +114,7 @@ extension SignUpViewController: SignUpViewCellDelegate {
       vm.setId(text)
     case 3:
       vm.setPassword(text)
+      print(vm.signUpModel)
       // 여기서 서버한테 사용자 회원강비 데이터 보내서 회원가입 시키자 !!
       //
       //
@@ -121,7 +122,6 @@ extension SignUpViewController: SignUpViewCellDelegate {
     case 4:
       break
     default: break
-      
     }
     
     signUpView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)

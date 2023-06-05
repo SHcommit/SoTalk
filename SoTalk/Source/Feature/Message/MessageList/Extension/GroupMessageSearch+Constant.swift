@@ -13,7 +13,7 @@ extension GroupMessageSearch {
     enum Icon {
       static let size = CGSize(width: 14, height: 14)
       static let spacing: UISpacing = .init(leading: 24)
-      static let name = "search"
+      static let name = "Search"
       static let color = UIColor.Palette.primaryHalf
     }
     

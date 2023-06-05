@@ -65,7 +65,6 @@ final class SignUpViewCell: UICollectionViewCell {
 // MARK: - Helper
 extension SignUpViewCell {
   func configure(with text: String, indexPath: IndexPath) {
-    setTitle(with: text)
     self.indexPath = indexPath
     switch indexPath.row {
     case InputState.nickname.value:
@@ -78,8 +77,19 @@ extension SignUpViewCell {
     case InputState.signUpEnd.value:
       _=contentView.subviews.map { $0.removeFromSuperview() }
       drawSignUpEndPage()
-    default: break
+    case InputState.id.value:
+      guard text != "중복된 아이디 입니다." else {
+        textField.setValidState(.inputExcess)
+        textField.text = ""
+        textField.setPlaceHolder("중복된 아이디 입니다. 다시 입력해주세요.")
+        nextButton.setNotWorking()
+        return
+      }
+    default:
+      break
     }
+    
+    setTitle(with: text)
   }
   
   func showKeyboard() {
@@ -122,7 +132,7 @@ private extension SignUpViewCell {
     textField
       .changed.sink { [weak self] text in
         if (self?.indexPath?.row ?? 0) == SignUpViewCellInputState.password.value {
-          guard (2...16).contains(text.count) else {
+          guard (2...20).contains(text.count) else {
             self?.textField.setValidState(.inputExcess)
             self?.nextButton.setNotWorking()
             self?.nextButton2.setNotWorking()
@@ -132,7 +142,9 @@ private extension SignUpViewCell {
           return
         }
         guard text.count >= 2 else {
+          self?.textField.setValidState(.editing)
           self?.nextButton.setNotWorking()
+          self?.textField.setPlaceHolder("아이디를 입력해주세요.")
           return
         }
         self?.nextButton.setWorking()
@@ -168,7 +180,7 @@ private extension SignUpViewCell {
   
   func bind(with passwordRe: AuthenticationTextField) {
     passwordRe.changed.sink { [weak self] text in
-      guard (2...16).contains(text.count) else {
+      guard (2...20).contains(text.count) else {
         self?.textField.setValidState(.inputExcess)
         self?.nextButton.setNotWorking()
         self?.nextButton2.setNotWorking()
@@ -192,7 +204,7 @@ private extension SignUpViewCell {
       .changed
       .combineLatest(passwordRe.changed)
       .sink { [weak self] in
-        guard ($0 == $1) && (2...16).contains($0.count) else {
+        guard ($0 == $1) && (2...20).contains($0.count) else {
           self?.nextButton.setNotWorking()
           self?.nextButton2.setNotWorking()
           self?.textField.setValidState(.notEditing)

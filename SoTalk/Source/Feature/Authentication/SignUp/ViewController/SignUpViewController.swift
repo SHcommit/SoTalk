@@ -112,13 +112,32 @@ extension SignUpViewController: SignUpViewCellDelegate {
       vm.setNickname(text)
     case 2:
       vm.setId(text)
+      vm.dulicateCheck { [weak self] state in
+        guard !state else {
+          DispatchQueue.main.async {
+            guard let cell = self?.signUpView.cellForItem(at: indexPath) as? SignUpViewCell else { return }
+            cell.configure(with: "중복된 아이디 입니다.", indexPath: indexPath)
+          }
+          return
+        }
+        DispatchQueue.main.async {
+          self?.signUpView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
+        }
+      }
+      return
     case 3:
       vm.setPassword(text)
-      print(vm.signUpModel)
-      // 여기서 서버한테 사용자 회원강비 데이터 보내서 회원가입 시키자 !!
-      //
-      //
-      signUpViewCellPrevIndexPath = nextIndexPath
+      vm.signUp { [weak self] state in
+        self?.signUpViewCellPrevIndexPath = nextIndexPath
+        if state {
+          DispatchQueue.main.async {
+            self?.signUpView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
+          }
+        } else {
+          print("DEBUG: 회원가입 실패")
+        }
+      }
+      return
     case 4:
       break
     default: break

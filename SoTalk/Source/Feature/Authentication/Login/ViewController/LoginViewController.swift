@@ -60,7 +60,7 @@ class LoginViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(false)
-    input.appear.send()
+    animView.play()
   }
   
   override func viewWillDisappear(_ animated: Bool) {
@@ -157,11 +157,10 @@ extension LoginViewController: ViewBindCase {
     switch state {
     case .none:
       break
-    case .appear:
-      animView.play()
     case .gotoSignUp:
       coordinator?.gotoSignUpPage()
     case .gotoChatPage:
+      // 인디케이터TODO: - 제거
       idTextField.hideKeyboard()
       pwTextField.hideKeyboard()
       coordinator?.gotoChatListPage()
@@ -179,6 +178,12 @@ extension LoginViewController: ViewBindCase {
       signIn.setNotWorking()
     case .idAndPwInputGood:
       signIn.setWorking()
+    case .failedLogin:
+      // 인디케이터TODO: - 제거
+      print("DEBUG: 로그인 실패.... 알림창 띄워야함.")
+    case .loginExecuting:
+      // 인디케이터TODO: - 생성
+      print("DEBUG: 로그인 진행중")
     }
   }
   

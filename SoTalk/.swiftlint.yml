@@ -24,3 +24,7 @@ nesting:
   function_level:
     warning: 5
     error: 10
+
+cyclomatic_complexity:
+  warning: 20
+  error: 20

@@ -8,8 +8,8 @@
 	<true/>
 	<key>ServerPort</key>
 	<string>$(ServerPort)</string>
-	<key>ServerAddress</key>
-	<string>$(ServerAddress)</string>
+	<key>ServerIp</key>
+	<string>$(ServerIp)</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

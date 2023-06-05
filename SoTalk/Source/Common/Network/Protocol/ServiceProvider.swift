@@ -8,10 +8,10 @@
 import Foundation
 
 protocol EndpointProvider: AnyObject {
-  func request<R: Decodable, M: HTTPMessage>(
-    with endpoint: M,
+  func request<R: Decodable, E: HTTPMessage>(
+    with endpoint: E,
     completion: @escaping (Result<R, Error>) -> Void
-  ) where M.Response == R
+  ) where E.Response == R
   
   func request(
     _ url: URL,

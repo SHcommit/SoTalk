@@ -1,5 +1,5 @@
 //
-//  EndPointProvider.swift
+//  ServiceProviderImpl.swift
 //  SoTalk
 //
 //  Created by 양승현 on 2023/06/04.
@@ -7,18 +7,18 @@
 
 import Foundation
 
-class EndpointProviderImpl {
+class ServiceProviderImpl {
   let session: URLSession
   init(session: URLSession = URLSession.shared) {
     self.session = session
   }
 }
 
-extension EndpointProviderImpl: EndpointProvider {
-  func request<R, M>(
-    with endpoint: M,
+extension ServiceProviderImpl: EndpointProvider {
+  func request<R, E>(
+    with endpoint: E,
     completion: @escaping (Result<R, Error>) -> Void
-  ) where R: Decodable, R == M.Response, M: HTTPMessage {
+  ) where R: Decodable, R == E.Response, E: HTTPMessage {
     do {
       let urlRequest = try endpoint.makeRequest()
       session.dataTask(with: urlRequest) { [weak self] data, response, error in

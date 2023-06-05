@@ -10,6 +10,7 @@ import Foundation
 protocol Requestable {
   var entryProtocol: String { get }
   var servIP: String { get }
+  var servPort: String { get }
   var path: String { get }
   var method: HTTPMethod { get }
   var queryParameters: Encodable? { get }
@@ -43,11 +44,13 @@ extension Requestable {
     _=headers?.map {
       urlRequest.setValue($1, forHTTPHeaderField: $0)
     }
+    
+    print("DEBUG: \(url)")
     return urlRequest
   }
   
   func url() throws -> URL {
-    let urlStr = "\(entryProtocol)\(servIP)/\(path)"
+    let urlStr = "\(entryProtocol)\(servIP):\(servPort)/\(path)"
     
     guard var components = URLComponents(string: urlStr) else { throw NetworkError.components
     }
@@ -79,10 +82,6 @@ private extension Requestable {
     
     data.appendString(
       "Content-Disposition: form-data; name=\"\(input.fieldName)\"\(lineBreak)\(lineBreak)")
-    // 경완이가 해준건 위에꺼만 같은데?
-    // 아래처럼 이미지 이름도 있어야 하는거 아닌가?
-//    data.appendString(
-//      "Content-Disposition: form-data; name=\"\(input.fieldName)\"; filename=\"\(input.fileName)\"\(lineBreak)")
     data.appendString("Content-Type: \(input.mimeType)\(lineBreak)\(lineBreak)")
     data.append(input.fileData)
     data.appendString(lineBreak)

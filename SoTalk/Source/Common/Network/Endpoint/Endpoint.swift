@@ -14,6 +14,7 @@ final class Endpoint<R>: HTTPMessage {
   
   var entryProtocol: String
   var servIP: String
+  var servPort: String
   var path: String
   var method: HTTPMethod
   var queryParameters: Encodable?
@@ -22,8 +23,9 @@ final class Endpoint<R>: HTTPMessage {
   var sampleData: Data?
   var multipartDTO: MultipartInputDTO?
   init(
-    entryProtocol: String = "https://",
-    servIP: String = SecretManager.shared.serverAddress,
+    entryProtocol: String = "http://",
+    servIP: String = SecretManager.shared.serverIp,
+    servPort: String = SecretManager.shared.serverPort,
     path: String = "",
     method: HTTPMethod = .get,
     queryParameters: Encodable? = nil,
@@ -34,6 +36,7 @@ final class Endpoint<R>: HTTPMessage {
   ) {
     self.entryProtocol = entryProtocol
     self.servIP = servIP
+    self.servPort = servPort
     self.path = path
     self.method = method
     self.queryParameters = queryParameters

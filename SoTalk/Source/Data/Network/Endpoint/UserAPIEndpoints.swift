@@ -8,34 +8,7 @@
 import Foundation
 
 struct UserAPIEndpoints {
-  static func signUp(with signUpRequestDTO: SignUpRequestDTO) -> Endpoint<SignUpRequestDTO> {
-    return Endpoint(
-      path: "user/signup",
-      method: .post,
-      bodyParameters: signUpRequestDTO,
-      headers: ["Content-Type": "application/json"])
-  }
-  
-  static func duplicateCheck(
-    with userDuplicatedCheckRequestDTO: UserIdSearchRequestDTO
-  ) -> Endpoint<UserIdSearchRequestDTO> {
-    return Endpoint(
-      path: "user/duplicateCheck",
-      method: .get,
-      queryParameters: userDuplicatedCheckRequestDTO)
-  }
-  
-  static func signIn(
-    with signInRequestDTO: SignInRequestDTO
-  ) -> Endpoint<SignInRequestDTO> {
-    return Endpoint(
-      path: "user/login",
-      method: .post,
-      bodyParameters: signInRequestDTO,
-      headers: ["Content-Type": "application/json"])
-  }
-  
-  static func searchProfile(
+  func searchProfile(
     with userIdSearchRequestDTO: UserIdSearchRequestDTO
   ) -> Endpoint<UserIdSearchRequestDTO> {
     return Endpoint(
@@ -44,7 +17,7 @@ struct UserAPIEndpoints {
       queryParameters: userIdSearchRequestDTO)
   }
   
-  static func uploadProfile(
+  func uploadProfile(
     with profileUploadRequestDTO: ProfileUploadRequestDTO
   ) -> Endpoint<ProfileUploadRequestDTO> {
     let boundary = UUID().uuidString
@@ -64,7 +37,7 @@ struct UserAPIEndpoints {
       multipartDTO: multiPartDTO)
   }
   
-  static func fetchProfile(
+  func fetchProfile(
     with userIdDTO: UserIdSearchRequestDTO
   ) -> Endpoint<UserIdSearchRequestDTO> {
     return Endpoint(
@@ -73,7 +46,7 @@ struct UserAPIEndpoints {
       queryParameters: userIdDTO)
   }
   
-  static func deleteProfile(
+  func deleteProfile(
     with userIdDTO: UserIdSearchRequestDTO
   ) -> Endpoint<UserIdSearchRequestDTO> {
     return Endpoint(

@@ -56,6 +56,7 @@ final class GroupViewCell: UICollectionViewCell {
     layer.cornerRadius = GroupViewCell.cornerRadius
     setupUI()
     setShadow()
+    contentView.isUserInteractionEnabled = true
     layoutIfNeeded()
     setBlurFromImageView()
   }
@@ -135,6 +136,7 @@ extension GroupViewCell: LayoutSupport {
   }
 }
 
+// MARK: - LayoutSupport helper
 private extension GroupViewCell {
   var imageViewConstraints: [NSLayoutConstraint] {
     return [

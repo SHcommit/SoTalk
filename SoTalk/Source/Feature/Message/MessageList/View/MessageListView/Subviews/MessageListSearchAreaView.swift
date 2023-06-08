@@ -89,7 +89,6 @@ extension MessageListSearchAreaView {
 
 // MARK: - Animation helper
 extension MessageListSearchAreaView {
-  
   func hideMainTitle() {
     mainTitle.alpha = 0
     mainTitle.center.y -= 30

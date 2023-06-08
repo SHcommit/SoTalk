@@ -9,7 +9,6 @@ import UIKit
 
 final class GroupViewAdapter: NSObject {
   weak var dataSource: GroupViewAdapterDataSource?
-  weak var collectionView: GroupView?
   weak var delegate: GroupViewAdapterDelegate?
   
   init(
@@ -19,7 +18,6 @@ final class GroupViewAdapter: NSObject {
   ) {
     super.init()
     self.dataSource = dataSource
-    self.collectionView = collectionView
     self.delegate = delegate
     collectionView?.delegate = self
     collectionView?.dataSource = self
@@ -42,7 +40,6 @@ extension GroupViewAdapter: UICollectionViewDataSource {
       return .init()
     }
     cell.configure(with: item)
-    
     return cell
   }
 }
@@ -53,10 +50,11 @@ extension GroupViewAdapter {
     _ collectionView: UICollectionView,
     didSelectItemAt indexPath: IndexPath
   ) {
+    print("ahahah")
     guard let cell = collectionView.cellForItem(at: indexPath) as? GroupViewCell else {
       return
     }
-    UIView.animate(withDuration: 0.1, animations: {
+    UIView.animate(withDuration: 0.2, animations: {
       cell.transform = CGAffineTransform(scaleX: 0.96, y: 0.96)
     }) { [weak self] _ in
       self?.delegate?.didSelectItemAt(indexPath)

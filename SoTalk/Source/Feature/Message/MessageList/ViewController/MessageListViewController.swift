@@ -10,11 +10,11 @@ import Combine
 
 class MessageListViewController: UIViewController {
   // MARK: - Properties
-  private lazy var messageListView = MessageListView(
-    naviBarHeight: navigationBarHeight,
-    statusBarHeight: statusBarHeight,
-    safeAreaBottomHeight: safeAreaBottomHeight,
-    userName: "아리아나 그란데 말입니다")
+  private var messageListView: MessageListView!
+  
+  private var sideMenu: MessageListSideMenuView?
+  
+  private var messageListViewOriginSize = CGAffineTransform()
   
   weak var coordinator: MessageListCoordinator?
   
@@ -36,7 +36,6 @@ class MessageListViewController: UIViewController {
     } else {
       statusBarHeight = UIApplication.shared.statusBarFrame.height
     }
-    print(statusBarHeight)
     return statusBarHeight
   }
   
@@ -75,13 +74,22 @@ class MessageListViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    configureUI()
-    messageListView.setLayout(from: view)
+    messageListView = MessageListView(
+      naviBarHeight: navigationBarHeight,
+      statusBarHeight: statusBarHeight,
+      safeAreaBottomHeight: safeAreaBottomHeight,
+      userName: "아리아나 그란데 말입니다")
+    view.backgroundColor = .clear
+    view.clipsToBounds = true
+    navigationController?.navigationBar.isTranslucent = true
+    navigationController?.navigationBar.isHidden = true
+    setMessageListView()
+    messageListViewOriginSize = messageListView.transform
     adapter = GroupViewAdapter(
       dataSource: vm,
       collectionView: messageListView.groupView,
       delegate: self)
-    eventBind()
+    bindAddGroupButton()
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -92,6 +100,12 @@ class MessageListViewController: UIViewController {
       messageListView.animationSubviews()
       isViewDidLoad = true
     }
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    navigationController?.navigationBar.isHidden = true
+    self.messageListView.bringNavigationBarToFrontView()
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -106,15 +120,7 @@ class MessageListViewController: UIViewController {
 
 // MARK: - Private helpers
 private extension MessageListViewController {
-  func configureUI() {
-    view.backgroundColor = .clear
-  }
-  
-  func eventBind() {
-    addGroupButtonBind()
-  }
-  
-  func addGroupButtonBind() {
+  func bindAddGroupButton() {
     messageListView
       .addGroupButtonTap
       .receive(on: DispatchQueue.main)
@@ -122,11 +128,83 @@ private extension MessageListViewController {
         self?.coordinator?.gotoCreatingGrupPage()
       }.store(in: &subscription)
   }
+  
+  func setMessageListView() {
+    messageListView.setLayout(from: view)
+    messageListView.delegate = self
+    messageListView.MessageListNavigationBarDelegate = self
+    view.bringSubviewToFront(messageListView)
+  }
+  
+  func showSideMenu() {
+    sideMenu = MessageListSideMenuView()
+    sideMenu?.setLayout(from: view)
+    
+    messageListView.subviewsIsUserInteractionNotWorking()
+    view.bringSubviewToFront(messageListView)
+    messageListView.setSideMenuIsWorking()
+    messageListView.layer.cornerRadius = 40
+    messageListView
+      .setNavigationAreaUpperCornerRadius(messageListView.layer.cornerRadius)
+    let moveX = UIScreen.main.bounds.width * 4.0 / 5.0
+    UIView.animate(
+      withDuration: 0.5,
+      delay: 0,
+      options: .curveEaseOut) {
+        self.messageListView.transform = self.messageListView
+          .transform
+          .scaledBy(x: 4.0/5.0, y: 4.0/5.0)
+          .translatedBy(x: moveX, y: 0)
+        self.sideMenu?.showLeftMenuWithAnim()
+      }
+  }
+  
+  func hideSideMenu() {
+    messageListView.setSideMenuIsNotWorking()
+    messageListView.subviewsIsUserInteractionWorking()
+    UIView.animate(
+      withDuration: 0.3,
+      delay: 0.1,
+      options: .curveEaseIn
+    ) {
+      self.sideMenu?.hideProfileArea()
+      self.sideMenu?.hideLeftMenuWithAnim()
+      
+    }
+    UIView.animate(
+      withDuration: 0.5,
+      delay: 0.1,
+      options: .curveEaseInOut,
+    animations: {
+      self.messageListView.transform = .identity
+    }) {_ in
+      self.messageListView.layer.cornerRadius = 0
+      self.messageListView.subviewsIsUserInteractionWorking()
+      self.messageListView
+        .setNavigationAreaUpperCornerRadius(0)
+      self.sideMenu?.removeFromSuperview()
+      self.sideMenu = nil
+    }
+  }
 }
 
 // MARK: - GroupViewAdapterDelegate
 extension MessageListViewController: GroupViewAdapterDelegate {
   func didSelectItemAt(_ indexPath: IndexPath) {
     coordinator?.gotoChattingPage()
+  }
+}
+
+// MARK: - MessageListNavigationBarDelegate
+extension MessageListViewController: MessageListNavigationBarDelegate {
+  func didTapProfile() {
+    showSideMenu()
+  }
+}
+
+// MARK: - MessageListViewDelegate
+extension MessageListViewController: MessageListViewDelegate {
+  func tapMessageListView() {
+    hideSideMenu()
   }
 }

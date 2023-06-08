@@ -8,6 +8,10 @@
 import UIKit
 import Lottie
 
+protocol MessageListNavigationBarDelegate: AnyObject {
+  func didTapProfile()
+}
+
 final class MessageListNavigationBar: UIView {
   // MARK: - Properties
   private let bottleView = LottieAnimationView(name: Constant.BottleView.imageName).set {
@@ -18,12 +22,17 @@ final class MessageListNavigationBar: UIView {
   
   private var userNameLabel: UILabel!
   
-  private let profile = UIImageView().set {
+  private lazy var profile = UIImageView().set {
     $0.translatesAutoresizingMaskIntoConstraints = false
     $0.layer.cornerRadius = Constant.MyProfile.size.width/2.0
     $0.clipsToBounds = true
     $0.backgroundColor = .lightGray
+    let tap = UITapGestureRecognizer(target: self, action: #selector(tapProfile))
+    $0.isUserInteractionEnabled = true
+    $0.addGestureRecognizer(tap)
   }
+  
+  weak var delegate: MessageListNavigationBarDelegate?
   
   // MARK: - Initialization
   private override init(frame: CGRect) {
@@ -43,6 +52,13 @@ final class MessageListNavigationBar: UIView {
     configure(with: userName)
     setupUI()
     bottleView.play()
+  }
+}
+
+// MARK: - Action
+extension MessageListNavigationBar {
+  @objc func tapProfile() {
+    delegate?.didTapProfile()
   }
 }
 

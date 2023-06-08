@@ -19,6 +19,7 @@ final class GroupView: UICollectionView {
   // MARK: - Initialization
   private override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
     super.init(frame: frame, collectionViewLayout: layout)
+    isUserInteractionEnabled = true
   }
   
   required init?(coder: NSCoder) {

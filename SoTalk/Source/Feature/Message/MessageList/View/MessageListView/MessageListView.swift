@@ -8,6 +8,10 @@
 import UIKit
 import Combine
 
+protocol MessageListViewDelegate: AnyObject {
+  func tapMessageListView()
+}
+
 final class MessageListView: UIView {
   // MARK: - Properties
   var statusBarHeight: CGFloat!
@@ -15,6 +19,10 @@ final class MessageListView: UIView {
   var safeAreaBottomHeight: CGFloat!
   
   var tempUserName: String = ""
+  
+  @Published private var isSideMenuWorking: Bool = false
+  
+  private var subscriptions = Set<AnyCancellable>()
   
   private lazy var naviBar = MessageListNavigationBar(with: tempUserName)
   
@@ -70,6 +78,18 @@ final class MessageListView: UIView {
     return _groupView
   }
   
+  var delegate: MessageListViewDelegate?
+  
+  var MessageListNavigationBarDelegate: MessageListNavigationBarDelegate? {
+    get {
+      naviBar.delegate
+    } set {
+      naviBar.delegate = newValue
+    }
+  }
+  
+  var tapGesture = UITapGestureRecognizer()
+  
   // MARK: - Lifecycle
   private override init(frame: CGRect) {
     super.init(frame: frame)
@@ -84,7 +104,8 @@ final class MessageListView: UIView {
     naviBarHeight: CGFloat,
     statusBarHeight: CGFloat,
     safeAreaBottomHeight: CGFloat,
-    userName: String) {
+    userName: String
+  ) {
     self.init(frame: .zero)
     self.naviBarHeight = naviBarHeight
     self.statusBarHeight = statusBarHeight
@@ -95,8 +116,9 @@ final class MessageListView: UIView {
     naviBarBottomView.setShadow()
     setAddGroupButtonShadow()
     backgroundColor = UIColor(hex: "#F8F8FA")
-    bringSubviewToFront(naviBGView)
-    bringSubviewToFront(naviBar)
+    bringNavigationBarToFrontView()
+    bind()
+    isUserInteractionEnabled = true
   }
 }
 
@@ -157,21 +179,43 @@ extension MessageListView {
           delay: 0,
           options: .curveEaseOut,
           animations: {
-            self.showGroupView()}) {_ in
-              UIView.animate(
-                withDuration: 0.2,
-                delay: 1.0,
-                options: .curveEaseOut) {
-                  self.addGroupButton.isHidden = false
-                }
-            }
-        
+            self.showGroupView()}
+        ) {_ in
+          UIView.animate(
+            withDuration: 0.2,
+            delay: 1.0,
+            options: .curveEaseOut
+          ) {
+            self.addGroupButton.isHidden = false
+          }
+        }
       }
+  }
+}
+
+// MARK: - Action
+extension MessageListView {
+  @objc func tapMessageListView() {
+    delegate?.tapMessageListView()
   }
 }
 
 // MARK: - Helper
 extension MessageListView {
+  
+  func bringNavigationBarToFrontView() {
+    bringSubviewToFront(naviBGView)
+    bringSubviewToFront(naviBar)
+  }
+  
+  func setSideMenuIsWorking() {
+    isSideMenuWorking = true
+  }
+  
+  func setSideMenuIsNotWorking() {
+    isSideMenuWorking = false
+  }
+  
   func setLayout(from superView: UIView) {
     superView.addSubview(self)
     NSLayoutConstraint.activate([
@@ -184,10 +228,24 @@ extension MessageListView {
   func hideKeyboard() {
     naviBarBottomView.hideKeyboard()
   }
+  
+  func setNavigationAreaUpperCornerRadius(_ radius: CGFloat) {
+    naviBGView.layer.cornerRadius = radius
+    naviBGView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+  }
+  
+  func subviewsIsUserInteractionNotWorking() {
+    _=subviews.map { $0.isUserInteractionEnabled = false }
+  }
+  
+  func subviewsIsUserInteractionWorking() {
+    _=subviews.map { $0.isUserInteractionEnabled = true }
+  }
+
 }
 
 // MARK: - Private helper
-extension MessageListView {
+private extension MessageListView {
   func setAddGroupButtonShadow() {
     addGroupButton.layer.shadowOffset = CGSize(width: 0, height: 0)
     addGroupButton.layer.shadowColor = UIColor.Palette.primary.cgColor
@@ -203,6 +261,22 @@ extension MessageListView {
     addGroupButton.layer.shadowPath = UIBezierPath(
       roundedRect: CGRect(origin: origin, size: rect),
       cornerRadius: 6.0).cgPath
+  }
+  
+  func bind() {
+    $isSideMenuWorking
+      .sink { [unowned self] in
+        if $0 {
+          tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapMessageListView))
+          addGestureRecognizer(tapGesture)
+        } else {
+          removeGestureRecognizer(tapGesture)
+        }
+        //        guard $0 else {
+        //          removeGestureRecognizer(tapGesture)
+        //          return
+        //        }
+      }.store(in: &subscriptions)
   }
 }
 

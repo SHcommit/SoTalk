@@ -24,6 +24,10 @@
 		1551140F2A2A2EC1009E0103 /* CreatingGroupBottomSheetViewController+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1551140E2A2A2EC1009E0103 /* CreatingGroupBottomSheetViewController+Constant.swift */; };
 		156C6E602A31B7B500CD1968 /* MessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156C6E5F2A31B7B500CD1968 /* MessageListView.swift */; };
 		156C6E622A31C1A300CD1968 /* MessageListView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156C6E612A31C1A300CD1968 /* MessageListView+Constant.swift */; };
+		156C6E652A31C24600CD1968 /* MessageListSideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156C6E642A31C24600CD1968 /* MessageListSideMenuView.swift */; };
+		156C6E672A31C4F900CD1968 /* MessageListSideMenuView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156C6E662A31C4F900CD1968 /* MessageListSideMenuView+Constant.swift */; };
+		156C6E692A31CE8C00CD1968 /* MessageListSideMenuLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156C6E682A31CE8C00CD1968 /* MessageListSideMenuLeftView.swift */; };
+		156C6E6B2A31CF4700CD1968 /* IconAndLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156C6E6A2A31CF4700CD1968 /* IconAndLabelView.swift */; };
 		157317942A2A66890061F914 /* PreviewGroupPictureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157317932A2A66890061F914 /* PreviewGroupPictureManager.swift */; };
 		157317962A2A68AF0061F914 /* UIImage+JPEGCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157317952A2A68AF0061F914 /* UIImage+JPEGCompression.swift */; };
 		157317982A2A69D90061F914 /* GroupPictureView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157317972A2A69D90061F914 /* GroupPictureView+Constant.swift */; };
@@ -158,6 +162,10 @@
 		1551140E2A2A2EC1009E0103 /* CreatingGroupBottomSheetViewController+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreatingGroupBottomSheetViewController+Constant.swift"; sourceTree = "<group>"; };
 		156C6E5F2A31B7B500CD1968 /* MessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListView.swift; sourceTree = "<group>"; };
 		156C6E612A31C1A300CD1968 /* MessageListView+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageListView+Constant.swift"; sourceTree = "<group>"; };
+		156C6E642A31C24600CD1968 /* MessageListSideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListSideMenuView.swift; sourceTree = "<group>"; };
+		156C6E662A31C4F900CD1968 /* MessageListSideMenuView+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageListSideMenuView+Constant.swift"; sourceTree = "<group>"; };
+		156C6E682A31CE8C00CD1968 /* MessageListSideMenuLeftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListSideMenuLeftView.swift; sourceTree = "<group>"; };
+		156C6E6A2A31CF4700CD1968 /* IconAndLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconAndLabelView.swift; sourceTree = "<group>"; };
 		157317932A2A66890061F914 /* PreviewGroupPictureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewGroupPictureManager.swift; sourceTree = "<group>"; };
 		157317952A2A68AF0061F914 /* UIImage+JPEGCompression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+JPEGCompression.swift"; sourceTree = "<group>"; };
 		157317972A2A69D90061F914 /* GroupPictureView+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupPictureView+Constant.swift"; sourceTree = "<group>"; };
@@ -376,8 +384,8 @@
 		156C6E5D2A31B56400CD1968 /* MessageListView */ = {
 			isa = PBXGroup;
 			children = (
-				156C6E5E2A31B7A300CD1968 /* Subviews */,
 				156C6E5F2A31B7B500CD1968 /* MessageListView.swift */,
+				156C6E5E2A31B7A300CD1968 /* Subviews */,
 			);
 			path = MessageListView;
 			sourceTree = "<group>";
@@ -391,6 +399,16 @@
 				15BB02522A2496B00035B486 /* MessageListNavigationBar.swift */,
 			);
 			path = Subviews;
+			sourceTree = "<group>";
+		};
+		156C6E632A31C23600CD1968 /* SideMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				156C6E642A31C24600CD1968 /* MessageListSideMenuView.swift */,
+				156C6E682A31CE8C00CD1968 /* MessageListSideMenuLeftView.swift */,
+				156C6E6A2A31CF4700CD1968 /* IconAndLabelView.swift */,
+			);
+			path = SideMenuView;
 			sourceTree = "<group>";
 		};
 		157317922A2A667C0061F914 /* Manager */ = {
@@ -720,6 +738,7 @@
 		15BB02512A2496A10035B486 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				156C6E632A31C23600CD1968 /* SideMenuView */,
 				156C6E5D2A31B56400CD1968 /* MessageListView */,
 			);
 			path = View;
@@ -733,6 +752,7 @@
 				15BB02612A251C0D0035B486 /* MessageListNavigationBar+Constant.swift */,
 				15BB02632A251C430035B486 /* MessageListViewController+Constant.swift */,
 				156C6E612A31C1A300CD1968 /* MessageListView+Constant.swift */,
+				156C6E662A31C4F900CD1968 /* MessageListSideMenuView+Constant.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1273,10 +1293,12 @@
 				15BB027A2A25F1710035B486 /* GroupView.swift in Sources */,
 				15E8A2E52A2E2100002ECFDB /* LoginModel.swift in Sources */,
 				15BB02272A22795C0035B486 /* AuthenticationButton.swift in Sources */,
+				156C6E672A31C4F900CD1968 /* MessageListSideMenuView+Constant.swift in Sources */,
 				15BB02B72A26785D0035B486 /* MessageListCoordinator.swift in Sources */,
 				15BB02F82A29076E0035B486 /* MessageContentView+Constant.swift in Sources */,
 				15BB02C82A28855D0035B486 /* MessageSendBar.swift in Sources */,
 				15BD2DA22A29CD6F00095214 /* CreatingGroupCoordinator.swift in Sources */,
+				156C6E692A31CE8C00CD1968 /* MessageListSideMenuLeftView.swift in Sources */,
 				15BB01E92A209ABF0035B486 /* UIColor+iconColorChange.swift in Sources */,
 				15E8A2B92A2D126A002ECFDB /* ProfileUploadRequestDTO+Mapping.swift in Sources */,
 				15E8A2DE2A2E0287002ECFDB /* LoginRepositoryImpl.swift in Sources */,
@@ -1305,10 +1327,12 @@
 				15856D102A1E9D150085FE75 /* LayoutSupport.swift in Sources */,
 				152E526A2A2BC8EA00987CA8 /* HTTPMethod.swift in Sources */,
 				15BB02622A251C0D0035B486 /* MessageListNavigationBar+Constant.swift in Sources */,
+				156C6E652A31C24600CD1968 /* MessageListSideMenuView.swift in Sources */,
 				15BB02AA2A2650BE0035B486 /* FlowCoordinator+ConvenienceInitSubCoordinator.swift in Sources */,
 				15BB02F42A29067D0035B486 /* MessageContentModel.swift in Sources */,
 				15BB027C2A25F31A0035B486 /* GroupViewCell.swift in Sources */,
 				15BB022C2A2336AA0035B486 /* SignUpViewCellDelegate.swift in Sources */,
+				156C6E6B2A31CF4700CD1968 /* IconAndLabelView.swift in Sources */,
 				1589198B2A1E7B43006796B2 /* AppDelegate.swift in Sources */,
 				15BB028C2A262D270035B486 /* GroupModel.swift in Sources */,
 				15856D0E2A1E9D150085FE75 /* ConvenienceInit.swift in Sources */,

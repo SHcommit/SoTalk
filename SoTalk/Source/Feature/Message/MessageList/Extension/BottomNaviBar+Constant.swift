@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension BottomNaviBar {
+extension MessageListSearchAreaView {
   // MARK: - Constant
   enum Constant {
     static let width: CGFloat = UIScreen.main.bounds.width

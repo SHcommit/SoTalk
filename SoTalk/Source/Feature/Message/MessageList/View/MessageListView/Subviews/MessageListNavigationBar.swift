@@ -19,6 +19,7 @@ final class MessageListNavigationBar: UIView {
   private var userNameLabel: UILabel!
   
   private let profile = UIImageView().set {
+    $0.translatesAutoresizingMaskIntoConstraints = false
     $0.layer.cornerRadius = Constant.MyProfile.size.width/2.0
     $0.clipsToBounds = true
     $0.backgroundColor = .lightGray
@@ -81,11 +82,11 @@ extension MessageListNavigationBar {
 // MARK: - LayoutSupport
 extension MessageListNavigationBar: LayoutSupport {
   func addSubviews() {
-    _=[bottleView, userNameLabel].map { addSubview($0) }
+    _=[bottleView, userNameLabel, profile].map { addSubview($0) }
   }
   
   func setConstraints() {
-    _=[menuViewConstraints, userNameLabelConstraints]
+    _=[menuViewConstraints, userNameLabelConstraints, profileConstraints]
       .map { NSLayoutConstraint.activate($0) }
   }
 }

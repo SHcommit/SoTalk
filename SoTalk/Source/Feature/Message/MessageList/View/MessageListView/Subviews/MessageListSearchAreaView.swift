@@ -1,5 +1,5 @@
 //
-//  BottomNaviBar.swift
+//  MessageListSearchAreaView.swift
 //  SoTalk
 //
 //  Created by 양승현 on 2023/05/29.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class BottomNaviBar: UIView {
+final class MessageListSearchAreaView: UIView {
   // MARK: - Properties
   private let mainTitle = UILabel().set {
     $0.translatesAutoresizingMaskIntoConstraints = false
@@ -63,7 +63,7 @@ final class BottomNaviBar: UIView {
 }
 
 // MARK: - Helpers
-extension BottomNaviBar {  
+extension MessageListSearchAreaView {  
   func hideKeyboard() {
     searchBar.hideKeyboard()
   }
@@ -88,7 +88,7 @@ extension BottomNaviBar {
 }
 
 // MARK: - Animation helper
-extension BottomNaviBar {
+extension MessageListSearchAreaView {
   
   func hideMainTitle() {
     mainTitle.alpha = 0
@@ -112,7 +112,7 @@ extension BottomNaviBar {
 }
 
 // MARK: - LayoutSupport
-extension BottomNaviBar: LayoutSupport {
+extension MessageListSearchAreaView: LayoutSupport {
   func addSubviews() {
     _=[mainTitle, searchBar].map { addSubview($0) }
   }
@@ -123,7 +123,7 @@ extension BottomNaviBar: LayoutSupport {
 }
 
 // MARK: - LayoutSupport constraints
-private extension BottomNaviBar {
+private extension MessageListSearchAreaView {
   var mainTitleConstraints: [NSLayoutConstraint] {
     [mainTitle.leadingAnchor.constraint(
       equalTo: leadingAnchor,

@@ -9,10 +9,6 @@ import UIKit
 
 extension MessageListViewController {
   enum Constant {
-    enum MyProfile {
-      static let size: CGSize = CGSize(width: 46, height: 46)
-    }
-    
     enum SearchBar {
       static let spacing: UISpacing = .init(leading: 31, top: 18, trailing: 24)
     }
@@ -25,6 +21,11 @@ extension MessageListViewController {
     
     enum GroupView {
       static let spacing: UISpacing = .init(top: 0)
+    }
+    
+    enum AddGroupButton {
+      static let size: CGSize = CGSize(width: 100, height: 40)
+      static let spacing: UISpacing = .init(trailing: 15)
     }
   }
 }

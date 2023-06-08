@@ -123,6 +123,7 @@ extension SignUpViewController: SignUpViewCellDelegate {
         DispatchQueue.main.async {
           self?.signUpView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
         }
+        return
       }
       return
     case 3:

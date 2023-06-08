@@ -33,11 +33,21 @@ final class GroupViewCell: UICollectionViewCell {
   private let groupName = UILabel().set {
     $0.translatesAutoresizingMaskIntoConstraints = false
     $0.font = .boldSystemFont(ofSize: 20)
-    $0.numberOfLines = 3
+    $0.numberOfLines = 2
     $0.textColor = .white
+    $0.text = "Empty"
+    $0.sizeToFit()
+  }
+  
+  private let groupMemberCountLabel = UILabel().set {
+    $0.translatesAutoresizingMaskIntoConstraints = false
+    $0.font = .systemFont(ofSize: 14)
+    $0.textColor = .white.withAlphaComponent(0.9)
+    $0.text = "1명"
+    $0.numberOfLines = 1
     $0.layer.cornerRadius = GroupViewCell.cornerRadius
     $0.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-    $0.text = "Empty"
+    $0.sizeToFit()
   }
   
   // MARK: - Initialization
@@ -58,7 +68,7 @@ final class GroupViewCell: UICollectionViewCell {
 // MARK: - Helper
 extension GroupViewCell {
   func configure(with data: GroupModel) {
-    setImageView(with: data.gorupImage)
+    setImageView(with: data.groupImage)
     setGroupName(with: data.groupName)
   }
 }
@@ -72,6 +82,10 @@ extension GroupViewCell {
   
   func setGroupName(with title: String) {
     groupName.text = title
+  }
+  
+  func setGroupMemberTotalCount(with count: Int) {
+    groupMemberCountLabel.text = "\(count)명"
   }
   
   func setShadow() {
@@ -105,11 +119,16 @@ extension GroupViewCell {
 // MARK: - LayoutSupport
 extension GroupViewCell: LayoutSupport {
   func addSubviews() {
-    _=[imageView, groupName].map { contentView.addSubview($0) }
+    _=[imageView,
+       groupName,
+       groupMemberCountLabel].map { contentView.addSubview($0)
+    }
   }
   
   func setConstraints() {
-    _=[imageViewConstraints, groupNameConstraints].map {
+    _=[imageViewConstraints,
+       groupNameConstraints,
+       groupMemberCountLabelConstraints].map {
       NSLayoutConstraint.activate($0)
       contentView.bringSubviewToFront(groupName)
     }
@@ -132,14 +151,24 @@ private extension GroupViewCell {
   var groupNameConstraints: [NSLayoutConstraint] {
     [groupName.leadingAnchor.constraint(
       equalTo: contentView.leadingAnchor,
-    constant: 12),
+    constant: 20),
      groupName.trailingAnchor.constraint(
       equalTo: contentView.trailingAnchor,
-     constant: -12),
+      constant: -20),
      groupName.bottomAnchor.constraint(
+      equalTo: groupMemberCountLabel.topAnchor,
+      constant: -5)]
+  }
+  
+  var groupMemberCountLabelConstraints: [NSLayoutConstraint] {
+    [groupMemberCountLabel.leadingAnchor.constraint(
+      equalTo: contentView.leadingAnchor,
+      constant: 20),
+     groupMemberCountLabel.trailingAnchor.constraint(
+      equalTo: contentView.trailingAnchor,
+      constant: -20),
+     groupMemberCountLabel.bottomAnchor.constraint(
       equalTo: contentView.bottomAnchor,
-     constant: -12),
-     groupName.heightAnchor.constraint(
-      equalToConstant: contentView.bounds.height-contentView.bounds.width)]
+      constant: -20)]
   }
 }

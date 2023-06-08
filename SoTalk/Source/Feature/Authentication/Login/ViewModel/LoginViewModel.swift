@@ -12,7 +12,7 @@ final class LoginViewModel {
   // MARK: - Properties
   private let loginRepository = LoginRepositoryImpl()
   private var loginModel = LoginModel()
-  @Published private var isLoginSuccess = false
+  private let isLoginSuccess = PassthroughSubject<Bool, ErrorType>()
 }
 
 // MARK: - ViewModelCase
@@ -33,9 +33,8 @@ extension LoginViewModel: ViewModelCase {
 // MARK: - Input operator chain Flow
 private extension LoginViewModel {
   func checkLoginSuccess() -> Output {
-    return $isLoginSuccess
-      .receive(on: DispatchQueue.main)
-      .setFailureType(to: ErrorType.self)
+    return isLoginSuccess
+      .subscribe(on: DispatchQueue.main)
       .tryMap { res -> State in
         // 유저 기록TODO: - 여기서 쳇 페이지 가기 전에 로그인 성공하면!! 다시 로그인 유저 기록 가져와야함.
         // 그리고 keychain에 저장.
@@ -59,7 +58,7 @@ private extension LoginViewModel {
       .setFailureType(to: ErrorType.self)
       .tryMap { [weak self] _ -> State in
         self?.login { [weak self] state in
-          self?.isLoginSuccess = state
+          self?.isLoginSuccess.send(state)
         }
         return .none }
       .mapError { $0 as? ErrorType ?? .unexpectedError }

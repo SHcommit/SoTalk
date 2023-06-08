@@ -25,6 +25,7 @@ struct SignUpRepositoryImpl: SignUpRepository {
   }
   
   func duplicateCheck(_ userId: UserIdSearchRequestDTO, completionHandler: @escaping (Bool) -> Void) {
+    
     let endpoint = Endpoints.shared.duplicateCheck(with: userId)
     provider.request(with: endpoint) { result in
       switch result {

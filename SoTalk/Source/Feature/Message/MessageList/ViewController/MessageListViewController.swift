@@ -15,23 +15,35 @@ class MessageListViewController: UIViewController {
   
   weak var coordinator: MessageListCoordinator?
   
+  var statusBarHeight: CGFloat {
+    var statusBarHeight: CGFloat = 0
+    if #available(iOS 13.0, *) {
+      let scenes = UIApplication.shared.connectedScenes
+      let windowScene = scenes.first as? UIWindowScene
+      let window = windowScene?.windows.first
+      statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+    } else {
+      statusBarHeight = UIApplication.shared.statusBarFrame.height
+    }
+    print(statusBarHeight)
+    return statusBarHeight
+  }
+  
+  var navigationBarHeight: CGFloat {
+    guard let naviBar = navigationController?.navigationBar else {
+      return 44.0
+    }
+    return naviBar.bounds.height
+  }
+  
   private let vm = MessageListViewModel()
   
   private var adapter: GroupViewAdapter!
   
   /// 이부분 이 화면 올 때 같이 대입해줘야함 첫 로그인 때 내가 저장해보리자
-  private lazy var leftNaviView = MessageListLeftNaviItem(with: "아리아나 그란데말입니다")
+  private lazy var messageListNavigationBar = MessageListNavigationBar(with: "아리아나 그란데말입니다")
   
   private lazy var naviBottomView = BottomNaviBar()
-  
-  private let profile = UIImageView().set {
-    $0.frame = CGRect(
-      origin: CGPoint(x: 0, y: 0),
-      size: Constant.MyProfile.size)
-    $0.layer.cornerRadius = Constant.MyProfile.size.width/2.0
-    $0.clipsToBounds = true
-    $0.backgroundColor = .lightGray
-  }
   
   private let groupView = GroupView()
   
@@ -60,6 +72,11 @@ class MessageListViewController: UIViewController {
     $0.backgroundColor = .Palette.primary
   }
   
+  private let naviBGView = UIView().set {
+    $0.translatesAutoresizingMaskIntoConstraints = false
+    $0.backgroundColor = UIColor.white
+  }
+  
   private var subscription = Set<AnyCancellable>()
   
   // MARK: - Lifecycle
@@ -83,6 +100,8 @@ class MessageListViewController: UIViewController {
       collectionView: groupView,
       delegate: self)
     eventBind()
+    view.bringSubviewToFront(naviBGView)
+    view.bringSubviewToFront(messageListNavigationBar)
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -160,7 +179,7 @@ class MessageListViewController: UIViewController {
 private extension MessageListViewController {
   func configureUI() {
     view.backgroundColor = UIColor(hex: "#F8F8FA")
-    setNavigationBar()
+    // setNavigationBar()
     setupUI()
     setNaviBottomViewShadow()
     setAddGroupButtonShadow()
@@ -184,27 +203,19 @@ private extension MessageListViewController {
   }
   
   func setNavigationBar() {
-    navigationController?.navigationBar.backgroundColor = .white
-    let appearance = UINavigationBarAppearance()
-  
-    appearance.backgroundColor = .white
-    appearance.shadowColor = .clear
-    navigationController?.navigationBar.standardAppearance = appearance
-    navigationController?.navigationBar.scrollEdgeAppearance = appearance
+//    navigationController?.navigationBar.backgroundColor = .none
+//    let appearance = UINavigationBarAppearance()
+//
+//    appearance.backgroundColor = .none
+//    appearance.shadowColor = .clear
+//    navigationController?.navigationBar.standardAppearance = appearance
+//    navigationController?.navigationBar.scrollEdgeAppearance = appearance
     
-    let leftBarItem = UIBarButtonItem(customView: leftNaviView)
-    navigationItem.leftBarButtonItem = leftBarItem
+//    let leftBarItem = UIBarButtonItem(customView: leftNaviView)
+//    navigationItem.leftBarButtonItem = leftBarItem
     
-    let profile = UIImageView().set {
-      $0.frame = CGRect(
-        origin: CGPoint(x: 0, y: 0),
-        size: Constant.MyProfile.size)
-      $0.layer.cornerRadius = Constant.MyProfile.size.width/2.0
-      $0.clipsToBounds = true
-      $0.backgroundColor = .lightGray
-    }
-    let rightBarItem = UIBarButtonItem(customView: profile)
-    navigationItem.rightBarButtonItem = rightBarItem
+//    let rightBarItem = UIBarButtonItem(customView: profile)
+//    navigationItem.rightBarButtonItem = rightBarItem
   }
   
   func setNaviBottomViewShadow() {
@@ -260,12 +271,14 @@ extension MessageListViewController: GroupViewAdapterDelegate {
 // MARK: - LayoutSupport
 extension MessageListViewController: LayoutSupport {
   func addSubviews() {
-    _=[groupView, myGroupLabel, naviBottomView, addGroupButton].map { view.addSubview($0)
+    _=[naviBGView, messageListNavigationBar, groupView, myGroupLabel, naviBottomView, addGroupButton].map { view.addSubview($0)
     }
   }
   
   func setConstraints() {
-    _=[groupViewConstraints,
+    _=[naviBGViewConstraints,
+       messageListNavigationBarConstraints,
+       groupViewConstraints,
        myGroupLabelConstraints,
        naviBottomViewConstraints,
        addGroupButtonConstraints].map { NSLayoutConstraint.activate($0) }
@@ -273,6 +286,25 @@ extension MessageListViewController: LayoutSupport {
 }
 
 private extension MessageListViewController {
+  var naviBGViewConstraints: [NSLayoutConstraint] {
+    [naviBGView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+     naviBGView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+     naviBGView.topAnchor.constraint(equalTo: view.topAnchor),
+     naviBGView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)]
+  }
+  
+  var messageListNavigationBarConstraints: [NSLayoutConstraint] {
+    [messageListNavigationBar.leadingAnchor.constraint(
+      equalTo: view.leadingAnchor),
+     messageListNavigationBar.trailingAnchor.constraint(
+      equalTo: view.trailingAnchor),
+     messageListNavigationBar.topAnchor.constraint(
+      equalTo: view.topAnchor,
+      constant: statusBarHeight),
+     messageListNavigationBar.heightAnchor.constraint(
+      equalToConstant: navigationBarHeight)]
+  }
+  
   var groupViewConstraints: [NSLayoutConstraint] {
     [groupView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
      groupView.topAnchor.constraint(
@@ -303,9 +335,9 @@ private extension MessageListViewController {
   var addGroupButtonConstraints: [NSLayoutConstraint] {
     [addGroupButton.trailingAnchor.constraint(
       equalTo: view.trailingAnchor,
-      constant: -15),
+      constant: -Constant.AddGroupButton.spacing.trailing),
      addGroupButton.centerYAnchor.constraint(equalTo: myGroupLabel.centerYAnchor),
-     addGroupButton.widthAnchor.constraint(equalToConstant: 100),
-     addGroupButton.heightAnchor.constraint(equalToConstant: 40)]
+     addGroupButton.widthAnchor.constraint(equalToConstant: Constant.AddGroupButton.size.width),
+     addGroupButton.heightAnchor.constraint(equalToConstant: Constant.AddGroupButton.size.height)]
   }
 }

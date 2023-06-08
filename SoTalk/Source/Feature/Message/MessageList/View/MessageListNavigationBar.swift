@@ -8,19 +8,28 @@
 import UIKit
 import Lottie
 
-final class MessageListLeftNaviItem: UIView {
+final class MessageListNavigationBar: UIView {
   // MARK: - Properties
-  let bottleView = LottieAnimationView(name: Constant.BottleView.imageName).set {
+  private let bottleView = LottieAnimationView(name: Constant.BottleView.imageName).set {
     $0.translatesAutoresizingMaskIntoConstraints = false
     $0.loopMode = .loop
     $0.contentMode = .scaleAspectFit
   }
   
-  var userNameLabel: UILabel!
+  private var userNameLabel: UILabel!
+  
+  private let profile = UIImageView().set {
+    $0.layer.cornerRadius = Constant.MyProfile.size.width/2.0
+    $0.clipsToBounds = true
+    $0.backgroundColor = .lightGray
+  }
   
   // MARK: - Initialization
   private override init(frame: CGRect) {
     super.init(frame: frame)
+    translatesAutoresizingMaskIntoConstraints = false
+    backgroundColor = .clear
+    clipsToBounds = false
   }
   
   required init?(coder: NSCoder) {
@@ -37,7 +46,7 @@ final class MessageListLeftNaviItem: UIView {
 }
 
 // MARK: - Private helpers
-extension MessageListLeftNaviItem {
+extension MessageListNavigationBar {
   func configure(with name: String) {
     let attrString = NSMutableAttributedString(
       string: "Hello,\n\(name)님!")
@@ -70,7 +79,7 @@ extension MessageListLeftNaviItem {
 }
 
 // MARK: - LayoutSupport
-extension MessageListLeftNaviItem: LayoutSupport {
+extension MessageListNavigationBar: LayoutSupport {
   func addSubviews() {
     _=[bottleView, userNameLabel].map { addSubview($0) }
   }
@@ -81,7 +90,7 @@ extension MessageListLeftNaviItem: LayoutSupport {
   }
 }
 
-private extension MessageListLeftNaviItem {
+private extension MessageListNavigationBar {
   var menuViewConstraints: [NSLayoutConstraint] {
     [bottleView.leadingAnchor.constraint(
       equalTo: leadingAnchor,
@@ -92,10 +101,23 @@ private extension MessageListLeftNaviItem {
      bottleView.widthAnchor.constraint(
       equalToConstant: Constant.BottleView.size.width)]
   }
+  
   var userNameLabelConstraints: [NSLayoutConstraint] {
     [userNameLabel.leadingAnchor.constraint(
       equalTo: bottleView.trailingAnchor,
       constant: Constant.userNameLabel.spacing.leading),
      userNameLabel.centerYAnchor.constraint(equalTo: centerYAnchor)]
+  }
+  
+  var profileConstraints: [NSLayoutConstraint] {
+    [profile.trailingAnchor.constraint(
+      equalTo: trailingAnchor,
+      constant: -Constant.MyProfile.spacing.trailing),
+     profile.widthAnchor.constraint(
+      equalToConstant: Constant.MyProfile.size.width),
+     profile.heightAnchor.constraint(
+      equalToConstant: Constant.MyProfile.size.height),
+     profile.centerYAnchor.constraint(
+      equalTo: centerYAnchor)]
   }
 }

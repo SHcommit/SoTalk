@@ -10,11 +10,17 @@ import UIKit
 struct GroupModel {
   let groupId: Int
   let groupName: String
-  let gorupImage: UIImage?
+  let groupImage: UIImage?
+  let groupMemberTotalCount: Int
   
-  init(groupId: Int = -1, groupName: String = "None", gorupImage: UIImage? = nil) {
+  init(groupId: Int = -1,
+       groupName: String = "None",
+       groupImage: UIImage? = nil,
+       groupMemberTotalCount: Int = 1
+  ) {
     self.groupId = groupId
     self.groupName = groupName
-    self.gorupImage = gorupImage
+    self.groupImage = groupImage
+    self.groupMemberTotalCount = groupMemberTotalCount
   }
 }

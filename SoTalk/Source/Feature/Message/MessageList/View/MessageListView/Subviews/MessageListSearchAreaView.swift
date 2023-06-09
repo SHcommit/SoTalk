@@ -72,18 +72,18 @@ extension MessageListSearchAreaView {
     guard let superview = superview else { return }
     superview.layoutIfNeeded()
     layer.cornerRadius = 24
-    layer.maskedCorners = [
-      .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-    layer.shadowOpacity = 1
-    layer.shadowOffset = CGSize(width: 0, height: 2)
+    layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+    layer.shadowOpacity = 0.58
+    layer.shadowOffset = CGSize(width: 0, height: 1)
     layer.shadowRadius = 12
-    layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.06).cgColor
+    layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15).cgColor
+    let width = UIScreen.main.bounds.width
     let shadowRect = CGRect(
-      x: bounds.origin.x,
-      y: bounds.origin.y,
-      width: bounds.width,
-      height: bounds.height + 2)
-    layer.shadowPath = UIBezierPath(rect: shadowRect).cgPath
+      x: frame.origin.x,
+      y: frame.origin.y,
+      width: width,
+      height: bounds.height - 90)
+    layer.shadowPath = UIBezierPath(roundedRect: shadowRect, cornerRadius: 12).cgPath
   }
 }
 

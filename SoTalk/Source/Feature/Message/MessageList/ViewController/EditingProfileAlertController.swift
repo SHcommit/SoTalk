@@ -7,11 +7,13 @@
 
 import UIKit
 
-final class EditingProfileALertController: UIAlertController {
+final class EditingProfileAlertController: UIAlertController {
+  // MARK: - Properties
+  var completionHandler: ((SideMenuProfileEditState) -> Void)?
   
+  // MARK: - Lifecycle
   private override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nil, bundle: nil)
-    
   }
   
   required init?(coder: NSCoder) {
@@ -20,48 +22,33 @@ final class EditingProfileALertController: UIAlertController {
 }
 
 // MARK: - Private helper
-extension EditingProfileALertController {
+extension EditingProfileAlertController {
   func setAlertAction() {
-    let profile = UIAlertAction(title: "프로필 이미지 변경", style: .default) { action in
-      action.isEnabled = false
-      self.tapProfile()
+    let profile = UIAlertAction(
+      title: "프로필 이미지 변경", style: .default
+    ) { _ in
+      self.completionHandler?(.profile)
     }
     
-    let nickname = UIAlertAction(title: "닉네임 변경", style: .default) { action in
-      action.isEnabled = false
-      self.tapNickname()
+    let nickname = UIAlertAction(
+      title: "닉네임 변경", style: .default
+    ) { _ in
+      self.completionHandler?(.nickname)
     }
     
-    let name = UIAlertAction(title: "이름 변경", style: .default) { action in
-      action.isEnabled = false
-      self.tapName()
+    let name = UIAlertAction(
+      title: "이름 변경", style: .default
+    ) { _ in
+      self.completionHandler?(.name)
     }
     
-    let cancel = UIAlertAction(title: "취소", style: .cancel) { _ in
-      
-      self.tapCancel()
+    let cancel = UIAlertAction(
+      title: "취소", style: .cancel
+    ) { _ in
+      self.completionHandler?(.cancel)
     }
     _=[profile, nickname, name, cancel].map {
       addAction($0)
     }
-  }
-}
-
-// MARK: - Action
-extension EditingProfileALertController {
-  func tapProfile() {
-    print("ok")
-  }
-  
-  func tapNickname() {
-    print("aa")
-  }
-  
-  func tapName() {
-    print("bbb")
-  }
-  
-  func tapCancel() {
-    print("dd")
   }
 }

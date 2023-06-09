@@ -49,13 +49,27 @@ extension MessageListCoordinator {
   }
   
   // MARK: - Event has occured from side menu
-  func gotoEditProfilePage(_ completionHandler: (() -> Void)? = nil) {
-    print("hi")
-    let editingProfileAlert = EditingProfileALertController()
+  func gotoEditProfilePage(
+    _ completionHandler: @escaping ((_ state: SideMenuProfileEditState) -> Void)
+  ) {
+    let editingProfileAlert = EditingProfileAlertController()
     editingProfileAlert.setAlertAction()
-    presenter.present(editingProfileAlert, animated: true) {
-      //  여기서 값들 받아서 하자
+    editingProfileAlert.completionHandler = { state in
+      completionHandler(state)
     }
+    presenter.present(editingProfileAlert, animated: true)
+  }
+  
+  func gotoProfileEditPage<ViewController>(
+    with prevVC: ViewController
+  ) where ViewController: UIImagePickerControllerDelegate,
+          ViewController: UINavigationControllerDelegate,
+          ViewController: UIViewController {
+    let imagePicker = UIImagePickerController()
+    imagePicker.sourceType = .photoLibrary
+    imagePicker.allowsEditing = true
+    imagePicker.delegate = prevVC
+    prevVC.present(imagePicker, animated: true)
   }
   
   func gotoBuyMeACoffeePage() {

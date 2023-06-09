@@ -209,9 +209,23 @@ extension MessageListViewController: MessageListViewDelegate {
   }
 }
 
+// MARK: - MessageListSideMenuLeftMenuViewDelegate
 extension MessageListViewController: MessageListSideMenuLeftMenuViewDelegate {
   func didTapEditProfile() {
-    coordinator?.gotoEditProfilePage()
+    coordinator?.gotoEditProfilePage { [unowned self] state in
+      // 여기서 값들 받아서 하자
+      // 여기서 그냥 델리게이트 보낼껀데 이거가지고 여요 이제 그 에디팅하는 VC호출하자 카카오톡처럼
+      switch state {
+      case .cancel:
+        break
+      case .name:
+        tapName()
+      case .nickname:
+        tapNickname()
+      case .profile:
+        tapProfile()
+      }
+    }
   }
   
   func didTapBuyMeACoffeePage() {
@@ -226,3 +240,51 @@ extension MessageListViewController: MessageListSideMenuLeftMenuViewDelegate {
     coordinator?.gotoLoginPage()
   }
 }
+
+// MARK: - EditingProfileAlertDelegate
+extension MessageListViewController {
+  @MainActor
+  func tapProfile() {
+     print("프")
+    coordinator?.gotoProfileEditPage(with: self)
+  }
+  
+  func tapNickname() {
+    let vc = ProfileEditingViewController(with: .nickname)
+    present(vc, animated: true)
+  }
+  
+  func tapName() {
+    let vc = ProfileEditingViewController(with: .name)
+    present(vc, animated: true)
+  }
+}
+
+// MARK: - UIImagePickerControllerDelegate
+extension MessageListViewController: UIImagePickerControllerDelegate {
+  func imagePickerController(
+    _ picker: UIImagePickerController,
+    didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
+  ) {
+    var newImage: UIImage?
+    if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+      newImage = editedImage
+    } else if let originImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+      newImage = originImage
+    }
+    //여기서 이제 newImage를 서버한테 보내면 된다.
+    //
+    //
+    //
+    //
+    print(newImage)
+    picker.dismiss(animated: true)
+  }
+  
+  func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+    picker.dismiss(animated: true, completion: nil)
+  }
+}
+
+// MARK: - UINavigationControllerDelegate
+extension MessageListViewController: UINavigationControllerDelegate { }

@@ -139,7 +139,7 @@ private extension MessageListViewController {
   func showSideMenu() {
     sideMenu = MessageListSideMenuView()
     sideMenu?.setLayout(from: view)
-    
+    sideMenu?.delegate = self
     messageListView.subviewsIsUserInteractionNotWorking()
     view.bringSubviewToFront(messageListView)
     messageListView.setSideMenuIsWorking()
@@ -211,18 +211,18 @@ extension MessageListViewController: MessageListViewDelegate {
 
 extension MessageListViewController: MessageListSideMenuLeftMenuViewDelegate {
   func didTapEditProfile() {
-    
+    coordinator?.gotoEditProfilePage()
   }
   
   func didTapBuyMeACoffeePage() {
-    
+    coordinator?.gotoBuyMeACoffeePage()
   }
   
   func didTapAboutUsPage() {
-    
+    coordinator?.gotoAboutUsPage()
   }
   
   func didTapLoginPage() {
-    
+    coordinator?.gotoLoginPage()
   }
 }

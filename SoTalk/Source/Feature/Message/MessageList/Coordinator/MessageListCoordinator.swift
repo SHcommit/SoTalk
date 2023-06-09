@@ -49,8 +49,13 @@ extension MessageListCoordinator {
   }
   
   // MARK: - Event has occured from side menu
-  func gotoEditProfilePage() {
-    
+  func gotoEditProfilePage(_ completionHandler: (() -> Void)? = nil) {
+    print("hi")
+    let editingProfileAlert = EditingProfileALertController()
+    editingProfileAlert.setAlertAction()
+    presenter.present(editingProfileAlert, animated: true) {
+      //  여기서 값들 받아서 하자
+    }
   }
   
   func gotoBuyMeACoffeePage() {

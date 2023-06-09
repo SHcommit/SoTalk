@@ -87,20 +87,46 @@ extension MessageListSideMenuLeftMenuView {
 
 // MARK: - Action
 extension MessageListSideMenuLeftMenuView {
+  @MainActor
   @objc func didTapEditProfile() {
+    UIView.touchAnimationFromHalfToOriginAlphaValue(
+      profile,
+      duration: 0.5,
+      delay: 0,
+      options: [.curveEaseOut])
     delegate?.didTapEditProfile()
   }
   
+  @MainActor
   @objc func didTapBuyMeACoffeePage() {
+    UIView.touchAnimationFromHalfToOriginAlphaValue(
+      buyMeACoffee,
+      duration: 0.5,
+      delay: 0,
+      options: [.curveEaseOut])
     delegate?.didTapBuyMeACoffeePage()
   }
   
+  @MainActor
   @objc func didTapAboutUsPage() {
+    UIView.touchAnimationFromHalfToOriginAlphaValue(
+      aboutUs,
+      duration: 0.5,
+      delay: 0,
+      options: [.curveEaseOut])
     delegate?.didTapAboutUsPage()
   }
   
+  @MainActor
   @objc func didTapLoginPage() {
-    delegate?.didTapLoginPage()
+    UIView.touchAnimationFromHalfToOriginAlphaValue(
+      logout,
+      duration: 0.15,
+      delay: 0,
+      options: [.curveEaseIn]
+    ) { _ in
+      self.delegate?.didTapLoginPage()
+    }
   }
 }
 
@@ -115,7 +141,6 @@ private extension MessageListSideMenuLeftMenuView {
         let tap = UITapGestureRecognizer(target: self, action: $1)
         $0.isUserInteractionEnabled = true
         $0.addGestureRecognizer(tap)
-        $0.backgroundColor = .yellow
       }
   }
 }

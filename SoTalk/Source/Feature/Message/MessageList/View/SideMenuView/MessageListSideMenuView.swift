@@ -46,6 +46,14 @@ final class MessageListSideMenuView: UIView {
   
   private let sideMenu = MessageListSideMenuLeftMenuView()
   
+  weak var delegate: MessageListSideMenuLeftMenuViewDelegate? {
+    get {
+      sideMenu.delegate
+    } set {
+      sideMenu.delegate = newValue
+    }
+  }
+  
   // MARK: - Lifecycle
   private override init(frame: CGRect) {
     super.init(frame: frame)

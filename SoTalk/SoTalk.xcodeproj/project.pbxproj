@@ -45,6 +45,9 @@
 		1582B8E82A333A64003499AB /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B8E72A333A64003499AB /* UserRepositoryImpl.swift */; };
 		1582B8EA2A333CD1003499AB /* UserInfoResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B8E92A333CD1003499AB /* UserInfoResponseDTO+Mapping.swift */; };
 		1582B8EC2A333DA3003499AB /* ProfileUploadResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B8EB2A333DA3003499AB /* ProfileUploadResponseDTO+Mapping.swift */; };
+		1582B8F22A339277003499AB /* ProfileFetchResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B8F12A339277003499AB /* ProfileFetchResponseDTO+Mapping.swift */; };
+		1582B8F42A3399C5003499AB /* MessageListSideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B8F32A3399C5003499AB /* MessageListSideMenuViewModel.swift */; };
+		1582B8F72A33A65A003499AB /* GroupMessageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B8F62A33A65A003499AB /* GroupMessageRepository.swift */; };
 		15856D052A1E9CAA0085FE75 /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D002A1E9CAA0085FE75 /* UIControl+Combine.swift */; };
 		15856D062A1E9CAA0085FE75 /* UISwitch+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D012A1E9CAA0085FE75 /* UISwitch+Combine.swift */; };
 		15856D072A1E9CAA0085FE75 /* UIButton+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D022A1E9CAA0085FE75 /* UIButton+Combine.swift */; };
@@ -193,6 +196,9 @@
 		1582B8E72A333A64003499AB /* UserRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryImpl.swift; sourceTree = "<group>"; };
 		1582B8E92A333CD1003499AB /* UserInfoResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInfoResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
 		1582B8EB2A333DA3003499AB /* ProfileUploadResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileUploadResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
+		1582B8F12A339277003499AB /* ProfileFetchResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileFetchResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
+		1582B8F32A3399C5003499AB /* MessageListSideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListSideMenuViewModel.swift; sourceTree = "<group>"; };
+		1582B8F62A33A65A003499AB /* GroupMessageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMessageRepository.swift; sourceTree = "<group>"; };
 		15856D002A1E9CAA0085FE75 /* UIControl+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
 		15856D012A1E9CAA0085FE75 /* UISwitch+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISwitch+Combine.swift"; sourceTree = "<group>"; };
 		15856D022A1E9CAA0085FE75 /* UIButton+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Combine.swift"; sourceTree = "<group>"; };
@@ -458,6 +464,21 @@
 				1579B8232A31746C00216ACF /* KeyChainWrapperError.swift */,
 			);
 			path = Keychain;
+			sourceTree = "<group>";
+		};
+		1582B8ED2A33702B003499AB /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				1582B8F62A33A65A003499AB /* GroupMessageRepository.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		1582B8F52A33A600003499AB /* GroupMessage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GroupMessage;
 			sourceTree = "<group>";
 		};
 		15856CFF2A1E9CAA0085FE75 /* CombineCocoa */ = {
@@ -807,6 +828,7 @@
 			isa = PBXGroup;
 			children = (
 				15BB02882A262C800035B486 /* MessageListViewModel.swift */,
+				1582B8F32A3399C5003499AB /* MessageListSideMenuViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1025,6 +1047,7 @@
 		15E8A2AF2A2D0108002ECFDB /* DataMapping */ = {
 			isa = PBXGroup;
 			children = (
+				1582B8F52A33A600003499AB /* GroupMessage */,
 				15E8A2BF2A2DC46E002ECFDB /* Common */,
 				15E8A2C02A2DC6B9002ECFDB /* User */,
 				15E8A2B02A2D012A002ECFDB /* Authentication */,
@@ -1078,6 +1101,7 @@
 				15E8A2B82A2D126A002ECFDB /* ProfileUploadRequestDTO+Mapping.swift */,
 				1582B8E92A333CD1003499AB /* UserInfoResponseDTO+Mapping.swift */,
 				1582B8EB2A333DA3003499AB /* ProfileUploadResponseDTO+Mapping.swift */,
+				1582B8F12A339277003499AB /* ProfileFetchResponseDTO+Mapping.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -1122,6 +1146,7 @@
 			isa = PBXGroup;
 			children = (
 				1582B8E52A333A54003499AB /* UserRepository.swift */,
+				1582B8ED2A33702B003499AB /* Message */,
 				15E8A2D22A2DED66002ECFDB /* Authentication */,
 			);
 			path = Repository;
@@ -1338,6 +1363,7 @@
 				15BB02FA2A2907870035B486 /* MessageSenderState.swift in Sources */,
 				15BB028F2A2631040035B486 /* MockGroupModel.swift in Sources */,
 				1573179A2A2B3D000061F914 /* UIImage+AverageColor.swift in Sources */,
+				1582B8F22A339277003499AB /* ProfileFetchResponseDTO+Mapping.swift in Sources */,
 				15856D052A1E9CAA0085FE75 /* UIControl+Combine.swift in Sources */,
 				15BB02CD2A288DBB0035B486 /* CommentSendInputAccessoryViewDelegate.swift in Sources */,
 				152E52432A2BACE600987CA8 /* CreatingGroupResponseModel.swift in Sources */,
@@ -1369,6 +1395,7 @@
 				1551140A2A2A29F1009E0103 /* GroupPictureView.swift in Sources */,
 				15BB02A72A264A070035B486 /* FlowCoordinator.swift in Sources */,
 				15BB01C82A1F0B710035B486 /* UIColor+Palette.swift in Sources */,
+				1582B8F72A33A65A003499AB /* GroupMessageRepository.swift in Sources */,
 				15BB01C22A1F01070035B486 /* LoginViewControllerConstant.swift in Sources */,
 				155114072A2A19CD009E0103 /* UIImage+resized.swift in Sources */,
 				1582B8EA2A333CD1003499AB /* UserInfoResponseDTO+Mapping.swift in Sources */,
@@ -1415,6 +1442,7 @@
 				15BB02DD2A28B7FC0035B486 /* MessageCell.swift in Sources */,
 				15BB02552A24AF650035B486 /* MessageListSearchAreaView.swift in Sources */,
 				152E52662A2BC76800987CA8 /* Responsable.swift in Sources */,
+				1582B8F42A3399C5003499AB /* MessageListSideMenuViewModel.swift in Sources */,
 				15BB02602A251BF10035B486 /* GroupMessageSearch+Constant.swift in Sources */,
 				1582B8E22A330A42003499AB /* SideMenuProfileEditState.swift in Sources */,
 				15BB022F2A233CC30035B486 /* SignUpRequestDTO+Mapping.swift in Sources */,

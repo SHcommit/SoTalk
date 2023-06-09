@@ -90,6 +90,11 @@ extension MessageListNavigationBar {
     
     userNameLabel.attributedText = attrString
   }
+  
+  @MainActor
+  func setProfile(_ image: UIImage) {
+    profile.image = image
+  }
 }
 
 // MARK: - LayoutSupport

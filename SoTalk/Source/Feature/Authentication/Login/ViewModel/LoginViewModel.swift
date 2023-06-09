@@ -95,7 +95,7 @@ private extension LoginViewModel {
       .debounce(for: .seconds(0.3), scheduler: DispatchQueue.main)
       .map {[weak self] id, pw -> State in
         if (1...8).contains(id.count) && (1...16).contains(pw.count) {
-          self?.loginModel.id = id
+          self?.loginModel.id = id.lowercased()
           self?.loginModel.password = pw
           return .idAndPwInputGood
         }

@@ -30,7 +30,7 @@ extension SignUpViewModel: SignUpViewAdapterDataSource {
 // MARK: - Public helpers
 extension SignUpViewModel {
   func setId(_ text: String) {
-    signUpModel.id = text
+    signUpModel.id = text.lowercased()
   }
   
   func setPassword(_ text: String) {

@@ -31,7 +31,7 @@ struct AuthenticationAPIEndpoints {
   func Login(
     with signInRequestDTO: LoginRequestDTO
   ) -> Endpoint<SignUpResponseDTO> {
-    return Endpoint(
+    return Endpoint<SignUpResponseDTO>(
       path: "user/login",
       method: .post,
       bodyParameters: signInRequestDTO,

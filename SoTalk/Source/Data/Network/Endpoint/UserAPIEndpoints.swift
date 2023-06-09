@@ -41,12 +41,12 @@ struct UserAPIEndpoints {
   }
   
   func fetchProfile(
-    with url: ProfileUploadURLDTO
-  ) -> Endpoint<Data> {
-    return Endpoint(
-      path: "user/profile",
-      method: .get,
-      queryParameters: url)
+    with queryParam: String
+  ) -> String {
+    let servIp = SecretManager.shared.serverIp
+    let servPort = SecretManager.shared.serverPort
+    let path = "user/profile"
+    return "http://\(servIp):\(servPort)/\(path)?url=\(queryParam)"
   }
   
   func deleteProfile(

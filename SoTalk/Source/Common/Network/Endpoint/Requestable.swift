@@ -26,20 +26,15 @@ extension Requestable {
     var urlRequest = URLRequest(url: url)
     urlRequest.httpMethod = method.rawValue
     if let bodyParameters = bodyParameters {
-      if
-        bodyParameters is ProfileUploadRequestDTO,
-        let multipartDTO = multipartDTO {
-        
-        let fileData = createMultipartFileData(
-          with: multipartDTO)
-        urlRequest.httpBody = fileData
-      } else {
-        do {
-          urlRequest.httpBody = try JSONEncoder().encode(bodyParameters)
-        } catch {
-          throw NetworkError.invalidBodyParameters
-        }
+      do {
+        urlRequest.httpBody = try JSONEncoder().encode(bodyParameters)
+      } catch {
+        throw NetworkError.invalidBodyParameters
       }
+    } else if let multipartDTO = multipartDTO {
+      let fileData = createMultipartFileData(
+        with: multipartDTO)
+      urlRequest.httpBody = fileData
     }
     _=headers?.map {
       urlRequest.setValue($1, forHTTPHeaderField: $0)
@@ -80,11 +75,25 @@ private extension Requestable {
     
     data.appendString("--\(input.boundary)\(lineBreak)")
     
-    data.appendString(
-      "Content-Disposition: form-data; name=\"\(input.fieldName)\"\(lineBreak)\(lineBreak)")
+    // 요거는 파일명안에 뭐 안뜬데 .jpeg이런거
+    data.appendString("Content-Disposition: form-data; name=\"\(input.fieldName)\"; filename=\"\(input.fileName)\"\(lineBreak)")
     data.appendString("Content-Type: \(input.mimeType)\(lineBreak)\(lineBreak)")
     data.append(input.fileData)
     data.appendString(lineBreak)
+    
+    
+//
+//    data.appendString(
+//      "Content-Disposition: form-data; name=\"\(input.fieldName)\"\(lineBreak)\(lineBreak)")
+//    data.appendString(
+//      "Content-Type: \(input.mimeType)\(lineBreak)\(lineBreak)")
+//
+//    data.appendString(
+//      "Content-Disposition: form-data; name=\"\(input.fieldName)\"\(lineBreak)\(lineBreak)")
+//    data.appendString("\(input.userId)\(lineBreak)")
+//    data.append(input.fileData)
+//    data.appendString(lineBreak)
+    
     data.appendString("--\(input.boundary)--\(lineBreak)")
     return data as Data
   }

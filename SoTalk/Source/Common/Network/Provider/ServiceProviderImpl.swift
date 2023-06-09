@@ -29,7 +29,6 @@ extension ServiceProviderImpl: EndpointProvider {
           case .success(let data):
             do {
               let decodedModel: R = try self.decode(data: data)
-              print(decodedModel)
               completion(.success(decodedModel))
             } catch {
               completion(.failure(NetworkError.failedDecoding))
@@ -72,7 +71,7 @@ private extension EndpointProvider {
       completion(.failure(NetworkError.unknownError))
       return
     }
-    
+    print("DEBUG: status code: \(response.statusCode)")
     guard (200...299).contains(response.statusCode) else {
       completion(.failure(NetworkError.invalidHttpStatusCode(response.statusCode)))
       return

@@ -78,8 +78,7 @@ class MessageListViewController: UIViewController {
     messageListView = MessageListView(
       naviBarHeight: navigationBarHeight,
       statusBarHeight: statusBarHeight,
-      safeAreaBottomHeight: safeAreaBottomHeight,
-      userName: "아리아나 그란데 말입니다")
+      safeAreaBottomHeight: safeAreaBottomHeight)
     view.backgroundColor = .clear
     view.clipsToBounds = true
     navigationController?.navigationBar.isTranslucent = true
@@ -91,6 +90,13 @@ class MessageListViewController: UIViewController {
       collectionView: messageListView.groupView,
       delegate: self)
     bindAddGroupButton()
+    vm.fetchProfile {
+      guard let image = $0 else { return }
+      print(image)
+      DispatchQueue.main.async {
+        self.messageListView.configureNaviBar(with: image)
+      }
+    }
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -246,7 +252,6 @@ extension MessageListViewController: MessageListSideMenuLeftMenuViewDelegate {
 extension MessageListViewController {
   @MainActor
   func tapProfile() {
-     print("프")
     coordinator?.gotoProfileEditPage(with: self)
   }
   
@@ -273,12 +278,14 @@ extension MessageListViewController: UIImagePickerControllerDelegate {
     } else if let originImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
       newImage = originImage
     }
-    //여기서 이제 newImage를 서버한테 보내면 된다.
+    guard let jpegData = newImage?.jpegData(compressionQuality: 0.83) else { return }
+    vm.uploadProfile(with: jpegData)
+    // 여기서 이제 newImage를 서버한테 보내면 된다.
+    // 그리그 userdefualts에도 저장하고 profile에도 표시하고
     //
     //
     //
-    //
-    print(newImage)
+    print(jpegData)
     picker.dismiss(animated: true)
   }
   

@@ -8,8 +8,8 @@
 import Foundation
 
 struct UserInfoModel {
-  let id: String
-  let name: String
-  let nickname: String
+  var id: String
+  var name: String
+  var nickname: String
   var profileUrl: String?
 }

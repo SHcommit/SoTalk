@@ -12,7 +12,7 @@ extension MessageListSideMenuView {
     static let lineSpacing: CGFloat = 60.0
     static let bgColor: UIColor = .Palette.selectedPrimary
     
-    enum Profile {
+    enum ProfileView {
       static let spacing: UISpacing = .init(leading: 80, top: 100)
       static let size: CGSize = CGSize(width: 100, height: 100)
     }

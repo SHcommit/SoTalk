@@ -47,16 +47,19 @@ struct UserRepositoryImpl: UserRepository {
   }
   
   func fetchProfile(
-    _ url: URL,
+    _ queryParam: String,
     completionHandler: @escaping (Data) -> Void
   ) {
+    let endpoint = Endpoints.shared.fetchProfile(with: queryParam)
+    guard let url = URL(string: endpoint) else { return }
+    
     provider.request(url) { result in
       switch result {
-      case .success(let response):
-        print(response)
-        completionHandler(response)
+      case .success(let data):
+        print("DEBUG: \(data)")
+        completionHandler(data)
       case .failure(let error):
-        print("DEBUG: error!!!: \(error.localizedDescription)")
+        print("DEBUG: Unexpected error occured. \(error.localizedDescription)")
       }
     }
   }

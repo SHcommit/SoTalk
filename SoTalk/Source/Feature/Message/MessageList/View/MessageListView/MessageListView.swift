@@ -18,8 +18,6 @@ final class MessageListView: UIView {
   var naviBarHeight: CGFloat!
   var safeAreaBottomHeight: CGFloat!
   
-  var tempUserName: String = ""
-  
   @Published private var isSideMenuWorking: Bool = false
   
   private var subscriptions = Set<AnyCancellable>()
@@ -103,15 +101,12 @@ final class MessageListView: UIView {
   convenience init(
     naviBarHeight: CGFloat,
     statusBarHeight: CGFloat,
-    safeAreaBottomHeight: CGFloat,
-    userName: String
+    safeAreaBottomHeight: CGFloat
   ) {
     self.init(frame: .zero)
     self.naviBarHeight = naviBarHeight
     self.statusBarHeight = statusBarHeight
     self.safeAreaBottomHeight = safeAreaBottomHeight
-    // 어차피 이건 userDefualts에서 가져올거.
-    self.tempUserName = userName
     setupUI()
     naviBarBottomView.setShadow()
     setAddGroupButtonShadow()
@@ -202,6 +197,10 @@ extension MessageListView {
 
 // MARK: - Helper
 extension MessageListView {
+  
+  func configureNaviBar(with image: UIImage) {
+    naviBar.setProfile(image)
+  }
   
   func bringNavigationBarToFrontView() {
     bringSubviewToFront(naviBGView)

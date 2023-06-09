@@ -17,5 +17,5 @@ protocol UserRepository {
     completionHandler: @escaping (String) -> Void)
   
   func fetchProfile(
-    _ url: URL, completionHandler: @escaping (Data) -> Void)
+    _ queryParam: String, completionHandler: @escaping (Data) -> Void)
 }

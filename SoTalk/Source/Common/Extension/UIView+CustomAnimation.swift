@@ -32,4 +32,21 @@ extension UIView {
           }
       }
   }
+  
+  static func touchAnimationFromHalfToOriginAlphaValue(
+    _ target: UIView,
+    duration: CGFloat = 0.3,
+    delay: CGFloat = 0,
+    options: UIView.AnimationOptions = [],
+    completionHandler: ((Bool) -> Void)? = nil
+  ) {
+    target.alpha = 0.5
+    animate(
+      withDuration: duration,
+      delay: delay,
+      options: options,
+      animations: {
+        target.alpha = 1
+      }) { state in completionHandler?(state) }
+  }
 }

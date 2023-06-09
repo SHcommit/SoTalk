@@ -44,12 +44,13 @@ final class MessageListSideMenuView: UIView {
     $0.sizeToFit()
   }
   
-  private let sideMenu = MessageListSideMenuLeftView()
+  private let sideMenu = MessageListSideMenuLeftMenuView()
   
   // MARK: - Lifecycle
   private override init(frame: CGRect) {
     super.init(frame: frame)
     translatesAutoresizingMaskIntoConstraints = false
+    isUserInteractionEnabled = true
   }
   
   required init?(coder: NSCoder) {

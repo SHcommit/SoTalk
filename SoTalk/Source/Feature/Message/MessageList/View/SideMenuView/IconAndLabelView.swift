@@ -28,6 +28,8 @@ final class IconAndLabelView: UIView {
   private override init(frame: CGRect) {
     super.init(frame: frame)
     translatesAutoresizingMaskIntoConstraints = false
+    backgroundColor = .white
+    setupUI()
   }
   
   required init?(coder: NSCoder) {
@@ -36,8 +38,6 @@ final class IconAndLabelView: UIView {
   
   convenience init() {
     self.init(frame: .zero)
-    backgroundColor = .white
-    setupUI()
   }
 }
 
@@ -61,6 +61,7 @@ extension IconAndLabelView: LayoutSupport {
   }
 }
 
+// MARK: - LayoutSupport helper
 private extension IconAndLabelView {
   var iconConstraints: [NSLayoutConstraint] {
     [icon.widthAnchor.constraint(equalToConstant: label.bounds.height),
@@ -73,6 +74,7 @@ private extension IconAndLabelView {
     [label.leadingAnchor.constraint(
       equalTo: icon.trailingAnchor,
     constant: 20),
-     label.centerYAnchor.constraint(equalTo: centerYAnchor)]
+     label.centerYAnchor.constraint(equalTo: centerYAnchor),
+     label.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor)]
   }
 }

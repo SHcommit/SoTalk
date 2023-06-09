@@ -208,3 +208,21 @@ extension MessageListViewController: MessageListViewDelegate {
     hideSideMenu()
   }
 }
+
+extension MessageListViewController: MessageListSideMenuLeftMenuViewDelegate {
+  func didTapEditProfile() {
+    
+  }
+  
+  func didTapBuyMeACoffeePage() {
+    
+  }
+  
+  func didTapAboutUsPage() {
+    
+  }
+  
+  func didTapLoginPage() {
+    
+  }
+}

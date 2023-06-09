@@ -47,4 +47,17 @@ extension MessageListCoordinator {
     let child = CreatingGroupCoordinator(presenter: presenter)
     addChild(with: child)
   }
+  
+  // MARK: - Event has occured from side menu
+  func gotoEditProfilePage() {
+    
+  }
+  
+  func gotoBuyMeACoffeePage() {
+    
+  }
+  
+  func gotoAboutUsPage() {
+    
+  }
 }

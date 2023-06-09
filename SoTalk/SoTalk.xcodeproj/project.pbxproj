@@ -26,7 +26,7 @@
 		156C6E622A31C1A300CD1968 /* MessageListView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156C6E612A31C1A300CD1968 /* MessageListView+Constant.swift */; };
 		156C6E652A31C24600CD1968 /* MessageListSideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156C6E642A31C24600CD1968 /* MessageListSideMenuView.swift */; };
 		156C6E672A31C4F900CD1968 /* MessageListSideMenuView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156C6E662A31C4F900CD1968 /* MessageListSideMenuView+Constant.swift */; };
-		156C6E692A31CE8C00CD1968 /* MessageListSideMenuLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156C6E682A31CE8C00CD1968 /* MessageListSideMenuLeftView.swift */; };
+		156C6E692A31CE8C00CD1968 /* MessageListSideMenu+LeftMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156C6E682A31CE8C00CD1968 /* MessageListSideMenu+LeftMenuView.swift */; };
 		156C6E6B2A31CF4700CD1968 /* IconAndLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156C6E6A2A31CF4700CD1968 /* IconAndLabelView.swift */; };
 		157317942A2A66890061F914 /* PreviewGroupPictureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157317932A2A66890061F914 /* PreviewGroupPictureManager.swift */; };
 		157317962A2A68AF0061F914 /* UIImage+JPEGCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157317952A2A68AF0061F914 /* UIImage+JPEGCompression.swift */; };
@@ -36,6 +36,7 @@
 		157317B22A2B90F30061F914 /* SecretManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157317B12A2B90F30061F914 /* SecretManager.swift */; };
 		1579B8222A30907C00216ACF /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579B8212A30907C00216ACF /* KeychainWrapper.swift */; };
 		1579B8242A31746C00216ACF /* KeyChainWrapperError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579B8232A31746C00216ACF /* KeyChainWrapperError.swift */; };
+		157D44632A32CB1D004EC742 /* MessageListSideMenuLeftMenuViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D44622A32CB1D004EC742 /* MessageListSideMenuLeftMenuViewDelegate.swift */; };
 		15856D052A1E9CAA0085FE75 /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D002A1E9CAA0085FE75 /* UIControl+Combine.swift */; };
 		15856D062A1E9CAA0085FE75 /* UISwitch+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D012A1E9CAA0085FE75 /* UISwitch+Combine.swift */; };
 		15856D072A1E9CAA0085FE75 /* UIButton+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D022A1E9CAA0085FE75 /* UIButton+Combine.swift */; };
@@ -164,7 +165,7 @@
 		156C6E612A31C1A300CD1968 /* MessageListView+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageListView+Constant.swift"; sourceTree = "<group>"; };
 		156C6E642A31C24600CD1968 /* MessageListSideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListSideMenuView.swift; sourceTree = "<group>"; };
 		156C6E662A31C4F900CD1968 /* MessageListSideMenuView+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageListSideMenuView+Constant.swift"; sourceTree = "<group>"; };
-		156C6E682A31CE8C00CD1968 /* MessageListSideMenuLeftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListSideMenuLeftView.swift; sourceTree = "<group>"; };
+		156C6E682A31CE8C00CD1968 /* MessageListSideMenu+LeftMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageListSideMenu+LeftMenuView.swift"; sourceTree = "<group>"; };
 		156C6E6A2A31CF4700CD1968 /* IconAndLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconAndLabelView.swift; sourceTree = "<group>"; };
 		157317932A2A66890061F914 /* PreviewGroupPictureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewGroupPictureManager.swift; sourceTree = "<group>"; };
 		157317952A2A68AF0061F914 /* UIImage+JPEGCompression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+JPEGCompression.swift"; sourceTree = "<group>"; };
@@ -175,6 +176,7 @@
 		157317B52A2BA3570061F914 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		1579B8212A30907C00216ACF /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		1579B8232A31746C00216ACF /* KeyChainWrapperError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainWrapperError.swift; sourceTree = "<group>"; };
+		157D44622A32CB1D004EC742 /* MessageListSideMenuLeftMenuViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListSideMenuLeftMenuViewDelegate.swift; sourceTree = "<group>"; };
 		15856D002A1E9CAA0085FE75 /* UIControl+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
 		15856D012A1E9CAA0085FE75 /* UISwitch+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISwitch+Combine.swift"; sourceTree = "<group>"; };
 		15856D022A1E9CAA0085FE75 /* UIButton+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Combine.swift"; sourceTree = "<group>"; };
@@ -405,7 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				156C6E642A31C24600CD1968 /* MessageListSideMenuView.swift */,
-				156C6E682A31CE8C00CD1968 /* MessageListSideMenuLeftView.swift */,
+				156C6E682A31CE8C00CD1968 /* MessageListSideMenu+LeftMenuView.swift */,
 				156C6E6A2A31CF4700CD1968 /* IconAndLabelView.swift */,
 			);
 			path = SideMenuView;
@@ -779,6 +781,7 @@
 			children = (
 				15BB02812A25F37E0035B486 /* GroupViewAdapterDataSoruce.swift */,
 				15BB02BA2A284D360035B486 /* GroupViewAdapterDelegate.swift */,
+				157D44622A32CB1D004EC742 /* MessageListSideMenuLeftMenuViewDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1298,7 +1301,7 @@
 				15BB02F82A29076E0035B486 /* MessageContentView+Constant.swift in Sources */,
 				15BB02C82A28855D0035B486 /* MessageSendBar.swift in Sources */,
 				15BD2DA22A29CD6F00095214 /* CreatingGroupCoordinator.swift in Sources */,
-				156C6E692A31CE8C00CD1968 /* MessageListSideMenuLeftView.swift in Sources */,
+				156C6E692A31CE8C00CD1968 /* MessageListSideMenu+LeftMenuView.swift in Sources */,
 				15BB01E92A209ABF0035B486 /* UIColor+iconColorChange.swift in Sources */,
 				15E8A2B92A2D126A002ECFDB /* ProfileUploadRequestDTO+Mapping.swift in Sources */,
 				15E8A2DE2A2E0287002ECFDB /* LoginRepositoryImpl.swift in Sources */,
@@ -1372,6 +1375,7 @@
 				15E8A29B2A2C78CB002ECFDB /* MessageListViewController.swift in Sources */,
 				15BB02CB2A2887140035B486 /* MessageTextViewDelegate.swift in Sources */,
 				15856D0F2A1E9D150085FE75 /* ViewModelProtocols.swift in Sources */,
+				157D44632A32CB1D004EC742 /* MessageListSideMenuLeftMenuViewDelegate.swift in Sources */,
 				157317962A2A68AF0061F914 /* UIImage+JPEGCompression.swift in Sources */,
 				15BB02DB2A2897B70035B486 /* MessageViewModel.swift in Sources */,
 				15BB02212A226A910035B486 /* SignUpViewAdapter.swift in Sources */,

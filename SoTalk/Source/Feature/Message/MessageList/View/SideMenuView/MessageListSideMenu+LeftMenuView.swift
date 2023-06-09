@@ -7,21 +7,25 @@
 
 import UIKit
 
-final class MessageListSideMenuLeftView: UIView {
+final class MessageListSideMenuLeftMenuView: UIView {
+  // MARK: - Constant
+  private let StackViewSpacing = 20.0
   
   // MARK: - Properties
   private let profile = IconAndLabelView()
-  
+
   private let buyMeACoffee = IconAndLabelView()
   
   private let aboutUs = IconAndLabelView()
   
   private let logout = IconAndLabelView()
   
+  weak var delegate: MessageListSideMenuLeftMenuViewDelegate?
+  
   private lazy var menuStackView: UIStackView = UIStackView(
     arrangedSubviews: [profile, buyMeACoffee, aboutUs, logout]).set {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.spacing = MessageListSideMenuView.Constant.lineSpacing
+        $0.spacing = StackViewSpacing
         $0.axis = .vertical
         $0.alignment = .top
         $0.distribution = .fillEqually
@@ -31,6 +35,7 @@ final class MessageListSideMenuLeftView: UIView {
   private override init(frame: CGRect) {
     super.init(frame: frame)
     backgroundColor = .white
+    isUserInteractionEnabled = true
     translatesAutoresizingMaskIntoConstraints = false
     layer.cornerRadius = 24
     layer.maskedCorners = [
@@ -47,15 +52,14 @@ final class MessageListSideMenuLeftView: UIView {
     setShadow()
     configureSubviews()
     setupUI()
+    setEvent()
   }
-  
-  
 }
 
 // MARK: - Helper
-extension MessageListSideMenuLeftView {
+extension MessageListSideMenuLeftMenuView {
   func configureSubviews() {
-    profile.configure(with: "Profile", UIImage(named: "profileIcon")!)
+    profile.configure(with: "Edit profile", UIImage(named: "profileIcon")!)
     buyMeACoffee.configure(with: "Buy me a coffee", UIImage(named: "buyMeACoffeeIcon")!)
     aboutUs.configure(with: "About us", UIImage(named: "aboutUsIcon")!)
     logout.configure(with: "Logout", UIImage(named: "LogoutIcon")!)
@@ -81,8 +85,43 @@ extension MessageListSideMenuLeftView {
   }
 }
 
+// MARK: - Action
+extension MessageListSideMenuLeftMenuView {
+  @objc func didTapEditProfile() {
+    delegate?.didTapEditProfile()
+  }
+  
+  @objc func didTapBuyMeACoffeePage() {
+    delegate?.didTapBuyMeACoffeePage()
+  }
+  
+  @objc func didTapAboutUsPage() {
+    delegate?.didTapAboutUsPage()
+  }
+  
+  @objc func didTapLoginPage() {
+    delegate?.didTapLoginPage()
+  }
+}
+
+// MARK: - Private helepr
+private extension MessageListSideMenuLeftMenuView {
+  func setEvent() {
+    _=[(profile, #selector(didTapEditProfile)),
+       (buyMeACoffee, #selector(didTapBuyMeACoffeePage)),
+       (aboutUs, #selector(didTapAboutUsPage)),
+       (logout, #selector(didTapLoginPage))]
+      .map {
+        let tap = UITapGestureRecognizer(target: self, action: $1)
+        $0.isUserInteractionEnabled = true
+        $0.addGestureRecognizer(tap)
+        $0.backgroundColor = .yellow
+      }
+  }
+}
+
 // MARK: - LayoutSupport
-extension MessageListSideMenuLeftView: LayoutSupport {
+extension MessageListSideMenuLeftMenuView: LayoutSupport {
   func addSubviews() {
     addSubview(menuStackView)
   }
@@ -92,7 +131,9 @@ extension MessageListSideMenuLeftView: LayoutSupport {
       menuStackView.leadingAnchor.constraint(
         equalTo: leadingAnchor,
         constant: 20),
-      menuStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+      menuStackView.trailingAnchor.constraint(
+        equalTo: trailingAnchor,
+      constant: -10),
       menuStackView.topAnchor.constraint(
         equalTo: topAnchor,
       constant: 20),

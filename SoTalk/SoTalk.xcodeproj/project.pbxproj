@@ -40,6 +40,11 @@
 		157D44652A32F07D004EC742 /* EditingProfileAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D44642A32F07D004EC742 /* EditingProfileAlertController.swift */; };
 		1582B8E02A33053C003499AB /* ProfileEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B8DF2A33053C003499AB /* ProfileEditingViewController.swift */; };
 		1582B8E22A330A42003499AB /* SideMenuProfileEditState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B8E12A330A42003499AB /* SideMenuProfileEditState.swift */; };
+		1582B8E42A333351003499AB /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B8E32A333351003499AB /* AppSettings.swift */; };
+		1582B8E62A333A54003499AB /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B8E52A333A54003499AB /* UserRepository.swift */; };
+		1582B8E82A333A64003499AB /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B8E72A333A64003499AB /* UserRepositoryImpl.swift */; };
+		1582B8EA2A333CD1003499AB /* UserInfoResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B8E92A333CD1003499AB /* UserInfoResponseDTO+Mapping.swift */; };
+		1582B8EC2A333DA3003499AB /* ProfileUploadResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B8EB2A333DA3003499AB /* ProfileUploadResponseDTO+Mapping.swift */; };
 		15856D052A1E9CAA0085FE75 /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D002A1E9CAA0085FE75 /* UIControl+Combine.swift */; };
 		15856D062A1E9CAA0085FE75 /* UISwitch+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D012A1E9CAA0085FE75 /* UISwitch+Combine.swift */; };
 		15856D072A1E9CAA0085FE75 /* UIButton+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D022A1E9CAA0085FE75 /* UIButton+Combine.swift */; };
@@ -183,6 +188,11 @@
 		157D44642A32F07D004EC742 /* EditingProfileAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingProfileAlertController.swift; sourceTree = "<group>"; };
 		1582B8DF2A33053C003499AB /* ProfileEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditingViewController.swift; sourceTree = "<group>"; };
 		1582B8E12A330A42003499AB /* SideMenuProfileEditState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuProfileEditState.swift; sourceTree = "<group>"; };
+		1582B8E32A333351003499AB /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		1582B8E52A333A54003499AB /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		1582B8E72A333A64003499AB /* UserRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryImpl.swift; sourceTree = "<group>"; };
+		1582B8E92A333CD1003499AB /* UserInfoResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInfoResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
+		1582B8EB2A333DA3003499AB /* ProfileUploadResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileUploadResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
 		15856D002A1E9CAA0085FE75 /* UIControl+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
 		15856D012A1E9CAA0085FE75 /* UISwitch+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISwitch+Combine.swift"; sourceTree = "<group>"; };
 		15856D022A1E9CAA0085FE75 /* UIButton+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Combine.swift"; sourceTree = "<group>"; };
@@ -657,6 +667,7 @@
 				152E526B2A2C4F3B00987CA8 /* Network */,
 				15BB01DD2A1F3DD70035B486 /* BackgroundBlur.swift */,
 				157317B12A2B90F30061F914 /* SecretManager.swift */,
+				1582B8E32A333351003499AB /* AppSettings.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1065,6 +1076,8 @@
 				15E8A2A82A2CEF93002ECFDB /* UserIdSearchRequestDTO+Mapping.swift */,
 				15E8A2DB2A2DFD1E002ECFDB /* UserIdSearchResponseDTO+Mapping.swift */,
 				15E8A2B82A2D126A002ECFDB /* ProfileUploadRequestDTO+Mapping.swift */,
+				1582B8E92A333CD1003499AB /* UserInfoResponseDTO+Mapping.swift */,
+				1582B8EB2A333DA3003499AB /* ProfileUploadResponseDTO+Mapping.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -1092,6 +1105,7 @@
 			children = (
 				15E8A2CD2A2DEB12002ECFDB /* SignUpRepositoryImpl.swift */,
 				15E8A2DD2A2E0287002ECFDB /* LoginRepositoryImpl.swift */,
+				1582B8E72A333A64003499AB /* UserRepositoryImpl.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -1107,6 +1121,7 @@
 		15E8A2CC2A2DEAFE002ECFDB /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				1582B8E52A333A54003499AB /* UserRepository.swift */,
 				15E8A2D22A2DED66002ECFDB /* Authentication */,
 			);
 			path = Repository;
@@ -1312,6 +1327,7 @@
 				15BD2DA22A29CD6F00095214 /* CreatingGroupCoordinator.swift in Sources */,
 				156C6E692A31CE8C00CD1968 /* MessageListSideMenu+LeftMenuView.swift in Sources */,
 				15BB01E92A209ABF0035B486 /* UIColor+iconColorChange.swift in Sources */,
+				1582B8E62A333A54003499AB /* UserRepository.swift in Sources */,
 				15E8A2B92A2D126A002ECFDB /* ProfileUploadRequestDTO+Mapping.swift in Sources */,
 				15E8A2DE2A2E0287002ECFDB /* LoginRepositoryImpl.swift in Sources */,
 				15BB01EB2A20CA240035B486 /* AuthenticationTextFieldColorState.swift in Sources */,
@@ -1338,6 +1354,7 @@
 				15856D092A1E9CAA0085FE75 /* UITextField+Combine.swift in Sources */,
 				15856D102A1E9D150085FE75 /* LayoutSupport.swift in Sources */,
 				152E526A2A2BC8EA00987CA8 /* HTTPMethod.swift in Sources */,
+				1582B8EC2A333DA3003499AB /* ProfileUploadResponseDTO+Mapping.swift in Sources */,
 				15BB02622A251C0D0035B486 /* MessageListNavigationBar+Constant.swift in Sources */,
 				156C6E652A31C24600CD1968 /* MessageListSideMenuView.swift in Sources */,
 				15BB02AA2A2650BE0035B486 /* FlowCoordinator+ConvenienceInitSubCoordinator.swift in Sources */,
@@ -1354,13 +1371,16 @@
 				15BB01C82A1F0B710035B486 /* UIColor+Palette.swift in Sources */,
 				15BB01C22A1F01070035B486 /* LoginViewControllerConstant.swift in Sources */,
 				155114072A2A19CD009E0103 /* UIImage+resized.swift in Sources */,
+				1582B8EA2A333CD1003499AB /* UserInfoResponseDTO+Mapping.swift in Sources */,
 				15856D062A1E9CAA0085FE75 /* UISwitch+Combine.swift in Sources */,
 				15E8A2B72A2D0F7A002ECFDB /* ProfileModel.swift in Sources */,
 				152E52612A2BC74C00987CA8 /* NetworkError.swift in Sources */,
+				1582B8E42A333351003499AB /* AppSettings.swift in Sources */,
 				15856D182A1E9F490085FE75 /* LoginViewModel.swift in Sources */,
 				1551140F2A2A2EC1009E0103 /* CreatingGroupBottomSheetViewController+Constant.swift in Sources */,
 				157317982A2A69D90061F914 /* GroupPictureView+Constant.swift in Sources */,
 				15BB01D42A1F25280035B486 /* ForgetViewConstant.swift in Sources */,
+				1582B8E82A333A64003499AB /* UserRepositoryImpl.swift in Sources */,
 				1589198D2A1E7B43006796B2 /* SceneDelegate.swift in Sources */,
 				15BB021F2A226A230035B486 /* SignUpViewModel.swift in Sources */,
 				15BB02BB2A284D360035B486 /* GroupViewAdapterDelegate.swift in Sources */,

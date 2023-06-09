@@ -24,7 +24,7 @@ final class MessageListView: UIView {
   
   private var subscriptions = Set<AnyCancellable>()
   
-  private lazy var naviBar = MessageListNavigationBar(with: tempUserName)
+  private let naviBar = MessageListNavigationBar()
   
   private lazy var naviBarBottomView = MessageListSearchAreaView()
   

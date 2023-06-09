@@ -8,10 +8,13 @@
 import Foundation
 
 struct UserAPIEndpoints {
-  func searchProfile(
+  static let shared = UserAPIEndpoints()
+  private init() { }
+  
+  func searchUser(
     with userIdSearchRequestDTO: UserIdSearchRequestDTO
-  ) -> Endpoint<UserIdSearchRequestDTO> {
-    return Endpoint(
+  ) -> Endpoint<UserInfoResponseDTO> {
+    return Endpoint<UserInfoResponseDTO>(
       path: "user/byUserId",
       method: .get,
       queryParameters: userIdSearchRequestDTO)
@@ -19,7 +22,7 @@ struct UserAPIEndpoints {
   
   func uploadProfile(
     with profileUploadRequestDTO: ProfileUploadRequestDTO
-  ) -> Endpoint<ProfileUploadRequestDTO> {
+  ) -> Endpoint<ProfileUploadURLDTO> {
     let boundary = UUID().uuidString
     let multiPartDTO = MultipartInputDTO(
       userId: profileUploadRequestDTO.userId,
@@ -28,7 +31,7 @@ struct UserAPIEndpoints {
       mimeType: "image/jpeg",
       fileData: profileUploadRequestDTO.imageData,
       boundary: boundary)
-    return Endpoint(
+    return Endpoint<ProfileUploadURLDTO>(
       path: "user/profile",
       method: .post,
       headers: [
@@ -38,12 +41,12 @@ struct UserAPIEndpoints {
   }
   
   func fetchProfile(
-    with userIdDTO: UserIdSearchRequestDTO
-  ) -> Endpoint<UserIdSearchRequestDTO> {
+    with url: ProfileUploadURLDTO
+  ) -> Endpoint<Data> {
     return Endpoint(
       path: "user/profile",
       method: .get,
-      queryParameters: userIdDTO)
+      queryParameters: url)
   }
   
   func deleteProfile(

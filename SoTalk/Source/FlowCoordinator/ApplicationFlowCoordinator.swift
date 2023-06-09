@@ -16,8 +16,10 @@ final class ApplicationFlowCoordinator: FlowCoordinator {
   
   private let window: UIWindow
   private var isSignIn: Bool {
-    // 유저 로그인 했는지 체크
-    return false
+    if AppSetting.getUser().id == "" {
+      return false
+    }
+    return true
   }
   
   // MARK: - Initialization
@@ -28,8 +30,7 @@ final class ApplicationFlowCoordinator: FlowCoordinator {
   func start() {
     parent = nil
     guard isSignIn else {
-      // gotoLoginPage()
-      gotoChatListpage()
+      gotoLoginPage()
       return
     }
     gotoChatListpage()

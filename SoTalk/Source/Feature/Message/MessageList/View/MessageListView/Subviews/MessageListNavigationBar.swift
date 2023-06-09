@@ -20,7 +20,11 @@ final class MessageListNavigationBar: UIView {
     $0.contentMode = .scaleAspectFit
   }
   
-  private var userNameLabel: UILabel!
+  private let userNameLabel = UILabel().set {
+    $0.translatesAutoresizingMaskIntoConstraints = false
+    $0.numberOfLines = 2
+    $0.textAlignment = .left
+  }
   
   private lazy var profile = UIImageView().set {
     $0.translatesAutoresizingMaskIntoConstraints = false
@@ -46,10 +50,9 @@ final class MessageListNavigationBar: UIView {
     fatalError("init(coder:) has not been implemented")
   }
   
-  convenience init(with userName: String) {
+  convenience init() {
     self.init(frame: .zero)
-    initUserNameLabel()
-    configure(with: userName)
+    setUserNickname()
     setupUI()
     bottleView.play()
   }
@@ -62,9 +65,11 @@ extension MessageListNavigationBar {
   }
 }
 
-// MARK: - Private helpers
+// MARK: - Helpers
 extension MessageListNavigationBar {
-  func configure(with name: String) {
+  /// 이름 변경할 수 도 있으니까 side->홈으로 올 때 이 함수 호출해야 합니다.
+  func setUserNickname() {
+    let name = AppSetting.getUser().nickname
     let attrString = NSMutableAttributedString(
       string: "Hello,\n\(name)님!")
     let hiAttrStr: [NSAttributedString.Key: Any] = [
@@ -82,16 +87,8 @@ extension MessageListNavigationBar {
       (userNameAttrStr,
        NSRange(location: 7, length: name.count+2))]
       .map { attrString.addAttributes($0, range: $1) }
-      
-    userNameLabel?.attributedText = attrString
-  }
-  
-  func initUserNameLabel() {
-    userNameLabel = UILabel().set {
-      $0.translatesAutoresizingMaskIntoConstraints = false
-      $0.numberOfLines = 2
-      $0.textAlignment = .left
-    }
+    
+    userNameLabel.attributedText = attrString
   }
 }
 

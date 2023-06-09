@@ -34,6 +34,9 @@ final class MessageListCoordinator: NSObject, FlowCoordinator {
 
 extension MessageListCoordinator {
   func gotoLoginPage() {
+    AppSetting[.isLoggedIn] = false
+    AppSetting.delete(.userInfo)
+    
     guard let parent = parent as? ApplicationFlowCoordinator else { return }
     parent.gotoLoginPage(withDelete: self)
   }

@@ -52,6 +52,7 @@ class LoginViewController: UIViewController {
   // MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
+    print(AppSetting.getUser())
     forgetView.delegate = self
     setupUI()
     configureUI()

@@ -9,21 +9,22 @@ import Foundation
 
 final class MessageListViewModel {
   // MARK: - Properties
-  var model: [GroupModel]?
+  private var groupModel: [GroupModel]?
+  private let userRepository = UserRepositoryImpl()
   
   init(model: [GroupModel]? = nil) {
-    self.model = MockGroupModel().mockData()
+    self.groupModel = MockGroupModel().mockData()
   }
 }
 
 // MARK: - GroupViewAdapterDataSource
 extension MessageListViewModel: GroupViewAdapterDataSource {
   var numberOfItems: Int {
-    model?.count ?? 0
+    groupModel?.count ?? 0
   }
   
   func cellItem(at index: Int) -> GroupModel {
-    guard let item = model?[index] else {
+    guard let item = groupModel?[index] else {
       return .init()
     }
     return item

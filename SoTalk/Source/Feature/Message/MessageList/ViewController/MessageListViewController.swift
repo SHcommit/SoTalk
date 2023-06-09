@@ -74,6 +74,7 @@ class MessageListViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    print(AppSetting.getUser())
     messageListView = MessageListView(
       naviBarHeight: navigationBarHeight,
       statusBarHeight: statusBarHeight,

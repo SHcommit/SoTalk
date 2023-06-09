@@ -24,11 +24,12 @@ extension ServiceProviderImpl: EndpointProvider {
       session.dataTask(with: urlRequest) { [weak self] data, response, error in
         self?.checkError(with: data, response, error) { result in
           guard let self = self else { return }
-          
+          print("DEBUG: response bytes: \(data)")
           switch result {
           case .success(let data):
             do {
               let decodedModel: R = try self.decode(data: data)
+              print(decodedModel)
               completion(.success(decodedModel))
             } catch {
               completion(.failure(NetworkError.failedDecoding))

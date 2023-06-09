@@ -48,6 +48,11 @@
 		1582B8F22A339277003499AB /* ProfileFetchResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B8F12A339277003499AB /* ProfileFetchResponseDTO+Mapping.swift */; };
 		1582B8F42A3399C5003499AB /* MessageListSideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B8F32A3399C5003499AB /* MessageListSideMenuViewModel.swift */; };
 		1582B8F72A33A65A003499AB /* GroupMessageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B8F62A33A65A003499AB /* GroupMessageRepository.swift */; };
+		1582B8F92A33A829003499AB /* GroupSocketPortSearchRequestDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B8F82A33A829003499AB /* GroupSocketPortSearchRequestDTO+Mapping.swift */; };
+		1582B8FB2A33A850003499AB /* GroupSocketPortSearchResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B8FA2A33A850003499AB /* GroupSocketPortSearchResponseDTO+Mapping.swift */; };
+		1582B8FD2A33AA07003499AB /* NewMessageGroupRequestDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B8FC2A33AA07003499AB /* NewMessageGroupRequestDTO+Mapping.swift */; };
+		1582B8FF2A33ABAD003499AB /* GroupJoinRequestDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B8FE2A33ABAD003499AB /* GroupJoinRequestDTO+Mapping.swift */; };
+		1582B9012A33AD0B003499AB /* GroupInfoDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B9002A33AD0B003499AB /* GroupInfoDTO+Mapping.swift */; };
 		15856D052A1E9CAA0085FE75 /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D002A1E9CAA0085FE75 /* UIControl+Combine.swift */; };
 		15856D062A1E9CAA0085FE75 /* UISwitch+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D012A1E9CAA0085FE75 /* UISwitch+Combine.swift */; };
 		15856D072A1E9CAA0085FE75 /* UIButton+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D022A1E9CAA0085FE75 /* UIButton+Combine.swift */; };
@@ -142,7 +147,7 @@
 		15E8A2B72A2D0F7A002ECFDB /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A2B62A2D0F7A002ECFDB /* ProfileModel.swift */; };
 		15E8A2B92A2D126A002ECFDB /* ProfileUploadRequestDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A2B82A2D126A002ECFDB /* ProfileUploadRequestDTO+Mapping.swift */; };
 		15E8A2BE2A2DAEA0002ECFDB /* MultipartInputDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A2BD2A2DAEA0002ECFDB /* MultipartInputDTO.swift */; };
-		15E8A2C62A2DC960002ECFDB /* GroupAPIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A2C52A2DC960002ECFDB /* GroupAPIEndpoints.swift */; };
+		15E8A2C62A2DC960002ECFDB /* GroupMessageAPIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A2C52A2DC960002ECFDB /* GroupMessageAPIEndpoints.swift */; };
 		15E8A2CA2A2DEADE002ECFDB /* SignUpRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A2C92A2DEADE002ECFDB /* SignUpRepository.swift */; };
 		15E8A2CE2A2DEB12002ECFDB /* SignUpRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A2CD2A2DEB12002ECFDB /* SignUpRepositoryImpl.swift */; };
 		15E8A2D12A2DEBE3002ECFDB /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A2D02A2DEBE3002ECFDB /* UserInfoModel.swift */; };
@@ -199,6 +204,11 @@
 		1582B8F12A339277003499AB /* ProfileFetchResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileFetchResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
 		1582B8F32A3399C5003499AB /* MessageListSideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListSideMenuViewModel.swift; sourceTree = "<group>"; };
 		1582B8F62A33A65A003499AB /* GroupMessageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMessageRepository.swift; sourceTree = "<group>"; };
+		1582B8F82A33A829003499AB /* GroupSocketPortSearchRequestDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupSocketPortSearchRequestDTO+Mapping.swift"; sourceTree = "<group>"; };
+		1582B8FA2A33A850003499AB /* GroupSocketPortSearchResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupSocketPortSearchResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
+		1582B8FC2A33AA07003499AB /* NewMessageGroupRequestDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewMessageGroupRequestDTO+Mapping.swift"; sourceTree = "<group>"; };
+		1582B8FE2A33ABAD003499AB /* GroupJoinRequestDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupJoinRequestDTO+Mapping.swift"; sourceTree = "<group>"; };
+		1582B9002A33AD0B003499AB /* GroupInfoDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupInfoDTO+Mapping.swift"; sourceTree = "<group>"; };
 		15856D002A1E9CAA0085FE75 /* UIControl+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
 		15856D012A1E9CAA0085FE75 /* UISwitch+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISwitch+Combine.swift"; sourceTree = "<group>"; };
 		15856D022A1E9CAA0085FE75 /* UIButton+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Combine.swift"; sourceTree = "<group>"; };
@@ -295,7 +305,7 @@
 		15E8A2B62A2D0F7A002ECFDB /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		15E8A2B82A2D126A002ECFDB /* ProfileUploadRequestDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileUploadRequestDTO+Mapping.swift"; sourceTree = "<group>"; };
 		15E8A2BD2A2DAEA0002ECFDB /* MultipartInputDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartInputDTO.swift; sourceTree = "<group>"; };
-		15E8A2C52A2DC960002ECFDB /* GroupAPIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupAPIEndpoints.swift; sourceTree = "<group>"; };
+		15E8A2C52A2DC960002ECFDB /* GroupMessageAPIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMessageAPIEndpoints.swift; sourceTree = "<group>"; };
 		15E8A2C92A2DEADE002ECFDB /* SignUpRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRepository.swift; sourceTree = "<group>"; };
 		15E8A2CD2A2DEB12002ECFDB /* SignUpRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRepositoryImpl.swift; sourceTree = "<group>"; };
 		15E8A2D02A2DEBE3002ECFDB /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
@@ -477,6 +487,11 @@
 		1582B8F52A33A600003499AB /* GroupMessage */ = {
 			isa = PBXGroup;
 			children = (
+				1582B8F82A33A829003499AB /* GroupSocketPortSearchRequestDTO+Mapping.swift */,
+				1582B8FA2A33A850003499AB /* GroupSocketPortSearchResponseDTO+Mapping.swift */,
+				1582B8FC2A33AA07003499AB /* NewMessageGroupRequestDTO+Mapping.swift */,
+				1582B8FE2A33ABAD003499AB /* GroupJoinRequestDTO+Mapping.swift */,
+				1582B9002A33AD0B003499AB /* GroupInfoDTO+Mapping.swift */,
 			);
 			path = GroupMessage;
 			sourceTree = "<group>";
@@ -1110,7 +1125,7 @@
 			isa = PBXGroup;
 			children = (
 				15E8A2AD2A2D00FD002ECFDB /* UserAPIEndpoints.swift */,
-				15E8A2C52A2DC960002ECFDB /* GroupAPIEndpoints.swift */,
+				15E8A2C52A2DC960002ECFDB /* GroupMessageAPIEndpoints.swift */,
 				15E8A2D52A2DEFD8002ECFDB /* AuthenticationAPIEndpoints.swift */,
 			);
 			path = Endpoint;
@@ -1343,6 +1358,7 @@
 				15856D082A1E9CAA0085FE75 /* UIControl+CombineInteraction.swift in Sources */,
 				15BB027F2A25F3690035B486 /* GroupViewAdapter.swift in Sources */,
 				15BB027A2A25F1710035B486 /* GroupView.swift in Sources */,
+				1582B8FF2A33ABAD003499AB /* GroupJoinRequestDTO+Mapping.swift in Sources */,
 				15E8A2E52A2E2100002ECFDB /* LoginModel.swift in Sources */,
 				15BB02272A22795C0035B486 /* AuthenticationButton.swift in Sources */,
 				156C6E672A31C4F900CD1968 /* MessageListSideMenuView+Constant.swift in Sources */,
@@ -1378,6 +1394,7 @@
 				152E52682A2BC76E00987CA8 /* Endpoint.swift in Sources */,
 				15BB02532A2496B00035B486 /* MessageListNavigationBar.swift in Sources */,
 				15856D092A1E9CAA0085FE75 /* UITextField+Combine.swift in Sources */,
+				1582B9012A33AD0B003499AB /* GroupInfoDTO+Mapping.swift in Sources */,
 				15856D102A1E9D150085FE75 /* LayoutSupport.swift in Sources */,
 				152E526A2A2BC8EA00987CA8 /* HTTPMethod.swift in Sources */,
 				1582B8EC2A333DA3003499AB /* ProfileUploadResponseDTO+Mapping.swift in Sources */,
@@ -1409,6 +1426,7 @@
 				15BB01D42A1F25280035B486 /* ForgetViewConstant.swift in Sources */,
 				1582B8E82A333A64003499AB /* UserRepositoryImpl.swift in Sources */,
 				1589198D2A1E7B43006796B2 /* SceneDelegate.swift in Sources */,
+				1582B8FB2A33A850003499AB /* GroupSocketPortSearchResponseDTO+Mapping.swift in Sources */,
 				15BB021F2A226A230035B486 /* SignUpViewModel.swift in Sources */,
 				15BB02BB2A284D360035B486 /* GroupViewAdapterDelegate.swift in Sources */,
 				15E8A2D82A2DF963002ECFDB /* LoginResponseDTO+Mapping.swift in Sources */,
@@ -1446,9 +1464,10 @@
 				15BB02602A251BF10035B486 /* GroupMessageSearch+Constant.swift in Sources */,
 				1582B8E22A330A42003499AB /* SideMenuProfileEditState.swift in Sources */,
 				15BB022F2A233CC30035B486 /* SignUpRequestDTO+Mapping.swift in Sources */,
-				15E8A2C62A2DC960002ECFDB /* GroupAPIEndpoints.swift in Sources */,
+				15E8A2C62A2DC960002ECFDB /* GroupMessageAPIEndpoints.swift in Sources */,
 				157D44652A32F07D004EC742 /* EditingProfileAlertController.swift in Sources */,
 				1551140D2A2A2A93009E0103 /* MessageCell+Constant.swift in Sources */,
+				1582B8FD2A33AA07003499AB /* NewMessageGroupRequestDTO+Mapping.swift in Sources */,
 				15BB02B42A26720A0035B486 /* SignUpCoordinator.swift in Sources */,
 				15BB02C02A284E8D0035B486 /* MessageViewContrller.swift in Sources */,
 				15BB02372A2347460035B486 /* SignUpViewCell+Constant.swift in Sources */,
@@ -1460,6 +1479,7 @@
 				15BB025D2A24E3E30035B486 /* GroupMessageSearch.swift in Sources */,
 				15BB01E32A1F519B0035B486 /* SignUpViewController.swift in Sources */,
 				15BB02252A226B2C0035B486 /* SignUpViewAdapterDataSource.swift in Sources */,
+				1582B8F92A33A829003499AB /* GroupSocketPortSearchRequestDTO+Mapping.swift in Sources */,
 				15BB01D92A1F311E0035B486 /* OneUnitHeightLine.swift in Sources */,
 				15E8A2E02A2E05AB002ECFDB /* Repository.swift in Sources */,
 				15BB023B2A23B0B60035B486 /* SignUpViewCellInputState.swift in Sources */,

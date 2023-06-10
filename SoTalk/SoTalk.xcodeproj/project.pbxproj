@@ -687,6 +687,7 @@
 		158919892A1E7B43006796B2 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				15C5290D2A34EB33005391F9 /* Socket */,
 				15E8A2C72A2DE92E002ECFDB /* Data */,
 				15E8A2B42A2D0F15002ECFDB /* Domain */,
 				15BB02A52A2649EC0035B486 /* FlowCoordinator */,
@@ -1121,6 +1122,13 @@
 				15BD2DA12A29CD6F00095214 /* CreatingGroupCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		15C5290D2A34EB33005391F9 /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Socket;
 			sourceTree = "<group>";
 		};
 		15E8A2992A2C78C3002ECFDB /* ViewController */ = {

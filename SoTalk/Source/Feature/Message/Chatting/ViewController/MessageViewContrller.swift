@@ -85,7 +85,6 @@ private extension MessageViewContrller {
     }
     navi.setLeftBackButton(navigationItem, target: self, action: #selector(didTapBackButton))
   }
-
 }
 
 // MARK: - Action
@@ -95,7 +94,7 @@ extension MessageViewContrller {
   }
   
   @objc func keyboardWillShow(_ noti: Notification) {
-    
+    // 여기서 이제 카톡처럼 키보드 높이만큼 스킄롤 롤하도록하자
   }
       
   @objc func tapCollectionView() {

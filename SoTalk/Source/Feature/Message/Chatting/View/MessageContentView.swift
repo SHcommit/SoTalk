@@ -9,6 +9,8 @@ import UIKit
 
 final class MessageContentView: UIView {
   // MARK: - Properties
+  let randColor: UIColor = .ChatPalette.randColor
+  
   private lazy var nameLabel = UILabel().set {
     $0.translatesAutoresizingMaskIntoConstraints = false
     $0.font = .boldSystemFont(ofSize: Constant.NameLabel.fontSize)
@@ -34,13 +36,7 @@ final class MessageContentView: UIView {
     setupUI()
     translatesAutoresizingMaskIntoConstraints = false
     layer.cornerRadius = 7
-    let randColor: UIColor = .ChatPalette.randColor
     backgroundColor = randColor
-    layer.shadowOffset = CGSize(width: 0, height: 1)
-    layer.shadowColor = randColor.cgColor
-    layer.shadowOpacity = 1
-    layer.shadowRadius = 9
-    
   }
   
   required init?(coder: NSCoder) {
@@ -49,6 +45,22 @@ final class MessageContentView: UIView {
   
   convenience init() {
     self.init(frame: .zero)
+  }
+  
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    layer.shadowOffset = CGSize(width: 1, height: 1)
+    layer.shadowColor = randColor.cgColor
+    layer.shadowOpacity = 1
+    layer.shadowRadius = 6
+    let shadowRect = CGRect(
+      x: bounds.origin.x,
+      y: bounds.origin.y,
+      width: bounds.width,
+      height: bounds.height+1)
+    layer.shadowPath = UIBezierPath(
+      roundedRect: shadowRect,
+      cornerRadius: 6).cgPath
   }
 }
 

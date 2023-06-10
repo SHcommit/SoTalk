@@ -240,6 +240,12 @@ extension MessageListView {
   func subviewsIsUserInteractionWorking() {
     _=subviews.map { $0.isUserInteractionEnabled = true }
   }
+  
+  func reloadGroupList() {
+    DispatchQueue.main.async {
+      self.groupView.reloadData()
+    }
+  }
 
 }
 
@@ -271,10 +277,6 @@ private extension MessageListView {
         } else {
           removeGestureRecognizer(tapGesture)
         }
-        //        guard $0 else {
-        //          removeGestureRecognizer(tapGesture)
-        //          return
-        //        }
       }.store(in: &subscriptions)
   }
 }

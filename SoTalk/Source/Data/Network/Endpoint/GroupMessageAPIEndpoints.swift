@@ -42,7 +42,7 @@ struct GroupMessageAPIEndpoints {
       headers: ["Content-Type": "application/json"])
   }
   
-  func fetchAllGrupList() -> Endpoint<[GroupInfoResponseDTO]> {
+  func fetchAllGroupList() -> Endpoint<GroupInfoListResponseDTO> {
     return .init(
       path: "group/list",
       method: .get,
@@ -55,7 +55,7 @@ struct GroupMessageAPIEndpoints {
 extension GroupMessageAPIEndpoints {
   func fetchUserJoinedAllGroupInfo(
     with userIdDTO: UserIdSearchRequestDTO
-  ) -> Endpoint<[GroupInfoResponseDTO]> {
+  ) -> Endpoint<GroupInfoListResponseDTO> {
     return .init(
       path: "group/listByUserId",
       method: .get,
@@ -65,7 +65,7 @@ extension GroupMessageAPIEndpoints {
   
   func searchJoinedAllUserInfoInGroup(
     with groupIdDTO: GroupIdRequestDTO
-  ) -> Endpoint<[GroupUserInfoResponseDTO]> {
+  ) -> Endpoint<GroupUserInfoListResponseDTO> {
     return .init(
       path: "group/users",
       method: .get,
@@ -102,7 +102,7 @@ extension GroupMessageAPIEndpoints {
   ) -> String {
     let servIp = SecretManager.shared.serverIp
     let servPort = SecretManager.shared.serverPort
-    let path = "grup/Img"
+    let path = "group/img"
     return "http://\(servIp):\(servPort)/\(path)?url=\(bodyParam)"
   }
 }
@@ -113,7 +113,7 @@ extension GroupMessageAPIEndpoints {
   /// headers: ["Content-Type": "application/json"]
   func fetchAllMessageInSpecificGroup(
     with requestDTO: GroupIdRequestDTO
-  ) -> Endpoint<[GroupMessageInfoResponseDTO]> {
+  ) -> Endpoint<GroupMessageInfoListResponseDTO> {
     return .init(
       path: "chat/group",
       method: .get,

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GroupInfoResponseDTO {
+struct GroupInfoResponseDTO: Decodable {
   let groupId: Int
   let groupName: String
   let groupImageUrl: String
@@ -19,14 +19,12 @@ struct GroupInfoResponseDTO {
     case groupImageUrl = "groupImgUrl"
     case memberCount = "people"
   }
-}
 
-extension GroupInfoResponseDTO: Decodable {
   init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
     groupId = try container.decode(Int.self, forKey: .groupId)
     groupName = try container.decode(String.self, forKey: .groupName)
-    groupImageUrl = try container.decode(String.self, forKey: .groupImageUrl)
+    groupImageUrl = (try? container.decode(String.self, forKey: .groupImageUrl)) ?? ""
     memberCount = try container.decode(Int.self, forKey: .memberCount)
   }
 }

@@ -14,8 +14,6 @@ class MessageListViewController: UIViewController {
   
   private var sideMenu: MessageListSideMenuView?
   
-  private var messageListViewOriginSize = CGAffineTransform()
-  
   weak var coordinator: MessageListCoordinator?
   
   private let vm = MessageListViewModel()
@@ -84,7 +82,6 @@ class MessageListViewController: UIViewController {
     navigationController?.navigationBar.isTranslucent = true
     navigationController?.navigationBar.isHidden = true
     setMessageListView()
-    messageListViewOriginSize = messageListView.transform
     adapter = GroupViewAdapter(
       dataSource: vm,
       collectionView: messageListView.groupView,
@@ -92,10 +89,12 @@ class MessageListViewController: UIViewController {
     bindAddGroupButton()
     vm.fetchProfile {
       guard let image = $0 else { return }
-      print(image)
       DispatchQueue.main.async {
         self.messageListView.configureNaviBar(with: image)
       }
+    }
+    vm.fetchAllGroupMessageRoomList {
+      self.messageListView.reloadGroupList()
     }
   }
   
@@ -113,6 +112,7 @@ class MessageListViewController: UIViewController {
     super.viewWillAppear(animated)
     navigationController?.navigationBar.isHidden = true
     self.messageListView.bringNavigationBarToFrontView()
+    messageListView.reloadGroupList()
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -132,7 +132,7 @@ private extension MessageListViewController {
       .addGroupButtonTap
       .receive(on: DispatchQueue.main)
       .sink { [weak self] in
-        self?.coordinator?.gotoCreatingGrupPage()
+        self?.coordinator?.gotoCreatingGroupPage()
       }.store(in: &subscription)
   }
   
@@ -176,7 +176,6 @@ private extension MessageListViewController {
     ) {
       self.sideMenu?.hideProfileArea()
       self.sideMenu?.hideLeftMenuWithAnim()
-      
     }
     UIView.animate(
       withDuration: 0.5,
@@ -213,6 +212,12 @@ extension MessageListViewController: MessageListNavigationBarDelegate {
 extension MessageListViewController: MessageListViewDelegate {
   func tapMessageListView() {
     hideSideMenu()
+    vm.fetchProfile {
+      guard let image = $0 else { return }
+      DispatchQueue.main.async {
+        self.messageListView.configureNaviBar(with: image)
+      }
+    }
   }
 }
 
@@ -250,9 +255,10 @@ extension MessageListViewController: MessageListSideMenuLeftMenuViewDelegate {
 
 // MARK: - EditingProfileAlertDelegate
 extension MessageListViewController {
-  @MainActor
   func tapProfile() {
-    coordinator?.gotoProfileEditPage(with: self)
+    DispatchQueue.main.async {
+      self.coordinator?.gotoProfileEditPage(with: self)
+    }
   }
   
   func tapNickname() {
@@ -279,13 +285,9 @@ extension MessageListViewController: UIImagePickerControllerDelegate {
       newImage = originImage
     }
     guard let jpegData = newImage?.jpegData(compressionQuality: 0.83) else { return }
-    vm.uploadProfile(with: jpegData)
-    // 여기서 이제 newImage를 서버한테 보내면 된다.
-    // 그리그 userdefualts에도 저장하고 profile에도 표시하고
-    //
-    //
-    //
-    print(jpegData)
+    vm.uploadProfile(with: jpegData) { [weak self] in
+      self?.sideMenu?.setUserInfo()
+    }
     picker.dismiss(animated: true)
   }
   
@@ -296,3 +298,15 @@ extension MessageListViewController: UIImagePickerControllerDelegate {
 
 // MARK: - UINavigationControllerDelegate
 extension MessageListViewController: UINavigationControllerDelegate { }
+
+extension MessageListViewController: CreatingGroupBottomSheetViewControllerDelegate {
+  func bottomSheetControllerWillDismiss() {
+    // 와 대박신기.
+    // 이상하게 그룹 추가했을때 커스텀 바텀 시트를 했엇는데 얘가 내려갈땐 현재 뷰의 viewWillAppear 호출을 안하네..
+    vm.fetchAllGroupMessageRoomList {
+      self.messageListView.reloadGroupList()
+      /// 그리고 메시지 뷰의 맨 오른쪽으로 이동하게
+      /// selectedcell 호출시키자.
+    }
+  }
+}

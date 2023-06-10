@@ -50,7 +50,6 @@ extension GroupViewAdapter {
     _ collectionView: UICollectionView,
     didSelectItemAt indexPath: IndexPath
   ) {
-    print("ahahah")
     guard let cell = collectionView.cellForItem(at: indexPath) as? GroupViewCell else {
       return
     }
@@ -58,9 +57,10 @@ extension GroupViewAdapter {
       cell.transform = CGAffineTransform(scaleX: 0.96, y: 0.96)
     }) { [weak self] _ in
       self?.delegate?.didSelectItemAt(indexPath)
-      cell.transform = .identity
+      UIView.animate(withDuration: 0.15) {
+        cell.transform = .identity
+      }
     }
-
   }
 }
 

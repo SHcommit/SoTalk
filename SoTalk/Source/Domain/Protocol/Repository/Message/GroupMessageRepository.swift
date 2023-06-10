@@ -23,7 +23,7 @@ protocol GroupMessageRepository {
     with groupJoinDTO: GroupJoinRequestDTO,
     completionHandler: @escaping (Int) -> Void)
   
-  func fetchAllGrupList(
+  func fetchAllGroupList(
     completionHandler: @escaping ([GroupMessageRoomInfoModel]) -> Void)
   
   // MARK: - User

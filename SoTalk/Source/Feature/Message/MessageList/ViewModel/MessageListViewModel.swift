@@ -9,11 +9,12 @@ import UIKit
 
 final class MessageListViewModel {
   // MARK: - Properties
-  private var groupModel: [GroupModel]?
+  private var groupModel: [GroupMessageRoomInfoModel]?
   private let userRepository = UserRepositoryImpl()
+  private let groupRepository = GroupMessageRepositoryImpl()
   
-  init(model: [GroupModel]? = nil) {
-    self.groupModel = MockGroupModel().mockData()
+  init() {
+    // self.groupModel = MockGroupModel().mockData()
   }
 }
 
@@ -23,9 +24,9 @@ extension MessageListViewModel: GroupViewAdapterDataSource {
     groupModel?.count ?? 0
   }
   
-  func cellItem(at index: Int) -> GroupModel {
+  func cellItem(at index: Int) -> GroupMessageRoomInfoModel {
     guard let item = groupModel?[index] else {
-      return .init()
+      return .init(groupId: -1, groupName: "", memberCount: 0)
     }
     return item
   }
@@ -33,17 +34,20 @@ extension MessageListViewModel: GroupViewAdapterDataSource {
 
 // MARK: - Service
 extension MessageListViewModel {
-  func uploadProfile(with imageData: Data) {
+  func uploadProfile(with imageData: Data, completionHandler: @escaping () -> Void) {
     let userId = AppSetting.getUser().id
     let requestDTO = ProfileUploadRequestDTO(userId: userId, imageData: imageData)
     userRepository.uploadProfile(requestDTO) { url in
       var userInfo = AppSetting.getUser()
       userInfo.profileUrl = url
       AppSetting.setUser(with: userInfo)
+      completionHandler()
     }
   }
   
-  func fetchProfile(completionHandler: @escaping (UIImage?) -> Void) {
+  func fetchProfile(
+    completionHandler: @escaping (UIImage?) -> Void
+  ) {
     guard
       let queryParamUrl = AppSetting.getUser().profileUrl
     else {
@@ -52,6 +56,16 @@ extension MessageListViewModel {
     }
     userRepository.fetchProfile(queryParamUrl) { data in
       completionHandler(UIImage(data: data))
+    }
+  }
+  
+  func fetchAllGroupMessageRoomList(
+    _ completionHandler: @escaping () -> Void
+  ) {
+    groupRepository.fetchAllGroupList {
+      print(self.groupModel)
+      self.groupModel = $0
+      completionHandler()
     }
   }
 }

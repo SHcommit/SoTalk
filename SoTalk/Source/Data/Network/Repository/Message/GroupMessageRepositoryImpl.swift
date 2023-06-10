@@ -56,15 +56,16 @@ struct GroupMessageRepositoryImpl: GroupMessageRepository {
     }
   }
   
-  func fetchAllGrupList(
+  func fetchAllGroupList(
     completionHandler: @escaping ([GroupMessageRoomInfoModel]) -> Void
   ) {
-    let endpoint = Endpoints.shared.fetchAllGrupList()
+    let endpoint = Endpoints.shared.fetchAllGroupList()
     provider.request(with: endpoint) { result in
       switch result {
       case .success(let response):
+        print("DEBUG: response Data:  \(response.result)")
         completionHandler(
-          response.map {
+          response.result.map {
             return GroupMessageRoomInfoModel(
               groupId: $0.groupId,
               groupName: $0.groupName,
@@ -84,13 +85,17 @@ struct GroupMessageRepositoryImpl: GroupMessageRepository {
     provider.request(with: endpoint) { result in
       switch result {
       case .success(let response):
-        completionHandler(
-          response.map {
-            return GroupMessageRoomInfoModel(
-              groupId: $0.groupId,
-              groupName: $0.groupName,
-              memberCount: $0.memberCount,
-              profileUrl: $0.groupImageUrl)})
+        guard response.result.isEmpty else {
+          completionHandler(
+            response.result.map {
+              return GroupMessageRoomInfoModel(
+                groupId: $0.groupId,
+                groupName: $0.groupName,
+                memberCount: $0.memberCount,
+                profileUrl: $0.groupImageUrl)})
+          return
+        }
+        completionHandler([])
       case .failure(let error):
         print("DEBUG: Failed to fetch user joined all gorup info. \(error.localizedDescription)")
       }
@@ -105,12 +110,16 @@ struct GroupMessageRepositoryImpl: GroupMessageRepository {
     provider.request(with: endpoint) { result in
       switch result {
       case .success(let response):
-        completionHandler(
-          response.map {
-            return GroupMessageUserInfoModel(
-              userId: $0.userId,
-              nickname: $0.nickname,
-              profileUrl: $0.profileImgUrl)})
+        guard response.list.isEmpty else {
+          completionHandler(
+            response.list.map {
+              return GroupMessageUserInfoModel(
+                userId: $0.userId,
+                nickname: $0.nickname,
+                profileUrl: $0.profileImgUrl)})
+          return
+        }
+        completionHandler([])
       case .failure(let error):
         print("DEBUG: Failed to search joined all user info in group. \(error.localizedDescription)")
       }
@@ -159,12 +168,16 @@ struct GroupMessageRepositoryImpl: GroupMessageRepository {
     provider.request(with: endpoint) { result in
       switch result {
       case .success(let response):
-        completionHandler(
-          response.map {
-            return GroupMessageInfoModel(
-              userId: $0.userId,
-              message: $0.message,
-              sendTime: $0.sendTime)})
+        guard response.list.isEmpty else {
+          completionHandler(
+            response.list.map {
+              return GroupMessageInfoModel(
+                userId: $0.userId,
+                message: $0.message,
+                sendTime: $0.sendTime)})
+          return
+        }
+        completionHandler([])
       case .failure(let error):
         print("DEBUG: Failed to fetch all message in specific group. \(error.localizedDescription)")
       }

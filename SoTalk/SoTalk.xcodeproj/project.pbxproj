@@ -78,6 +78,12 @@
 		1589198F2A1E7B43006796B2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589198E2A1E7B43006796B2 /* LoginViewController.swift */; };
 		158919942A1E7B43006796B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 158919932A1E7B43006796B2 /* Assets.xcassets */; };
 		158919972A1E7B43006796B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 158919952A1E7B43006796B2 /* LaunchScreen.storyboard */; };
+		15ACF8F42A34699100070028 /* CreatingGroupBottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ACF8F32A34699100070028 /* CreatingGroupBottomSheetViewModel.swift */; };
+		15ACF8F62A346A1E00070028 /* CreatingGroupInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ACF8F52A346A1E00070028 /* CreatingGroupInfoModel.swift */; };
+		15ACF8F82A3478A900070028 /* GroupMessageInfoListResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ACF8F72A3478A900070028 /* GroupMessageInfoListResponseDTO.swift */; };
+		15ACF8FA2A34804D00070028 /* GroupUserInfoListResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ACF8F92A34804D00070028 /* GroupUserInfoListResponseDTO.swift */; };
+		15ACF8FC2A34816D00070028 /* GroupInfoListResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ACF8FB2A34816D00070028 /* GroupInfoListResponseDTO+Mapping.swift */; };
+		15ACF8FE2A34930A00070028 /* GroupViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ACF8FD2A34930A00070028 /* GroupViewCellViewModel.swift */; };
 		15BB01C22A1F01070035B486 /* LoginViewControllerConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01C12A1F01070035B486 /* LoginViewControllerConstant.swift */; };
 		15BB01C82A1F0B710035B486 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01C72A1F0B710035B486 /* UIColor+Palette.swift */; };
 		15BB01CA2A1F10730035B486 /* AuthenticationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01C92A1F10730035B486 /* AuthenticationTextField.swift */; };
@@ -122,7 +128,6 @@
 		15BB02822A25F37E0035B486 /* GroupViewAdapterDataSoruce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02812A25F37E0035B486 /* GroupViewAdapterDataSoruce.swift */; };
 		15BB02842A261D910035B486 /* UIColor+ChatPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02832A261D910035B486 /* UIColor+ChatPalette.swift */; };
 		15BB02892A262C800035B486 /* MessageListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02882A262C800035B486 /* MessageListViewModel.swift */; };
-		15BB028C2A262D270035B486 /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB028B2A262D270035B486 /* GroupModel.swift */; };
 		15BB028F2A2631040035B486 /* MockGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB028E2A2631040035B486 /* MockGroupModel.swift */; };
 		15BB02A72A264A070035B486 /* FlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02A62A264A070035B486 /* FlowCoordinator.swift */; };
 		15BB02AA2A2650BE0035B486 /* FlowCoordinator+ConvenienceInitSubCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02A92A2650BE0035B486 /* FlowCoordinator+ConvenienceInitSubCoordinator.swift */; };
@@ -246,6 +251,12 @@
 		158919932A1E7B43006796B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		158919962A1E7B43006796B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		158919982A1E7B43006796B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15ACF8F32A34699100070028 /* CreatingGroupBottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingGroupBottomSheetViewModel.swift; sourceTree = "<group>"; };
+		15ACF8F52A346A1E00070028 /* CreatingGroupInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingGroupInfoModel.swift; sourceTree = "<group>"; };
+		15ACF8F72A3478A900070028 /* GroupMessageInfoListResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMessageInfoListResponseDTO.swift; sourceTree = "<group>"; };
+		15ACF8F92A34804D00070028 /* GroupUserInfoListResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupUserInfoListResponseDTO.swift; sourceTree = "<group>"; };
+		15ACF8FB2A34816D00070028 /* GroupInfoListResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupInfoListResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
+		15ACF8FD2A34930A00070028 /* GroupViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewCellViewModel.swift; sourceTree = "<group>"; };
 		15BB01C12A1F01070035B486 /* LoginViewControllerConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerConstant.swift; sourceTree = "<group>"; };
 		15BB01C72A1F0B710035B486 /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
 		15BB01C92A1F10730035B486 /* AuthenticationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTextField.swift; sourceTree = "<group>"; };
@@ -290,7 +301,6 @@
 		15BB02812A25F37E0035B486 /* GroupViewAdapterDataSoruce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewAdapterDataSoruce.swift; sourceTree = "<group>"; };
 		15BB02832A261D910035B486 /* UIColor+ChatPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ChatPalette.swift"; sourceTree = "<group>"; };
 		15BB02882A262C800035B486 /* MessageListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListViewModel.swift; sourceTree = "<group>"; };
-		15BB028B2A262D270035B486 /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 		15BB028E2A2631040035B486 /* MockGroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGroupModel.swift; sourceTree = "<group>"; };
 		15BB02A62A264A070035B486 /* FlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.swift; sourceTree = "<group>"; };
 		15BB02A92A2650BE0035B486 /* FlowCoordinator+ConvenienceInitSubCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlowCoordinator+ConvenienceInitSubCoordinator.swift"; sourceTree = "<group>"; };
@@ -518,6 +528,9 @@
 				1582B9082A344582003499AB /* GroupProfileUploadRequestDTO.swift */,
 				1582B90A2A3445BC003499AB /* GroupProfileUploadResponseDTO+Mapping.swift */,
 				1582B90C2A344997003499AB /* GroupMessageInfoResponseDTO+Mapping.swift */,
+				15ACF8F72A3478A900070028 /* GroupMessageInfoListResponseDTO.swift */,
+				15ACF8F92A34804D00070028 /* GroupUserInfoListResponseDTO.swift */,
+				15ACF8FB2A34816D00070028 /* GroupInfoListResponseDTO+Mapping.swift */,
 			);
 			path = GroupMessage;
 			sourceTree = "<group>";
@@ -553,6 +566,7 @@
 				1582B9182A34512D003499AB /* GroupMessageInfoModel.swift */,
 				1582B9142A344F05003499AB /* GroupMessageRoomInfoModel.swift */,
 				1582B9162A344FA5003499AB /* GroupMessageUserInfoModel.swift */,
+				15ACF8F52A346A1E00070028 /* CreatingGroupInfoModel.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -693,6 +707,14 @@
 				158919982A1E7B43006796B2 /* Info.plist */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		15ACF8F22A34697E00070028 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				15ACF8F32A34699100070028 /* CreatingGroupBottomSheetViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		15BB01C02A1F00F10035B486 /* Constant */ = {
@@ -905,6 +927,7 @@
 			children = (
 				15BB02882A262C800035B486 /* MessageListViewModel.swift */,
 				1582B8F32A3399C5003499AB /* MessageListSideMenuViewModel.swift */,
+				15ACF8FD2A34930A00070028 /* GroupViewCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -912,7 +935,6 @@
 		15BB028A2A262D1D0035B486 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				15BB028B2A262D270035B486 /* GroupModel.swift */,
 				1582B8E12A330A42003499AB /* SideMenuProfileEditState.swift */,
 			);
 			path = Model;
@@ -971,7 +993,6 @@
 		15BB02BC2A284E2B0035B486 /* MessageList */ = {
 			isa = PBXGroup;
 			children = (
-				15E8A2992A2C78C3002ECFDB /* ViewController */,
 				15BB027D2A25F3600035B486 /* Adapter */,
 				15BB02B52A2678510035B486 /* Coordinator */,
 				15BB025E2A251BE00035B486 /* Extension */,
@@ -979,6 +1000,7 @@
 				15BB028A2A262D1D0035B486 /* Model */,
 				15BB02802A25F36E0035B486 /* Protocol */,
 				15BB02512A2496A10035B486 /* View */,
+				15E8A2992A2C78C3002ECFDB /* ViewController */,
 				15BB02872A262C730035B486 /* ViewModel */,
 			);
 			path = MessageList;
@@ -1074,6 +1096,7 @@
 		15BD2D9E2A29CD4100095214 /* CreatingGroup */ = {
 			isa = PBXGroup;
 			children = (
+				15ACF8F22A34697E00070028 /* ViewModel */,
 				152E523E2A2BAC9700987CA8 /* Model */,
 				157317922A2A667C0061F914 /* Manager */,
 				1551140B2A2A2A0C009E0103 /* View */,
@@ -1415,6 +1438,7 @@
 				152E52642A2BC76000987CA8 /* Requestable.swift in Sources */,
 				152E52702A2C537600987CA8 /* ServiceProvider.swift in Sources */,
 				1589198F2A1E7B43006796B2 /* LoginViewController.swift in Sources */,
+				15ACF8FC2A34816D00070028 /* GroupInfoListResponseDTO+Mapping.swift in Sources */,
 				15BB02F22A28E8AB0035B486 /* MessageContentView.swift in Sources */,
 				15BB02C62A287B1C0035B486 /* MessageSendBarInputTextView.swift in Sources */,
 				15856D082A1E9CAA0085FE75 /* UIControl+CombineInteraction.swift in Sources */,
@@ -1446,6 +1470,7 @@
 				1582B90D2A344997003499AB /* GroupMessageInfoResponseDTO+Mapping.swift in Sources */,
 				1582B9032A34405F003499AB /* NewMessageGroupResponseDTO+Mapping.swift in Sources */,
 				15856D052A1E9CAA0085FE75 /* UIControl+Combine.swift in Sources */,
+				15ACF8F62A346A1E00070028 /* CreatingGroupInfoModel.swift in Sources */,
 				15BB02CD2A288DBB0035B486 /* CommentSendInputAccessoryViewDelegate.swift in Sources */,
 				152E52432A2BACE600987CA8 /* CreatingGroupResponseModel.swift in Sources */,
 				15BB01DE2A1F3DD70035B486 /* BackgroundBlur.swift in Sources */,
@@ -1464,6 +1489,7 @@
 				15856D102A1E9D150085FE75 /* LayoutSupport.swift in Sources */,
 				152E526A2A2BC8EA00987CA8 /* HTTPMethod.swift in Sources */,
 				1582B8EC2A333DA3003499AB /* ProfileUploadResponseDTO+Mapping.swift in Sources */,
+				15ACF8FA2A34804D00070028 /* GroupUserInfoListResponseDTO.swift in Sources */,
 				15BB02622A251C0D0035B486 /* MessageListNavigationBar+Constant.swift in Sources */,
 				156C6E652A31C24600CD1968 /* MessageListSideMenuView.swift in Sources */,
 				15BB02AA2A2650BE0035B486 /* FlowCoordinator+ConvenienceInitSubCoordinator.swift in Sources */,
@@ -1472,7 +1498,6 @@
 				15BB022C2A2336AA0035B486 /* SignUpViewCellDelegate.swift in Sources */,
 				156C6E6B2A31CF4700CD1968 /* IconAndLabelView.swift in Sources */,
 				1589198B2A1E7B43006796B2 /* AppDelegate.swift in Sources */,
-				15BB028C2A262D270035B486 /* GroupModel.swift in Sources */,
 				15856D0E2A1E9D150085FE75 /* ConvenienceInit.swift in Sources */,
 				1582B9072A3442B1003499AB /* GroupUserInfoResponseDTO+Mapping.swift in Sources */,
 				15BB02892A262C800035B486 /* MessageListViewModel.swift in Sources */,
@@ -1560,9 +1585,12 @@
 				1582B8E02A33053C003499AB /* ProfileEditingViewController.swift in Sources */,
 				15BB01CF2A1F134A0035B486 /* AuthenticationTextFieldConstant.swift in Sources */,
 				15E8A2AE2A2D00FD002ECFDB /* UserAPIEndpoints.swift in Sources */,
+				15ACF8F82A3478A900070028 /* GroupMessageInfoListResponseDTO.swift in Sources */,
 				157317B22A2B90F30061F914 /* SecretManager.swift in Sources */,
 				15BB02402A23DDC70035B486 /* SignUpViewCell+DrawSignUpEndPage.swift in Sources */,
 				15E8A2E22A2E0973002ECFDB /* SignUpModel.swift in Sources */,
+				15ACF8FE2A34930A00070028 /* GroupViewCellViewModel.swift in Sources */,
+				15ACF8F42A34699100070028 /* CreatingGroupBottomSheetViewModel.swift in Sources */,
 				1579B8222A30907C00216ACF /* KeychainWrapper.swift in Sources */,
 				15BB021A2A225E380035B486 /* SignUpVIew.swift in Sources */,
 				15BB01D22A1F24960035B486 /* ForgetView.swift in Sources */,

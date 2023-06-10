@@ -50,6 +50,8 @@ final class GroupViewCell: UICollectionViewCell {
     $0.sizeToFit()
   }
   
+  private var vm: GroupViewCellViewModel?
+  
   // MARK: - Initialization
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -68,17 +70,24 @@ final class GroupViewCell: UICollectionViewCell {
 
 // MARK: - Helper
 extension GroupViewCell {
-  func configure(with data: GroupModel) {
-    setImageView(with: data.groupImage)
+  func configure(with data: GroupMessageRoomInfoModel) {
+    vm = GroupViewCellViewModel(item: data)
     setGroupName(with: data.groupName)
+    setGroupMemberTotalCount(with: data.memberCount)
+    vm?.fetchGroupProfile { image in
+      DispatchQueue.main.async {
+        self.setImageView(with: image)
+      }
+    }
   }
 }
 
 // MARK: - Private helper
 extension GroupViewCell {
-  @MainActor
   func setImageView(with image: UIImage?) {
-    imageView.image = image
+    DispatchQueue.main.async {
+      self.imageView.image = image
+    }
   }
   
   func setGroupName(with title: String) {

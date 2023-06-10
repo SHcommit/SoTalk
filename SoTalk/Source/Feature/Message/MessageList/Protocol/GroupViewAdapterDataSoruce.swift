@@ -11,5 +11,5 @@ protocol GroupViewAdapterDataSource: AnyObject {
   var numberOfItems: Int { get }
   func cellItem(
     at index: Int
-  ) -> GroupModel
+  ) -> GroupMessageRoomInfoModel
 }

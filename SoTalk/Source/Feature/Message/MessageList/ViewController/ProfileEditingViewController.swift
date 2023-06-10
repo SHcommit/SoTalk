@@ -34,11 +34,7 @@ final class ProfileEditingViewController: UIViewController {
         textfield = AuthenticationTextField(with: "새 닉네임을 입력해주세요.")
       }
       setupUI()
-    } else if state == .profile {
-      // 프로필일때는 화면 구성다르게!!
-      //시간없으니까 그냥 지금은 바로 picker 한담에 오키누르면 바로 완료되게 하자.
     }
-    
   }
 }
 

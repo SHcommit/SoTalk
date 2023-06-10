@@ -76,6 +76,7 @@ final class MessageListSideMenuView: UIView {
       profile.topAnchor.constraint(equalTo: profileView.topAnchor),
       profile.bottomAnchor.constraint(
         equalTo: profileView.bottomAnchor)])
+    setUserInfo()
   }
   
   required init?(coder: NSCoder) {
@@ -99,9 +100,11 @@ final class MessageListSideMenuView: UIView {
 extension MessageListSideMenuView {
   func setUserInfo() {
     let userInfo = AppSetting.getUser()
-    nickname.text = userInfo.nickname
-    name.text = userInfo.name
-    
+    DispatchQueue.main.async {
+      self.nickname.text = userInfo.nickname
+      self.name.text = userInfo.name
+      
+    }
     vm.fetchProfile { image in
       guard let image = image else { return }
       DispatchQueue.main.async {

@@ -8,6 +8,10 @@
 import UIKit
 import Combine
 
+protocol CreatingGroupBottomSheetViewControllerDelegate: AnyObject {
+  func bottomSheetControllerWillDismiss()
+}
+
 final class CreatingGroupBottomSheetViewController: UIViewController {
   // MARK: - Constant
   private let Picture = 0
@@ -45,9 +49,13 @@ final class CreatingGroupBottomSheetViewController: UIViewController {
   
   weak var coordinator: CreatingGroupCoordinator?
   
+  let vm = CreatingGroupBottomSheetViewModel()
+  
   private var subscription = Set<AnyCancellable>()
   
   @Published private var selectedValueFlags = Array(repeating: false, count: 2)
+  
+  weak var delegate: CreatingGroupBottomSheetViewControllerDelegate?
   
   // MARK: - Lifecycle
   private override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -186,14 +194,18 @@ private extension CreatingGroupBottomSheetViewController {
       .tap
       .receive(on: DispatchQueue.main)
       .sink { [weak self] _ in
-        // 만약 누른 return안누르고 바로 이 버튼 누를 수 있어서
         self?.textField.text = (self?.textField.text ?? "")
           .trimmingCharacters(in: .whitespaces)
+        self?.vm.setGroupName(with: self?.textField.text ?? "제목이 비어있습니다.")
         let maxLength = Constant.TextCountPlaceholder.maximumTextLength
         self?.textCountPlaceholder.text = "\((self?.textField.text ?? "").count)/\(maxLength) 글자"
-        
-        print("완료 했고 서버로 보낸 뒤 쳇 리스트에 추가")
-        self?.coordinator?.gotoMessageListPage()
+
+        self?.vm.addNewGroupRoom {
+          DispatchQueue.main.async {
+            self?.delegate?.bottomSheetControllerWillDismiss()
+            self?.coordinator?.gotoMessageListPage()
+          }
+        }
       }.store(in: &subscription)
   }
 }
@@ -233,6 +245,7 @@ extension CreatingGroupBottomSheetViewController: UIImagePickerControllerDelegat
       newImage = originImage
       selectedValueFlags[Picture] = true
     }
+    vm.setGroupInfoImageData(with: newImage?.jpegData(compressionQuality: 0.85) ?? Data())
     pictureView.setImageView(with: newImage)
     picker.dismiss(animated: true)
   }

@@ -46,9 +46,15 @@ extension MessageListCoordinator {
     addChild(with: child)
   }
   
-  func gotoCreatingGrupPage() {
+  func gotoCreatingGroupPage() {
     let child = CreatingGroupCoordinator(presenter: presenter)
     addChild(with: child)
+    guard
+      let vc = child.viewController as? CreatingGroupBottomSheetViewController,
+    let currentVC = viewController as? MessageListViewController else {
+      return
+    }
+    vc.delegate = currentVC
   }
   
   // MARK: - Event has occured from side menu

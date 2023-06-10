@@ -87,45 +87,49 @@ extension MessageListSideMenuLeftMenuView {
 
 // MARK: - Action
 extension MessageListSideMenuLeftMenuView {
-  @MainActor
   @objc func didTapEditProfile() {
-    UIView.touchAnimationFromHalfToOriginAlphaValue(
-      profile,
-      duration: 0.5,
-      delay: 0,
-      options: [.curveEaseOut])
-    delegate?.didTapEditProfile()
+    DispatchQueue.main.async {
+      UIView.touchAnimationFromHalfToOriginAlphaValue(
+        self.profile,
+        duration: 0.5,
+        delay: 0,
+        options: [.curveEaseOut])
+      self.delegate?.didTapEditProfile()
+    }
   }
   
-  @MainActor
   @objc func didTapBuyMeACoffeePage() {
-    UIView.touchAnimationFromHalfToOriginAlphaValue(
-      buyMeACoffee,
-      duration: 0.5,
-      delay: 0,
-      options: [.curveEaseOut])
-    delegate?.didTapBuyMeACoffeePage()
+    DispatchQueue.main.async {
+      UIView.touchAnimationFromHalfToOriginAlphaValue(
+        self.buyMeACoffee,
+        duration: 0.5,
+        delay: 0,
+        options: [.curveEaseOut])
+      self.delegate?.didTapBuyMeACoffeePage()
+    }
   }
   
-  @MainActor
   @objc func didTapAboutUsPage() {
-    UIView.touchAnimationFromHalfToOriginAlphaValue(
-      aboutUs,
-      duration: 0.5,
-      delay: 0,
-      options: [.curveEaseOut])
-    delegate?.didTapAboutUsPage()
+    DispatchQueue.main.async {
+      UIView.touchAnimationFromHalfToOriginAlphaValue(
+        self.aboutUs,
+        duration: 0.5,
+        delay: 0,
+        options: [.curveEaseOut])
+      self.delegate?.didTapAboutUsPage()
+    }
   }
   
-  @MainActor
   @objc func didTapLoginPage() {
-    UIView.touchAnimationFromHalfToOriginAlphaValue(
-      logout,
-      duration: 0.15,
-      delay: 0,
-      options: [.curveEaseIn]
-    ) { _ in
-      self.delegate?.didTapLoginPage()
+    DispatchQueue.main.async {
+      UIView.touchAnimationFromHalfToOriginAlphaValue(
+        self.logout,
+        duration: 0.15,
+        delay: 0,
+        options: [.curveEaseIn]
+      ) { _ in
+        self.delegate?.didTapLoginPage()
+      }
     }
   }
 }

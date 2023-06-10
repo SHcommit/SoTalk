@@ -57,8 +57,9 @@ extension MessageViewAdapter: UICollectionViewDelegateFlowLayout {
     var width = collectionView.bounds.width
     var height = 0.0
     var rect: CGRect
+    let owner = AppSetting.getUser()
     
-    guard item.username == "나 닉네임" else {
+    guard item.userId == owner.id else {
       let messageContentViewOuterSpacing = MessageCell.Constant.Other.MessageContentView.spacing
       let messageContentViewInnerContentSpacing = MessageContentView.Constant.MessageLabel.spacing
       let messageContentViewInnerNameSpacing = MessageContentView.Constant.MessageLabel.spacing
@@ -67,7 +68,7 @@ extension MessageViewAdapter: UICollectionViewDelegateFlowLayout {
       rect = CGRect(x: 0, y: 0, width: width, height: 50)
       let lb = UITextView(frame: rect).set {
         $0.font = .systemFont(ofSize: MessageContentView.Constant.MessageLabel.fontSize)
-        $0.text = item.comment
+        $0.text = item.message
         $0.textAlignment = .natural
         $0.sizeToFit()
       }
@@ -89,7 +90,7 @@ extension MessageViewAdapter: UICollectionViewDelegateFlowLayout {
     rect = CGRect(x: 0, y: 0, width: width, height: 50)
     let lb = UITextView(frame: rect).set {
       $0.font = .systemFont(ofSize: MessageContentView.Constant.MessageLabel.fontSize)
-      $0.text = item.comment
+      $0.text = item.message
       $0.textAlignment = .left
       $0.sizeToFit()
     }

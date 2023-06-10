@@ -41,8 +41,8 @@ extension MessageListCoordinator {
     parent.gotoLoginPage(withDelete: self)
   }
   
-  func gotoChattingPage() {
-    let child = MessageCoordinator(presenter: presenter)
+  func gotoChattingPage(with groupId: Int) {
+    let child = MessageCoordinator(presenter: presenter, groupId: groupId)
     addChild(with: child)
   }
   

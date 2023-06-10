@@ -9,14 +9,8 @@ import Foundation
 
 struct CommentModel {
   // 사용자 id
-  let uid: String
-  let comment: String
-  let username: String
-  let profileImageUrl: String
-}
-
-struct UploadCommentModel {
-  let comment: String
-  let postId: String
-  let user: UserModel
+  let userId: String
+  let message: String
+  let sendTime: String
+  var profileImageUrl: String?
 }

@@ -52,6 +52,10 @@ final class GroupViewCell: UICollectionViewCell {
   
   private var vm: GroupViewCellViewModel?
   
+  var groupId: Int? {
+    vm?.groupId
+  }
+  
   // MARK: - Initialization
   override init(frame: CGRect) {
     super.init(frame: frame)

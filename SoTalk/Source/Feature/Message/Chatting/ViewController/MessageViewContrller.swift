@@ -39,13 +39,6 @@ final class MessageViewContrller: UICollectionViewController {
     collectionView.alwaysBounceVertical = true
     navigationItem.title = "Comments"
     collectionView.backgroundColor = UIColor(hex: "#F8F8FA")
-    vm = MessageViewModel()
-    adapter = MessageViewAdapter(
-      collectionView: collectionView,
-    dataSource: vm)
-    setNavigationBar()
-    let tap = UITapGestureRecognizer(target: self, action: #selector(tapCollectionView))
-    collectionView.addGestureRecognizer(tap)
   }
   
   private override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -54,8 +47,15 @@ final class MessageViewContrller: UICollectionViewController {
     super.init(collectionViewLayout: layout)
   }
   
-  convenience init() {
+  convenience init(with groupId: Int) {
     self.init(nibName: nil, bundle: nil)
+    vm = MessageViewModel(groupId: groupId)
+    adapter = MessageViewAdapter(
+      collectionView: collectionView,
+      dataSource: vm)
+    setNavigationBar()
+    let tap = UITapGestureRecognizer(target: self, action: #selector(tapCollectionView))
+    collectionView.addGestureRecognizer(tap)
   }
   
   required init?(coder: NSCoder) {

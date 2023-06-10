@@ -23,6 +23,8 @@ final class MessageCell: UICollectionViewCell {
   private var isSetupUICalled = false
   
   private var messageSenderState: MessageSenderState = .other
+  
+  private let vm = MessageCellViewModel()
         
   // MARK: - Lifecycle
   override init(frame: CGRect) {
@@ -37,20 +39,16 @@ final class MessageCell: UICollectionViewCell {
 // MARK: - Helper
 extension MessageCell {
   func configure(with data: CommentModel) {
-    // 로그인 사용자의 프로필 url과 유효한지 ( 사용자인가? 다른사람의 채팅인가 )
-    // 여기서 url로 사용자 일치 여불르 비교하면안되겠다. 이미지 안올릴경우.....
-    // 일단 임시로 userName으로 해보자
-    if data.username == "홍길동" {
+    let owner = AppSetting.getUser()
+    if data.userId == owner.id {
       messageSenderState = .me
       profile.isHidden = true
     }
     
-    if messageSenderState != .me {
-      setProfile(with: data.profileImageUrl)
-    }
-    
-    let messageContentModel = MessageContentModel(name: data.username, message: data.comment)
-    messageContentView.configure(with: messageContentModel, state: messageSenderState)
+    let inputModel = MessageContentInfoModel(
+      message: data.message,
+      sendTime: data.sendTime)
+    messageContentView.configure(with: inputModel, state: messageSenderState)
     
     if !isSetupUICalled {
       isSetupUICalled = true
@@ -59,15 +57,21 @@ extension MessageCell {
   }
 }
 
-// MARK: - Private helper
-private extension MessageCell {
-  func setProfile(with url: String) {
-    // url 다운받은후에 이미지 적용
-    // profile.image = ...
+// MARK: - MessageCellViewModelDelegate
+extension MessageCell: MessageCellViewModelDelegate {
+  func setProfile(with image: UIImage?) {
+    guard messageSenderState != .me else {
+      return
+    }
+    DispatchQueue.main.async {
+      self.profile.image = image
+    }
   }
   
-  func setMessageContentView(with model: MessageContentModel) {
-    messageContentView.configure(with: model, state: messageSenderState)
+  func setNickname(with nickname: String) {
+    DispatchQueue.main.async {
+      self.messageContentView.setNameLabel(with: nickname)
+    }
   }
 }
 

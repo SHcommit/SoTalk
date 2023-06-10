@@ -9,7 +9,12 @@ import UIKit
 
 struct GroupViewCellViewModel {
   private var item: GroupMessageRoomInfoModel
+  
   private let groupRepository = GroupMessageRepositoryImpl()
+  
+  var groupId: Int {
+    item.groupId
+  }
   
   init(
     item: GroupMessageRoomInfoModel) {
@@ -17,6 +22,7 @@ struct GroupViewCellViewModel {
   }
 }
 
+// MARK: - Service
 extension GroupViewCellViewModel {
   func fetchGroupProfile(
     completionHandler: @escaping (UIImage?) -> Void

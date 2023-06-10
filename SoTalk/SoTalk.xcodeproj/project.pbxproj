@@ -150,11 +150,12 @@
 		15BB02DB2A2897B70035B486 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02DA2A2897B70035B486 /* MessageViewModel.swift */; };
 		15BB02DD2A28B7FC0035B486 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02DC2A28B7FC0035B486 /* MessageCell.swift */; };
 		15BB02F22A28E8AB0035B486 /* MessageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02F12A28E8AB0035B486 /* MessageContentView.swift */; };
-		15BB02F42A29067D0035B486 /* MessageContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02F32A29067D0035B486 /* MessageContentModel.swift */; };
 		15BB02F82A29076E0035B486 /* MessageContentView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02F72A29076E0035B486 /* MessageContentView+Constant.swift */; };
 		15BB02FA2A2907870035B486 /* MessageSenderState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02F92A2907870035B486 /* MessageSenderState.swift */; };
 		15BD2D9B2A29CADA00095214 /* CreatingGroupBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BD2D9A2A29CADA00095214 /* CreatingGroupBottomSheetViewController.swift */; };
 		15BD2DA22A29CD6F00095214 /* CreatingGroupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BD2DA12A29CD6F00095214 /* CreatingGroupCoordinator.swift */; };
+		15C5290F2A34EE91005391F9 /* MessageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5290E2A34EE91005391F9 /* MessageCellViewModel.swift */; };
+		15C529112A34F5A8005391F9 /* MessageContentInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C529102A34F5A8005391F9 /* MessageContentInfoModel.swift */; };
 		15E7C9FD2A1EB01600F1CB49 /* .swiftLint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */; };
 		15E8A29B2A2C78CB002ECFDB /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A29A2A2C78CB002ECFDB /* MessageListViewController.swift */; };
 		15E8A2A92A2CEF93002ECFDB /* UserIdSearchRequestDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A2A82A2CEF93002ECFDB /* UserIdSearchRequestDTO+Mapping.swift */; };
@@ -323,11 +324,12 @@
 		15BB02DA2A2897B70035B486 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		15BB02DC2A28B7FC0035B486 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		15BB02F12A28E8AB0035B486 /* MessageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageContentView.swift; sourceTree = "<group>"; };
-		15BB02F32A29067D0035B486 /* MessageContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageContentModel.swift; sourceTree = "<group>"; };
 		15BB02F72A29076E0035B486 /* MessageContentView+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageContentView+Constant.swift"; sourceTree = "<group>"; };
 		15BB02F92A2907870035B486 /* MessageSenderState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSenderState.swift; sourceTree = "<group>"; };
 		15BD2D9A2A29CADA00095214 /* CreatingGroupBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingGroupBottomSheetViewController.swift; sourceTree = "<group>"; };
 		15BD2DA12A29CD6F00095214 /* CreatingGroupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingGroupCoordinator.swift; sourceTree = "<group>"; };
+		15C5290E2A34EE91005391F9 /* MessageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellViewModel.swift; sourceTree = "<group>"; };
+		15C529102A34F5A8005391F9 /* MessageContentInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageContentInfoModel.swift; sourceTree = "<group>"; };
 		15E7C9FC2A1EB01600F1CB49 /* .swiftLint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftLint.yml; sourceTree = "<group>"; };
 		15E8A29A2A2C78CB002ECFDB /* MessageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
 		15E8A2A82A2CEF93002ECFDB /* UserIdSearchRequestDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserIdSearchRequestDTO+Mapping.swift"; sourceTree = "<group>"; };
@@ -1071,8 +1073,8 @@
 			isa = PBXGroup;
 			children = (
 				15BB02D22A2895700035B486 /* CommentModel.swift */,
-				15BB02F32A29067D0035B486 /* MessageContentModel.swift */,
 				15BB02F92A2907870035B486 /* MessageSenderState.swift */,
+				15C529102A34F5A8005391F9 /* MessageContentInfoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1081,6 +1083,7 @@
 			isa = PBXGroup;
 			children = (
 				15BB02DA2A2897B70035B486 /* MessageViewModel.swift */,
+				15C5290E2A34EE91005391F9 /* MessageCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1449,6 +1452,7 @@
 				15ACF8FC2A34816D00070028 /* GroupInfoListResponseDTO+Mapping.swift in Sources */,
 				15BB02F22A28E8AB0035B486 /* MessageContentView.swift in Sources */,
 				15BB02C62A287B1C0035B486 /* MessageSendBarInputTextView.swift in Sources */,
+				15C5290F2A34EE91005391F9 /* MessageCellViewModel.swift in Sources */,
 				15856D082A1E9CAA0085FE75 /* UIControl+CombineInteraction.swift in Sources */,
 				15BB027F2A25F3690035B486 /* GroupViewAdapter.swift in Sources */,
 				15BB027A2A25F1710035B486 /* GroupView.swift in Sources */,
@@ -1501,7 +1505,6 @@
 				15BB02622A251C0D0035B486 /* MessageListNavigationBar+Constant.swift in Sources */,
 				156C6E652A31C24600CD1968 /* MessageListSideMenuView.swift in Sources */,
 				15BB02AA2A2650BE0035B486 /* FlowCoordinator+ConvenienceInitSubCoordinator.swift in Sources */,
-				15BB02F42A29067D0035B486 /* MessageContentModel.swift in Sources */,
 				15BB027C2A25F31A0035B486 /* GroupViewCell.swift in Sources */,
 				15BB022C2A2336AA0035B486 /* SignUpViewCellDelegate.swift in Sources */,
 				156C6E6B2A31CF4700CD1968 /* IconAndLabelView.swift in Sources */,
@@ -1602,6 +1605,7 @@
 				1579B8222A30907C00216ACF /* KeychainWrapper.swift in Sources */,
 				15BB021A2A225E380035B486 /* SignUpVIew.swift in Sources */,
 				15BB01D22A1F24960035B486 /* ForgetView.swift in Sources */,
+				15C529112A34F5A8005391F9 /* MessageContentInfoModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

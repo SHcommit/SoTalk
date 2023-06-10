@@ -63,13 +63,27 @@ final class MessageContentView: UIView {
       cornerRadius: 6).cgPath
   }
 }
+//
+//
+//
+// 보낸 시간 추가해야함.
+
 
 // MARK: - Helper
 extension MessageContentView {
-  func configure(with data: MessageContentModel, state: MessageSenderState) {
+  func configure(
+    with messageContentInfo: MessageContentInfoModel,
+    state: MessageSenderState
+  ) {
     setMessageLabelTopAnchor(with: state)
-    setNameLabel(with: data.name)
-    setMessageLabel(with: data.message)
+    setMessageLabel(with: messageContentInfo.message)
+  }
+  
+  func setNameLabel(with userName: String) {
+    nameLabel.text = userName
+    nameLabel.sizeToFit()
+    nameLabel.heightAnchor.constraint(
+      equalToConstant: nameLabel.bounds.height).isActive = true
   }
 }
 
@@ -88,12 +102,6 @@ extension MessageContentView {
     case .other:
       break
     }
-  }
-  
-  func setNameLabel(with userName: String) {
-    nameLabel.text = userName
-    nameLabel.sizeToFit()
-    nameLabel.heightAnchor.constraint(equalToConstant: nameLabel.bounds.height).isActive = true
   }
   
   func setMessageLabel(with message: String) {

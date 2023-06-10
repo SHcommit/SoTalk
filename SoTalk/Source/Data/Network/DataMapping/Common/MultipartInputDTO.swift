@@ -21,7 +21,8 @@ import Foundation
 /// ```
 
 struct MultipartInputDTO {
-  let userId: String
+  let userId: String?
+  let groupId: Int?
   let fieldName: String
   let fileName: String
   let mimeType: String
@@ -29,13 +30,15 @@ struct MultipartInputDTO {
   let boundary: String
   
   init(
-    userId: String,
+    userId: String? = nil,
+    groupId: Int? = nil,
     fieldName: String,
     fileName: String,
     mimeType: String,
     fileData: Data,
     boundary: String = UUID().uuidString) {
     self.userId = userId
+    self.groupId = groupId
     self.fieldName = fieldName
     self.fileName = fileName
     self.mimeType = mimeType

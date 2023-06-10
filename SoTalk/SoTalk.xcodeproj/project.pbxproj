@@ -53,6 +53,16 @@
 		1582B8FD2A33AA07003499AB /* NewMessageGroupRequestDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B8FC2A33AA07003499AB /* NewMessageGroupRequestDTO+Mapping.swift */; };
 		1582B8FF2A33ABAD003499AB /* GroupJoinRequestDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B8FE2A33ABAD003499AB /* GroupJoinRequestDTO+Mapping.swift */; };
 		1582B9012A33AD0B003499AB /* GroupInfoDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B9002A33AD0B003499AB /* GroupInfoDTO+Mapping.swift */; };
+		1582B9032A34405F003499AB /* NewMessageGroupResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B9022A34405F003499AB /* NewMessageGroupResponseDTO+Mapping.swift */; };
+		1582B9052A344197003499AB /* GroupIdRequestDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B9042A344197003499AB /* GroupIdRequestDTO+Mapping.swift */; };
+		1582B9072A3442B1003499AB /* GroupUserInfoResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B9062A3442B1003499AB /* GroupUserInfoResponseDTO+Mapping.swift */; };
+		1582B9092A344582003499AB /* GroupProfileUploadRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B9082A344582003499AB /* GroupProfileUploadRequestDTO.swift */; };
+		1582B90B2A3445BC003499AB /* GroupProfileUploadResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B90A2A3445BC003499AB /* GroupProfileUploadResponseDTO+Mapping.swift */; };
+		1582B90D2A344997003499AB /* GroupMessageInfoResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B90C2A344997003499AB /* GroupMessageInfoResponseDTO+Mapping.swift */; };
+		1582B9152A344F05003499AB /* GroupMessageRoomInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B9142A344F05003499AB /* GroupMessageRoomInfoModel.swift */; };
+		1582B9172A344FA5003499AB /* GroupMessageUserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B9162A344FA5003499AB /* GroupMessageUserInfoModel.swift */; };
+		1582B9192A34512D003499AB /* GroupMessageInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B9182A34512D003499AB /* GroupMessageInfoModel.swift */; };
+		1582B91B2A3451EF003499AB /* GroupMessageRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B91A2A3451EF003499AB /* GroupMessageRepositoryImpl.swift */; };
 		15856D052A1E9CAA0085FE75 /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D002A1E9CAA0085FE75 /* UIControl+Combine.swift */; };
 		15856D062A1E9CAA0085FE75 /* UISwitch+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D012A1E9CAA0085FE75 /* UISwitch+Combine.swift */; };
 		15856D072A1E9CAA0085FE75 /* UIButton+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15856D022A1E9CAA0085FE75 /* UIButton+Combine.swift */; };
@@ -209,6 +219,16 @@
 		1582B8FC2A33AA07003499AB /* NewMessageGroupRequestDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewMessageGroupRequestDTO+Mapping.swift"; sourceTree = "<group>"; };
 		1582B8FE2A33ABAD003499AB /* GroupJoinRequestDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupJoinRequestDTO+Mapping.swift"; sourceTree = "<group>"; };
 		1582B9002A33AD0B003499AB /* GroupInfoDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupInfoDTO+Mapping.swift"; sourceTree = "<group>"; };
+		1582B9022A34405F003499AB /* NewMessageGroupResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewMessageGroupResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
+		1582B9042A344197003499AB /* GroupIdRequestDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupIdRequestDTO+Mapping.swift"; sourceTree = "<group>"; };
+		1582B9062A3442B1003499AB /* GroupUserInfoResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupUserInfoResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
+		1582B9082A344582003499AB /* GroupProfileUploadRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupProfileUploadRequestDTO.swift; sourceTree = "<group>"; };
+		1582B90A2A3445BC003499AB /* GroupProfileUploadResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupProfileUploadResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
+		1582B90C2A344997003499AB /* GroupMessageInfoResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupMessageInfoResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
+		1582B9142A344F05003499AB /* GroupMessageRoomInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMessageRoomInfoModel.swift; sourceTree = "<group>"; };
+		1582B9162A344FA5003499AB /* GroupMessageUserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMessageUserInfoModel.swift; sourceTree = "<group>"; };
+		1582B9182A34512D003499AB /* GroupMessageInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMessageInfoModel.swift; sourceTree = "<group>"; };
+		1582B91A2A3451EF003499AB /* GroupMessageRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMessageRepositoryImpl.swift; sourceTree = "<group>"; };
 		15856D002A1E9CAA0085FE75 /* UIControl+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
 		15856D012A1E9CAA0085FE75 /* UISwitch+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISwitch+Combine.swift"; sourceTree = "<group>"; };
 		15856D022A1E9CAA0085FE75 /* UIButton+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Combine.swift"; sourceTree = "<group>"; };
@@ -492,8 +512,49 @@
 				1582B8FC2A33AA07003499AB /* NewMessageGroupRequestDTO+Mapping.swift */,
 				1582B8FE2A33ABAD003499AB /* GroupJoinRequestDTO+Mapping.swift */,
 				1582B9002A33AD0B003499AB /* GroupInfoDTO+Mapping.swift */,
+				1582B9022A34405F003499AB /* NewMessageGroupResponseDTO+Mapping.swift */,
+				1582B9042A344197003499AB /* GroupIdRequestDTO+Mapping.swift */,
+				1582B9062A3442B1003499AB /* GroupUserInfoResponseDTO+Mapping.swift */,
+				1582B9082A344582003499AB /* GroupProfileUploadRequestDTO.swift */,
+				1582B90A2A3445BC003499AB /* GroupProfileUploadResponseDTO+Mapping.swift */,
+				1582B90C2A344997003499AB /* GroupMessageInfoResponseDTO+Mapping.swift */,
 			);
 			path = GroupMessage;
+			sourceTree = "<group>";
+		};
+		1582B90E2A344AFC003499AB /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				1582B91A2A3451EF003499AB /* GroupMessageRepositoryImpl.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		1582B90F2A344B0F003499AB /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				15E8A2CD2A2DEB12002ECFDB /* SignUpRepositoryImpl.swift */,
+				15E8A2DD2A2E0287002ECFDB /* LoginRepositoryImpl.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		1582B9102A344B1A003499AB /* User */ = {
+			isa = PBXGroup;
+			children = (
+				1582B8E72A333A64003499AB /* UserRepositoryImpl.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		1582B9112A344E35003499AB /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				1582B9182A34512D003499AB /* GroupMessageInfoModel.swift */,
+				1582B9142A344F05003499AB /* GroupMessageRoomInfoModel.swift */,
+				1582B9162A344FA5003499AB /* GroupMessageUserInfoModel.swift */,
+			);
+			path = Message;
 			sourceTree = "<group>";
 		};
 		15856CFF2A1E9CAA0085FE75 /* CombineCocoa */ = {
@@ -1084,6 +1145,7 @@
 		15E8A2B12A2D0177002ECFDB /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				1582B9112A344E35003499AB /* Message */,
 				15E8A2E32A2E20F3002ECFDB /* Authentication */,
 				15E8A2CF2A2DEBDC002ECFDB /* User */,
 			);
@@ -1142,9 +1204,9 @@
 		15E8A2C82A2DEA69002ECFDB /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				15E8A2CD2A2DEB12002ECFDB /* SignUpRepositoryImpl.swift */,
-				15E8A2DD2A2E0287002ECFDB /* LoginRepositoryImpl.swift */,
-				1582B8E72A333A64003499AB /* UserRepositoryImpl.swift */,
+				1582B9102A344B1A003499AB /* User */,
+				1582B90F2A344B0F003499AB /* Authentication */,
+				1582B90E2A344AFC003499AB /* Message */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -1362,6 +1424,7 @@
 				15E8A2E52A2E2100002ECFDB /* LoginModel.swift in Sources */,
 				15BB02272A22795C0035B486 /* AuthenticationButton.swift in Sources */,
 				156C6E672A31C4F900CD1968 /* MessageListSideMenuView+Constant.swift in Sources */,
+				1582B9092A344582003499AB /* GroupProfileUploadRequestDTO.swift in Sources */,
 				15BB02B72A26785D0035B486 /* MessageListCoordinator.swift in Sources */,
 				15BB02F82A29076E0035B486 /* MessageContentView+Constant.swift in Sources */,
 				15BB02C82A28855D0035B486 /* MessageSendBar.swift in Sources */,
@@ -1380,6 +1443,8 @@
 				15BB028F2A2631040035B486 /* MockGroupModel.swift in Sources */,
 				1573179A2A2B3D000061F914 /* UIImage+AverageColor.swift in Sources */,
 				1582B8F22A339277003499AB /* ProfileFetchResponseDTO+Mapping.swift in Sources */,
+				1582B90D2A344997003499AB /* GroupMessageInfoResponseDTO+Mapping.swift in Sources */,
+				1582B9032A34405F003499AB /* NewMessageGroupResponseDTO+Mapping.swift in Sources */,
 				15856D052A1E9CAA0085FE75 /* UIControl+Combine.swift in Sources */,
 				15BB02CD2A288DBB0035B486 /* CommentSendInputAccessoryViewDelegate.swift in Sources */,
 				152E52432A2BACE600987CA8 /* CreatingGroupResponseModel.swift in Sources */,
@@ -1389,6 +1454,7 @@
 				15BB02642A251C430035B486 /* MessageListViewController+Constant.swift in Sources */,
 				15BB02842A261D910035B486 /* UIColor+ChatPalette.swift in Sources */,
 				15BB021C2A225EE30035B486 /* SignUpViewCell.swift in Sources */,
+				1582B9172A344FA5003499AB /* GroupMessageUserInfoModel.swift in Sources */,
 				15E8A2DA2A2DFC1B002ECFDB /* SignUpResponseDTO+Mapping.swift in Sources */,
 				15E8A2D12A2DEBE3002ECFDB /* UserInfoModel.swift in Sources */,
 				152E52682A2BC76E00987CA8 /* Endpoint.swift in Sources */,
@@ -1408,6 +1474,7 @@
 				1589198B2A1E7B43006796B2 /* AppDelegate.swift in Sources */,
 				15BB028C2A262D270035B486 /* GroupModel.swift in Sources */,
 				15856D0E2A1E9D150085FE75 /* ConvenienceInit.swift in Sources */,
+				1582B9072A3442B1003499AB /* GroupUserInfoResponseDTO+Mapping.swift in Sources */,
 				15BB02892A262C800035B486 /* MessageListViewModel.swift in Sources */,
 				1551140A2A2A29F1009E0103 /* GroupPictureView.swift in Sources */,
 				15BB02A72A264A070035B486 /* FlowCoordinator.swift in Sources */,
@@ -1417,6 +1484,7 @@
 				155114072A2A19CD009E0103 /* UIImage+resized.swift in Sources */,
 				1582B8EA2A333CD1003499AB /* UserInfoResponseDTO+Mapping.swift in Sources */,
 				15856D062A1E9CAA0085FE75 /* UISwitch+Combine.swift in Sources */,
+				1582B90B2A3445BC003499AB /* GroupProfileUploadResponseDTO+Mapping.swift in Sources */,
 				15E8A2B72A2D0F7A002ECFDB /* ProfileModel.swift in Sources */,
 				152E52612A2BC74C00987CA8 /* NetworkError.swift in Sources */,
 				1582B8E42A333351003499AB /* AppSettings.swift in Sources */,
@@ -1436,6 +1504,8 @@
 				15E8A2D42A2DED9F002ECFDB /* LoginRepository.swift in Sources */,
 				157317942A2A66890061F914 /* PreviewGroupPictureManager.swift in Sources */,
 				15BB02822A25F37E0035B486 /* GroupViewAdapterDataSoruce.swift in Sources */,
+				1582B9052A344197003499AB /* GroupIdRequestDTO+Mapping.swift in Sources */,
+				1582B9152A344F05003499AB /* GroupMessageRoomInfoModel.swift in Sources */,
 				15BB02D02A2895090035B486 /* MessageViewAdapter.swift in Sources */,
 				15BB02D82A2897020035B486 /* MessageViewControllerDataSource.swift in Sources */,
 				15E8A2BE2A2DAEA0002ECFDB /* MultipartInputDTO.swift in Sources */,
@@ -1446,6 +1516,7 @@
 				156C6E602A31B7B500CD1968 /* MessageListView.swift in Sources */,
 				15E8A2DC2A2DFD1E002ECFDB /* UserIdSearchResponseDTO+Mapping.swift in Sources */,
 				15BB02C32A2850050035B486 /* MessageCoordinator.swift in Sources */,
+				1582B91B2A3451EF003499AB /* GroupMessageRepositoryImpl.swift in Sources */,
 				15E8A29B2A2C78CB002ECFDB /* MessageListViewController.swift in Sources */,
 				15BB02CB2A2887140035B486 /* MessageTextViewDelegate.swift in Sources */,
 				15856D0F2A1E9D150085FE75 /* ViewModelProtocols.swift in Sources */,
@@ -1457,6 +1528,7 @@
 				152E52402A2BACA700987CA8 /* CreatingGruopRequestModel.swift in Sources */,
 				15BB01E02A1F480E0035B486 /* UIView+CustomAnimation.swift in Sources */,
 				15BB02D62A2895EF0035B486 /* UserModel.swift in Sources */,
+				1582B9192A34512D003499AB /* GroupMessageInfoModel.swift in Sources */,
 				15BB02DD2A28B7FC0035B486 /* MessageCell.swift in Sources */,
 				15BB02552A24AF650035B486 /* MessageListSearchAreaView.swift in Sources */,
 				152E52662A2BC76800987CA8 /* Responsable.swift in Sources */,

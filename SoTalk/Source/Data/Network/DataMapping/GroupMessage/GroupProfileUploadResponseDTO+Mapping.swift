@@ -1,5 +1,5 @@
 //
-//  GroupSocketPortSearchResponseDTO.swift
+//  GroupProfileUploadResponseDTO+Mapping.swift
 //  SoTalk
 //
 //  Created by 양승현 on 2023/06/10.
@@ -7,16 +7,17 @@
 
 import Foundation
 
-struct GroupJoinResponseDTO {
-  let port: Int
+struct GroupProfileUploadResponseDTO {
+  let url: String
+  
   enum CodingKeys: String, CodingKey {
-    case port
+    case url
   }
 }
 
-extension GroupJoinResponseDTO: Decodable {
+extension GroupProfileUploadResponseDTO: Decodable {
   init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
-    port = try container.decode(Int.self, forKey: .port)
+    url = try container.decode(String.self, forKey: .url)
   }
 }

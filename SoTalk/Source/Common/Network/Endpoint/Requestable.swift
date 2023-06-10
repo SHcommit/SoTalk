@@ -69,10 +69,16 @@ private extension Requestable {
     let lineBreak = "\r\n"
     
     data.appendString("--\(input.boundary)\(lineBreak)")
-    data.appendString(
-      "Content-Disposition: form-data; name=\"userId\"\(lineBreak)\(lineBreak)")
-    data.appendString("\(input.userId)\(lineBreak)")
-    
+    if let userId = input.userId {
+      data.appendString(
+        "Content-Disposition: form-data; name=\"userId\"\(lineBreak)\(lineBreak)")
+      data.appendString("\(userId)\(lineBreak)")
+    } else if let groupId = input.groupId {
+      data.appendString(
+        "Content-Disposition: form-data; name=\"groupId\"\(lineBreak)\(lineBreak)")
+      data.appendString("\(groupId)\(lineBreak)")
+    }
+
     data.appendString("--\(input.boundary)\(lineBreak)")
     
     // 요거는 파일명안에 뭐 안뜬데 .jpeg이런거

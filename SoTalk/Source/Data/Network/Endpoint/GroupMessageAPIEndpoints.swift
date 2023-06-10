@@ -13,17 +13,19 @@ struct GroupMessageAPIEndpoints {
   
   func fetchGroupSocketPort(
     with groupId: GroupSocketPortSearchRequestDTO
-  ) -> Endpoint<GroupSocketPortSearchResponseDTO> {
-    return Endpoint<GroupSocketPortSearchResponseDTO>(
+  ) -> Endpoint<GroupJoinResponseDTO> {
+    return Endpoint<GroupJoinResponseDTO>(
       path: "socket/port",
       method: .get,
       queryParameters: groupId,
       headers: ["Content-Type": "application/json"])
   }
   
+  // 받은 후에는 서버한테 다시 group list fetch해야함
+  // 이미지 바로 전송
   func addNewMessageGroup(
     with newMessageGroup: NewMessageGroupRequestDTO
-  ) -> Endpoint<GroupSocketPortSearchResponseDTO> {
+  ) -> Endpoint<NewMessageGroupResponseDTO> {
     return .init(
       path: "group/add",
       method: .post,
@@ -32,7 +34,7 @@ struct GroupMessageAPIEndpoints {
   }
   
   func joinGroup(with groupJoinDTO: GroupJoinRequestDTO
-  ) -> Endpoint<GroupSocketPortSearchResponseDTO> {
+  ) -> Endpoint<GroupJoinResponseDTO> {
     return .init(
       path: "group/join",
       method: .post,
@@ -40,21 +42,81 @@ struct GroupMessageAPIEndpoints {
       headers: ["Content-Type": "application/json"])
   }
   
-  func fetchAllGrupInfo() -> Endpoint<GroupInfoResponseDTO> {
+  func fetchAllGrupList() -> Endpoint<[GroupInfoResponseDTO]> {
     return .init(
       path: "group/list",
       method: .get,
     bodyParameters: nil,
     headers: ["Content-Type": "application/json"])
   }
-  
-  func fetchJoinedAllGroupInfo(
+}
+
+// MARK: - User Endpoint
+extension GroupMessageAPIEndpoints {
+  func fetchUserJoinedAllGroupInfo(
     with userIdDTO: UserIdSearchRequestDTO
-  ) -> Endpoint<GroupInfoResponseDTO> {
+  ) -> Endpoint<[GroupInfoResponseDTO]> {
     return .init(
       path: "group/listByUserId",
       method: .get,
       bodyParameters: userIdDTO,
       headers: ["Content-Type": "application/json"])
+  }
+  
+  func searchJoinedAllUserInfoInGroup(
+    with groupIdDTO: GroupIdRequestDTO
+  ) -> Endpoint<[GroupUserInfoResponseDTO]> {
+    return .init(
+      path: "group/users",
+      method: .get,
+      bodyParameters: groupIdDTO,
+      headers: ["Content-Type": "application/json"])
+  }
+}
+
+// MARK: - Image Endpoint
+extension GroupMessageAPIEndpoints {
+  func uploadGroupProfile(
+    with requestDTO: GroupProfileUploadRequestDTO
+  ) -> Endpoint<GroupProfileUploadResponseDTO> {
+    let boundary = UUID().uuidString
+    let multiPartDTO = MultipartInputDTO(
+      groupId: requestDTO.groupId,
+      fieldName: "file",
+      fileName: "profile.jpeg",
+      mimeType: "image/jpeg",
+      fileData: requestDTO.imageData,
+      boundary: boundary)
+    return .init(
+      path: "group/img",
+      method: .post,
+      queryParameters: nil,
+      headers: [
+        "Content-Type": "multipart/form-data; boundary=\(boundary)",
+        "boundary": boundary],
+      multipartDTO: multiPartDTO)
+  }
+  
+  func fetchGroupProfile(
+    with bodyParam: String
+  ) -> String {
+    let servIp = SecretManager.shared.serverIp
+    let servPort = SecretManager.shared.serverPort
+    let path = "grup/Img"
+    return "http://\(servIp):\(servPort)/\(path)?url=\(bodyParam)"
+  }
+}
+
+// MARK: - Chat
+extension GroupMessageAPIEndpoints {
+  /// get일때 header안넣어도되나?
+  /// headers: ["Content-Type": "application/json"]
+  func fetchAllMessageInSpecificGroup(
+    with requestDTO: GroupIdRequestDTO
+  ) -> Endpoint<[GroupMessageInfoResponseDTO]> {
+    return .init(
+      path: "chat/group",
+      method: .get,
+      queryParameters: requestDTO)
   }
 }

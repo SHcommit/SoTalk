@@ -23,7 +23,7 @@ struct GroupInfoResponseDTO {
 
 extension GroupInfoResponseDTO: Decodable {
   init(from decoder: Decoder) throws {
-    var container = try decoder.container(keyedBy: CodingKeys.self)
+    let container = try decoder.container(keyedBy: CodingKeys.self)
     groupId = try container.decode(Int.self, forKey: .groupId)
     groupName = try container.decode(String.self, forKey: .groupName)
     groupImageUrl = try container.decode(String.self, forKey: .groupImageUrl)

@@ -1,5 +1,5 @@
 //
-//  GroupSocketPortSearchRequestDTO.swift
+//  GroupIdRequestDTO+Mapping.swift
 //  SoTalk
 //
 //  Created by 양승현 on 2023/06/10.
@@ -7,15 +7,17 @@
 
 import Foundation
 
-struct GroupSocketPortSearchRequestDTO: Encodable {
-  let id: Int
+struct GroupIdRequestDTO {
+  let groupId: Int
   
   enum CodingKeys: String, CodingKey {
-    case id = "groupId"
+    case groupId
   }
-  
+}
+
+extension GroupIdRequestDTO: Encodable {
   func encode(to encoder: Encoder) throws {
     var container = encoder.container(keyedBy: CodingKeys.self)
-    try container.encode(id, forKey: .id)
+    try container.encode(groupId, forKey: .groupId)
   }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 struct LoginRepositoryImpl: LoginRepository {
   typealias Endpoints = AuthenticationAPIEndpoints
-  let provider = ServiceProviderImpl()
+  private let provider = ServiceProviderImpl()
   
   func login(_ user: LoginRequestDTO, completionHandler: @escaping (String) -> Void) {
     let endpoint = Endpoints.shared.Login(with: user)

@@ -93,27 +93,38 @@ extension GroupViewAdapter: UICollectionViewDelegateFlowLayout {
 
 // MARK: - UIScrollViewDelegate
 extension GroupViewAdapter {
+  
   func scrollViewWillEndDragging(
     _ scrollView: UIScrollView,
     withVelocity velocity: CGPoint,
     targetContentOffset: UnsafeMutablePointer<CGPoint>
   ) {
-    let itemSize = GroupView.Constant.itemSize.width
+    
+    let itemWidth = GroupView.Constant.itemSize.width
     let interItemSpacing = GroupView.Constant.interLineSpacing
-    let itemAndInterItemSpacingSize = itemSize + interItemSpacing
+    
+    var collectionViewInset = GroupView.Constant.edgeInset
+    
+    let contentWidth = scrollView.contentSize.width
+    let maximumScrollableWidth = contentWidth
+      - scrollView.bounds.width
+    let fixexContentW = contentWidth - collectionViewInset*2.0
+    let msWidth = maximumScrollableWidth
+    let cellAndSpacingArea = itemWidth + interItemSpacing
     var offset = targetContentOffset.pointee
-    var idx = 0.0
-    if offset.x > GroupView.Constant.edgeInset {
-      idx = round(
-        (offset.x - GroupView
-          .Constant
-          .edgeInset)/itemAndInterItemSpacingSize)
+    let idx = round(
+      offset.x *
+      fixexContentW /
+      msWidth /
+      cellAndSpacingArea)
+    guard let n = dataSource?.numberOfItems else { return }
+    if Int(idx) == n {
+      collectionViewInset *= 2
     }
-    if idx == 0 {
-      offset = CGPoint(x: idx*itemSize - GroupView.Constant.edgeInset, y: 0.0)
-    } else {
-      offset = CGPoint(x: idx*itemSize, y: 0)
-    }
+    offset = CGPoint(
+      x: idx*cellAndSpacingArea-collectionViewInset,
+      y: 0.0)
+
     targetContentOffset.pointee = offset
   }
 }

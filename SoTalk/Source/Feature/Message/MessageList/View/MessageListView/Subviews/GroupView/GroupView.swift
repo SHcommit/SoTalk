@@ -33,7 +33,8 @@ final class GroupView: UICollectionView {
     self.init(frame: .zero, collectionViewLayout: layout)
     translatesAutoresizingMaskIntoConstraints = false
     backgroundColor = .none
-    decelerationRate = .fast
+    decelerationRate = UIScrollView.DecelerationRate(rawValue: 0.55)
+    
     contentInset = UIEdgeInsets(
       top: 0,
       left: GroupView.Constant.interLineSpacing,

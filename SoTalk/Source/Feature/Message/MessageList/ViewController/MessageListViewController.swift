@@ -307,6 +307,7 @@ extension MessageListViewController: CreatingGroupBottomSheetViewControllerDeleg
       self.messageListView.reloadGroupList()
       /// 그리고 메시지 뷰의 맨 오른쪽으로 이동하게
       /// selectedcell 호출시키자.
+      self.messageListView.moveToLastCell()
     }
   }
 }

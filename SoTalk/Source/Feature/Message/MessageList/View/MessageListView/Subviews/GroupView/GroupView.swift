@@ -33,7 +33,7 @@ final class GroupView: UICollectionView {
     self.init(frame: .zero, collectionViewLayout: layout)
     translatesAutoresizingMaskIntoConstraints = false
     backgroundColor = .none
-    decelerationRate = UIScrollView.DecelerationRate(rawValue: 0.55)
+    decelerationRate = UIScrollView.DecelerationRate(rawValue: 0.45)
     
     contentInset = UIEdgeInsets(
       top: 0,

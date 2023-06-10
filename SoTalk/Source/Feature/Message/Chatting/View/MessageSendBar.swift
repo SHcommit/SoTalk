@@ -21,6 +21,10 @@ final class MessageSendBar: UIView {
     $0.addTarget(self, action: #selector(didTapSend), for: .touchUpInside)
   }
   
+  var isTextViewFirstResponder: Bool {
+    textView.isFirstResponder
+  }
+  
   weak var delegate: CommentSendInputAccessoryViewDelegate?
   
   // MARK: - Lifecycle
@@ -39,6 +43,12 @@ final class MessageSendBar: UIView {
   
   override var intrinsicContentSize: CGSize {
     .zero
+  }
+}
+
+extension MessageSendBar {
+  func hideKeyboard() {
+    textView.resignFirstResponder()
   }
 }
 

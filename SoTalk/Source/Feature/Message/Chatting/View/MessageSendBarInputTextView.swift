@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+// 카카오톡TODO: - 카카오톡은 아마 텍스트필드에 스크롤 뷰를 달았나본데?,, 나중ㅇ ㅔ 시도해보자
 final class MessageSendBarInputTextView: UITextView {
   // MARK: - Properties
   private let placeholderLabel = UILabel().set {
@@ -35,9 +35,16 @@ final class MessageSendBarInputTextView: UITextView {
     translatesAutoresizingMaskIntoConstraints = false
     font = .systemFont(ofSize: 15)
     isScrollEnabled = false
+
     backgroundColor = .Palette.searchBG
     layer.cornerRadius = 7
+    
     setupUI()
+    
+    guard let textContainer = textContainer else {
+      return
+    }
+    textContainer.maximumNumberOfLines = 3
   }
   
   required init?(coder: NSCoder) {

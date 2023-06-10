@@ -19,9 +19,17 @@ final class MessageViewContrller: UICollectionViewController {
   private lazy var commentView = MessageSendBar(
     frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50)).set {
       $0.delegate = self
-    }
+  }
+  
+  override var inputAccessoryView: UIView? {
+    commentView
+  }
+  
+  override var canBecomeFirstResponder: Bool {
+    return true
+  }
     
-  // MARK: - Lifecycle
+  // MARK: - Initialization
   override func viewDidLoad() {
     super.viewDidLoad()
     collectionView.register(
@@ -36,6 +44,8 @@ final class MessageViewContrller: UICollectionViewController {
       collectionView: collectionView,
     dataSource: vm)
     setNavigationBar()
+    let tap = UITapGestureRecognizer(target: self, action: #selector(tapCollectionView))
+    collectionView.addGestureRecognizer(tap)
   }
   
   private override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -52,19 +62,19 @@ final class MessageViewContrller: UICollectionViewController {
     fatalError("init(coder:) has not been implemented")
   }
   
-  override var inputAccessoryView: UIView? {
-    commentView
-  }
-  
-  override var canBecomeFirstResponder: Bool {
-    return true
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(keyboardWillShow(_:)),
+      name: UIResponder.keyboardWillShowNotification,
+      object: nil)
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     navigationController?.navigationBar.isHidden = false
   }
-  
 }
 
 // MARK: - Private helper
@@ -75,12 +85,23 @@ private extension MessageViewContrller {
     }
     navi.setLeftBackButton(navigationItem, target: self, action: #selector(didTapBackButton))
   }
+
 }
 
 // MARK: - Action
 extension MessageViewContrller {
   @objc func didTapBackButton() {
     navigationController?.popViewController(animated: true)
+  }
+  
+  @objc func keyboardWillShow(_ noti: Notification) {
+    
+  }
+      
+  @objc func tapCollectionView() {
+    if commentView.isTextViewFirstResponder || isFirstResponder {
+      commentView.hideKeyboard()
+    }
   }
 }
 

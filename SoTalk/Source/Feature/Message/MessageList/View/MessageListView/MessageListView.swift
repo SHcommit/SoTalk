@@ -246,11 +246,21 @@ extension MessageListView {
       self.groupView.reloadData()
     }
   }
+  
+  func moveToLastCell() {
+    DispatchQueue.main.async {
+      let idx = self.groupView.numberOfItems(inSection: 0) - 1
+      let idxPath = IndexPath(item: idx, section: 0)
+      self.groupView.scrollToItem(at: idxPath, at: .centeredHorizontally, animated: true)
+      
+    }
+  }
 
 }
 
 // MARK: - Private helper
 private extension MessageListView {
+  
   func setAddGroupButtonShadow() {
     addGroupButton.layer.shadowOffset = CGSize(width: 0, height: 0)
     addGroupButton.layer.shadowColor = UIColor.Palette.primary.cgColor

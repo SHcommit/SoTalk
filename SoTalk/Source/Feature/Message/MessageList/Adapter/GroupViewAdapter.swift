@@ -57,8 +57,11 @@ extension GroupViewAdapter {
       cell.transform = CGAffineTransform(scaleX: 0.96, y: 0.96)
     }) { [weak self] _ in
       // 여기서 이제 특정 cell이 소유즁인 groupId를 보내야함.
-      guard let groupId = cell.groupId else { return }
-      self?.delegate?.didSelectItemAt(indexPath,groupId: groupId)
+      guard
+        let groupId = cell.groupId,
+      let groupName = cell.groupName else { return }
+      
+      self?.delegate?.didSelectItemAt(indexPath, groupId: groupId, groupName: groupName)
       UIView.animate(withDuration: 0.2) {
         cell.transform = .identity
       }

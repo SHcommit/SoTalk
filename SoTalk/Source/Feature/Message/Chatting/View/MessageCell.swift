@@ -29,6 +29,7 @@ final class MessageCell: UICollectionViewCell {
   // MARK: - Lifecycle
   override init(frame: CGRect) {
     super.init(frame: frame)
+    vm.delegate = self
   }
   
   required init?(coder: NSCoder) {
@@ -39,6 +40,7 @@ final class MessageCell: UICollectionViewCell {
 // MARK: - Helper
 extension MessageCell {
   func configure(with data: CommentModel) {
+    vm.setData(with: data)
     let owner = AppSetting.getUser()
     if data.userId == owner.id {
       messageSenderState = .me
@@ -60,17 +62,18 @@ extension MessageCell {
 // MARK: - MessageCellViewModelDelegate
 extension MessageCell: MessageCellViewModelDelegate {
   func setProfile(with image: UIImage?) {
-    guard messageSenderState != .me else {
-      return
-    }
-    DispatchQueue.main.async {
-      self.profile.image = image
+    if messageSenderState == .other {
+      DispatchQueue.main.async {
+        self.profile.image = image
+      }
     }
   }
   
   func setNickname(with nickname: String) {
-    DispatchQueue.main.async {
-      self.messageContentView.setNameLabel(with: nickname)
+    if messageSenderState == .other {
+      DispatchQueue.main.async {
+        self.messageContentView.setNameLabel(with: nickname)
+      }
     }
   }
 }

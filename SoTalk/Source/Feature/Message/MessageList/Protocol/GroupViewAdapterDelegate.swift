@@ -8,5 +8,5 @@
 import Foundation
 
 protocol GroupViewAdapterDelegate: AnyObject {
-  func didSelectItemAt(_ indexPath: IndexPath, groupId: Int)
+  func didSelectItemAt(_ indexPath: IndexPath, groupId: Int, groupName: String)
 }

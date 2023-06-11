@@ -15,6 +15,19 @@ protocol MessageCellViewModelDelegate: AnyObject {
 final class MessageCellViewModel {
   private let userRepository = UserRepositoryImpl()
   weak var delegate: MessageCellViewModelDelegate?
+  private var data: CommentModel? {
+    didSet {
+      guard let data = data else { return }
+      fetchUserInfo(with: data.userId)
+    }
+  }
+  
+}
+
+extension MessageCellViewModel {
+  func setData(with data: CommentModel) {
+    self.data = data
+  }
 }
 
 // MARK: - Service

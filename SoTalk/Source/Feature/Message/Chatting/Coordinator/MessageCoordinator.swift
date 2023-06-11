@@ -15,10 +15,10 @@ class MessageCoordinator: NSObject, FlowCoordinator {
   var viewController: UIViewController!
   
   // MARK: - Lifecycle
-  init(presenter: NavigationControler, groupId: Int) {
+  init(presenter: NavigationControler, groupId: Int, gruopName: String) {
     self.presenter = presenter
     super.init()
-    let vc = MessageViewContrller(with: groupId)
+    let vc = MessageViewContrller(with: groupId, groupName: gruopName)
     viewController = vc
     vc.coordinator = self
   }

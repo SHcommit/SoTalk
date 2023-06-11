@@ -27,7 +27,7 @@ final class MessageContentView: UIView {
     $0.text = "빈 텍스트"
     $0.textColor = .black
     $0.numberOfLines = 0
-    $0.textAlignment = .natural
+    $0.textAlignment = .left
   }
   
   private var messageLabelTopConstraint: NSLayoutConstraint?

@@ -46,7 +46,6 @@ final class MessageViewContrller: UICollectionViewController {
       forCellWithReuseIdentifier: MessageCell.id)
     collectionView.keyboardDismissMode = .interactive
     collectionView.alwaysBounceVertical = true
-    navigationItem.title = "Comments"
     collectionView.backgroundColor = UIColor(hex: "#F8F8FA")
   }
   
@@ -56,14 +55,14 @@ final class MessageViewContrller: UICollectionViewController {
     super.init(collectionViewLayout: layout)
   }
   
-  convenience init(with groupId: Int) {
+  convenience init(with groupId: Int, groupName: String) {
     self.init(nibName: nil, bundle: nil)
     vm = MessageViewModel(groupId: groupId)
     bindEvent(with: groupId)
     adapter = MessageViewAdapter(
       collectionView: collectionView,
       dataSource: vm)
-    setNavigationBar()
+    setNavigationBar(with: groupName)
     
     let tap = UITapGestureRecognizer(target: self, action: #selector(tapCollectionView))
     collectionView.addGestureRecognizer(tap)
@@ -95,7 +94,8 @@ final class MessageViewContrller: UICollectionViewController {
 
 // MARK: - Private helper
 private extension MessageViewContrller {
-  func setNavigationBar() {
+  func setNavigationBar(with title: String) {
+    navigationItem.title = title
     guard let navi = navigationController as? NavigationControler else {
       return
     }

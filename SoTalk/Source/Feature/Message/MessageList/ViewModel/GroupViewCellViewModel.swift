@@ -16,6 +16,10 @@ struct GroupViewCellViewModel {
     item.groupId
   }
   
+  var groupName: String {
+    item.groupName
+  }
+  
   init(
     item: GroupMessageRoomInfoModel) {
     self.item = item

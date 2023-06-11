@@ -196,8 +196,8 @@ private extension MessageListViewController {
 
 // MARK: - GroupViewAdapterDelegate
 extension MessageListViewController: GroupViewAdapterDelegate {
-  func didSelectItemAt(_ indexPath: IndexPath, groupId: Int) {
-    coordinator?.gotoChattingPage(with: groupId)
+  func didSelectItemAt(_ indexPath: IndexPath, groupId: Int, groupName: String) {
+    coordinator?.gotoChattingPage(with: groupId, groupName: groupName)
   }
 }
 

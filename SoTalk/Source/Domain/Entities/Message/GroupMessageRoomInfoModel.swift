@@ -7,6 +7,15 @@
 
 import Foundation
 
+//
+//struct CommentModel {
+//  // 사용자 id
+//  let userId: String
+//  let message: String
+//  let sendTime: String
+//  var profileImageUrl: String?
+//}
+
 struct GroupMessageRoomInfoModel {
   var groupId: Int
   var groupName: String

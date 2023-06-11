@@ -30,7 +30,7 @@ final class GroupViewCell: UICollectionViewCell {
     return bluredView
   }()
   
-  private let groupName = UILabel().set {
+  private let groupNameLabel = UILabel().set {
     $0.translatesAutoresizingMaskIntoConstraints = false
     $0.font = .boldSystemFont(ofSize: 20)
     $0.numberOfLines = 2
@@ -56,6 +56,10 @@ final class GroupViewCell: UICollectionViewCell {
     vm?.groupId
   }
   
+  var groupName: String? {
+    vm?.groupName
+  }
+
   // MARK: - Initialization
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -95,7 +99,7 @@ extension GroupViewCell {
   }
   
   func setGroupName(with title: String) {
-    groupName.text = title
+    groupNameLabel.text = title
   }
   
   func setGroupMemberTotalCount(with count: Int) {
@@ -134,7 +138,7 @@ extension GroupViewCell {
 extension GroupViewCell: LayoutSupport {
   func addSubviews() {
     _=[imageView,
-       groupName,
+       groupNameLabel,
        groupMemberCountLabel].map { contentView.addSubview($0)
     }
   }
@@ -144,7 +148,7 @@ extension GroupViewCell: LayoutSupport {
        groupNameConstraints,
        groupMemberCountLabelConstraints].map {
       NSLayoutConstraint.activate($0)
-      contentView.bringSubviewToFront(groupName)
+      contentView.bringSubviewToFront(groupNameLabel)
     }
   }
 }
@@ -164,13 +168,13 @@ private extension GroupViewCell {
   }
   
   var groupNameConstraints: [NSLayoutConstraint] {
-    [groupName.leadingAnchor.constraint(
+    [groupNameLabel.leadingAnchor.constraint(
       equalTo: contentView.leadingAnchor,
     constant: 20),
-     groupName.trailingAnchor.constraint(
+     groupNameLabel.trailingAnchor.constraint(
       equalTo: contentView.trailingAnchor,
       constant: -20),
-     groupName.bottomAnchor.constraint(
+     groupNameLabel.bottomAnchor.constraint(
       equalTo: groupMemberCountLabel.topAnchor,
       constant: -5)]
   }

@@ -117,6 +117,17 @@
 
 > 채팅 기능을 처음에 구현하려고 했을 때 화면 구성을 어떻게 해야할지 막막하면서도 예전에 봤던 <a href="https://engineering.linecorp.com/ko/blog/ios-refactoring-uicollectionview-1">라인 message cell colllectionView로 리펙터링 한 글</a>이 떠올랐고 이와, 카카오톡의 UI를 본따서 만들게 되었습니다. 라인의 글을 보니 정말 많은 기능들을 구현했음을 알 수 있었습니다. 시간적 여유가 있다면 계속해서 추가 기능을 개발하고 싶은데 지금 더 대박인 앱을 개발중에 있어서.. (시간이 48시간이었으면 좋았을텐데.. :)
 
+- Multipart form-data
+
+>  으으... 기존에 개발할 때 base64를 썼었다가 인스타그램 개발하면서 파이어베이스에서 지원되는 함수를 사용했고 firesbase의 storage에서 url을 불러왔었습니다. 이번에 처음으로 Multipart 형식으로 이미지를 requset해야 했었습니다. 정말 어려웠는데.. 그럼에도 서버측에선 기능을 이미 구현했기에... 
+
+> 이번에 새롭게 접한 Multipart 도 계속해서 코드를 보니 익숙해져 버렸습니다. boundary를 사용하면서 서버에서 요구했던 json data를 양식에 맞게 여러 파트로 나눠서 보내면 되는 것이었습니다. (처음이 어렵지..)
+
+- HTTP/HTTPs header, body param, method, query param... Endpoints | Encodable, Decodable
+
+> 기존 https 통신은 그저 영화 정보를 가져온다던지, 뉴스 정보를 가져온다던지 등 + 내가 원하는 정보만 Decodable로 mapping해서 받아오면 끝이었습니다. 그리고 파이어베이스를 5개월간 사용했었는데,, 이번 기회에 서버랑 통신을 하면서 처음으로.... post도 method로 body param도 넣어보고 get으로 query param도 넣는 경험을 했었습니다. 이전에는 Codable을 왜 정의했을까? (주로 Decodable 만 사용했었기 때문입니다.) 이번 서버와의 통신을 통해 Encodable은 request!!! Decodable은 response라는 것을 정확히 알게 됬고 왜 Decodable은 init으로 시작되는가? 에대한 해답을 자연스레알게 되었습니다. "서버에서의 data를 Decodable타입의 모델 각각의 인스턴스에 값을 넣기 위해 init을 사용한다는..." 우와.. 정말 프로토콜 잘 지었다는 생각이..
+
+> Endpoints는 Clean architecture에서도 정의를 했는데 김종권님이 정의한 것에 추가적으로 Multipart form data request형식을 추가해서 프로젝트에 적용했습니다.
 
 ## 🧭 느낀점
 

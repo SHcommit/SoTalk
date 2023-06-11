@@ -6,8 +6,8 @@
 //
 
 import UIKit
+import Combine
 
-// 이제 스크롤이아닌 터치했을 때 resignResponder해야함TODO: - resignResponder
 final class MessageViewContrller: UICollectionViewController {
   // MARK: - Properties
   weak var coordinator: MessageCoordinator?
@@ -15,6 +15,15 @@ final class MessageViewContrller: UICollectionViewController {
   var adapter: MessageViewAdapter!
   
   var vm: MessageViewModel!
+  
+  private var socketManager: SocketManager! {
+    didSet {
+      bindSocketRecv()
+      socketManager.run()
+    }
+  }
+  
+  var subscription = Set<AnyCancellable>()
   
   private lazy var commentView = MessageSendBar(
     frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50)).set {
@@ -50,10 +59,19 @@ final class MessageViewContrller: UICollectionViewController {
   convenience init(with groupId: Int) {
     self.init(nibName: nil, bundle: nil)
     vm = MessageViewModel(groupId: groupId)
+    vm.fetchGroupPort { [weak self] groupPort in
+      self?.socketManager = SocketManager(groupMessageRoomPort: groupPort, groupId: groupId)
+    }
     adapter = MessageViewAdapter(
       collectionView: collectionView,
       dataSource: vm)
     setNavigationBar()
+    vm.fetchAllMessages()
+    vm.$messageData
+      .receive(on: DispatchQueue.main)
+      .sink { [weak self] _ in
+      self?.collectionView.reloadData()
+    }.store(in: &subscription)
     let tap = UITapGestureRecognizer(target: self, action: #selector(tapCollectionView))
     collectionView.addGestureRecognizer(tap)
   }
@@ -75,6 +93,11 @@ final class MessageViewContrller: UICollectionViewController {
     super.viewWillAppear(animated)
     navigationController?.navigationBar.isHidden = false
   }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    socketManager.closeSocket()
+  }
 }
 
 // MARK: - Private helper
@@ -84,6 +107,18 @@ private extension MessageViewContrller {
       return
     }
     navi.setLeftBackButton(navigationItem, target: self, action: #selector(didTapBackButton))
+  }
+  
+  func bindSocketRecv() {
+    socketManager.recvEvent.sink {[weak self] model in
+      print(model)
+      let commentModel = CommentModel(
+        userId: model.userId,
+        message: model.message,
+        sendTime: "Not",
+        profileImageUrl: nil)
+      self?.vm.addMesasge(with: commentModel)
+    }.store(in: &subscription)
   }
 }
 
@@ -111,6 +146,12 @@ extension MessageViewContrller: CommentSendInputAccessoryViewDelegate {
     completionHandler: @escaping (Result<Void, Error>) -> Void
   ) {
     // 여기서 이제 대화 메시지 보내자!
+    print("send comment: \(comment)")
+    do {
+      try socketManager.sendFor(comment, sendType: .message)
+    } catch let error {
+      print("DEBUG: Error occured in messageViewController.\n\tDescriptions:  \(error.localizedDescription)")
+    }
     completionHandler(.success(Void()))
   }
 }

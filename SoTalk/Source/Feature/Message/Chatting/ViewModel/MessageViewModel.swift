@@ -51,6 +51,14 @@ extension MessageViewModel: MessageViewControllerDataSource {
 
 }
 
+// MARK: - Helper
+extension MessageViewModel {
+  func addMesasge(with data: CommentModel) {
+    messageData.append(data)
+  }
+}
+
+// MARK: - Service
 extension MessageViewModel {
   func fetchAllMessages() {
     groupRepository.fetchAllMessageInSpecificGroup(
@@ -62,6 +70,14 @@ extension MessageViewModel {
           message: $0.message,
           sendTime: $0.sendTime)
       }
+    }
+  }
+  
+  func fetchGroupPort(completionHandler: @escaping (Int)->Void) {
+    let userId = AppSetting.getUser().id
+    let requestDTO = GroupJoinRequestDTO(groupId: groupId, userId: userId)
+    groupRepository.joinGroup(with: requestDTO) { groupPort in
+      completionHandler(groupPort)
     }
   }
 }

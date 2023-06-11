@@ -145,7 +145,7 @@ private extension MessageContentView {
         equalTo: leadingAnchor,
         constant: Constant.MessageLabel.spacing.leading),
       messageLabel.trailingAnchor.constraint(
-        equalTo: trailingAnchor,
+        lessThanOrEqualTo: trailingAnchor,
         constant: -Constant.MessageLabel.spacing.trailing),
       messageLabel.bottomAnchor.constraint(
         equalTo: bottomAnchor,

@@ -115,7 +115,7 @@
 
 - Chatting UI
 
-> 채팅 기능을 처음에 구현하려고 했을 때 화면 구성을 어떻게 해야할지 막막하면서도 예전에 봤던 <a href="https://engineering.linecorp.com/ko/blog/ios-refactoring-uicollectionview-1">라인 message cell colllectionView로 리펙터링 한 글</a>이 떠올랐고 이와, 카카오톡의 UI를 본따서 만들게 되었습니다. 라인의 글을 보니 정말 많은 기능들을 구현했음을 알 수 있었습니다.
+> 채팅 기능을 처음에 구현하려고 했을 때 화면 구성을 어떻게 해야할지 막막하면서도 예전에 봤던 <a href="https://engineering.linecorp.com/ko/blog/ios-refactoring-uicollectionview-1">라인 message cell colllectionView로 리펙터링 한 글</a>이 떠올랐고 이와, 카카오톡의 UI를 본따서 만들게 되었습니다. 라인의 글을 보니 정말 많은 기능들을 구현했음을 알 수 있었습니다. 시간적 여유가 있다면 계속해서 추가 기능을 개발하고 싶은데 지금 더 대박인 앱을 개발중에 있어서.. (시간이 48시간이었으면 좋았을텐데.. :)
 
 
 ## 🧭 느낀점

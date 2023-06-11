@@ -17,6 +17,8 @@ final class MessageContentView: UIView {
     $0.text = "익명"
     $0.textColor = .black
     $0.numberOfLines = 1
+    $0.textAlignment = .left
+    $0.sizeToFit()
   }
   
   private let messageLabel = UILabel().set {
@@ -68,7 +70,6 @@ final class MessageContentView: UIView {
 //
 // 보낸 시간 추가해야함.
 
-
 // MARK: - Helper
 extension MessageContentView {
   func configure(
@@ -80,10 +81,12 @@ extension MessageContentView {
   }
   
   func setNameLabel(with userName: String) {
-    nameLabel.text = userName
-    nameLabel.sizeToFit()
-    nameLabel.heightAnchor.constraint(
-      equalToConstant: nameLabel.bounds.height).isActive = true
+    DispatchQueue.main.async {
+      self.nameLabel.text = userName
+      self.nameLabel.sizeToFit()
+      self.nameLabel.heightAnchor.constraint(
+        equalToConstant: self.nameLabel.bounds.height).isActive = true
+    }
   }
 }
 
@@ -105,8 +108,10 @@ extension MessageContentView {
   }
   
   func setMessageLabel(with message: String) {
-    messageLabel.text = message
-    messageLabel.sizeToFit()
+    DispatchQueue.main.async {
+      self.messageLabel.text = message
+      self.messageLabel.sizeToFit()
+    }
   }
 }
 
@@ -131,7 +136,8 @@ private extension MessageContentView {
      nameLabel.topAnchor.constraint(
       equalTo: topAnchor,
       constant: Constant.NameLabel.spacing.top),
-     nameLabel.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor)]
+     nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+     nameLabel.heightAnchor.constraint(equalToConstant: nameLabel.bounds.height)]
   }
   
   var messageLabelConstraints: [NSLayoutConstraint] {
@@ -145,7 +151,7 @@ private extension MessageContentView {
         equalTo: leadingAnchor,
         constant: Constant.MessageLabel.spacing.leading),
       messageLabel.trailingAnchor.constraint(
-        lessThanOrEqualTo: trailingAnchor,
+        equalTo: trailingAnchor,
         constant: -Constant.MessageLabel.spacing.trailing),
       messageLabel.bottomAnchor.constraint(
         equalTo: bottomAnchor,

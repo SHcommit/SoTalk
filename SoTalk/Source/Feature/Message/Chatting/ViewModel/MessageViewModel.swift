@@ -34,7 +34,7 @@ final class MessageViewModel {
   
   var groupId: Int
   
-  //들어올 때 채팅방
+  // 들어올 때 채팅방
   init(groupId: Int) {
     self.groupId = groupId
   }
@@ -73,7 +73,7 @@ extension MessageViewModel {
     }
   }
   
-  func fetchGroupPort(completionHandler: @escaping (Int)->Void) {
+  func fetchGroupPort(completionHandler: @escaping (Int) -> Void) {
     let userId = AppSetting.getUser().id
     let requestDTO = GroupJoinRequestDTO(groupId: groupId, userId: userId)
     groupRepository.joinGroup(with: requestDTO) { groupPort in

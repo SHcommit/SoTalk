@@ -59,19 +59,12 @@ final class MessageViewContrller: UICollectionViewController {
   convenience init(with groupId: Int) {
     self.init(nibName: nil, bundle: nil)
     vm = MessageViewModel(groupId: groupId)
-    vm.fetchGroupPort { [weak self] groupPort in
-      self?.socketManager = SocketManager(groupMessageRoomPort: groupPort, groupId: groupId)
-    }
+    bindEvent(with: groupId)
     adapter = MessageViewAdapter(
       collectionView: collectionView,
       dataSource: vm)
     setNavigationBar()
-    vm.fetchAllMessages()
-    vm.$messageData
-      .receive(on: DispatchQueue.main)
-      .sink { [weak self] _ in
-      self?.collectionView.reloadData()
-    }.store(in: &subscription)
+    
     let tap = UITapGestureRecognizer(target: self, action: #selector(tapCollectionView))
     collectionView.addGestureRecognizer(tap)
   }
@@ -107,6 +100,18 @@ private extension MessageViewContrller {
       return
     }
     navi.setLeftBackButton(navigationItem, target: self, action: #selector(didTapBackButton))
+  }
+  
+  func bindEvent(with groupId: Int) {
+    vm.fetchGroupPort { [weak self] groupPort in
+      self?.socketManager = SocketManager(groupMessageRoomPort: groupPort, groupId: groupId)
+    }
+    vm.fetchAllMessages()
+    vm.$messageData
+      .receive(on: DispatchQueue.main)
+      .sink { [weak self] _ in
+        self?.collectionView.reloadData()
+      }.store(in: &subscription)
   }
   
   func bindSocketRecv() {
@@ -145,7 +150,6 @@ extension MessageViewContrller: CommentSendInputAccessoryViewDelegate {
     wantsToUploadComment comment: String,
     completionHandler: @escaping (Result<Void, Error>) -> Void
   ) {
-    // 여기서 이제 대화 메시지 보내자!
     print("send comment: \(comment)")
     do {
       try socketManager.sendFor(comment, sendType: .message)

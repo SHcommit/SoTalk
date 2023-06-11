@@ -54,28 +54,30 @@ extension MessageViewAdapter: UICollectionViewDelegateFlowLayout {
       return CGSize(width: 50, height: 50)
     }
     let screenWidth = UIScreen.main.bounds.width
-    var width = collectionView.bounds.width
+    var fixexWidth = collectionView.bounds.width
     var height = 0.0
     var rect: CGRect
     let owner = AppSetting.getUser()
     
     guard item.userId == owner.id else {
+      // 타인일 경우
       let messageContentViewOuterSpacing = MessageCell.Constant.Other.MessageContentView.spacing
       let messageContentViewInnerContentSpacing = MessageContentView.Constant.MessageLabel.spacing
       let messageContentViewInnerNameSpacing = MessageContentView.Constant.MessageLabel.spacing
-      width -= (messageContentViewOuterSpacing.leading + messageContentViewOuterSpacing.trailing)
-      width -= (messageContentViewInnerContentSpacing.leading + messageContentViewInnerContentSpacing.trailing)
-      rect = CGRect(x: 0, y: 0, width: width, height: 50)
+      fixexWidth -= (messageContentViewOuterSpacing.leading + messageContentViewOuterSpacing.trailing)
+      fixexWidth -= (messageContentViewInnerContentSpacing.leading + messageContentViewInnerContentSpacing.trailing)
+      rect = CGRect(x: 0, y: 0, width: fixexWidth, height: 50)
       let lb = UITextView(frame: rect).set {
         $0.font = .systemFont(ofSize: MessageContentView.Constant.MessageLabel.fontSize)
         $0.text = item.message
-        $0.textAlignment = .natural
+        $0.textAlignment = .left
         $0.sizeToFit()
       }
       height += lb.bounds.height
       height += messageContentViewOuterSpacing.top + messageContentViewOuterSpacing.bottom
       height += messageContentViewInnerNameSpacing.top + messageContentViewInnerNameSpacing.bottom
       height += messageContentViewInnerContentSpacing.top + messageContentViewInnerContentSpacing.bottom
+      print(fixexWidth)
       if height < 50 {
         return CGSize(width: screenWidth, height: 50)
       }
@@ -83,11 +85,11 @@ extension MessageViewAdapter: UICollectionViewDelegateFlowLayout {
     }
     
     let messageContentViewOuterSpacing = MessageCell.Constant.Me.MessageContentView.spacing
-    width -= (messageContentViewOuterSpacing.leading + messageContentViewOuterSpacing.trailing)
+    fixexWidth -= (messageContentViewOuterSpacing.leading + messageContentViewOuterSpacing.trailing)
     let messageContentViewInnerSpacing = MessageContentView.Constant.MessageLabel.spacing
-    width -= (messageContentViewInnerSpacing.leading + messageContentViewInnerSpacing.trailing)
+    fixexWidth -= (messageContentViewInnerSpacing.leading + messageContentViewInnerSpacing.trailing)
     
-    rect = CGRect(x: 0, y: 0, width: width, height: 50)
+    rect = CGRect(x: 0, y: 0, width: fixexWidth, height: 50)
     let lb = UITextView(frame: rect).set {
       $0.font = .systemFont(ofSize: MessageContentView.Constant.MessageLabel.fontSize)
       $0.text = item.message
@@ -97,11 +99,11 @@ extension MessageViewAdapter: UICollectionViewDelegateFlowLayout {
     height += lb.bounds.height
     height += messageContentViewOuterSpacing.top + messageContentViewOuterSpacing.bottom
     height += messageContentViewInnerSpacing.top + messageContentViewInnerSpacing.bottom
-    
+    print(fixexWidth)
     if height < 50 {
       return CGSize(width: screenWidth, height: height)
     }
     
-    return CGSize(width: width, height: height)
+    return CGSize(width: fixexWidth, height: height)
   }
 }

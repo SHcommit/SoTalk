@@ -26,10 +26,8 @@ struct SocketUtils {
     switch actionType {
     case .send:
       guard res != -1 else { throw SocketError.FailedToSendMessage }
-      print("DEBUG: Successfully send \(res) bytes to server.")
     case .recv:
       guard res != -1 else { throw SocketError.FailedToRecvMessage }
-      print("DEBUG: Successfully recv \(res) bytes from server.")
     }
   }
   
@@ -43,6 +41,11 @@ struct SocketUtils {
   
   func jsonStrToBytes(_ string: String) -> Data {
     return string.data(using: .utf8) ?? Data()
+  }
+  
+  func decoder<T: Decodable>(_ data: Data) throws -> T {
+    let decoder = JSONDecoder()
+    return try decoder.decode(T.self, from: data)
   }
   
 }

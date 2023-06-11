@@ -61,7 +61,6 @@ enum SocketJsonKeyType: String {
   case status
 }
 
-
 // MARK: - SocketActionType
 enum SocketActionType {
   case send
@@ -70,23 +69,8 @@ enum SocketActionType {
 
 // MARK: - Socket's recv model
 struct MessageResponseModel: Decodable {
-  let groupId: String
+  let groupId: Int
   let userId: String
   let message: String
   let type: String
-  
-  enum CodingKeys: CodingKey {
-    case groupId
-    case userId
-    case message
-    case type
-  }
-  
-  init(from decoder: Decoder) throws {
-    let container = try decoder.container(keyedBy: CodingKeys.self)
-    self.groupId = try container.decode(String.self, forKey: .groupId)
-    self.userId = try container.decode(String.self, forKey: .userId)
-    self.message = try container.decode(String.self, forKey: .message)
-    self.type = try container.decode(String.self, forKey: .type)
-  }
 }

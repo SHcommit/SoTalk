@@ -79,10 +79,44 @@ extension SocketManager {
   }
   
   private func recvFromServer() throws -> (bytes: [CChar], size: Int) {
+    // 초기에는 cString으로 변환하지 않아도 됩니다.
     var buf = [CChar](repeating: 0, count: RecvSize)
     let res = recv(ownerSocket, &buf, RecvSize, 0)
     try SocketUtils.shared.ckeckError(res, actionType: .recv)
     return (buf, res)
+  }
+  
+  private func recvFromServerWithMessage(buf: [CChar]) -> String {
+    if let cString = buf.withUnsafeBufferPointer({ $0.baseAddress }) {
+      return String(cString: cString)
+    }
+    return ""
+  }
+  
+  /// Listening server's send data with background queue :)
+  private func listenServerSendFromBackgroundQueue() {
+    var isRunning = true
+    while isRunning {
+      do {
+        let result = try recvFromServer()
+        let jsonStr = recvFromServerWithMessage(buf: result.bytes)
+        if !jsonStr.isEmpty, let jsonData = jsonStr.data(using: .utf8) {
+          if let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any] {
+            let model = try JSONDecoder().decode(
+              MessageResponseModel.self,
+              from: JSONSerialization.data(withJSONObject: jsonObject))
+            print("DEBUG: recv model: \(model)")
+            recvEvent.send(model)
+          }
+        }
+      } catch let sockErr as SocketError {
+        print("DEBUG: Error occured from background queue\n\tDescriptions:  \(sockErr.description)")
+        isRunning = false
+      } catch let error {
+        print("DEBUG: Error occured from background queue\n\tDescriptions:  \(error.localizedDescription)")
+        isRunning = false
+      }
+    }
   }
 }
 
@@ -139,28 +173,6 @@ extension SocketManager {
     let decoder = JSONDecoder()
     let model = try decoder.decode(InitResponseModel.self, from: recvData)
     return model.action
-  }
-
-  /// Listening server's send data with background queue :)
-  private func listenServerSendFromBackgroundQueue() {
-    var isRunning = true
-    while isRunning {
-      do {
-        let result = try recvFromServer()
-        let data = Data(bytes: result.bytes, count: result.size)
-        let decoder = JSONDecoder()
-        let model = try decoder.decode(MessageResponseModel.self, from: data)
-        print("DEBUG: recv model: \(model)")
-        recvEvent.send(model)
-        
-      } catch let sockErr as SocketError {
-        print("DEBUG: Error occured from background queue\n\tDescriptions:  \(sockErr.description)")
-        isRunning = false
-      } catch let error {
-        print("DEBUG: Error occured from background queue\n\tDescriptions:  \(error.localizedDescription)")
-        isRunning = false
-      }
-    }
   }
   
   private func checkIsInitlaiRecv(_ data: Data) throws {

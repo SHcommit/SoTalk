@@ -35,7 +35,6 @@ extension CreatingGroupBottomSheetViewModel {
         groupId: groupId,
         imageData: self.groupInfoModel.imageData)
       self.groupRepository.uploadGroupProfile(with: gruopProfileRequestDTO) { url in
-        print("DEBUG: Successfully get url. \(url)")
         completionHandler()
       }
     }

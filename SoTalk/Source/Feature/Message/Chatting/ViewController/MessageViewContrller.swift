@@ -120,7 +120,7 @@ private extension MessageViewContrller {
       let commentModel = CommentModel(
         userId: model.userId,
         message: model.message,
-        sendTime: "Not",
+        sendTime: "n",
         profileImageUrl: nil)
       self?.vm.addMesasge(with: commentModel)
     }.store(in: &subscription)

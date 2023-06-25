@@ -72,8 +72,7 @@
 
 ## 🔭  프로젝트 구조: MVVM+C
 
-
-![스크린샷 2023-06-12 오전 4 02 31](https://github.com/SHcommit/SoTalk/assets/96910404/23cc4ca5-0d97-4570-a1b6-a563e5d0c29a)
+![스크린샷 2023-06-25 오후 5 29 04](https://github.com/SHcommit/SoTalk/assets/96910404/b3a38702-df74-45e5-a650-d2d171233ae4)
 
 - clean architecture+ MVVM을 사용하려 했으나 굳이 use case정의 없어도 될 것 같아 UseCase를 제외한 Clean architecture를 적용했습니다.
 

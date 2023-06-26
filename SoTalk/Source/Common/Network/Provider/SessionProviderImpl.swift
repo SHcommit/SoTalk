@@ -1,5 +1,5 @@
 //
-//  ServiceProviderImpl.swift
+//  SessionProviderImpl.swift
 //  SoTalk
 //
 //  Created by 양승현 on 2023/06/04.
@@ -7,14 +7,14 @@
 
 import Foundation
 
-class ServiceProviderImpl {
+class SessionProviderImpl {
   let session: URLSession
   init(session: URLSession = URLSession.shared) {
     self.session = session
   }
 }
 
-extension ServiceProviderImpl: EndpointProvider {
+extension SessionProviderImpl: EndpointProvider {
   func request<R, E>(
     with endpoint: E,
     completion: @escaping (Result<R, Error>) -> Void

@@ -9,7 +9,7 @@ import Foundation
 
 struct GroupMessageRepositoryImpl: GroupMessageRepository {
   typealias Endpoints = GroupMessageAPIEndpoints
-  private let provider = ServiceProviderImpl()
+  private let provider = SessionProviderImpl()
   
   func fetchGroupSocketPort(
     with groupId: GroupSocketPortSearchRequestDTO,

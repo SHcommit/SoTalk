@@ -9,7 +9,7 @@ import Foundation
 
 struct UserRepositoryImpl: UserRepository {
   typealias Endpoints = UserAPIEndpoints
-  let provider = ServiceProviderImpl()
+  let provider = SessionProviderImpl()
   
   func fetchUserInfo(
     _ userId: UserIdSearchRequestDTO,

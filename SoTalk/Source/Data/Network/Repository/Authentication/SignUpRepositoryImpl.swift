@@ -10,7 +10,7 @@ import Foundation
 struct SignUpRepositoryImpl: SignUpRepository {
   typealias Endpoints = AuthenticationAPIEndpoints
   
-  private let provider = ServiceProviderImpl()
+  private let provider = SessionProviderImpl()
   
   func signUp(_ user: SignUpRequestDTO, completionHandler: @escaping (String) -> Void) {
     let endpoint = Endpoints.shared.signUp(with: user)

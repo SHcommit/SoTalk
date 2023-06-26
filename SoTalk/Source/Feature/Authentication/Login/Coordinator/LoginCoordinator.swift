@@ -11,13 +11,13 @@ final class LoginCoordinator: NSObject, FlowCoordinator {
   // MARK: - Properties
   var parent: FlowCoordinator!
   var child: [FlowCoordinator] = []
-  var presenter: NavigationControler
+  var presenter: NavigationController
   var viewController: UIViewController!
   
   // MARK: - Initialization
   override init() {
     let loginViewController = LoginViewController()
-    presenter = NavigationControler(rootViewController: loginViewController)
+    presenter = NavigationController(rootViewController: loginViewController)
     super.init()
     viewController = loginViewController
     loginViewController.coordinator = self

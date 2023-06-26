@@ -11,12 +11,12 @@ final class MessageListCoordinator: NSObject, FlowCoordinator {
   // MARK: - Properties
   var parent: FlowCoordinator!
   var child: [FlowCoordinator] = []
-  var presenter: NavigationControler
+  var presenter: NavigationController
   var viewController: UIViewController!
   
   override init() {
     let chatListViewController = MessageListViewController()
-    presenter = NavigationControler(rootViewController: chatListViewController)
+    presenter = NavigationController(rootViewController: chatListViewController)
     viewController = chatListViewController
     super.init()
     chatListViewController.coordinator = self
@@ -27,7 +27,7 @@ final class MessageListCoordinator: NSObject, FlowCoordinator {
   }
   
   func finish() {
-    guard let parent = parent as? ApplicationFlowCoordinator else { return }
+    viewController = nil
     removeSelf(from: parent)
   }
 }

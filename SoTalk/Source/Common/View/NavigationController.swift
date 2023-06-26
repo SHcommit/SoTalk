@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NavigationControler: UINavigationController {
+class NavigationController: UINavigationController {
   // MARK: - Propertiese
   private var backBtnImage: UIImage {
     guard let img = UIImage(named: "backBtn")?.withRenderingMode(.alwaysOriginal) else {

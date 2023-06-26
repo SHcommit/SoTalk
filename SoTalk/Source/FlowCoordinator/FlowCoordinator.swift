@@ -11,7 +11,7 @@ protocol FlowCoordinator: AnyObject {
   // MARK: - Properteis
   var parent: FlowCoordinator! { get set }
   var child: [FlowCoordinator] { get set }
-  var presenter: NavigationControler { get set }
+  var presenter: NavigationController { get set }
   var viewController: UIViewController! { get set }
   
   // MARK: - Helpers

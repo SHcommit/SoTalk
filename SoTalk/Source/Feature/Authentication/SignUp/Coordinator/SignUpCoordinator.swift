@@ -11,11 +11,11 @@ class SignUpCoordinator: NSObject, FlowCoordinator {
   // MARK: - Properties
   var parent: FlowCoordinator!
   var child: [FlowCoordinator] = []
-  var presenter: NavigationControler
+  var presenter: NavigationController
   var viewController: UIViewController!
   
   // MARK: - Lifecycle
-  init(presenter: NavigationControler) {
+  init(presenter: NavigationController) {
     self.presenter = presenter
     super.init()
     let vc = SignUpViewController()

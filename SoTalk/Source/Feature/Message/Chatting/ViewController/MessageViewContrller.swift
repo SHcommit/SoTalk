@@ -89,6 +89,7 @@ final class MessageViewContrller: UICollectionViewController {
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     socketManager.closeSocket()
+    coordinator?.finish()
   }
 }
 
@@ -96,7 +97,7 @@ final class MessageViewContrller: UICollectionViewController {
 private extension MessageViewContrller {
   func setNavigationBar(with title: String) {
     navigationItem.title = title
-    guard let navi = navigationController as? NavigationControler else {
+    guard let navi = navigationController as? NavigationController else {
       return
     }
     navi.setLeftBackButton(navigationItem, target: self, action: #selector(didTapBackButton))

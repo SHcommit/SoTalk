@@ -39,6 +39,11 @@ final class SignUpViewController: UIViewController {
     setAdapter()
     view.backgroundColor = .Palette.bgColor
   }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    coordinator?.finish()
+  }
 }
 
 // MARK: - Private helper
@@ -58,7 +63,7 @@ extension SignUpViewController {
     }
     
     guard
-      let navigationController = navigationController as? NavigationControler else {
+      let navigationController = navigationController as? NavigationController else {
       return
     }
     navigationController.setLeftBackButton(

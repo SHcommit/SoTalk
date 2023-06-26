@@ -97,7 +97,7 @@
 		15BB01DE2A1F3DD70035B486 /* BackgroundBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01DD2A1F3DD70035B486 /* BackgroundBlur.swift */; };
 		15BB01E02A1F480E0035B486 /* UIView+CustomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01DF2A1F480E0035B486 /* UIView+CustomAnimation.swift */; };
 		15BB01E32A1F519B0035B486 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01E22A1F519B0035B486 /* SignUpViewController.swift */; };
-		15BB01E72A205F5C0035B486 /* NavigationControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01E62A205F5C0035B486 /* NavigationControler.swift */; };
+		15BB01E72A205F5C0035B486 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01E62A205F5C0035B486 /* NavigationController.swift */; };
 		15BB01E92A209ABF0035B486 /* UIColor+iconColorChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01E82A209ABF0035B486 /* UIColor+iconColorChange.swift */; };
 		15BB01EB2A20CA240035B486 /* AuthenticationTextFieldColorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB01EA2A20CA240035B486 /* AuthenticationTextFieldColorState.swift */; };
 		15BB021A2A225E380035B486 /* SignUpVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB02192A225E380035B486 /* SignUpVIew.swift */; };
@@ -274,7 +274,7 @@
 		15BB01DD2A1F3DD70035B486 /* BackgroundBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundBlur.swift; sourceTree = "<group>"; };
 		15BB01DF2A1F480E0035B486 /* UIView+CustomAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CustomAnimation.swift"; sourceTree = "<group>"; };
 		15BB01E22A1F519B0035B486 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		15BB01E62A205F5C0035B486 /* NavigationControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControler.swift; sourceTree = "<group>"; };
+		15BB01E62A205F5C0035B486 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		15BB01E82A209ABF0035B486 /* UIColor+iconColorChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+iconColorChange.swift"; sourceTree = "<group>"; };
 		15BB01EA2A20CA240035B486 /* AuthenticationTextFieldColorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTextFieldColorState.swift; sourceTree = "<group>"; };
 		15BB02192A225E380035B486 /* SignUpVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVIew.swift; sourceTree = "<group>"; };
@@ -774,7 +774,7 @@
 			children = (
 				15BB01C92A1F10730035B486 /* AuthenticationTextField.swift */,
 				15BB01D82A1F311E0035B486 /* OneUnitHeightLine.swift */,
-				15BB01E62A205F5C0035B486 /* NavigationControler.swift */,
+				15BB01E62A205F5C0035B486 /* NavigationController.swift */,
 				15BB02262A22795C0035B486 /* AuthenticationButton.swift */,
 			);
 			path = View;
@@ -1543,7 +1543,7 @@
 				15BB021F2A226A230035B486 /* SignUpViewModel.swift in Sources */,
 				15BB02BB2A284D360035B486 /* GroupViewAdapterDelegate.swift in Sources */,
 				15E8A2D82A2DF963002ECFDB /* LoginResponseDTO+Mapping.swift in Sources */,
-				15BB01E72A205F5C0035B486 /* NavigationControler.swift in Sources */,
+				15BB01E72A205F5C0035B486 /* NavigationController.swift in Sources */,
 				156C6E622A31C1A300CD1968 /* MessageListView+Constant.swift in Sources */,
 				15BB02B92A28407B0035B486 /* BottomNaviBar+Constant.swift in Sources */,
 				15E8A2D42A2DED9F002ECFDB /* LoginRepository.swift in Sources */,

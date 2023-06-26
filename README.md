@@ -72,9 +72,9 @@
 
 ## 🔭  프로젝트 구조: MVVM+C
 
-![스크린샷 2023-06-25 오후 5 29 04](https://github.com/SHcommit/SoTalk/assets/96910404/b3a38702-df74-45e5-a650-d2d171233ae4)
+![스크린샷 2023-06-27 오전 12 20 07](https://github.com/SHcommit/SoTalk/assets/96910404/f40e66a7-5b5c-4c5e-98a4-e3cd886edc65)
 
-- clean architecture+ MVVM을 사용하려 했으나 굳이 use case정의 없어도 될 것 같아 UseCase를 제외한 Clean architecture를 적용했습니다.
+- clean architecture + MVVM을 사용하려 했으나 굳이 use case정의 없어도 될 것 같아 UseCase를 제외한 Clean architecture를 적용했습니다.
 
 - ViewController와 ViewModel간 Input/Output binding을 사용해 비즈니스로직과 UI관련 처리를 분리했습니다.
 

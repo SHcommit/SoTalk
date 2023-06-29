@@ -6,16 +6,17 @@
 //
 
 import UIKit
+import SHCoordinator
 
 class MessageCoordinator: NSObject, FlowCoordinator {
   // MARK: - Properties
   var parent: FlowCoordinator!
   var child: [FlowCoordinator] = []
-  var presenter: NavigationController
+  let presenter: UINavigationController
   var viewController: UIViewController!
   
   // MARK: - Lifecycle
-  init(presenter: NavigationController, groupId: Int, gruopName: String) {
+  init(presenter: UINavigationController, groupId: Int, gruopName: String) {
     self.presenter = presenter
     super.init()
     let vc = MessageViewContrller(with: groupId, groupName: gruopName)

@@ -6,15 +6,16 @@
 //
 
 import UIKit
+import SHCoordinator
 
 final class CreatingGroupCoordinator: NSObject, FlowCoordinator {
   var parent: FlowCoordinator!
   var child: [FlowCoordinator] = []
-  var presenter: NavigationController
+  let presenter: UINavigationController
   
   var viewController: UIViewController!
   
-  init(presenter: NavigationController) {
+  init(presenter: UINavigationController) {
     let creatingGroupBottomSheetViewController = CreatingGroupBottomSheetViewController()
     viewController = creatingGroupBottomSheetViewController
     self.presenter = presenter

@@ -9,5 +9,4 @@ target 'SoTalk' do
   pod 'SwiftLint'
   pod 'Swinject'
   pod 'lottie-ios'
-
 end

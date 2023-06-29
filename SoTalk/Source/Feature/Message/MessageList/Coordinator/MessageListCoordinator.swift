@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import SHCoordinator
 
 final class MessageListCoordinator: NSObject, FlowCoordinator {
   // MARK: - Properties
   var parent: FlowCoordinator!
   var child: [FlowCoordinator] = []
-  var presenter: NavigationController
+  let presenter: UINavigationController
   var viewController: UIViewController!
   
   override init() {

@@ -6,16 +6,17 @@
 //
 
 import UIKit
+import SHCoordinator
 
 class SignUpCoordinator: NSObject, FlowCoordinator {
   // MARK: - Properties
   var parent: FlowCoordinator!
   var child: [FlowCoordinator] = []
-  var presenter: NavigationController
+  let presenter: UINavigationController
   var viewController: UIViewController!
   
   // MARK: - Lifecycle
-  init(presenter: NavigationController) {
+  init(presenter: UINavigationController) {
     self.presenter = presenter
     super.init()
     let vc = SignUpViewController()

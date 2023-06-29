@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import SHCoordinator
 
 final class ApplicationFlowCoordinator: FlowCoordinator {
+  
   // MARK: - Properties
   var parent: FlowCoordinator!
   var child: [FlowCoordinator] = []
-  var presenter: NavigationController = NavigationController()
+  let presenter: UINavigationController = NavigationController()
   var viewController: UIViewController! = nil
   
   private let window: UIWindow
